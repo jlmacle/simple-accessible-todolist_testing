@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SeleniumTest {
+public class UserRequirement1 {
 
 	 WebDriver driver;
 
@@ -42,7 +42,7 @@ public class SeleniumTest {
 	    	driver.findElement(By.id("new_category_input_field")).sendKeys("Protractor test category");
 	    	driver.findElement(By.id("add_category_button")).submit();
 	    	try {
-				driver.wait(5000);
+				driver.wait(15000);
 			} catch (InterruptedException e) {
 				System.err.println();
 				e.printStackTrace();
