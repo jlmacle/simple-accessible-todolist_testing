@@ -3,14 +3,14 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.com.SeleniumTest">
+      <class name="jl.com.UserRequirement1">
         <methods>
-          <include name="setup"/>
-          <include name="createCategory"/>
           <include name="releaseResources"/>
+          <include name="setup"/>
           <include name="navigate"/>
+          <include name="createCategory"/>
         </methods>
-      </class> <!-- jl.com.SeleniumTest -->
+      </class> <!-- jl.com.UserRequirement1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

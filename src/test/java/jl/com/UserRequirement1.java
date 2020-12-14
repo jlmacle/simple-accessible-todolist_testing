@@ -5,9 +5,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -40,21 +45,25 @@ public class UserRequirement1 {
 	    	String textToFind= "Protractor test category";
 	    	
 	    	driver.findElement(By.id("new_category_input_field")).sendKeys("Protractor test category");
-	    	driver.findElement(By.id("add_category_button")).submit();
-	    	try {
-				driver.wait(15000);
-			} catch (InterruptedException e) {
-				System.err.println();
-				e.printStackTrace();
-			}
+	    	driver.findElement(By.id("add_category_button")).click();
+	    	//The category has been added. The display of the existing categories is being refreshed.
+	    	driver.get("http://localhost:4200");
 	    		    	
-	    	List<WebElement> spanElements = driver.findElements(By.tagName("span"));
-	    	for (WebElement spanElement : spanElements) {
-				String text = spanElement.getText();
-				System.out.println("Found text: "+text);
-				if (text.equals(textToFind)) isCategoryFound=true;
-				System.out.println("isCategoryFound: "+isCategoryFound);
-			}
+	    	List<WebElement> spanElements = driver.findElements(By.tagName("span"));	    	
+	    	try {
+	    		System.out.println("Found "+spanElements.size()+" SPAN elements");
+	    		for (WebElement spanElement : spanElements) {
+		    		String text = spanElement.getText();
+					System.out.println("Found text: "+text);
+					if (text.equals(textToFind)) isCategoryFound=true;
+					System.out.println("isCategoryFound: "+isCategoryFound);
+				}
+	    	}
+	    	catch(StaleElementReferenceException e) {
+	    		System.err.println("Caught a StaleElementReferenceException "
+	    				+ "while going through the SPAN elements.");
+	    		e.printStackTrace();
+	    	}	    	
 	    	
 	    	assertThat(isCategoryFound).isEqualTo(true);
 	    	
