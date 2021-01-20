@@ -20,6 +20,7 @@ import org.testng.annotations.Test;
 /**
  * @author 
  * Class testing the user requirement of deleting a category.
+ * NB: needs to start a fresh instance of the application
  */
 public class UserRequirement1 {
 	
