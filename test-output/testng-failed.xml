@@ -5,6 +5,7 @@
     <classes>
       <class name="jl.com.UserRequirement2">
         <methods>
+          <include name="navigate"/>
           <include name="releaseResources"/>
           <include name="createItem"/>
           <include name="setup"/>

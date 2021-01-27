@@ -25,10 +25,12 @@ import org.testng.annotations.Test;
 public class UserRequirement1 {
 	
 	WebDriver driver;
+	String testCategoryLabel= "Protractor test category"; 
 	
 	@BeforeClass
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\Programming a good gift to Adelaide Ellie and Liam\\z_webdriver_win32\\chromedriver.exe");
+		//https://chromedriver.chromium.org/downloads
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();		
 	}
 	
@@ -39,27 +41,30 @@ public class UserRequirement1 {
 	
 	@Test
     public void createCategory() {
+		System.out.println("Entering the test of creation of category");
     	boolean isCategoryFound = false;
-    	String textToFind= "Protractor test category";
     	
-    	driver.findElement(By.id("new_category_input_field")).sendKeys("Protractor test category");
+    	
+    	driver.findElement(By.id("new_category_input_field")).sendKeys(testCategoryLabel);
     	driver.findElement(By.id("add_category_button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
+    	System.out.println("At this point, the test category should have been created.");
     	driver.get("http://localhost:4200");
     		    	
-    	List<WebElement> spanElements = driver.findElements(By.tagName("span"));	    	
+    	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	    	
     	try {
-    		System.out.println("Found "+spanElements.size()+" SPAN elements");
-    		for (WebElement spanElement : spanElements) {
-	    		String text = spanElement.getText();
-				System.out.println("Found text: "+text);
-				if (text.equals(textToFind)) {isCategoryFound=true;break;}
+    		System.out.println("Found "+aCategoryElements.size()+" aCategory elements");
+    		if(aCategoryElements.size() == 0 ){fail("No categories, the app wasn't started.");}//for the case where the app wasn't started 
+    		for (WebElement aCategoryElement : aCategoryElements) {
+	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
+				System.out.println("Found text: *"+text+"*");
+				if (text.equals(testCategoryLabel)) {isCategoryFound=true;break;}
 				
 			}
     	}
     	catch(StaleElementReferenceException e) {
     		System.err.println("Caught a StaleElementReferenceException "
-    				+ "while going through the SPAN elements.");
+    				+ "while going through the elements with the name aCategory.");
     		e.printStackTrace();
     	}	    	
     	
@@ -69,20 +74,23 @@ public class UserRequirement1 {
 	
 	@Test
 	public void deleteCategory() throws Exception {
-		int newCategoryPositionIntheList = 0;
-		int categoryPosition = 0;
-		String newCategoryDescription = "Protractor test category";
+		System.out.println("Entering the test of deletion of category");
+		int testCategoryPositionIntheList = 0;
+		int currentCategoryPosition = 0;
 		boolean isCategoryFound = false;
 		
-		//1. Confirmation that the category was created; registration of its position in the list of span elements    	
-    	List<WebElement> spanElements = driver.findElements(By.tagName("span"));	    	
+		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
+    	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	
+		System.out.println("Found "+aCategoryElements.size()+" elements named aCategory");
+		if(aCategoryElements.size() == 0 ){fail("No categories, the app wasn't started.");}//for the case where the app wasn't started 
     	try {    		
-    		for (WebElement spanElement : spanElements) {
-    			categoryPosition++;
-	    		String text = spanElement.getText();
-				if (text.equals(newCategoryDescription)) {
-					newCategoryPositionIntheList = categoryPosition;
-					System.out.println("Found the text:"+text+" in position: "+newCategoryPositionIntheList);					
+    		for (WebElement aCategoryElement : aCategoryElements) {
+    			currentCategoryPosition++;
+	    		String text = aCategoryElement.getText().trim();
+	    		System.out.println("Found text: *"+text);
+				if (text.equals(testCategoryLabel)) {
+					testCategoryPositionIntheList = currentCategoryPosition;
+					System.out.println("Found the text:"+text+" in position: "+testCategoryPositionIntheList);					
 					isCategoryFound=true;
 					break;
 				}
@@ -90,25 +98,24 @@ public class UserRequirement1 {
     	}
     	catch(StaleElementReferenceException e) {
     		System.err.println("Caught a StaleElementReferenceException "
-    				+ "while going through the SPAN elements.");
+    				+ "while going through the anItem elements.");
     		e.getMessage();
     		e.printStackTrace();
     	}	 
 		    	
     	if(isCategoryFound == true) {
     		System.out.println("The new category has been successfuly created.");
-    		//2. deletion of the category created
-    			// finding the elements of the class "fas fa-trash-alt"
-    		List<WebElement> trashIconElements = driver.findElements(By.className("fa-trash-alt"));
-    		System.out.println("Found "+trashIconElements.size()+" elements in trashIconElements.");
+    		//2. Deletion of the category created
+    			// finding the elements with the name "anIconToDeleteACategory"
+    		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name("anIconToDeleteACategory"));
+    		System.out.println("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
     		try {
-    			categoryPosition=0;    			
-    			for(WebElement trashCanIconElement : trashIconElements) {
-    				categoryPosition++;    				
-    				System.out.println("Text for trashCanIconElement: "+trashCanIconElement.getText());
-    				if (categoryPosition == newCategoryPositionIntheList) {
-    					System.out.println("Clicking the trash can icon in position: "+categoryPosition);
-    					trashCanIconElement.click();
+    			currentCategoryPosition=0;    			
+    			for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) {
+    				currentCategoryPosition++;    				    				
+    				if (currentCategoryPosition == testCategoryPositionIntheList) {
+    					System.out.println("Clicking the trash can icon in position: "+currentCategoryPosition);
+    					trashCanIconElementInFrontOfCategory.click();
     					break;
     				}
     				else {System.out.println("Skipping this trash can icon.");}
@@ -117,22 +124,22 @@ public class UserRequirement1 {
     		}
     		catch(StaleElementReferenceException e) {
     			System.err.println("Caught a StaleElementReferenceException"
-    					+ "while going through the elements related to a trash can icon.");
+    					+ "while going through the elements related to a trash can icon in front of a category.");
     			e.getMessage();
     			e.printStackTrace();    			
     		}    		
     		
-    		//4. confirmation of deletion
+    		//3. confirmation of deletion
     		driver.get("http://localhost:4200");
-    		spanElements = driver.findElements(By.tagName("span"));
-    		System.out.println("Found "+spanElements.size()+" elements in spanElements after deletion.");
+    		aCategoryElements = driver.findElements(By.name("aCategory"));
+    		System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
     		try {
-    			for(WebElement spanElement : spanElements) {
-    				String text = spanElement.getText();
+    			for(WebElement aCategoryElement : aCategoryElements) {
+    				String text = aCategoryElement.getText();
     				System.out.println(text);
-    				if (text.equals(newCategoryDescription)) {
+    				if (text.equals(testCategoryLabel)) {
     					//if the created category can be found the test is failed
-    					System.err.println("Found "+newCategoryDescription+" when the test category should have been deleted."
+    					System.err.println("Found "+testCategoryLabel+" when the test category should have been deleted."
     							+ "The test is failed.");
     					fail();
     				}
@@ -143,7 +150,7 @@ public class UserRequirement1 {
     		}
     		catch(StaleElementReferenceException e) {
     			System.err.println("Caught a StaleElementReferenceException"
-    					+ "while going through the elements related to a trash can icon.");
+    					+ "while going through the elements related to a trash can icon before a category.");
     			e.getMessage();
     			e.printStackTrace();    			
     		}    
@@ -151,6 +158,7 @@ public class UserRequirement1 {
     	}
     	
     	else {
+    		System.err.println("The protractor test category was not found.");
     		throw new Exception("Test of category creation failed.");
     	}		
 		
