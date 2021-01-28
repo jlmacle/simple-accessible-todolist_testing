@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 public class UserRequirement2 {
 	
 	WebDriver driver;
-	String newItemLabel="Protractor test item";
+	String testItemLabel="Protractor test item";	
 	
 	@BeforeClass
 	public void setup() {
@@ -32,27 +32,79 @@ public class UserRequirement2 {
 		driver = new ChromeDriver();		
 	}
 	
+	@BeforeMethod
+	public void navigate() {
+		driver.get("http://localhost:4200");
+	}
+	
 	@Test
-	public void createItem() throws Exception{
-		String testItemLabel = "newItemLabel";
-		boolean isItemFound = false;
-		
-		
+	public void createItem() throws Exception{		
+			
+		System.out.println("1. Creation of the item");
 		//Adding an item to the Misc. category created at startup
 		driver.findElement(By.id("category_to_select_field")).sendKeys("Misc.");
-		driver.findElement(By.id("item_input_name")).sendKeys("newItemLabel");
+		driver.findElement(By.id("item_input_name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add_item_button")).click();
 		//To avoid a StaleElementReferenceException 
 		driver.get("http://localhost:4200");
+		System.out.println("At this point the item should be created.");
 		
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		try {
-			System.out.println("Found "+anItemElements.size()+" elements named 'anItem'");
+			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();
 				System.out.println("Found "+text+" as text.");
-				if (text.equals(testItemLabel)) {isItemFound=true;break;}
+				if (text.equals(testItemLabel)) {assert(true);}
+			}
+			
+		}
+		catch(StaleElementReferenceException e) {
+			System.err.println("A StaleElementReferenceException has been caught while searching"
+					+ "the elements named 'anItem' after creation of the element.");
+			e.getMessage();
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	@Test
+	public void deleteItem() throws Exception {
+		System.out.println("2. Deletion of the item");
+		boolean isItemFound = false;
+		//Deleting the item
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+		
+		try {			
+			System.out.println("Found "+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
+			//There should be only one item
+			if(anIconToDeleteAnItemElements.size() != 1) {System.err.println("Found "+anIconToDeleteAnItemElements.size()+" element(s) instead of 1.");assert(false);}
+			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {				
+				anIconToDeleteAnItemElement.click();
+				System.out.println("Trash can icon clicked.");
+			}
+			driver.get("http://localhost:4200");
+			
+		}
+		catch(StaleElementReferenceException e) {
+			System.err.println("A StaleElementReferenceException has been caught while searching"
+					+ "the elements named 'anIconToDeleteAnItem' ");
+			e.getMessage();
+			e.printStackTrace();
+		}
+		//Checking the absence of the items
+		System.out.println("3. Confirmation of deletion");
+		anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
+		try {
+			
+			System.out.println("Found "+anIconToDeleteAnItemElements.size()+" element named 'anItem'");
+			for(WebElement anItemElement: anIconToDeleteAnItemElements) {
+				String text = anItemElement.getText();
+				System.out.println("Found *"+text+"* as text.");
+				if (text.equals(testItemLabel)) {System.out.println("Error: the test label has been found.");isItemFound = true; assertThat(isItemFound).isEqualTo(false);}
 			}
 			
 		}
@@ -62,21 +114,11 @@ public class UserRequirement2 {
 			e.getMessage();
 			e.printStackTrace();
 		}
-		assertThat(isItemFound).isEqualTo(true);
-		//nb: worked in progress
 	}
 	
-	/*
-	@Test
-	public void deleteItem() throws Exception {
-		List<WebElement> 
-	}
-	*/
 	
-	@BeforeMethod
-	public void navigate() {
-		driver.get("http://localhost:4200");
-	}
+	
+	
 	
 	@AfterClass
 	public void releaseResources() {
