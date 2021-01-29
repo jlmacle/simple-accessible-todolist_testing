@@ -28,8 +28,7 @@ public class UserRequirement1 {
 	String testCategoryLabel= "Protractor test category"; 
 	
 	@BeforeClass
-	public void setup() {
-		//https://chromedriver.chromium.org/downloads
+	public void setup() {		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();		
 	}

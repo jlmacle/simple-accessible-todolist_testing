@@ -29,6 +29,12 @@
             <artifactId>assertj-core</artifactId>
             <version>${assertj.version}</version>
         </dependency>
+        <!-- API for OCR -->
+        <dependency>
+		  <groupId>com.itextpdf</groupId>
+		  <artifactId>pdfocr-tesseract4</artifactId>
+		  <version>1.0.2</version>
+		</dependency>
 	</dependencies>
   
 </project>

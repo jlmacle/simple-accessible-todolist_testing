@@ -26,8 +26,7 @@ public class UserRequirement2 {
 	String testItemLabel="Protractor test item";	
 	
 	@BeforeClass
-	public void setup() {
-		//https://chromedriver.chromium.org/downloads
+	public void setup() {		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();		
 	}
@@ -47,16 +46,14 @@ public class UserRequirement2 {
 		driver.findElement(By.id("add_item_button")).click();
 		//To avoid a StaleElementReferenceException 
 		driver.get("http://localhost:4200");
-		System.out.println("At this point the item should be created.");
-		
+				
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		try {
 			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
-				String text = anItemElement.getText();
-				System.out.println("Found "+text+" as text.");
-				if (text.equals(testItemLabel)) {assert(true);}
+				String text = anItemElement.getText();				
+				if (text.equals(testItemLabel)) {System.out.println("Found "+text+" as text.");}
 			}
 			
 		}
@@ -65,9 +62,7 @@ public class UserRequirement2 {
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();
 			e.printStackTrace();
-		}
-		
-		
+		}		
 	}
 	
 	
