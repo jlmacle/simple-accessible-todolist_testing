@@ -1,5 +1,6 @@
 package jl.com;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
 
 import java.io.File;
@@ -16,7 +17,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import net.sourceforge.tess4j.Tesseract;
@@ -29,7 +29,7 @@ import net.sourceforge.tess4j.TesseractException;
 public class UserRequirement3 {
 	ChromeDriver driver; 
 	String testItemLabel ="Protractor test item";
-	boolean isTestItemLabelFound = false;
+	
 	
 	@BeforeClass
 	public void setup(){
@@ -38,13 +38,14 @@ public class UserRequirement3 {
 		driver = new ChromeDriver();
 	}
 	
-	@BeforeMethod
-	public void navigate() {
-		driver.get("http://localhost:4200");
-	}
-	
+		
 	@Test
-	public void hideItems() {
+	public void hideAndDisplayItems() {
+		boolean isTestItemLabelFound = false;
+		boolean isItemDiplayed = false;
+		boolean isItemHidden =  false;		
+		boolean isItemDisplayedAgain = false;
+		driver.get("http://localhost:4200");
 		//1. Creation of an item. By default the item is displayed
 		System.out.println("1. Creation of the item");
 		//Adding an item to the Misc. category created at startup
@@ -71,8 +72,10 @@ public class UserRequirement3 {
 			e.printStackTrace();
 		}		
 		
+		
 		//2. Verification that the item is displayed
 		//a. code to get a screenshot from the browser
+		System.out.println("2. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
 		try {
@@ -94,26 +97,64 @@ public class UserRequirement3 {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
-		if(result.contains(testItemLabel)) {System.out.println("Success. The test label has been found on the screen.");};
-				
-		//3. Hiding of the item
-		
-		
+		if(result.contains(testItemLabel)) {isItemDiplayed=true; System.out.println("Success. The test label has been found on the screen.");};
+	
+		//3. Hiding of the item		
+		System.out.println("3. Verification that the item can be hidden.");
+		//Click on the category to hide the item. Only one category (Misc.) means only one element named foldUnfoldArea.
+		driver.findElement(By.id("foldUnfoldArea")).click();
 		//4. Verification that the item is hidden
+		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
+		try {
+			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToHide_copy);
+			result = ocr.doOCR(screenshot_AfterClickToHide_copy);
+			if(!result.contains(testItemLabel)) { isItemHidden = true; System.out.println("Success: the label couldn't be found in the screenshot: "+result);}
+			
+		} catch (IOException e) {
+			System.err.println("An IOExeption occured while copying the screenshot taken after the click"				
+					+ "(Hiding of the item).");
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
+		 catch (TesseractException e) {
+			System.err.println("TesseractException while reading the screenshot taken after the click."
+					+ "(Hiding of the item)");			
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}		
 		
+		//4. Verification that the item can be displayed 
+		System.out.println("4. Verification that the item can be displayed");
+		driver.findElement(By.id("foldUnfoldArea")).click();	
 		
-		//fail("The hideItems test failed.");
+		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");
+		
+		try {			
+			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
+			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
+			
+			if(result.contains(testItemLabel)) {isItemDisplayedAgain=true;System.out.println("Sucess: the label was found after clicking to display the item: "+result);}
+		} catch (IOException e) {
+			System.err.println("An IOException occured while copying the screenshot taken after the click"
+					+ "(Display of the item)");
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		} catch (TesseractException e) {
+			System.err.println("TesseractException while reading the screenshot taken after the click"
+					+ "(Display of the item)");
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
+		
+		assertThat(isItemDiplayed&&isItemHidden&&isItemDisplayedAgain).isEqualTo(true);
 	}
 	
-	
-	@Test
-	@Ignore
-	public void displayItems() {
-		fail();
-	}
 	
 	@AfterClass
 	public void releaseResources() {
+		//TODO: to understand why the Google Chrome doesn't close at the end of the test.
 		driver.quit();
 	}
 

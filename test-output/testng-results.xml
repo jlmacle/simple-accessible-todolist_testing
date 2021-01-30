@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-29T16:05:04Z" name="Default suite" finished-at="2021-01-29T16:05:13Z" duration-ms="8732">
+  <suite started-at="2021-01-30T20:42:28Z" name="Default suite" finished-at="2021-01-30T20:42:41Z" duration-ms="12705">
     <groups>
     </groups>
-    <test started-at="2021-01-29T16:05:04Z" name="Default test" finished-at="2021-01-29T16:05:13Z" duration-ms="8732">
+    <test started-at="2021-01-30T20:42:28Z" name="Default test" finished-at="2021-01-30T20:42:41Z" duration-ms="12705">
       <class name="jl.com.UserRequirement3">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.com.UserRequirement3@5be49b60]" started-at="2021-01-29T10:05:04Z" name="setup" finished-at="2021-01-29T10:05:06Z" duration-ms="2113" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.com.UserRequirement3@176b75f7]" started-at="2021-01-30T14:42:28Z" name="setup" finished-at="2021-01-30T14:42:30Z" duration-ms="1784" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.com.UserRequirement3@5be49b60]" started-at="2021-01-29T10:05:06Z" name="navigate" finished-at="2021-01-29T10:05:08Z" duration-ms="1749" status="PASS">
+        <test-method signature="hideAndDisplayItems()[pri:0, instance:jl.com.UserRequirement3@176b75f7]" started-at="2021-01-30T14:42:30Z" name="hideAndDisplayItems" finished-at="2021-01-30T14:42:41Z" duration-ms="10904" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="hideItems()[pri:0, instance:jl.com.UserRequirement3@5be49b60]" started-at="2021-01-29T10:05:08Z" name="hideItems" finished-at="2021-01-29T10:05:13Z" duration-ms="4845" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- hideItems -->
+        </test-method> <!-- hideAndDisplayItems -->
       </class> <!-- jl.com.UserRequirement3 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
