@@ -3,12 +3,15 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.com.UserRequirement3">
+      <class name="jl.project.UserRequirement1">
         <methods>
-          <include name="hideAndDisplayItem"/>
+          <include name="releaseResources"/>
           <include name="setup"/>
+          <include name="navigate"/>
+          <include name="deleteCategory"/>
+          <include name="createCategory"/>
         </methods>
-      </class> <!-- jl.com.UserRequirement3 -->
+      </class> <!-- jl.project.UserRequirement1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

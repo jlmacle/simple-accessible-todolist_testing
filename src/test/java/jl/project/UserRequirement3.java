@@ -1,4 +1,4 @@
-package jl.com;
+package jl.project;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;

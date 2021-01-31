@@ -1,4 +1,4 @@
-package jl.com;
+package jl.project;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -22,23 +22,42 @@ import org.testng.annotations.Test;
  * Class testing the user requirement of deleting a category.
  * NB: needs to start a fresh instance of the application
  */
+/**
+ * @author Jean-Louis Le Papa
+ *
+ */
+/**
+ * @author Jean-Louis Le Papa
+ *
+ */
 public class UserRequirement1 {
 	
 	WebDriver driver;
 	String testCategoryLabel= "Protractor test category"; 
 	
-	@BeforeClass
+	/**
+	 * "The annotated method will be run before the first test method in the current class is invoked."  
+	 * https://testng.org/doc/documentation-main.html
+	 */
+	@BeforeClass	
 	public void setup() {		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();		
 	}
 	
-	@BeforeMethod
+	/**
+	 * "The annotated method will be run before each test method"
+	 * https://testng.org/doc/documentation-main.html
+	 */
+	@BeforeMethod	
 	public void navigate() {
 		driver.get("http://localhost:4200");
 	}
 	
-	@Test
+	/**
+	 * Tests a successful creation of category
+	 */
+	@Test	
     public void createCategory() {
 		System.out.println("Entering the test of creation of category");
     	boolean isCategoryFound = false;
@@ -57,7 +76,8 @@ public class UserRequirement1 {
     		for (WebElement aCategoryElement : aCategoryElements) {
 	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
 				System.out.println("Found text: *"+text+"*");
-				if (text.equals(testCategoryLabel)) {isCategoryFound=true;break;}
+				//the value of the attribute title ("Clickable icon to suppress a category") has been included in the text value
+				if (text.contains(testCategoryLabel)) {isCategoryFound=true;break;}
 				
 			}
     	}
@@ -71,8 +91,11 @@ public class UserRequirement1 {
     	
     }
 	
-	@Test
-	public void deleteCategory() throws Exception {
+	/**
+	 * Tests a successful deletion of category	 
+	 */
+	@Test	
+	public void deleteCategory() {
 		System.out.println("Entering the test of deletion of category");
 		int testCategoryPositionIntheList = 0;
 		int currentCategoryPosition = 0;
@@ -137,15 +160,15 @@ public class UserRequirement1 {
     				String text = aCategoryElement.getText();
     				System.out.println(text);
     				if (text.equals(testCategoryLabel)) {
-    					//if the created category can be found the test is failed
-    					System.err.println("Found "+testCategoryLabel+" when the test category should have been deleted."
+    					//if the created category can be found the test is failed    					
+    					fail("Found "+testCategoryLabel+" when the test category should have been deleted."
     							+ "The test is failed.");
-    					fail();
     				}
     				   				
     			}
-    			//otherwise the test is successful 
-    			assertTrue(true);
+    			//otherwise the test is successful
+    			isCategoryFound = false;
+    			assertThat(isCategoryFound).isEqualTo(true);
     		}
     		catch(StaleElementReferenceException e) {
     			System.err.println("Caught a StaleElementReferenceException"
@@ -158,13 +181,17 @@ public class UserRequirement1 {
     	
     	else {
     		System.err.println("The protractor test category was not found.");
-    		throw new Exception("Test of category creation failed.");
+    		fail("Test of category creation failed.");
     	}		
 		
 	}	
 	
 	
-	@AfterClass
+	/**
+	 * The annotated method will be run after all the test methods in the current class have been run.
+	 * https://testng.org/doc/documentation-main.html 
+	 */
+	@AfterClass	
 	public void releaseResources() {
 		driver.quit();
 	}
