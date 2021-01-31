@@ -5,7 +5,7 @@
     <classes>
       <class name="jl.com.UserRequirement3">
         <methods>
-          <include name="hideAndDisplayItems"/>
+          <include name="hideAndDisplayItem"/>
           <include name="setup"/>
         </methods>
       </class> <!-- jl.com.UserRequirement3 -->

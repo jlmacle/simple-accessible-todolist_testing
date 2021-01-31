@@ -40,7 +40,7 @@ public class UserRequirement3 {
 	
 		
 	@Test
-	public void hideAndDisplayItems() {
+	public void hideAndDisplayItem() {
 		boolean isTestItemLabelFound = false;
 		boolean isItemDiplayed = false;
 		boolean isItemHidden =  false;		
@@ -148,14 +148,9 @@ public class UserRequirement3 {
 			e.printStackTrace();
 		}
 		
-		assertThat(isItemDiplayed&&isItemHidden&&isItemDisplayedAgain).isEqualTo(true);
-	}
-	
-	
-	@AfterClass
-	public void releaseResources() {
-		//TODO: to understand why the Google Chrome doesn't close at the end of the test.
+		driver.close();		
 		driver.quit();
-	}
-
+		
+		assertThat(isItemDiplayed&&isItemHidden&&isItemDisplayedAgain).isEqualTo(true);
+	}	
 }

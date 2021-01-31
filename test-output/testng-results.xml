@@ -2,19 +2,19 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-30T20:42:28Z" name="Default suite" finished-at="2021-01-30T20:42:41Z" duration-ms="12705">
+  <suite started-at="2021-01-31T05:37:50Z" name="Default suite" finished-at="2021-01-31T05:38:18Z" duration-ms="27868">
     <groups>
     </groups>
-    <test started-at="2021-01-30T20:42:28Z" name="Default test" finished-at="2021-01-30T20:42:41Z" duration-ms="12705">
+    <test started-at="2021-01-31T05:37:50Z" name="Default test" finished-at="2021-01-31T05:38:18Z" duration-ms="27868">
       <class name="jl.com.UserRequirement3">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.com.UserRequirement3@176b75f7]" started-at="2021-01-30T14:42:28Z" name="setup" finished-at="2021-01-30T14:42:30Z" duration-ms="1784" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.com.UserRequirement3@4e31276e]" started-at="2021-01-30T23:37:50Z" name="setup" finished-at="2021-01-30T23:37:52Z" duration-ms="1831" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="hideAndDisplayItems()[pri:0, instance:jl.com.UserRequirement3@176b75f7]" started-at="2021-01-30T14:42:30Z" name="hideAndDisplayItems" finished-at="2021-01-30T14:42:41Z" duration-ms="10904" status="PASS">
+        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.com.UserRequirement3@4e31276e]" started-at="2021-01-30T23:37:52Z" name="hideAndDisplayItem" finished-at="2021-01-30T23:38:18Z" duration-ms="26019" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- hideAndDisplayItems -->
+        </test-method> <!-- hideAndDisplayItem -->
       </class> <!-- jl.com.UserRequirement3 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
