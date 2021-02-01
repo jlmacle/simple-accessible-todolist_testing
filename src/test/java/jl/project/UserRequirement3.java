@@ -28,7 +28,7 @@ import net.sourceforge.tess4j.TesseractException;
  */
 public class UserRequirement3 {
 	ChromeDriver driver; 
-	String testItemLabel ="Protractor test item";
+	String testItemLabel ="Protractor test";//Note the ocr might sometimes have an issue to detect the text.
 	
 	
 	@BeforeClass
@@ -133,9 +133,12 @@ public class UserRequirement3 {
 		
 		try {			
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
+			ocr.setDatapath("./tessdata");
+			ocr.setLanguage("eng");
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
 			if(result.contains(testItemLabel)) {isItemDisplayedAgain=true;System.out.println("Sucess: the label was found after clicking to display the item: "+result);}
+			else {System.err.println("The label: "+testItemLabel+" could not be in the ocr result: "+result);}
 		} catch (IOException e) {
 			System.err.println("An IOException occured while copying the screenshot taken after the click"
 					+ "(Display of the item)");

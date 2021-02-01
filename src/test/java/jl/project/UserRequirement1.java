@@ -109,7 +109,7 @@ public class UserRequirement1 {
     		for (WebElement aCategoryElement : aCategoryElements) {
     			currentCategoryPosition++;
 	    		String text = aCategoryElement.getText().trim();
-	    		System.out.println("Found text: *"+text);
+	    		System.out.println("Found text: *"+text+"*");
 				if (text.equals(testCategoryLabel)) {
 					testCategoryPositionIntheList = currentCategoryPosition;
 					System.out.println("Found the text:"+text+" in position: "+testCategoryPositionIntheList);					
@@ -168,7 +168,7 @@ public class UserRequirement1 {
     			}
     			//otherwise the test is successful
     			isCategoryFound = false;
-    			assertThat(isCategoryFound).isEqualTo(true);
+    			assertThat(isCategoryFound).isEqualTo(false);
     		}
     		catch(StaleElementReferenceException e) {
     			System.err.println("Caught a StaleElementReferenceException"
