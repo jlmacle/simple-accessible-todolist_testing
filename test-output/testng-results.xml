@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-02T07:19:19Z" name="Default suite" finished-at="2021-02-02T07:19:29Z" duration-ms="10675">
+  <suite started-at="2021-02-02T10:37:46Z" name="Default suite" finished-at="2021-02-02T10:37:51Z" duration-ms="5613">
     <groups>
     </groups>
-    <test started-at="2021-02-02T07:19:19Z" name="Default test" finished-at="2021-02-02T07:19:29Z" duration-ms="10675">
+    <test started-at="2021-02-02T10:37:46Z" name="Default test" finished-at="2021-02-02T10:37:51Z" duration-ms="5613">
       <class name="jl.project.UserRequirement4">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement4@1a72a540]" started-at="2021-02-02T01:19:19Z" name="setup" finished-at="2021-02-02T01:19:20Z" duration-ms="1799" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement4@2931522b]" started-at="2021-02-02T04:37:46Z" name="setup" finished-at="2021-02-02T04:37:48Z" duration-ms="2208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4@1a72a540]" started-at="2021-02-02T01:19:20Z" name="navigate" finished-at="2021-02-02T01:19:24Z" duration-ms="3660" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4@2931522b]" started-at="2021-02-02T04:37:48Z" name="navigate" finished-at="2021-02-02T04:37:50Z" duration-ms="1700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createACategoryWithKeyboard()[pri:0, instance:jl.project.UserRequirement4@1a72a540]" started-at="2021-02-02T01:19:24Z" name="createACategoryWithKeyboard" finished-at="2021-02-02T01:19:28Z" duration-ms="4400" status="PASS">
+        <test-method signature="deleteCategoryWithKeyboard()[pri:0, instance:jl.project.UserRequirement4@2931522b]" started-at="2021-02-02T04:37:50Z" name="deleteCategoryWithKeyboard" finished-at="2021-02-02T04:37:51Z" duration-ms="900" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createACategoryWithKeyboard -->
-        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.UserRequirement4@1a72a540]" started-at="2021-02-02T01:19:28Z" name="releseResources" finished-at="2021-02-02T01:19:29Z" duration-ms="787" status="PASS">
+        </test-method> <!-- deleteCategoryWithKeyboard -->
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.UserRequirement4@2931522b]" started-at="2021-02-02T04:37:51Z" name="releseResources" finished-at="2021-02-02T04:37:51Z" duration-ms="774" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releseResources -->
