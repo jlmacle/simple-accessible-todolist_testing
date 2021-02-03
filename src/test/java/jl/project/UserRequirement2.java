@@ -1,6 +1,7 @@
 package jl.project;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class UserRequirement2 {
 	public void createItem() throws Exception{		
 			
 		System.out.println("1. Creation of the item");
+		boolean isItemCreated=false;
 		//Adding an item to the Misc. category created at startup
 		driver.findElement(By.id("category_to_select_field")).sendKeys("Misc.");
 		driver.findElement(By.id("item_input_name")).sendKeys(testItemLabel);
@@ -53,7 +55,11 @@ public class UserRequirement2 {
 			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.equals(testItemLabel)) {System.out.println("Found "+text+" as text.");}
+				if (text.contains(testItemLabel))
+				{
+					System.out.println("Found "+text+" as text.");
+					isItemCreated = true;
+				}
 			}
 			
 		}
@@ -62,14 +68,14 @@ public class UserRequirement2 {
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();
 			e.printStackTrace();
-		}		
+		}	
+		assertThat(isItemCreated).isEqualTo(true);
 	}
 	
 	
 	@Test
 	public void deleteItem() throws Exception {
 		System.out.println("2. Deletion of the item");
-		boolean isItemFound = false;
 		//Deleting the item
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		
@@ -99,7 +105,8 @@ public class UserRequirement2 {
 			for(WebElement anItemElement: anIconToDeleteAnItemElements) {
 				String text = anItemElement.getText();
 				System.out.println("Found *"+text+"* as text.");
-				if (text.equals(testItemLabel)) {System.out.println("Error: the test label has been found.");isItemFound = true; assertThat(isItemFound).isEqualTo(false);}
+				if (text.equals(testItemLabel)) {
+					fail("Error: the test label has been found.");}
 			}
 			
 		}
@@ -111,10 +118,7 @@ public class UserRequirement2 {
 		}
 	}
 	
-	
-	
-	
-	
+
 	@AfterClass
 	public void releaseResources() {
 		driver.quit();

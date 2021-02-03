@@ -1,3 +1,4 @@
+	
 package jl.project;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,18 +18,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
+
 /**
  * @author 
- * Class testing the user requirement of deleting a category.
- * NB: needs to start a fresh instance of the application
- */
-/**
- * @author Jean-Louis Le Papa
- *
- */
-/**
- * @author Jean-Louis Le Papa
- *
+ *	Class testing the user requirement 1 of creating and deleting a category
  */
 public class UserRequirement1 {
 	
@@ -75,8 +68,7 @@ public class UserRequirement1 {
     		if(aCategoryElements.size() == 0 ){fail("No categories, the app wasn't started.");}//for the case where the app wasn't started 
     		for (WebElement aCategoryElement : aCategoryElements) {
 	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
-				System.out.println("Found text: *"+text+"*");
-				//the value of the attribute title ("Clickable icon to suppress a category") has been included in the text value
+				System.out.println("Found text: *"+text+"*");				
 				if (text.contains(testCategoryLabel)) {isCategoryFound=true;break;}
 				
 			}
