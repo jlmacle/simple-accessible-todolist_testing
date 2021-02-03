@@ -21,4 +21,11 @@
       </classes>
    </test>
   
+   <test name = "User Requirement 4">
+      <classes>
+         <class name = "jl.project.UserRequirement4" />
+      </classes>
+   </test>
+   
+  
 </suite>  	
