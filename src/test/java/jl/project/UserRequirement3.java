@@ -1,6 +1,5 @@
 package jl.project;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
 
 import java.io.File;
@@ -8,7 +7,6 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -16,7 +14,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import net.sourceforge.tess4j.Tesseract;
@@ -42,9 +39,7 @@ public class UserRequirement3 {
 	@Test
 	public void hideAndDisplayItem() {
 		boolean isTestItemLabelFound = false;
-		boolean isItemDiplayed = false;
-		boolean isItemHidden =  false;		
-		boolean isItemDisplayedAgain = false;
+		
 		driver.get("http://localhost:4200");
 		//1. Creation of an item. By default the item is displayed
 		System.out.println("1. Creation of the item");
@@ -60,7 +55,7 @@ public class UserRequirement3 {
 		try {
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.equals(testItemLabel)) {System.out.println("Found "+text+" as text."); isTestItemLabelFound=true;}
+				if (text.contains(testItemLabel)) {System.out.println("Found "+text+" as text."); isTestItemLabelFound=true;}
 				if(isTestItemLabelFound == false) {fail("The test label was not found. The test of item creation failed.");}
 			}
 			
@@ -97,7 +92,12 @@ public class UserRequirement3 {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
-		if(result.contains(testItemLabel)) {isItemDiplayed=true; System.out.println("Success. The test label has been found on the screen.");};
+		if(result.contains(testItemLabel)) 
+		{
+			 
+			System.out.println("Success. The test label has been found on the screen.");
+		}
+		else{fail("The item label seems to be absent from the screenshot: "+result);};
 	
 		//3. Hiding of the item		
 		System.out.println("3. Verification that the item can be hidden.");
@@ -109,7 +109,14 @@ public class UserRequirement3 {
 		try {
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToHide_copy);
 			result = ocr.doOCR(screenshot_AfterClickToHide_copy);
-			if(!result.contains(testItemLabel)) { isItemHidden = true; System.out.println("Success: the label couldn't be found in the screenshot: "+result);}
+			if(!result.contains(testItemLabel)) 
+			{ 
+				
+				System.out.println("Success: the label couldn't be found in the screenshot: "+result);
+			}
+			else 
+			{fail("The label was found on the screenshot when the item should have been hidden: "+result);
+			}
 			
 		} catch (IOException e) {
 			System.err.println("An IOExeption occured while copying the screenshot taken after the click"				
@@ -137,8 +144,12 @@ public class UserRequirement3 {
 			ocr.setLanguage("eng");
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
-			if(result.contains(testItemLabel)) {isItemDisplayedAgain=true;System.out.println("Sucess: the label was found after clicking to display the item: "+result);}
-			else {System.err.println("The label: "+testItemLabel+" could not be in the ocr result: "+result);}
+			if(result.contains(testItemLabel)) 
+			{
+				System.out.println("Sucess: the label was found after clicking to display the item: "+result);
+			}
+			else {fail("The label: "+testItemLabel+" could not be in the ocr result: "+result
+					+" when the item should have been displayed.");}
 		} catch (IOException e) {
 			System.err.println("An IOException occured while copying the screenshot taken after the click"
 					+ "(Display of the item)");
@@ -151,9 +162,21 @@ public class UserRequirement3 {
 			e.printStackTrace();
 		}
 		
+		//5. Suppressing the item to go on with the test suite
+		System.out.println("5. Deletion of the test item");
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
+				anIconToDeleteAnItemElement.click();
+			}
+			
+		System.out.println("6. Testing the deletion of the test item");
+		driver.get("http://localhost:4200");
+		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+		if(!(anIconToDeleteAnItemElements.size() == 0)) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");
+		
 		driver.close();		
 		driver.quit();
 		
-		assertThat(isItemDiplayed&&isItemHidden&&isItemDisplayedAgain).isEqualTo(true);
+		
 	}	
 }
