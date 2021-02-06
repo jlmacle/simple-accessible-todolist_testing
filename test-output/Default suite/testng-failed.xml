@@ -5,8 +5,8 @@
     <classes>
       <class name="jl.project.UserRequirement4_2">
         <methods>
-          <include name="releseResources"/>
-          <include name="setup"/>
+          <include name="HideAndDisplayItemsWithKeyboardOnly"/>
+          <include name="navigate"/>
           <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
           <include name="navigate"/>
         </methods>

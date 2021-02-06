@@ -148,6 +148,7 @@
           </reporter-output>
         </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_SpaceKey -->
         <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.UserRequirement4_2@4470f8a6]" started-at="2021-02-06T12:19:14Z" name="releseResources" finished-at="2021-02-06T12:19:14Z" duration-ms="855" status="PASS">
+
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releseResources -->
