@@ -29,9 +29,11 @@ import net.sourceforge.tess4j.TesseractException;
 
 /**
  * @author
- * Class testing the user requirement of accessibility using the keyboard only - 			 key used.
+ * Class testing the user requirement of physical impairment web accessibility 
+ * using the keyboard only - Enter key used.
  */
 public class UserRequirement4_1 {
+	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	ChromeDriver driver;
 	String testCategoryLabel= "Protractor test category"; 
 	String testItemLabel = "Protractor test";//The word item is not always well detected by the ocr.
@@ -67,9 +69,7 @@ public class UserRequirement4_1 {
 			robot.delay(1000);
 			//robot.keyPress(KeyEvent.VK_ENTER);// Previous test failures with the enter event being ignored
 			action.sendKeys("\n").build().perform();
-			robot.delay(1000);
-			
-			
+			robot.delay(1000);		
 			
 		} catch (AWTException e) {
 			System.err.println("AWTException when using the robot class");

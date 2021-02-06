@@ -7,7 +7,7 @@
         <methods>
           <include name="releseResources"/>
           <include name="setup"/>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
           <include name="navigate"/>
         </methods>
       </class> <!-- jl.project.UserRequirement4_2 -->

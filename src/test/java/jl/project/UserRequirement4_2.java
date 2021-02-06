@@ -29,9 +29,11 @@ import net.sourceforge.tess4j.TesseractException;
 
 /**
  * @author
- * Class testing the user requirement of accessibility using the keyboard only - Space key used.
+ * Class testing the user requirement of physical impairment web accessibility 
+ * using the keyboard only - Space key used.
  */
 public class UserRequirement4_2 {
+	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	ChromeDriver driver;
 	String testCategoryLabel= "Protractor test category"; 
 	String testItemLabel = "Protractor test";//The word item is not always well detected by the ocr.
@@ -50,8 +52,7 @@ public class UserRequirement4_2 {
 		driver.get("http://localhost:4200");
 	}
 	
-	@Test(groups = {"creation_deletion2"})	
-	@Ignore
+	@Test(groups = {"creation_deletion2"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() {
 		
 		boolean isCategoryCreated = false;		
@@ -63,25 +64,13 @@ public class UserRequirement4_2 {
 		Actions  actions = new Actions(driver);
 		try {
 			robot = new Robot();
-			actions = new Actions(driver);
-			robot.keyPress(KeyEvent.VK_TAB);//new category text
+			robot.keyPress(KeyEvent.VK_TAB);
+			actions.sendKeys(testCategoryLabel).build().perform();
+			robot.keyPress(KeyEvent.VK_TAB);
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			actions.sendKeys("Misc.").build().perform();
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new item text
-			robot.delay(1000);
-			actions.sendKeys(testItemLabel).build().perform();
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit item button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_SPACE);// Previous test failures with the space event being ignored
+			//robot.keyPress(KeyEvent.VK_SPACE);// Previous test failures with the space event being ignored
 			actions.sendKeys(" ").build().perform();
 			robot.delay(1000);
-			
-			
 			
 		} catch (AWTException e) {
 			System.err.println("AWTException when using the robot class");
@@ -177,9 +166,8 @@ public class UserRequirement4_2 {
 		
 	}
 	
-		
-	@Test(groups = {"creation_deletion2"})
-	@Ignore
+	
+	@Test(groups = {"creation_deletion2"})					
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() {
 		System.out.println("1. Creation of an item with the keyboard only.");
 		Robot robot;
@@ -282,8 +270,7 @@ public class UserRequirement4_2 {
 		}
 	}
 	
-	//@Test(dependsOnGroups = {"creation_deletion2"})	
-	@Test
+	@Test(dependsOnGroups = {"creation_deletion2"})		
 	//TODO: issue with edge not reacting to the entry key
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
@@ -379,17 +366,17 @@ public class UserRequirement4_2 {
 			robot = new Robot();
 			actions = new Actions(driver);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
-			//robot.delay(1000);
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			//robot.delay(1000);
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			//robot.delay(1000);
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
-			//robot.delay(1000);
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
-			//robot.delay(1000);
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
-			//robot.delay(1000);
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
 			robot.delay(1000);			
 			//robot.keyPress(KeyEvent.VK_SPACE);//Click to hide the item
