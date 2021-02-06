@@ -29,9 +29,11 @@ import net.sourceforge.tess4j.TesseractException;
 
 /**
  * @author
- * Class testing the user requirement of accessibility using the keyboard only
+ * Class testing the user requirement of physical impairment web accessibility 
+ * using the keyboard only - Enter key used.
  */
-public class UserRequirement4 {
+public class UserRequirement4_1 {
+	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	ChromeDriver driver;
 	String testCategoryLabel= "Protractor test category"; 
 	String testItemLabel = "Protractor test";//The word item is not always well detected by the ocr.
@@ -50,8 +52,8 @@ public class UserRequirement4 {
 		driver.get("http://localhost:4200");
 	}
 	
-	@Test(groups = {"creation_deletion"})	
-	public void createAndDeleteACategoryWithKeyboardOnly() {
+	@Test(groups = {"creation_deletion1"})	
+	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() {
 		
 		boolean isCategoryCreated = false;		
 		
@@ -67,9 +69,7 @@ public class UserRequirement4 {
 			robot.delay(1000);
 			//robot.keyPress(KeyEvent.VK_ENTER);// Previous test failures with the enter event being ignored
 			action.sendKeys("\n").build().perform();
-			robot.delay(1000);
-			
-			
+			robot.delay(1000);		
 			
 		} catch (AWTException e) {
 			System.err.println("AWTException when using the robot class");
@@ -118,6 +118,8 @@ public class UserRequirement4 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
 			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
 			robot.delay(1000);
 			//robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
@@ -164,8 +166,8 @@ public class UserRequirement4 {
 	}
 	
 		
-	@Test(groups = {"creation_deletion"})
-	public void createAndDeleteItemWithKeyboardOnly() {
+	@Test(groups = {"creation_deletion1"})
+	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
 		System.out.println("1. Creation of an item with the keyboard only.");
 		Robot robot;
 		Actions actions;
@@ -229,7 +231,9 @@ public class UserRequirement4 {
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
-			robot.delay(1000);			
+			robot.delay(1000);		
+			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
 			actions.sendKeys("\n").build().perform(); //Click to delete the test category
 			//robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
@@ -265,9 +269,9 @@ public class UserRequirement4 {
 		}
 	}
 	
-	@Test(dependsOnGroups = {"creation_deletion"})
+	@Test(dependsOnGroups = {"creation_deletion1"})
 	//TODO: issue with edge not reacting to the entry key
-	public void HideAndDisplayItemsWithKeyboardOnly() 
+	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
 		System.out.println("1. Creation of an item with the keyboard only.");
 		driver.get("http://localhost:4200");

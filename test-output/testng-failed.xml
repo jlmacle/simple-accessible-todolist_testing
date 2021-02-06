@@ -3,7 +3,7 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.UserRequirement4">
+      <class name="jl.project.UserRequirement4_2">
         <methods>
           <include name="HideAndDisplayItemsWithKeyboardOnly"/>
           <include name="navigate"/>
@@ -11,8 +11,10 @@
           <include name="createAndDeleteACategoryWithKeyboardOnly"/>
           <include name="createAndDeleteItemWithKeyboardOnly"/>
           <include name="setup"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
+          <include name="navigate"/>
         </methods>
-      </class> <!-- jl.project.UserRequirement4 -->
+      </class> <!-- jl.project.UserRequirement4_2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
