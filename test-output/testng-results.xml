@@ -1,157 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-06T19:13:35Z" name="Test Suite " finished-at="2021-02-06T19:16:14Z" duration-ms="158649">
+  <suite started-at="2021-02-07T18:39:05Z" name="Default suite" finished-at="2021-02-07T18:40:14Z" duration-ms="69440">
     <groups>
-      <group name="creation_deletion1">
-        <method signature="UserRequirement4_1.createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" class="jl.project.UserRequirement4_1"/>
-        <method signature="UserRequirement4_1.createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" name="createAndDeleteItemWithKeyboardOnly_EnterKey" class="jl.project.UserRequirement4_1"/>
-      </group> <!-- creation_deletion1 -->
       <group name="creation_deletion2">
-        <method signature="UserRequirement4_2.createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" class="jl.project.UserRequirement4_2"/>
-        <method signature="UserRequirement4_2.createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" class="jl.project.UserRequirement4_2"/>
+        <method signature="UserRequirement4_2.createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" class="jl.project.UserRequirement4_2"/>
+        <method signature="UserRequirement4_2.createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" class="jl.project.UserRequirement4_2"/>
       </group> <!-- creation_deletion2 -->
     </groups>
-    <test started-at="2021-02-06T19:13:35Z" name="User Requirement 1" finished-at="2021-02-06T19:13:42Z" duration-ms="6084">
-      <class name="jl.project.UserRequirement1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement1@757277dc]" started-at="2021-02-06T13:13:35Z" name="setup" finished-at="2021-02-06T13:13:37Z" duration-ms="1946" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement1@757277dc]" started-at="2021-02-06T13:13:37Z" name="navigate" finished-at="2021-02-06T13:13:39Z" duration-ms="1767" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="createCategory()[pri:0, instance:jl.project.UserRequirement1@757277dc]" started-at="2021-02-06T13:13:39Z" name="createCategory" finished-at="2021-02-06T13:13:40Z" duration-ms="858" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createCategory -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement1@757277dc]" started-at="2021-02-06T13:13:40Z" name="navigate" finished-at="2021-02-06T13:13:40Z" duration-ms="230" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="deleteCategory()[pri:0, instance:jl.project.UserRequirement1@757277dc]" started-at="2021-02-06T13:13:40Z" name="deleteCategory" finished-at="2021-02-06T13:13:41Z" duration-ms="476" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteCategory -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.UserRequirement1@757277dc]" started-at="2021-02-06T13:13:41Z" name="releaseResources" finished-at="2021-02-06T13:13:42Z" duration-ms="784" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- releaseResources -->
-      </class> <!-- jl.project.UserRequirement1 -->
-    </test> <!-- User Requirement 1 -->
-    <test started-at="2021-02-06T19:13:42Z" name="User Requirement 2" finished-at="2021-02-06T19:13:47Z" duration-ms="5160">
-      <class name="jl.project.UserRequirement2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement2@21b2e768]" started-at="2021-02-06T13:13:42Z" name="setup" finished-at="2021-02-06T13:13:43Z" duration-ms="1333" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement2@21b2e768]" started-at="2021-02-06T13:13:43Z" name="navigate" finished-at="2021-02-06T13:13:45Z" duration-ms="1917" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="createItem()[pri:0, instance:jl.project.UserRequirement2@21b2e768]" started-at="2021-02-06T13:13:45Z" name="createItem" finished-at="2021-02-06T13:13:45Z" duration-ms="594" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createItem -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement2@21b2e768]" started-at="2021-02-06T13:13:45Z" name="navigate" finished-at="2021-02-06T13:13:46Z" duration-ms="277" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="deleteItem()[pri:0, instance:jl.project.UserRequirement2@21b2e768]" started-at="2021-02-06T13:13:46Z" name="deleteItem" finished-at="2021-02-06T13:13:46Z" duration-ms="304" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteItem -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.UserRequirement2@21b2e768]" started-at="2021-02-06T13:13:46Z" name="releaseResources" finished-at="2021-02-06T13:13:47Z" duration-ms="728" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- releaseResources -->
-      </class> <!-- jl.project.UserRequirement2 -->
-    </test> <!-- User Requirement 2 -->
-    <test started-at="2021-02-06T19:13:47Z" name="User Requirement 3" finished-at="2021-02-06T19:14:02Z" duration-ms="15277">
-      <class name="jl.project.UserRequirement3">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement3@fd07cbb]" started-at="2021-02-06T13:13:47Z" name="setup" finished-at="2021-02-06T13:13:48Z" duration-ms="1437" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.project.UserRequirement3@fd07cbb]" started-at="2021-02-06T13:13:48Z" name="hideAndDisplayItem" finished-at="2021-02-06T13:14:02Z" duration-ms="13837" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- hideAndDisplayItem -->
-      </class> <!-- jl.project.UserRequirement3 -->
-    </test> <!-- User Requirement 3 -->
-    <test started-at="2021-02-06T19:14:02Z" name="User Requirement 4 Part 1" finished-at="2021-02-06T19:15:08Z" duration-ms="66329">
-      <class name="jl.project.UserRequirement4_1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:14:02Z" name="setup" finished-at="2021-02-06T13:14:04Z" duration-ms="1539" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:14:04Z" name="navigate" finished-at="2021-02-06T13:14:06Z" duration-ms="1918" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:14:06Z" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" finished-at="2021-02-06T13:14:20Z" duration-ms="14318" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_EnterKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:14:20Z" name="navigate" finished-at="2021-02-06T13:14:20Z" duration-ms="230" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:14:20Z" name="createAndDeleteItemWithKeyboardOnly_EnterKey" finished-at="2021-02-06T13:14:34Z" duration-ms="13492" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAndDeleteItemWithKeyboardOnly_EnterKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:14:34Z" name="navigate" finished-at="2021-02-06T13:14:34Z" duration-ms="284" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:14:34Z" name="HideAndDisplayItemsWithKeyboardOnly_EnterKey" depends-on-groups="creation_deletion1" finished-at="2021-02-06T13:15:08Z" duration-ms="33703" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_EnterKey -->
-        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.UserRequirement4_1@f2ff811]" started-at="2021-02-06T13:15:08Z" name="releseResources" finished-at="2021-02-06T13:15:08Z" duration-ms="838" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- releseResources -->
-      </class> <!-- jl.project.UserRequirement4_1 -->
-    </test> <!-- User Requirement 4 Part 1 -->
-    <test started-at="2021-02-06T19:15:08Z" name="User Requirement 4 Part 2" finished-at="2021-02-06T19:16:14Z" duration-ms="65701">
+    <test started-at="2021-02-07T18:39:05Z" name="Default test" finished-at="2021-02-07T18:40:14Z" duration-ms="69440">
       <class name="jl.project.UserRequirement4_2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:15:08Z" name="setup" finished-at="2021-02-06T13:15:10Z" duration-ms="1498" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:39:05Z" name="setup" finished-at="2021-02-07T12:39:07Z" duration-ms="1942" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:15:10Z" name="navigate" finished-at="2021-02-06T13:15:12Z" duration-ms="1661" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:39:07Z" name="navigate" finished-at="2021-02-07T12:39:09Z" duration-ms="1874" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:15:12Z" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" finished-at="2021-02-06T13:15:26Z" duration-ms="14528" status="PASS">
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:39:09Z" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" finished-at="2021-02-07T12:39:23Z" duration-ms="14796" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_SpaceKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:15:26Z" name="navigate" finished-at="2021-02-06T13:15:26Z" duration-ms="250" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:39:23Z" name="navigate" finished-at="2021-02-07T12:39:24Z" duration-ms="257" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:15:26Z" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" finished-at="2021-02-06T13:15:40Z" duration-ms="13829" status="PASS">
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:39:24Z" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" finished-at="2021-02-07T12:39:38Z" duration-ms="14016" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAndDeleteItemWithKeyboardOnly_SpaceKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:15:40Z" name="navigate" finished-at="2021-02-06T13:15:40Z" duration-ms="271" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:39:38Z" name="navigate" finished-at="2021-02-07T12:39:38Z" duration-ms="315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:15:40Z" name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey" depends-on-groups="creation_deletion2" finished-at="2021-02-06T13:16:13Z" duration-ms="32872" status="PASS">
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:39:38Z" name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey" depends-on-groups="creation_deletion2" finished-at="2021-02-07T12:40:13Z" duration-ms="35012" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_SpaceKey -->
-        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.UserRequirement4_2@343570b7]" started-at="2021-02-06T13:16:13Z" name="releseResources" finished-at="2021-02-06T13:16:14Z" duration-ms="787" status="PASS">
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.UserRequirement4_2@6cb6decd]" started-at="2021-02-07T12:40:13Z" name="releseResources" finished-at="2021-02-07T12:40:14Z" duration-ms="1198" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releseResources -->
       </class> <!-- jl.project.UserRequirement4_2 -->
-    </test> <!-- User Requirement 4 Part 2 -->
-  </suite> <!-- Test Suite  -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

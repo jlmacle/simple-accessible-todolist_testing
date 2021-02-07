@@ -102,7 +102,7 @@ public class UserRequirement3 {
 		//3. Hiding of the item		
 		System.out.println("3. Verification that the item can be hidden.");
 		//Click on the category to hide the item. Only one category (Misc.) means only one element named foldUnfoldArea.
-		driver.findElement(By.id("foldUnfoldArea")).click();
+		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
 		//4. Verification that the item is hidden
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
@@ -133,7 +133,7 @@ public class UserRequirement3 {
 		
 		//4. Verification that the item can be displayed 
 		System.out.println("4. Verification that the item can be displayed");
-		driver.findElement(By.id("foldUnfoldArea")).click();	
+		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
 		
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");
