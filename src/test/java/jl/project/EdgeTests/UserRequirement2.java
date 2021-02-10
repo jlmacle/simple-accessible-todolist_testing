@@ -1,4 +1,4 @@
-package jl.project;
+package jl.project.EdgeTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -23,13 +23,13 @@ import org.testng.annotations.Test;
 
 public class UserRequirement2 {
 	
-	WebDriver driver;
+	EdgeDriver driver;
 	String testItemLabel="Protractor test item";	
 	
 	@BeforeClass
 	public void setup() {		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();		
+		System.setProperty("webdriver.edge.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\msedgedriver.exe");
+		driver = new EdgeDriver();			
 	}
 	
 	@BeforeMethod

@@ -4,31 +4,31 @@
 <suite name = "Test Suite ">
    <test name = "User Requirement 1">
       <classes>
-         <class name = "jl.project.UserRequirement1" />
+         <class name = "jl.project.ChromeTests.UserRequirement1" />
       </classes>
    </test>
   
     <test name = "User Requirement 2">
       <classes>
-         <class name = "jl.project.UserRequirement2" />
+         <class name = "jl.project.ChromeTests.UserRequirement2" />
       </classes>
    </test>
    
     <test name = "User Requirement 3">
       <classes>
-         <class name = "jl.project.UserRequirement3" />
+         <class name = "jl.project.ChromeTests.UserRequirement3" />
       </classes>
    </test>
   
    <test name = "User Requirement 4 Part 1">
       <classes>
-         <class name = "jl.project.UserRequirement4_1" />
+         <class name = "jl.project.ChromeTests.UserRequirement4_1" />
       </classes>
    </test>
    
    <test name = "User Requirement 4 Part 2">
       <classes>
-         <class name = "jl.project.UserRequirement4_2" />
+         <class name = "jl.project.ChromeTests.UserRequirement4_2" />
       </classes>
    </test>  
 </suite>  	

@@ -1,5 +1,5 @@
 	
-package jl.project;
+package jl.project.ChromeTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertTrue;
