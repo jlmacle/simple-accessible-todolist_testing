@@ -45,8 +45,8 @@ public class UserRequirement3 {
 		driver.get("http://localhost:4200");
 		//1. Creation of an item. By default the item is displayed
 		System.out.println("1. Creation of the item");
-		//Adding an item to the Misc. category created at startup
-		driver.findElement(By.id("category_to_select_field")).sendKeys("Misc.");
+		//Adding an item to the Uncategorized category created at startup
+		driver.findElement(By.id("category_to_select_field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item_input_name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add_item_button")).click();
 		//To avoid a StaleElementReferenceException 
@@ -103,7 +103,7 @@ public class UserRequirement3 {
 	
 		//3. Hiding of the item		
 		System.out.println("3. Verification that the item can be hidden.");
-		//Click on the category to hide the item. Only one category (Misc.) means only one element named foldUnfoldArea.
+		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
 		//4. Verification that the item is hidden
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -180,17 +180,7 @@ public class UserRequirement3 {
 	@AfterClass	
 	public void releaseResources()
 	{	
-		Robot robot;		
-		try 
-		{
-			robot = new Robot();
-			robot.delay(2000);
-			driver.quit();
-		} 
-		catch (AWTException e) {
-			// TODO Auto-generated catch block
-		}
-		
+		driver.quit();
 		
 	}
 	

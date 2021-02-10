@@ -114,12 +114,8 @@ public class UserRequirement4_2 {
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."			
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
+			robot.delay(1000);	
+			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
 			robot.delay(1000);
@@ -180,7 +176,7 @@ public class UserRequirement4_2 {
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			actions.sendKeys("Misc.").build().perform();
+			actions.sendKeys("Uncategorized").build().perform();
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
@@ -229,11 +225,13 @@ public class UserRequirement4_2 {
 			robot = new Robot();	
 			actions = new Actions(driver);
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Uncategorized"
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Uncategorized"
 			robot.delay(1000);			
-			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//Category "Uncategorized"
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
 			actions.sendKeys(" ").build().perform(); //Click to delete the test category
@@ -271,7 +269,6 @@ public class UserRequirement4_2 {
 	}
 	
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_2"})		
-	//TODO: issue with edge not reacting to the entry key
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
 		System.out.println("1. Creation of an item with the keyboard only.");
@@ -286,7 +283,7 @@ public class UserRequirement4_2 {
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			actions.sendKeys("Misc.").build().perform();
+			actions.sendKeys("Uncategorized").build().perform();
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
@@ -360,7 +357,7 @@ public class UserRequirement4_2 {
 		
 		//clicking to hide the item		
 		System.out.println("4. Verification that the item can be hidden.");
-		//Using the keyboard to hide the item. Only one category (Misc.) means only one element named foldUnfoldArea.
+		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.get("http://localhost:4200");
 		try {
 			robot = new Robot();
@@ -375,9 +372,11 @@ public class UserRequirement4_2 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Uncategorized"
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Uncategorized"
 			robot.delay(1000);			
 			//robot.keyPress(KeyEvent.VK_SPACE);//Click to hide the item
 			actions.sendKeys(" ").build().perform();//Click to hide the item
