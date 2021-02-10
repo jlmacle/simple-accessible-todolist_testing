@@ -1,4 +1,4 @@
-package jl.project;
+package jl.project.ChromeTests;
 
 import static org.testng.Assert.fail;
 

@@ -1,4 +1,4 @@
-package jl.project;
+package jl.project.EdgeTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
@@ -16,7 +16,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -30,20 +30,18 @@ import net.sourceforge.tess4j.TesseractException;
 /**
  * @author
  * Class testing the user requirement of physical impairment web accessibility 
- * using the keyboard only - Enter key used.
+ * using the keyboard only - Space key used.
  */
-public class UserRequirement4_1 {
+public class UserRequirement4_2 {
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
-	ChromeDriver driver;
+	EdgeDriver driver;
 	String testCategoryLabel= "Protractor test category"; 
 	String testItemLabel = "Protractor test";//The word item is not always well detected by the ocr.
 	
 	@BeforeClass
 	public void setup() {
-	//https://chromedriver.chromium.org/downloads
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
-	driver = new ChromeDriver();	
-	
+		System.setProperty("webdriver.edge.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\msedgedriver.exe");
+		driver = new EdgeDriver();		
 	}
 	
 	@BeforeMethod
@@ -52,24 +50,25 @@ public class UserRequirement4_1 {
 		driver.get("http://localhost:4200");
 	}
 	
-	@Test(groups = {"creation_deletion1"})	
-	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() {
+	@Test(groups = {"creation_deletion_edge_2"})	
+	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() {
 		
 		boolean isCategoryCreated = false;		
 		
 		System.out.println("1. Creation of a category with the keyboard only.");		
 		//Tabbing until finding the input field to add the new category label
+		driver.get("http://localhost:4200");
 		Robot robot;
-		Actions  action = new Actions(driver);
+		Actions  actions = new Actions(driver);
 		try {
 			robot = new Robot();
 			robot.keyPress(KeyEvent.VK_TAB);
-			action.sendKeys(testCategoryLabel).build().perform();
+			actions.sendKeys(testCategoryLabel).build().perform();
 			robot.keyPress(KeyEvent.VK_TAB);
 			robot.delay(1000);
-			//robot.keyPress(KeyEvent.VK_ENTER);// Previous test failures with the enter event being ignored
-			action.sendKeys("\n").build().perform();
-			robot.delay(1000);		
+			//robot.keyPress(KeyEvent.VK_SPACE);// Previous test failures with the space event being ignored
+			actions.sendKeys(" ").build().perform();
+			robot.delay(1000);
 			
 		} catch (AWTException e) {
 			System.err.println("AWTException when using the robot class");
@@ -114,16 +113,20 @@ public class UserRequirement4_1 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."			
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
 			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
 			robot.delay(1000);
-			//robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
-			action.sendKeys("\n").build().perform();//Click to delete the test category
+			//robot.keyPress(KeyEvent.VK_SPACE);//Click to delete the test category
+			actions.sendKeys(" ").build().perform();//Click to delete the test category
 			robot.delay(2000);
 			
 		} catch (AWTException e) {
@@ -165,9 +168,9 @@ public class UserRequirement4_1 {
 		
 	}
 	
-		
-	@Test(groups = {"creation_deletion1"})
-	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
+	
+	@Test(groups = {"creation_deletion_edge_2"})					
+	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() {
 		System.out.println("1. Creation of an item with the keyboard only.");
 		Robot robot;
 		Actions actions;
@@ -187,8 +190,8 @@ public class UserRequirement4_1 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(2000);
-			//robot.keyPress(KeyEvent.VK_ENTER);
-			actions.sendKeys("\n").build().perform();
+			//robot.keyPress(KeyEvent.VK_SPACE);
+			actions.sendKeys(" ").build().perform();
 			robot.delay(2000);
 			
 				
@@ -231,12 +234,14 @@ public class UserRequirement4_1 {
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
-			robot.delay(1000);		
+			robot.delay(1000);			
 			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
 			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
-			actions.sendKeys("\n").build().perform(); //Click to delete the test category
-			//robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
+			actions.sendKeys(" ").build().perform(); //Click to delete the test category
+			//robot.keyPress(KeyEvent.VK_SPACE);//Click to delete the test category
 		} catch (AWTException e) {
 			System.err.println("AWTException while using the instance of the class ");
 			System.err.println(e.getMessage());
@@ -269,9 +274,9 @@ public class UserRequirement4_1 {
 		}
 	}
 	
-	@Test(dependsOnGroups = {"creation_deletion1"})
+	@Test(dependsOnGroups = {"creation_deletion_edge_2"})		
 	//TODO: issue with edge not reacting to the entry key
-	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
+	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
 		System.out.println("1. Creation of an item with the keyboard only.");
 		driver.get("http://localhost:4200");
@@ -293,8 +298,8 @@ public class UserRequirement4_1 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(1000);
-			//robot.keyPress(KeyEvent.VK_ENTER);
-			actions.sendKeys("\n").build().perform();
+			//robot.keyPress(KeyEvent.VK_SPACE);
+			actions.sendKeys(" ").build().perform();
 			robot.delay(5000);
 							
 			
@@ -310,6 +315,7 @@ public class UserRequirement4_1 {
 		boolean isItemCreated=false;
 		try {
 			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
+			if(anItemElements.size()==0) {fail("Failure of element creation test during the hiding/diplay test.	");}
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
 				if (text.contains(testItemLabel)) {
@@ -366,19 +372,21 @@ public class UserRequirement4_1 {
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);robot.delay(1000);
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
+			robot.delay(1000);		
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
-			robot.delay(1000);
-			//robot.keyPress(KeyEvent.VK_ENTER);//Click to hide the item
-			actions.sendKeys("\n").build().perform();//Click to hide the item
+			robot.delay(1000);			
+			//robot.keyPress(KeyEvent.VK_SPACE);//Click to hide the item
+			actions.sendKeys(" ").build().perform();//Click to hide the item
 			robot.delay(5000);
 		} catch (AWTException e) {
 			System.err.println("AWTException while using the instance of the class ");
@@ -421,8 +429,8 @@ public class UserRequirement4_1 {
 			robot = new Robot();
 			actions = new Actions(driver);
 			robot.delay(1000);
-			actions.sendKeys("\n").build().perform();//Click to hide the item
-			//robot.keyPress(KeyEvent.VK_ENTER);//Click to hide the item
+			actions.sendKeys(" ").build().perform();//Click to hide the item
+			//robot.keyPress(KeyEvent.VK_SPACE);//Click to hide the item
 			
 		} catch (AWTException e) {
 			System.err.println("AWTException while using the instance of the class ");
