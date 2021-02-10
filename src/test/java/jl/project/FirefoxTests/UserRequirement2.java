@@ -42,8 +42,8 @@ public class UserRequirement2 {
 			
 		System.out.println("1. Creation of the item");
 		boolean isItemCreated=false;
-		//Adding an item to the Misc. category created at startup
-		driver.findElement(By.id("category_to_select_field")).sendKeys("Misc.");
+		//Adding an item to the Uncategorized category created at startup
+		driver.findElement(By.id("category_to_select_field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item_input_name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add_item_button")).click();
 		//To avoid a StaleElementReferenceException 

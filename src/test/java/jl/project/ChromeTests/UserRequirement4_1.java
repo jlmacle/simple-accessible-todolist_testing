@@ -52,7 +52,7 @@ public class UserRequirement4_1 {
 		driver.get("http://localhost:4200");
 	}
 	
-	@Test(groups = {"creation_deletion_Chrome_1"})	
+	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() {
 		
 		boolean isCategoryCreated = false;		
@@ -113,12 +113,8 @@ public class UserRequirement4_1 {
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
+			robot.delay(1000);	
+			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
 			robot.delay(1000);
@@ -166,8 +162,7 @@ public class UserRequirement4_1 {
 	}
 	
 		
-	@Test(groups = {"creation_deletion_Chrome_1"})
-	@Ignore
+	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
 		System.out.println("1. Creation of an item with the keyboard only.");
 		Robot robot;
@@ -180,7 +175,7 @@ public class UserRequirement4_1 {
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			actions.sendKeys("Misc.").build().perform();
+			actions.sendKeys("Uncategorized").build().perform();
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
@@ -229,11 +224,13 @@ public class UserRequirement4_1 {
 			robot = new Robot();	
 			actions = new Actions(driver);
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Uncategorized"
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Uncategorized"
 			robot.delay(1000);		
-			robot.keyPress(KeyEvent.VK_TAB);//Category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//Category "Uncategorized"
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
 			actions.sendKeys("\n").build().perform(); //Click to delete the test category
@@ -270,8 +267,7 @@ public class UserRequirement4_1 {
 		}
 	}
 	
-	@Test(dependsOnGroups = {"creation_deletion_Chrome_1"})
-	@Ignore
+	@Test(dependsOnGroups = {"creation_deletion_Chrome_1"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
 		System.out.println("1. Creation of an item with the keyboard only.");
@@ -286,7 +282,7 @@ public class UserRequirement4_1 {
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			actions.sendKeys("Misc.").build().perform();
+			actions.sendKeys("Uncategorized").build().perform();
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
@@ -359,7 +355,7 @@ public class UserRequirement4_1 {
 		
 		//clicking to hide the item		
 		System.out.println("4. Verification that the item can be hidden.");
-		//Using the keyboard to hide the item. Only one category (Misc.) means only one element named foldUnfoldArea.
+		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.get("http://localhost:4200");
 		try {
 			robot = new Robot();
@@ -374,9 +370,11 @@ public class UserRequirement4_1 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Misc."
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Uncategorized"
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Uncategorized"
 			robot.delay(1000);
 			//robot.keyPress(KeyEvent.VK_ENTER);//Click to hide the item
 			actions.sendKeys("\n").build().perform();//Click to hide the item
