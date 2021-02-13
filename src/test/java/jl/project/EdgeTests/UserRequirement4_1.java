@@ -61,8 +61,12 @@ public class UserRequirement4_1 {
 		Actions  action = new Actions(driver);
 		try {
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);
+			robot.delay(1000);
 			action.sendKeys(testCategoryLabel).build().perform();
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);
 			robot.delay(1000);
 			//robot.keyPress(KeyEvent.VK_ENTER);// Previous test failures with the enter event being ignored
@@ -102,9 +106,13 @@ public class UserRequirement4_1 {
 		boolean isCategoryFound;
 		try {
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
@@ -168,9 +176,13 @@ public class UserRequirement4_1 {
 		try {
 			robot = new Robot();			
 			actions = new Actions(driver);
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			actions.sendKeys("Uncategorized").build().perform();
@@ -275,9 +287,13 @@ public class UserRequirement4_1 {
 		try {
 			robot = new Robot();
 			actions = new Actions(driver);
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			actions.sendKeys("Uncategorized").build().perform();
@@ -358,10 +374,14 @@ public class UserRequirement4_1 {
 		try {
 			robot = new Robot();
 			actions = new Actions(driver);
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
 			robot.delay(1000);robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//Form label
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text

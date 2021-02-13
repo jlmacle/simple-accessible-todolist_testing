@@ -3,14 +3,16 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.ChromeTests.UserRequirement4_1">
+      <class name="jl.project.FirefoxTests.UserRequirement4_1">
         <methods>
-          <include name="releseResources"/>
-          <include name="setup"/>
+          <include name="createAndDeleteItemWithKeyboardOnly_EnterKey"/>
           <include name="navigate"/>
+          <include name="releaseResources"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_EnterKey"/>
           <include name="HideAndDisplayItemsWithKeyboardOnly_EnterKey"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement4_1 -->
+      </class> <!-- jl.project.FirefoxTests.UserRequirement4_1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
