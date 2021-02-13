@@ -34,7 +34,7 @@ public class UserRequirement1 {
 	 */
 	@BeforeClass	
 	public void setup() {		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "..\\z_webdriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();		
 	}
 	
