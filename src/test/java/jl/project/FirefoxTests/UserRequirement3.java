@@ -46,9 +46,9 @@ public class UserRequirement3 {
 		//1. Creation of an item. By default the item is displayed
 		System.out.println("1. Creation of the item");
 		//Adding an item to the Uncategorized category created at startup
-		driver.findElement(By.id("category_to_select_field")).sendKeys("Uncategorized");
+		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
-		driver.findElement(By.id("add_item_button")).click();
+		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
 		driver.get("http://localhost:4200");
 				
