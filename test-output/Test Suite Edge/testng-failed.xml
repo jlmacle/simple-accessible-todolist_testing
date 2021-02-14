@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Test Suite Edge]" guice-stage="DEVELOPMENT">
+  <test name="User Requirement 1(failed)">
+    <classes>
+      <class name="jl.project.EdgeTests.UserRequirement1">
+        <methods>
+          <include name="deleteCategory"/>
+          <include name="createCategory"/>
+          <include name="setup"/>
+          <include name="navigate"/>
+          <include name="releaseResources"/>
+        </methods>
+      </class> <!-- jl.project.EdgeTests.UserRequirement1 -->
+    </classes>
+  </test> <!-- User Requirement 1(failed) -->
+</suite> <!-- Failed suite [Test Suite Edge] -->

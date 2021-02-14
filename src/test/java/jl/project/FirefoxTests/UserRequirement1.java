@@ -56,7 +56,7 @@ public class UserRequirement1 {
     	boolean isCategoryFound = false;
     	
     	
-    	driver.findElement(By.id("new_category_input_field")).sendKeys(testCategoryLabel);
+    	driver.findElement(By.id("new-category-input-field")).sendKeys(testCategoryLabel);
     	driver.findElement(By.id("add_category_button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	System.out.println("At this point, the test category should have been created.");
