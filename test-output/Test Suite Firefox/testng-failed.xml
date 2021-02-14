@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Test Suite Firefox]" guice-stage="DEVELOPMENT">
+  <test name="User Requirement 3(failed)">
+    <classes>
+      <class name="jl.project.FirefoxTests.UserRequirement3">
+        <methods>
+          <include name="hideAndDisplayItem"/>
+          <include name="releaseResources"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jl.project.FirefoxTests.UserRequirement3 -->
+    </classes>
+  </test> <!-- User Requirement 3(failed) -->
+  <test name="User Requirement 4 Part 1(failed)">
+    <classes>
+      <class name="jl.project.FirefoxTests.UserRequirement4_1">
+        <methods>
+          <include name="createAndDeleteItemWithKeyboardOnly_EnterKey"/>
+          <include name="navigate"/>
+          <include name="releaseResources"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_EnterKey"/>
+          <include name="HideAndDisplayItemsWithKeyboardOnly_EnterKey"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jl.project.FirefoxTests.UserRequirement4_1 -->
+    </classes>
+  </test> <!-- User Requirement 4 Part 1(failed) -->
+  <test name="User Requirement 4 Part 2(failed)">
+    <classes>
+      <class name="jl.project.FirefoxTests.UserRequirement4_2">
+        <methods>
+          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
+          <include name="navigate"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
+          <include name="releseResources"/>
+          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jl.project.FirefoxTests.UserRequirement4_2 -->
+    </classes>
+  </test> <!-- User Requirement 4 Part 2(failed) -->
+</suite> <!-- Failed suite [Test Suite Firefox] -->
