@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" name="Failed suite [Test Suite Firefox]" guice-stage="DEVELOPMENT">
+  <test name="User Requirement 2(failed)">
+    <classes>
+      <class name="jl.project.FirefoxTests.UserRequirement2">
+        <methods>
+          <include name="setup"/>
+          <include name="createItem"/>
+          <include name="navigate"/>
+          <include name="releaseResources"/>
+        </methods>
+      </class> <!-- jl.project.FirefoxTests.UserRequirement2 -->
+    </classes>
+  </test> <!-- User Requirement 2(failed) -->
   <test name="User Requirement 3(failed)">
     <classes>
       <class name="jl.project.FirefoxTests.UserRequirement3">
