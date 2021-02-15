@@ -42,8 +42,8 @@ public class UserRequirement3 {
 	@Test
 	public void hideAndDisplayItem() {
 		boolean isTestItemLabelFound = false;
-		
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 		//1. Creation of an item. By default the item is displayed
 		System.out.println("1. Creation of the item");
 		//Adding an item to the Uncategorized category created at startup
@@ -51,7 +51,8 @@ public class UserRequirement3 {
 		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 				
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
@@ -173,7 +174,8 @@ public class UserRequirement3 {
 			}
 			
 		System.out.println("6. Testing the deletion of the test item");
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");
 				

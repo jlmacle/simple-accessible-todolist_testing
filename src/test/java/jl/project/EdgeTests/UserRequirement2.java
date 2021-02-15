@@ -35,7 +35,8 @@ public class UserRequirement2 {
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 	}
 	
 	@Test
@@ -47,8 +48,9 @@ public class UserRequirement2 {
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add-item-button")).click();
-		//To avoid a StaleElementReferenceException 
-		driver.get("http://localhost:4200");
+		//To avoid a StaleElementReferenceException
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 				
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
@@ -88,7 +90,8 @@ public class UserRequirement2 {
 				anIconToDeleteAnItemElement.click();
 				System.out.println("Trash can icon clicked.");
 			}
-			driver.get("http://localhost:4200");
+			driver.get("http://192.168.1.100:4200");
+			//driver.get("http://localhost:4200");
 			
 		}
 		catch(StaleElementReferenceException e) {

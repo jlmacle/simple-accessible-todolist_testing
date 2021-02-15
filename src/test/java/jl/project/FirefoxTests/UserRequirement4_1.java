@@ -48,8 +48,8 @@ public class UserRequirement4_1 {
 	
 	@BeforeMethod
 	public void navigate() {
-		
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 	}
 	
 	@Test(groups = {"creation_deletion_firefox_1"})		
@@ -90,7 +90,8 @@ public class UserRequirement4_1 {
 		
 			//Verifying that the category has been created		
 			System.out.println("2. Confirming creation of the category");
-			driver.get("http://localhost:4200");
+			driver.get("http://192.168.1.100:4200");
+			//driver.get("http://localhost:4200");
 			List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));
 			System.out.println("Found "+aCategoryElements.size()+" elements named aCategory");	
 			for(WebElement aCategoryElement: aCategoryElements ) {
@@ -150,7 +151,8 @@ public class UserRequirement4_1 {
 		{
 			//Verifying that the category has been deleted
 			System.out.println("4. Confirming that the category has been deleted.");
-			driver.get("http://localhost:4200");
+			driver.get("http://192.168.1.100:4200");
+			//driver.get("http://localhost:4200");
 			List<WebElement>aCategoryElements = driver.findElements(By.name("aCategory"));
 			System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
 			try {
@@ -271,7 +273,8 @@ public class UserRequirement4_1 {
 		}
 		
 		System.out.println("4. Confirmation of deletion");
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
 		try {
 			
@@ -300,7 +303,8 @@ public class UserRequirement4_1 {
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
 		System.out.println("1. Creation of an item with the keyboard only.");
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 		Robot robot;
 		Actions actions;
 		try {
@@ -395,7 +399,8 @@ public class UserRequirement4_1 {
 		//clicking to hide the item		
 		System.out.println("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 		try {
 			robot = new Robot();
 			actions = new Actions(driver);
@@ -512,7 +517,8 @@ public class UserRequirement4_1 {
 		}
 		
 		System.out.println("7. Testing the deletion of the test item");
-		driver.get("http://localhost:4200");
+		driver.get("http://192.168.1.100:4200");
+		//driver.get("http://localhost:4200");
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
 		else {System.out.println("Page cleaned from test item.");}
