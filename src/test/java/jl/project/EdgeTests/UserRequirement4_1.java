@@ -42,6 +42,7 @@ public class UserRequirement4_1 {
 	public void setup() {
 		System.setProperty("webdriver.edge.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\msedgedriver.exe");
 		driver = new EdgeDriver();		
+		driver.manage().window().maximize();
 	}
 	
 	@BeforeMethod
@@ -61,6 +62,12 @@ public class UserRequirement4_1 {
 		Actions  action = new Actions(driver);
 		try {
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);
@@ -106,6 +113,12 @@ public class UserRequirement4_1 {
 		boolean isCategoryFound;
 		try {
 			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
@@ -176,6 +189,12 @@ public class UserRequirement4_1 {
 		try {
 			robot = new Robot();			
 			actions = new Actions(driver);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
@@ -287,6 +306,12 @@ public class UserRequirement4_1 {
 		try {
 			robot = new Robot();
 			actions = new Actions(driver);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
@@ -374,6 +399,12 @@ public class UserRequirement4_1 {
 		try {
 			robot = new Robot();
 			actions = new Actions(driver);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
+			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text

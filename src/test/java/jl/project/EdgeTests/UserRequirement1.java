@@ -35,7 +35,8 @@ public class UserRequirement1 {
 	public void setup() {		
 		//https://www.selenium.dev/documentation/en/webdriver/driver_requirements/		
 		System.setProperty("webdriver.edge.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\msedgedriver.exe");
-		driver = new EdgeDriver();		
+		driver = new EdgeDriver();	
+		driver.manage().window().maximize();
 	}
 	
 	/**
