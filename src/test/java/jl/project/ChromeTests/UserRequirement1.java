@@ -36,6 +36,7 @@ public class UserRequirement1 {
 	public void setup() {		
 		System.setProperty("webdriver.chrome.driver", "..\\z_webdriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();		
+		driver.manage().window().maximize();
 	}
 	
 	/**

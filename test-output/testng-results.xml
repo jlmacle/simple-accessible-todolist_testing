@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-14T11:25:45Z" name="Test Suite Firefox" finished-at="2021-02-14T11:29:14Z" duration-ms="208575">
+  <suite started-at="2021-02-15T06:11:55Z" name="Test Suite Firefox" finished-at="2021-02-15T06:15:41Z" duration-ms="226212">
     <groups>
       <group name="creation_deletion_firefox_2">
         <method signature="UserRequirement4_2.createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" class="jl.project.FirefoxTests.UserRequirement4_2"/>
@@ -13,145 +13,145 @@
         <method signature="UserRequirement4_1.createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" name="createAndDeleteItemWithKeyboardOnly_EnterKey" class="jl.project.FirefoxTests.UserRequirement4_1"/>
       </group> <!-- creation_deletion_firefox_1 -->
     </groups>
-    <test started-at="2021-02-14T11:25:45Z" name="User Requirement 1" finished-at="2021-02-14T11:25:55Z" duration-ms="9696">
+    <test started-at="2021-02-15T06:11:55Z" name="User Requirement 1" finished-at="2021-02-15T06:12:12Z" duration-ms="17656">
       <class name="jl.project.FirefoxTests.UserRequirement1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-14T05:25:45Z" name="setup" finished-at="2021-02-14T05:25:51Z" duration-ms="5090" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-15T00:11:55Z" name="setup" finished-at="2021-02-15T00:12:09Z" duration-ms="14276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-14T05:25:51Z" name="navigate" finished-at="2021-02-14T05:25:52Z" duration-ms="1159" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-15T00:12:09Z" name="navigate" finished-at="2021-02-15T00:12:10Z" duration-ms="818" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-14T05:25:52Z" name="createCategory" finished-at="2021-02-14T05:25:53Z" duration-ms="986" status="PASS">
+        <test-method signature="createCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-15T00:12:10Z" name="createCategory" finished-at="2021-02-15T00:12:10Z" duration-ms="759" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createCategory -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-14T05:25:53Z" name="navigate" finished-at="2021-02-14T05:25:53Z" duration-ms="444" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-15T00:12:10Z" name="navigate" finished-at="2021-02-15T00:12:11Z" duration-ms="277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="deleteCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-14T05:25:53Z" name="deleteCategory" finished-at="2021-02-14T05:25:54Z" duration-ms="742" status="PASS">
+        <test-method signature="deleteCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-15T00:12:11Z" name="deleteCategory" finished-at="2021-02-15T00:12:11Z" duration-ms="608" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteCategory -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-14T05:25:54Z" name="releaseResources" finished-at="2021-02-14T05:25:55Z" duration-ms="1249" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1757cd72]" started-at="2021-02-15T00:12:11Z" name="releaseResources" finished-at="2021-02-15T00:12:12Z" duration-ms="891" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
       </class> <!-- jl.project.FirefoxTests.UserRequirement1 -->
     </test> <!-- User Requirement 1 -->
-    <test started-at="2021-02-14T11:25:55Z" name="User Requirement 2" finished-at="2021-02-14T11:26:04Z" duration-ms="8712">
+    <test started-at="2021-02-15T06:12:12Z" name="User Requirement 2" finished-at="2021-02-15T06:12:20Z" duration-ms="7473">
       <class name="jl.project.FirefoxTests.UserRequirement2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-14T05:25:55Z" name="setup" finished-at="2021-02-14T05:25:59Z" duration-ms="4312" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-15T00:12:12Z" name="setup" finished-at="2021-02-15T00:12:16Z" duration-ms="3834" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-14T05:25:59Z" name="navigate" finished-at="2021-02-14T05:26:00Z" duration-ms="955" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-15T00:12:16Z" name="navigate" finished-at="2021-02-15T00:12:17Z" duration-ms="669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-14T05:26:00Z" name="createItem" finished-at="2021-02-14T05:26:01Z" duration-ms="890" status="PASS">
+        <test-method signature="createItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-15T00:12:17Z" name="createItem" finished-at="2021-02-15T00:12:18Z" duration-ms="808" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createItem -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-14T05:26:01Z" name="navigate" finished-at="2021-02-14T05:26:02Z" duration-ms="474" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-15T00:12:18Z" name="navigate" finished-at="2021-02-15T00:12:18Z" duration-ms="382" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="deleteItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-14T05:26:02Z" name="deleteItem" finished-at="2021-02-14T05:26:03Z" duration-ms="696" status="PASS">
+        <test-method signature="deleteItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-15T00:12:18Z" name="deleteItem" finished-at="2021-02-15T00:12:19Z" duration-ms="655" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteItem -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-14T05:26:03Z" name="releaseResources" finished-at="2021-02-14T05:26:04Z" duration-ms="1381" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@175b9425]" started-at="2021-02-15T00:12:19Z" name="releaseResources" finished-at="2021-02-15T00:12:20Z" duration-ms="1119" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
       </class> <!-- jl.project.FirefoxTests.UserRequirement2 -->
     </test> <!-- User Requirement 2 -->
-    <test started-at="2021-02-14T11:26:04Z" name="User Requirement 3" finished-at="2021-02-14T11:26:20Z" duration-ms="15940">
+    <test started-at="2021-02-15T06:12:20Z" name="User Requirement 3" finished-at="2021-02-15T06:12:36Z" duration-ms="16302">
       <class name="jl.project.FirefoxTests.UserRequirement3">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3@672872e1]" started-at="2021-02-14T05:26:04Z" name="setup" finished-at="2021-02-14T05:26:08Z" duration-ms="4276" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3@672872e1]" started-at="2021-02-15T00:12:20Z" name="setup" finished-at="2021-02-15T00:12:24Z" duration-ms="3836" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3@672872e1]" started-at="2021-02-14T05:26:08Z" name="hideAndDisplayItem" finished-at="2021-02-14T05:26:19Z" duration-ms="10371" status="PASS">
+        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3@672872e1]" started-at="2021-02-15T00:12:24Z" name="hideAndDisplayItem" finished-at="2021-02-15T00:12:35Z" duration-ms="11394" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- hideAndDisplayItem -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3@672872e1]" started-at="2021-02-14T05:26:19Z" name="releaseResources" finished-at="2021-02-14T05:26:20Z" duration-ms="1290" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3@672872e1]" started-at="2021-02-15T00:12:35Z" name="releaseResources" finished-at="2021-02-15T00:12:36Z" duration-ms="1068" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
       </class> <!-- jl.project.FirefoxTests.UserRequirement3 -->
     </test> <!-- User Requirement 3 -->
-    <test started-at="2021-02-14T11:26:20Z" name="User Requirement 4 Part 1" finished-at="2021-02-14T11:27:43Z" duration-ms="83194">
+    <test started-at="2021-02-15T06:12:36Z" name="User Requirement 4 Part 1" finished-at="2021-02-15T06:14:07Z" duration-ms="91203">
       <class name="jl.project.FirefoxTests.UserRequirement4_1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:26:20Z" name="setup" finished-at="2021-02-14T05:26:24Z" duration-ms="4284" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:12:36Z" name="setup" finished-at="2021-02-15T00:12:39Z" duration-ms="3327" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:26:24Z" name="navigate" finished-at="2021-02-14T05:26:25Z" duration-ms="916" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:12:39Z" name="navigate" finished-at="2021-02-15T00:12:40Z" duration-ms="621" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:26:25Z" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" finished-at="2021-02-14T05:26:45Z" duration-ms="19660" status="PASS">
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:12:40Z" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" finished-at="2021-02-15T00:13:05Z" duration-ms="24992" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_EnterKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:26:45Z" name="navigate" finished-at="2021-02-14T05:26:46Z" duration-ms="1015" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:13:05Z" name="navigate" finished-at="2021-02-15T00:13:05Z" duration-ms="282" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:26:46Z" name="createAndDeleteItemWithKeyboardOnly_EnterKey" finished-at="2021-02-14T05:27:03Z" duration-ms="16908" status="PASS">
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:13:05Z" name="createAndDeleteItemWithKeyboardOnly_EnterKey" finished-at="2021-02-15T00:13:25Z" duration-ms="19536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAndDeleteItemWithKeyboardOnly_EnterKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:27:03Z" name="navigate" finished-at="2021-02-14T05:27:04Z" duration-ms="1288" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:13:25Z" name="navigate" finished-at="2021-02-15T00:13:26Z" duration-ms="618" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:27:04Z" name="HideAndDisplayItemsWithKeyboardOnly_EnterKey" depends-on-groups="creation_deletion_firefox_1" finished-at="2021-02-14T05:27:42Z" duration-ms="37903" status="PASS">
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:13:26Z" name="HideAndDisplayItemsWithKeyboardOnly_EnterKey" depends-on-groups="creation_deletion_firefox_1" finished-at="2021-02-15T00:14:06Z" duration-ms="40848" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_EnterKey -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-14T05:27:42Z" name="releaseResources" finished-at="2021-02-14T05:27:43Z" duration-ms="1205" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1@65b3f4a4]" started-at="2021-02-15T00:14:06Z" name="releaseResources" finished-at="2021-02-15T00:14:07Z" duration-ms="974" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
       </class> <!-- jl.project.FirefoxTests.UserRequirement4_1 -->
     </test> <!-- User Requirement 4 Part 1 -->
-    <test started-at="2021-02-14T11:27:43Z" name="User Requirement 4 Part 2" finished-at="2021-02-14T11:29:14Z" duration-ms="90921">
+    <test started-at="2021-02-15T06:14:07Z" name="User Requirement 4 Part 2" finished-at="2021-02-15T06:15:41Z" duration-ms="93442">
       <class name="jl.project.FirefoxTests.UserRequirement4_2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:27:43Z" name="setup" finished-at="2021-02-14T05:27:47Z" duration-ms="4281" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:14:07Z" name="setup" finished-at="2021-02-15T00:14:11Z" duration-ms="3337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:27:47Z" name="navigate" finished-at="2021-02-14T05:27:48Z" duration-ms="1136" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:14:11Z" name="navigate" finished-at="2021-02-15T00:14:11Z" duration-ms="638" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:27:48Z" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" finished-at="2021-02-14T05:28:09Z" duration-ms="20389" status="PASS">
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:14:11Z" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" finished-at="2021-02-15T00:14:37Z" duration-ms="25266" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_SpaceKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:28:09Z" name="navigate" finished-at="2021-02-14T05:28:11Z" duration-ms="1992" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:14:37Z" name="navigate" finished-at="2021-02-15T00:14:38Z" duration-ms="994" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:28:11Z" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" finished-at="2021-02-14T05:28:28Z" duration-ms="16960" status="PASS">
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:14:38Z" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" finished-at="2021-02-15T00:14:57Z" duration-ms="19488" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAndDeleteItemWithKeyboardOnly_SpaceKey -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:28:28Z" name="navigate" finished-at="2021-02-14T05:28:29Z" duration-ms="1442" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:14:57Z" name="navigate" finished-at="2021-02-15T00:14:58Z" duration-ms="683" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:28:29Z" name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey" depends-on-groups="creation_deletion_firefox_2" finished-at="2021-02-14T05:29:13Z" duration-ms="43496" status="PASS">
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:14:58Z" name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey" depends-on-groups="creation_deletion_firefox_2" finished-at="2021-02-15T00:15:40Z" duration-ms="42000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_SpaceKey -->
-        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-14T05:29:13Z" name="releseResources" finished-at="2021-02-14T05:29:14Z" duration-ms="1219" status="PASS">
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2@343570b7]" started-at="2021-02-15T00:15:40Z" name="releseResources" finished-at="2021-02-15T00:15:41Z" duration-ms="1031" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releseResources -->

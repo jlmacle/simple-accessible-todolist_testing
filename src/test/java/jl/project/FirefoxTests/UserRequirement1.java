@@ -36,6 +36,7 @@ public class UserRequirement1 {
 	public void setup() {		
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\geckodriver.exe");
 		driver = new FirefoxDriver();		
+		driver.manage().window().maximize();
 	}
 	
 	/**
