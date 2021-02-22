@@ -16,6 +16,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import jl.project.StringExternalization;
+
 
 
 /**
@@ -34,7 +36,8 @@ public class UserRequirement1 {
 	@BeforeClass	
 	public void setup() {		
 		//https://www.selenium.dev/documentation/en/webdriver/driver_requirements/		
-		System.setProperty("webdriver.edge.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\msedgedriver.exe");
+		System.setProperty(StringExternalization.webdriver_edge_key, 
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value);
 		driver = new EdgeDriver();	
 		driver.manage().window().maximize();
 	}

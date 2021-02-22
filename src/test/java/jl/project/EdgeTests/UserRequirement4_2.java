@@ -24,6 +24,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
+import jl.project.StringExternalization;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
@@ -40,7 +41,8 @@ public class UserRequirement4_2 {
 	
 	@BeforeClass
 	public void setup() {
-		System.setProperty("webdriver.edge.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\msedgedriver.exe");
+		System.setProperty(StringExternalization.webdriver_edge_key, 
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value);
 		driver = new EdgeDriver();		
 		driver.manage().window().maximize();
 	}

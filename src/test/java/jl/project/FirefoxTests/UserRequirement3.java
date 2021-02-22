@@ -19,6 +19,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import jl.project.StringExternalization;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
@@ -33,7 +34,8 @@ public class UserRequirement3 {
 	
 	@BeforeClass
 	public void setup(){
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\geckodriver.exe");
+		System.setProperty(StringExternalization.webdriver_firefox_key, 
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_firefox_value);
 		driver = new FirefoxDriver();	
 		driver.manage().window().maximize();
 	}
