@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import jl.project.StringExternalization;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
@@ -29,9 +30,9 @@ public class UserRequirement3 {
 	
 	
 	@BeforeClass
-	public void setup(){
-		//https://chromedriver.chromium.org/downloads
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
+	public void setup(){		
+		System.setProperty(StringExternalization.webdriver_chrome_key, 
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_chrome_value_linux);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}

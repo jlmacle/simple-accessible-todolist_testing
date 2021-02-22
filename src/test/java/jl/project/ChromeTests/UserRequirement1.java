@@ -17,6 +17,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import jl.project.StringExternalization;
+
 
 
 /**
@@ -34,7 +36,9 @@ public class UserRequirement1 {
 	 */
 	@BeforeClass	
 	public void setup() {		
-		System.setProperty("webdriver.chrome.driver", "..\\z_webdriver_win32\\chromedriver.exe");
+		//https://chromedriver.chromium.org/downloads
+		System.setProperty(StringExternalization.webdriver_chrome_key, 
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_chrome_value_linux);
 		driver = new ChromeDriver();		
 		driver.manage().window().maximize();
 	}

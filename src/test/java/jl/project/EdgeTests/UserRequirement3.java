@@ -16,6 +16,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import jl.project.StringExternalization;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
@@ -30,7 +31,8 @@ public class UserRequirement3 {
 	
 	@BeforeClass
 	public void setup(){
-		System.setProperty("webdriver.edge.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\msedgedriver.exe");
+		System.setProperty(StringExternalization.webdriver_edge_key, 
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value_linux);
 		driver = new EdgeDriver();			
 		driver.manage().window().maximize();
 	}

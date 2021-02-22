@@ -15,6 +15,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import jl.project.StringExternalization;
+
 /**
  * @author 
  * Class testing the creation and deletion of an item.
@@ -28,7 +30,8 @@ public class UserRequirement2 {
 	
 	@BeforeClass
 	public void setup() {		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jeanl\\Documents\\_SynchronizedFolder_Code\\JavaFullStackCode\\z_webdriver_win32\\chromedriver.exe");
+		System.setProperty(StringExternalization.webdriver_chrome_key, 
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_chrome_value_linux);
 		driver = new ChromeDriver();	
 		driver.manage().window().maximize();
 	}
