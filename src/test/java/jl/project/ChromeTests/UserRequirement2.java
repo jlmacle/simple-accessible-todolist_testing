@@ -32,6 +32,7 @@ public class UserRequirement2 {
 	public void setup() {		
 		System.setProperty(StringExternalization.webdriver_chrome_key, 
 				StringExternalization.webdrivers_folder+StringExternalization.webdriver_chrome_value);
+
 		driver = new ChromeDriver();	
 		driver.manage().window().maximize();
 	}

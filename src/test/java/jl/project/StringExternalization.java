@@ -18,10 +18,7 @@ public class StringExternalization {
 	public static final String webdriver_firefox_value = "geckodriver";
 	public static final String webdriver_edge_value = "msedgedriver";
 	 */
-	
-	
-	
-	
+
 	
 	
 	
