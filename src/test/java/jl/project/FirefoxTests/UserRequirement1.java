@@ -48,8 +48,8 @@ public class UserRequirement1 {
 	 */
 	@BeforeMethod	
 	public void navigate() {
-		driver.get("http://192.168.1.100:4200");
-		//driver.get("http://localhost:4200");
+		driver.get(StringExternalization.front_end_url);
+		
 	}
 	
 	/**
@@ -65,8 +65,8 @@ public class UserRequirement1 {
     	driver.findElement(By.id("add-category-button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	System.out.println("At this point, the test category should have been created.");
-    	driver.get("http://192.168.1.100:4200");
-    	//driver.get("http://localhost:4200");
+    	driver.get(StringExternalization.front_end_url);
+    	
     		    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	    	
     	try {
@@ -150,8 +150,8 @@ public class UserRequirement1 {
     		}    		
     		
     		//3. confirmation of deletion
-    		driver.get("http://192.168.1.100:4200");
-    		//driver.get("http://localhost:4200");
+    		driver.get(StringExternalization.front_end_url);
+    		
     		aCategoryElements = driver.findElements(By.name("aCategory"));
     		System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
     		try {
