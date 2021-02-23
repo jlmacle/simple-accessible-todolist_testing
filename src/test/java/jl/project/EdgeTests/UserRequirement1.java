@@ -37,7 +37,7 @@ public class UserRequirement1 {
 	public void setup() {		
 		//https://www.selenium.dev/documentation/en/webdriver/driver_requirements/		
 		System.setProperty(StringExternalization.webdriver_edge_key, 
-				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value_linux);
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value);
 		driver = new EdgeDriver();	
 		driver.manage().window().maximize();
 	}
@@ -48,7 +48,8 @@ public class UserRequirement1 {
 	 */
 	@BeforeMethod	
 	public void navigate() {
-		driver.get("http://localhost:4200");
+		driver.get(StringExternalization.front_end_url);
+		
 	}
 	
 	/**
@@ -64,7 +65,8 @@ public class UserRequirement1 {
     	driver.findElement(By.id("add-category-button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	System.out.println("At this point, the test category should have been created.");
-    	driver.get("http://localhost:4200");
+    	driver.get(StringExternalization.front_end_url);
+    	
     		    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	    	
     	try {
@@ -148,7 +150,8 @@ public class UserRequirement1 {
     		}    		
     		
     		//3. confirmation of deletion
-    		driver.get("http://localhost:4200");
+    		driver.get(StringExternalization.front_end_url);
+    		
     		aCategoryElements = driver.findElements(By.name("aCategory"));
     		System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
     		try {

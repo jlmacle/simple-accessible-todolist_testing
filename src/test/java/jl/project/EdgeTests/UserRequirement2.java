@@ -31,14 +31,15 @@ public class UserRequirement2 {
 	@BeforeClass
 	public void setup() {		
 		System.setProperty(StringExternalization.webdriver_edge_key, 
-				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value_linux);
+				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value);
 		driver = new EdgeDriver();	
 		driver.manage().window().maximize();
 	}
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get("http://localhost:4200");
+		driver.get(StringExternalization.front_end_url);
+		
 	}
 	
 	@Test
@@ -50,8 +51,9 @@ public class UserRequirement2 {
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add-item-button")).click();
-		//To avoid a StaleElementReferenceException 
-		driver.get("http://localhost:4200");
+		//To avoid a StaleElementReferenceException
+		driver.get(StringExternalization.front_end_url);
+		
 				
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
@@ -91,7 +93,8 @@ public class UserRequirement2 {
 				anIconToDeleteAnItemElement.click();
 				System.out.println("Trash can icon clicked.");
 			}
-			driver.get("http://localhost:4200");
+			driver.get(StringExternalization.front_end_url);
+			
 			
 		}
 		catch(StaleElementReferenceException e) {
