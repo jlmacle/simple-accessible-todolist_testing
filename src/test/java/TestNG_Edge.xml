@@ -13,7 +13,9 @@
          <class name = "jl.project.EdgeTests.UserRequirement2" />
       </classes>
    </test>
-   
+   <!-- User Requirements 3, 4 part 1 and 4 part 2 need to be commented on Linux Ubuntu
+   		due to a Tesseract library issue  -->
+   <!--  
     <test name = "User Requirement 3">
       <classes>
          <class name = "jl.project.EdgeTests.UserRequirement3" />
@@ -31,4 +33,5 @@
          <class name = "jl.project.EdgeTests.UserRequirement4_2" />
       </classes>
    </test>  
+   -->
 </suite>  	
