@@ -54,6 +54,8 @@ public class UserRequirement4_1 {
 		
 	}
 	
+	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
+	@Ignore
 	@Test(groups = {"creation_deletion_firefox_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() {
 		
@@ -184,7 +186,8 @@ public class UserRequirement4_1 {
 		
 	}
 	
-		
+	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
+	@Ignore
 	@Test(groups = {"creation_deletion_firefox_1"})
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
 		System.out.println("1. Creation of an item with the keyboard only.");
@@ -301,6 +304,8 @@ public class UserRequirement4_1 {
 		}
 	}
 	
+	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
+	@Ignore
 	@Test(dependsOnGroups = {"creation_deletion_firefox_1"})	
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{

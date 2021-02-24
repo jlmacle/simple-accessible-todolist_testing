@@ -9,15 +9,18 @@ public class StringExternalization {
 	public static final String webdriver_edge_key = "webdriver.edge.driver";
 
 	// Windows webdrivers
-	public static final String webdriver_chrome_value = "chromedriver.exe";
-	public static final String webdriver_firefox_value = "geckodriver.exe";
-	public static final String webdriver_edge_value = "msedgedriver.exe";
+	
+	/*
+	 * public static final String webdriver_chrome_value = "chromedriver.exe";
+	 * public static final String webdriver_firefox_value = "geckodriver.exe";
+	 * public static final String webdriver_edge_value = "msedgedriver.exe";
+	 */
 	
 	// Linux webdrivers
-	/* public static final String webdriver_chrome_value = "chromedriver";
+	public static final String webdriver_chrome_value = "chromedriver";
 	public static final String webdriver_firefox_value = "geckodriver";
 	public static final String webdriver_edge_value = "msedgedriver";
-	 */
+	 
 
 	
 	
