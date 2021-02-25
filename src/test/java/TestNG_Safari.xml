@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- Right-click + Run As 'TestNG Suite' -->
+<suite name = "Test Suite Safari">
+   <test name = "User Requirement 1">
+      <classes>
+         <class name = "jl.project.SafariTests.UserRequirement1" />
+      </classes>
+   </test>
+  
+    <test name = "User Requirement 2">
+      <classes>
+         <class name = "jl.project.SafariTests.UserRequirement2" />
+      </classes>
+   </test>
+    <!-- User Requirements 3, 4 part 1 and 4 part 2 need to be commented on Linux Ubuntu
+   		due to a Tesseract library issue  -->
+   	<!--     
+    <test name = "User Requirement 3">
+      <classes>
+         <class name = "jl.project.SafariTests.UserRequirement3" />
+      </classes>
+   </test>
+  
+   <test name = "User Requirement 4 Part 1">
+      <classes>
+         <class name = "jl.project.SafariTests.UserRequirement4_1" />
+      </classes>
+   </test>
+   
+   <test name = "User Requirement 4 Part 2">
+      <classes>
+         <class name = "jl.project.SafariTests.UserRequirement4_2" />
+      </classes>
+   </test>  
+   -->
+</suite>  	

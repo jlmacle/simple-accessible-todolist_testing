@@ -2,7 +2,7 @@ package jl.project;
 
 public class StringExternalization {
 	public static final String FRONT_END_URL = "http://localhost:4200";
-	
+		
 	public static final String WEBDRIVERS_FOLDER = "../webdrivers/";	
 	public static final String WEBDRIVER_CHROME_KEY = "webdriver.chrome.driver";	
 	public static final String WEBDRIVER_FIREFOX_KEY = "webdriver.gecko.driver";	
@@ -27,8 +27,8 @@ public class StringExternalization {
 	// macOS webdrivers
 	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver";
 	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver";
-	public static final String WEBDRIVER_EDGE_VALUE = "";
-	public static final String WEBDRIVER_SAFARI_VALUE = "";
+	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver";
+	public static final String WEBDRIVER_SAFARI_VALUE = ""; // /usr/bin/safaridriver to be used instead
 	
 	
 	
