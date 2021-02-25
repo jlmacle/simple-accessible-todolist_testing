@@ -32,8 +32,8 @@ public class UserRequirement3 {
 	
 	@BeforeClass
 	public void setup(){		
-		System.setProperty(StringExternalization.webdriver_chrome_key, 
-				StringExternalization.webdrivers_folder+StringExternalization.webdriver_chrome_value);
+		System.setProperty(StringExternalization.WEBDRIVER_CHROME_KEY, 
+				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_CHROME_VALUE);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}
@@ -43,7 +43,7 @@ public class UserRequirement3 {
 	@Ignore
 	public void hideAndDisplayItem() {
 		boolean isTestItemLabelFound = false;
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 		//1. Creation of an item. By default the item is displayed
 		System.out.println("1. Creation of the item");
@@ -52,7 +52,7 @@ public class UserRequirement3 {
 		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 				
 		//Checking that the new item creation was successful		
@@ -175,7 +175,7 @@ public class UserRequirement3 {
 			}
 			
 		System.out.println("6. Testing the deletion of the test item");
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");

@@ -31,14 +31,14 @@ public class UserRequirement2 {
 	@BeforeClass
 	public void setup() {		
 		System.setProperty(StringExternalization.webdriver_firefox_key, 
-				StringExternalization.webdrivers_folder+StringExternalization.webdriver_firefox_value);
+				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_FIREFOX_VALUE);
 		driver = new FirefoxDriver();		
 		driver.manage().window().maximize();
 	}
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 	}
 	
@@ -52,7 +52,7 @@ public class UserRequirement2 {
 		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 				
 		//Checking that the new item creation was successful		
@@ -93,7 +93,7 @@ public class UserRequirement2 {
 				anIconToDeleteAnItemElement.click();
 				System.out.println("Trash can icon clicked.");
 			}
-			driver.get(StringExternalization.front_end_url);
+			driver.get(StringExternalization.FRONT_END_URL);
 			
 			
 		}

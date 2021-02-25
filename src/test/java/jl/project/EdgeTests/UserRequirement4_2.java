@@ -41,15 +41,15 @@ public class UserRequirement4_2 {
 	
 	@BeforeClass
 	public void setup() {
-		System.setProperty(StringExternalization.webdriver_edge_key, 
-				StringExternalization.webdrivers_folder+StringExternalization.webdriver_edge_value);
+		System.setProperty(StringExternalization.WEBDRIVER_EDGE_KEY, 
+				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_EDGE_VALUE);
 		driver = new EdgeDriver();		
 		driver.manage().window().maximize();
 	}
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 	}
 	
@@ -62,7 +62,7 @@ public class UserRequirement4_2 {
 		
 		System.out.println("1. Creation of a category with the keyboard only.");		
 		//Tabbing until finding the input field to add the new category label
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 		Robot robot;
 		Actions  actions = new Actions(driver);
@@ -95,7 +95,7 @@ public class UserRequirement4_2 {
 		
 			//Verifying that the category has been created		
 			System.out.println("2. Confirming creation of the category");
-			driver.get(StringExternalization.front_end_url);
+			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));
 			System.out.println("Found "+aCategoryElements.size()+" elements named aCategory");	
@@ -156,7 +156,7 @@ public class UserRequirement4_2 {
 		{
 			//Verifying that the category has been deleted
 			System.out.println("4. Confirming that the category has been deleted.");
-			driver.get(StringExternalization.front_end_url);
+			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement>aCategoryElements = driver.findElements(By.name("aCategory"));
 			System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
@@ -279,7 +279,7 @@ public class UserRequirement4_2 {
 		}
 		
 		System.out.println("4. Confirmation of deletion");
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
 		try {
@@ -311,7 +311,7 @@ public class UserRequirement4_2 {
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
 		System.out.println("1. Creation of an item with the keyboard only.");
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 		Robot robot;
 		Actions actions;
@@ -408,7 +408,7 @@ public class UserRequirement4_2 {
 		//clicking to hide the item		
 		System.out.println("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 		try {
 			robot = new Robot();
@@ -526,7 +526,7 @@ public class UserRequirement4_2 {
 		}
 		
 		System.out.println("7. Testing the deletion of the test item");
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
