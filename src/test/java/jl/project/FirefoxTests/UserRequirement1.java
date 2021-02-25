@@ -36,7 +36,7 @@ public class UserRequirement1 {
 	 */
 	@BeforeClass	
 	public void setup() {		
-		System.setProperty(StringExternalization.webdriver_firefox_key, 
+		System.setProperty(StringExternalization.WEBDRIVER_FIREFOX_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_FIREFOX_VALUE);
 		driver = new FirefoxDriver();		
 		driver.manage().window().maximize();
