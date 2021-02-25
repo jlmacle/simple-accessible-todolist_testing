@@ -36,9 +36,7 @@ import net.sourceforge.tess4j.TesseractException;
 public class UserRequirement4_2 {
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	EdgeDriver driver;
-	String testCategoryLabel= "Protractor test category"; 
-	String testItemLabel = "Protractor test";//The word item is not always well detected by the ocr.
-	
+		
 	@BeforeClass
 	public void setup() {
 		System.setProperty(StringExternalization.WEBDRIVER_EDGE_KEY, 
@@ -78,7 +76,7 @@ public class UserRequirement4_2 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category input
 			robot.delay(1000);
-			actions.sendKeys(testCategoryLabel).build().perform();
+			actions.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();
 			robot.keyPress(KeyEvent.VK_TAB);
 			robot.delay(1000);
 			//robot.keyPress(KeyEvent.VK_SPACE);// Previous test failures with the space event being ignored
@@ -101,7 +99,7 @@ public class UserRequirement4_2 {
 			System.out.println("Found "+aCategoryElements.size()+" elements named aCategory");	
 			for(WebElement aCategoryElement: aCategoryElements ) {
 				String text = aCategoryElement.getText();
-				if(text.contains(testCategoryLabel)) 
+				if(text.contains(StringExternalization.LABEL_TEST_CATEGORY)) 
 				{
 					System.out.println("The text *"+text+"* was found. The category was successfully "
 							+ "created using the keyboard only. ");
@@ -164,9 +162,9 @@ public class UserRequirement4_2 {
 				for(WebElement aCategoryElement : aCategoryElements) {
 					String text = aCategoryElement.getText();
 					System.out.println(text);
-					if (text.contains(testCategoryLabel)) {
+					if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {
 						//if the created category can be found the test is failed    					
-						fail("Found "+testCategoryLabel+" when the test category should have been deleted."
+						fail("Found "+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
 								+ "The test is failed.");
 					}
 					   				
@@ -216,7 +214,7 @@ public class UserRequirement4_2 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
-			actions.sendKeys(testItemLabel).build().perform();
+			actions.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(2000);
@@ -240,7 +238,7 @@ public class UserRequirement4_2 {
 			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.contains(testItemLabel)) {
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {
 					System.out.println("Found "+text+" as text.");
 					isItemCreated = true;
 					}
@@ -288,7 +286,7 @@ public class UserRequirement4_2 {
 			for(WebElement anItemElement: anIconToDeleteAnItemElements) {
 				String text = anItemElement.getText();
 				System.out.println("Found *"+text+"* as text.");
-				if (text.equals(testItemLabel)) 
+				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) 
 				{
 					fail("Error: the test item label has been found. The test is failed.");
 				}
@@ -337,7 +335,7 @@ public class UserRequirement4_2 {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);
-			actions.sendKeys(testItemLabel).build().perform();
+			actions.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit item button
 			robot.delay(1000);
@@ -361,7 +359,7 @@ public class UserRequirement4_2 {
 			if(anItemElements.size()==0) {fail("Failure of element creation test during the hiding/diplay test.	");}
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.contains(testItemLabel)) {
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {
 					System.out.println("Success. Found "+text+" as text.");
 					isItemCreated = true;
 					}
@@ -399,7 +397,7 @@ public class UserRequirement4_2 {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
-		if(result.contains(testItemLabel)) 
+		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
 			System.out.println("Success. The test label has been found on the screen.");
 		}
@@ -454,7 +452,7 @@ public class UserRequirement4_2 {
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToHide_copy);
 			result = ocr.doOCR(screenshot_AfterClickToHide_copy);
 			
-			if(!result.contains(testItemLabel)) 
+			if(!result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{ 
 				
 				System.out.println("Success: the label couldn't be found in the screenshot: "+result);
@@ -501,11 +499,11 @@ public class UserRequirement4_2 {
 			ocr.setLanguage("eng");
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
-			if(result.contains(testItemLabel)) 
+			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{
 				System.out.println("Sucess: the label was found after clicking to display the item: "+result);
 			}
-			else {fail("The label: "+testItemLabel+" could not be in the ocr result: "+result
+			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
 		} catch (IOException e) {
 			System.err.println("An IOException occured while copying the screenshot taken after the click"

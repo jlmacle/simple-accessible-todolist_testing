@@ -26,8 +26,7 @@ import jl.project.StringExternalization;
 public class UserRequirement2 {
 	
 	FirefoxDriver driver;
-	String testItemLabel="Protractor test item";	
-	
+		
 	@BeforeClass
 	public void setup() {		
 		System.setProperty(StringExternalization.WEBDRIVER_FIREFOX_KEY, 
@@ -44,12 +43,13 @@ public class UserRequirement2 {
 	
 	@Test
 	public void createItem() throws Exception{		
-			
+		
+		System.out.println(StringExternalization.LABEL_TEST_ITEM);	
 		System.out.println("1. Creation of the item");
 		boolean isItemCreated=false;
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
-		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
+		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.FRONT_END_URL);
@@ -61,7 +61,7 @@ public class UserRequirement2 {
 			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.contains(testItemLabel))
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM))
 				{
 					System.out.println("Found "+text+" as text.");
 					isItemCreated = true;
@@ -81,7 +81,7 @@ public class UserRequirement2 {
 	
 	@Test
 	public void deleteItem() throws Exception {
-		System.out.println("2. Deletion of the item");
+		System.out.println(StringExternalization.TEST_ITEM_DELETION);
 		//Deleting the item
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		
@@ -112,7 +112,7 @@ public class UserRequirement2 {
 			for(WebElement anItemElement: anIconToDeleteAnItemElements) {
 				String text = anItemElement.getText();
 				System.out.println("Found *"+text+"* as text.");
-				if (text.equals(testItemLabel)) {
+				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) {
 					fail("Error: the test label has been found.");}
 			}
 			

@@ -27,8 +27,7 @@ import jl.project.StringExternalization;
 public class UserRequirement1 {
 	
 	EdgeDriver driver;
-	String testCategoryLabel= "Protractor test category"; 
-	
+		
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  
 	 * https://testng.org/doc/documentation-main.html
@@ -57,11 +56,11 @@ public class UserRequirement1 {
 	 */
 	@Test	
     public void createCategory() {
-		System.out.println("Entering the test of creation of category");
+		System.out.println(StringExternalization.TEST_CATEGORY_CREATION);
     	boolean isCategoryFound = false;
     	
     	
-    	driver.findElement(By.id("new-category-input-field")).sendKeys(testCategoryLabel);
+    	driver.findElement(By.id("new-category-input-field")).sendKeys(StringExternalization.LABEL_TEST_CATEGORY);
     	driver.findElement(By.id("add-category-button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	System.out.println("At this point, the test category should have been created.");
@@ -71,11 +70,11 @@ public class UserRequirement1 {
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	    	
     	try {
     		System.out.println("Found "+aCategoryElements.size()+" aCategory elements");
-    		if(aCategoryElements.size() == 0 ){fail("No categories, the app wasn't started.");}//for the case where the app wasn't started 
+    		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
     		for (WebElement aCategoryElement : aCategoryElements) {
 	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
 				System.out.println("Found text: *"+text+"*");				
-				if (text.contains(testCategoryLabel)) {isCategoryFound=true;break;}
+				if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {isCategoryFound=true;break;}
 				
 			}
     	}
@@ -94,7 +93,7 @@ public class UserRequirement1 {
 	 */
 	@Test	
 	public void deleteCategory() {
-		System.out.println("Entering the test of deletion of category");
+		System.out.println(StringExternalization.TEST_CATEGORY_DELETION);
 		int testCategoryPositionIntheList = 0;
 		int currentCategoryPosition = 0;
 		boolean isCategoryFound = false;
@@ -102,13 +101,13 @@ public class UserRequirement1 {
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	
 		System.out.println("Found "+aCategoryElements.size()+" elements named aCategory");
-		if(aCategoryElements.size() == 0 ){fail("No categories, the app wasn't started.");}//for the case where the app wasn't started 
+		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
     	try {    		
     		for (WebElement aCategoryElement : aCategoryElements) {
     			currentCategoryPosition++;
 	    		String text = aCategoryElement.getText().trim();
 	    		System.out.println("Found text: *"+text+"*");
-				if (text.equals(testCategoryLabel)) {
+				if (text.equals(StringExternalization.LABEL_TEST_CATEGORY)) {
 					testCategoryPositionIntheList = currentCategoryPosition;
 					System.out.println("Found the text:"+text+" in position: "+testCategoryPositionIntheList);					
 					isCategoryFound=true;
@@ -158,9 +157,9 @@ public class UserRequirement1 {
     			for(WebElement aCategoryElement : aCategoryElements) {
     				String text = aCategoryElement.getText();
     				System.out.println(text);
-    				if (text.equals(testCategoryLabel)) {
+    				if (text.equals(StringExternalization.LABEL_TEST_CATEGORY)) {
     					//if the created category can be found the test is failed    					
-    					fail("Found "+testCategoryLabel+" when the test category should have been deleted."
+    					fail("Found "+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
     							+ "The test is failed.");
     				}
     				   				

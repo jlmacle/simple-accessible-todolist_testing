@@ -26,9 +26,7 @@ import net.sourceforge.tess4j.TesseractException;
  * Class testing the display/hiding of items
  */
 public class UserRequirement3 {
-	ChromeDriver driver; 
-	String testItemLabel ="Protractor test";//Note the ocr might sometimes have an issue to detect the text.
-	
+	ChromeDriver driver; 	
 	
 	@BeforeClass
 	public void setup(){		
@@ -42,14 +40,16 @@ public class UserRequirement3 {
 	@Test
 	@Ignore
 	public void hideAndDisplayItem() {
+		System.out.println(StringExternalization.TEST_ITEM_HIDING_DISPLAY);
 		boolean isTestItemLabelFound = false;
 		driver.get(StringExternalization.FRONT_END_URL);
+		
 		
 		//1. Creation of an item. By default the item is displayed
 		System.out.println("1. Creation of the item");
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
-		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
+		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.FRONT_END_URL);
@@ -60,7 +60,7 @@ public class UserRequirement3 {
 		try {
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.contains(testItemLabel)) {System.out.println("Found "+text+" as text."); isTestItemLabelFound=true;}
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {System.out.println("Found "+text+" as text."); isTestItemLabelFound=true;}
 				if(isTestItemLabelFound == false) {fail("The test label was not found. The test of item creation failed.");}
 			}
 			
@@ -97,7 +97,7 @@ public class UserRequirement3 {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
-		if(result.contains(testItemLabel)) 
+		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
 			 
 			System.out.println("Success. The test label has been found on the screen.");
@@ -114,7 +114,7 @@ public class UserRequirement3 {
 		try {
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToHide_copy);
 			result = ocr.doOCR(screenshot_AfterClickToHide_copy);
-			if(!result.contains(testItemLabel)) 
+			if(!result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{ 
 				
 				System.out.println("Success: the label couldn't be found in the screenshot: "+result);
@@ -149,11 +149,11 @@ public class UserRequirement3 {
 			ocr.setLanguage("eng");
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
-			if(result.contains(testItemLabel)) 
+			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{
 				System.out.println("Sucess: the label was found after clicking to display the item: "+result);
 			}
-			else {fail("The label: "+testItemLabel+" could not be in the ocr result: "+result
+			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
 		} catch (IOException e) {
 			System.err.println("An IOException occured while copying the screenshot taken after the click"
