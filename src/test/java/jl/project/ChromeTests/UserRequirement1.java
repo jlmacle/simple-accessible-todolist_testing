@@ -37,8 +37,8 @@ public class UserRequirement1 {
 	@BeforeClass	
 	public void setup() {		
 		//https://chromedriver.chromium.org/downloads
-		System.setProperty(StringExternalization.webdriver_chrome_key, 
-				StringExternalization.webdrivers_folder+StringExternalization.webdriver_chrome_value);
+		System.setProperty(StringExternalization.WEBDRIVER_CHROME_KEY, 
+				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_CHROME_VALUE);
 		driver = new ChromeDriver();		
 		driver.manage().window().maximize();
 	}
@@ -49,7 +49,7 @@ public class UserRequirement1 {
 	 */
 	@BeforeMethod	
 	public void navigate() {
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 	}
 	
@@ -66,7 +66,7 @@ public class UserRequirement1 {
     	driver.findElement(By.id("add-category-button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	System.out.println("At this point, the test category should have been created.");
-    	driver.get(StringExternalization.front_end_url);
+    	driver.get(StringExternalization.FRONT_END_URL);
     	
     		    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	    	
@@ -151,7 +151,7 @@ public class UserRequirement1 {
     		}    		
     		
     		//3. confirmation of deletion
-    		driver.get(StringExternalization.front_end_url);
+    		driver.get(StringExternalization.FRONT_END_URL);
     		
     		aCategoryElements = driver.findElements(By.name("aCategory"));
     		System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");

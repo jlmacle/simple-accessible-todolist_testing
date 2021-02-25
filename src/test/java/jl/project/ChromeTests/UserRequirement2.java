@@ -30,8 +30,8 @@ public class UserRequirement2 {
 	
 	@BeforeClass
 	public void setup() {		
-		System.setProperty(StringExternalization.webdriver_chrome_key, 
-				StringExternalization.webdrivers_folder+StringExternalization.webdriver_chrome_value);
+		System.setProperty(StringExternalization.WEBDRIVER_CHROME_KEY, 
+				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_CHROME_VALUE);
 
 		driver = new ChromeDriver();	
 		driver.manage().window().maximize();
@@ -39,7 +39,7 @@ public class UserRequirement2 {
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 	}
 	
@@ -53,7 +53,7 @@ public class UserRequirement2 {
 		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
 		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
-		driver.get(StringExternalization.front_end_url);
+		driver.get(StringExternalization.FRONT_END_URL);
 		
 				
 		//Checking that the new item creation was successful		
@@ -94,7 +94,7 @@ public class UserRequirement2 {
 				anIconToDeleteAnItemElement.click();
 				System.out.println("Trash can icon clicked.");
 			}
-			driver.get(StringExternalization.front_end_url);
+			driver.get(StringExternalization.FRONT_END_URL);
 			
 			
 		}
