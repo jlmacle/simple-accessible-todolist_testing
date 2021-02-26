@@ -11,6 +11,8 @@ public class StringExternalization {
 			"There should be one item. Number of item found: ";
 	public static final String EXCEPTION_STALE_ELEMENT_REFERENCE = "Caught a StaleElementReferenceException ";
 	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException ";
+	public static final String EXCEPTION_IO = "Caught an IOException ";
+	public static final String EXCEPTION_AWT = "Caught an AWTException while using the instance of the Robot class";
 	
 	public static final String TEST_START = "Entering test for: ";
 	public static final String TEST_CATEGORY_CREATION = "category creation";
@@ -25,6 +27,10 @@ public class StringExternalization {
 	public static final String TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD = "item hiding/display with keyboard";
 	public static final String TEST_KEYBOARD_ENTER_KEY = " with ENTER key";
 	public static final String TEST_KEYBOARD_SPACE_KEY = " with SPACE key";
+	
+	public static final String TESSERACT_SCREENSHOT_PATH_NEW_ITEM = "./screenshots/newItemScreenshot.png";
+	public static final String TESSERACT_TESSDATA = "./tessdata";
+	public static final String TESSERACT_LANGUAGE = "eng";
 	
 		
 	public static final String WEBDRIVERS_FOLDER = "../webdrivers/";	

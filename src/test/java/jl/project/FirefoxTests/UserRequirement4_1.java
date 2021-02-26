@@ -88,7 +88,7 @@ public class UserRequirement4_1 {
 			robot.delay(3000);		
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException when using the robot class");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -150,7 +150,7 @@ public class UserRequirement4_1 {
 			robot.delay(2000);
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -231,7 +231,7 @@ public class UserRequirement4_1 {
 				
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -277,7 +277,7 @@ public class UserRequirement4_1 {
 			//actions.sendKeys("\n").build().perform(); //Click to delete the test category
 			robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -353,7 +353,7 @@ public class UserRequirement4_1 {
 							
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -384,23 +384,23 @@ public class UserRequirement4_1 {
 		
 		logger.info("3. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
-		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
+		File screenshotFile_copy = new File(StringExternalization.TESSERACT_SCREENSHOT_PATH_NEW_ITEM);
 		try {
 			FileUtils.copyFile(screenshotFile, screenshotFile_copy);
 		} catch (IOException e) {
-			System.err.println("IOException while copy and saving the screenshot");
+			System.err.println(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
 			e.printStackTrace();
 		}
 		// code to extract the text from the picture
 		Tesseract ocr = new Tesseract();
 		String result = null;
 		//https://github.com/tesseract-ocr/tessdata
-		ocr.setDatapath("./tessdata");
+		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 		ocr.setLanguage("eng");
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
-			System.err.println("Exception while doing the OCR.");
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while doing the OCR.");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -448,7 +448,7 @@ public class UserRequirement4_1 {
 			//actions.sendKeys("\n").build().perform();//Click to hide the item
 			robot.delay(5000);
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -475,7 +475,7 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		 catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click."
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while reading the screenshot taken after the click."
 					+ "(Hiding of the item)");			
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -492,7 +492,7 @@ public class UserRequirement4_1 {
 			robot.keyPress(KeyEvent.VK_ENTER);//Click to hide the item
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -502,7 +502,7 @@ public class UserRequirement4_1 {
 		
 		try {			
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
-			ocr.setDatapath("./tessdata");
+			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 			ocr.setLanguage("eng");
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
@@ -513,12 +513,12 @@ public class UserRequirement4_1 {
 			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
 		} catch (IOException e) {
-			System.err.println("An IOException occured while copying the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_IO+"while copying the screenshot taken after the click"
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while reading the screenshot taken after the click"
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
