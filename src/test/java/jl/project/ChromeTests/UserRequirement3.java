@@ -41,7 +41,6 @@ public class UserRequirement3 {
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
 	@Test
-	@Ignore
 	public void hideAndDisplayItem() {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
 		boolean isTestItemLabelFound = false;
@@ -93,6 +92,7 @@ public class UserRequirement3 {
 		//https://github.com/tesseract-ocr/tessdata
 		ocr.setDatapath("./tessdata");
 		ocr.setLanguage("eng");
+		ocr.setTessVariable("user_defined_dpi","300");
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
@@ -150,6 +150,7 @@ public class UserRequirement3 {
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
 			ocr.setDatapath("./tessdata");
 			ocr.setLanguage("eng");
+			ocr.setTessVariable("user_defined_dpi","300");
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 

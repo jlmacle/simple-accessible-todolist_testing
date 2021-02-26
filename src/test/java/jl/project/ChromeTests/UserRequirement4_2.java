@@ -403,6 +403,7 @@ public class UserRequirement4_2 {
 		//https://github.com/tesseract-ocr/tessdata
 		ocr.setDatapath("./tessdata");
 		ocr.setLanguage("eng");
+		ocr.setTessVariable("user_defined_dpi","300");
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
@@ -510,6 +511,7 @@ public class UserRequirement4_2 {
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
 			ocr.setDatapath("./tessdata");
 			ocr.setLanguage("eng");
+			ocr.setTessVariable("user_defined_dpi","300");
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
