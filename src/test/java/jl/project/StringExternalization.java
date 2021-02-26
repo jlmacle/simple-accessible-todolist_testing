@@ -10,7 +10,7 @@ public class StringExternalization {
 	public static final String EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE = 
 			"There should be one item. Number of item found: ";
 	public static final String EXCEPTION_STALE_ELEMENT_REFERENCE = "Caught a StaleElementReferenceException ";
-	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException ";
+	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException while doing the OCR";
 	public static final String EXCEPTION_IO = "Caught an IOException ";
 	public static final String EXCEPTION_AWT = "Caught an AWTException while using the instance of the Robot class";
 	
@@ -31,6 +31,10 @@ public class StringExternalization {
 	public static final String TESSERACT_SCREENSHOT_PATH_NEW_ITEM = "./screenshots/newItemScreenshot.png";
 	public static final String TESSERACT_TESSDATA = "./tessdata";
 	public static final String TESSERACT_LANGUAGE = "eng";
+	public static final String TESSERACT_DPI_KEY = "user_defined_dpi";
+	public static final String TESSERACT_DPI_VALUE = "300";
+	public static final String TESSERACT_FOUND_TEST_ITEM = "Success. The test label has been found on the screen.";
+	public static final String TESSERACT_NOT_FOUND_TEST_ITEM = "The item label seems to be absent from the screenshot: ";
 	
 		
 	public static final String WEBDRIVERS_FOLDER = "../webdrivers/";	

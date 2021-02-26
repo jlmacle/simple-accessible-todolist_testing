@@ -94,20 +94,20 @@ public class UserRequirement3 {
 		String result = null;
 		//https://github.com/tesseract-ocr/tessdata
 		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
-		ocr.setLanguage("eng");
+		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
-			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while doing the OCR.");
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
 			 
-			logger.debug("Success. The test label has been found on the screen.");
+			logger.debug(StringExternalization.TESSERACT_FOUND_TEST_ITEM);
 		}
-		else{fail("The item label seems to be absent from the screenshot: "+result);};
+		else{fail(StringExternalization.TESSERACT_NOT_FOUND_TEST_ITEM+result);};
 	
 		//3. Hiding of the item		
 		logger.info("3. Verification that the item can be hidden.");
@@ -135,7 +135,7 @@ public class UserRequirement3 {
 			e.printStackTrace();
 		}
 		 catch (TesseractException e) {
-			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while reading the screenshot taken after the click."
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Hiding of the item)");			
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -151,7 +151,7 @@ public class UserRequirement3 {
 		try {			
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
 			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
-			ocr.setLanguage("eng");
+			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
@@ -166,7 +166,7 @@ public class UserRequirement3 {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} catch (TesseractException e) {
-			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while reading the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
