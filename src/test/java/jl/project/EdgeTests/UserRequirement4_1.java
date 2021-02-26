@@ -61,7 +61,7 @@ public class UserRequirement4_1 {
 		logger.debug(StringExternalization.TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD);	
 		boolean isCategoryCreated = false;		
 		
-		System.out.println("1. Creation of a category with the keyboard only.");		
+		logger.debug("1. Creation of a category with the keyboard only.");		
 		//Tabbing until finding the input field to add the new category label
 		Robot robot;
 		Actions  action = new Actions(driver);
@@ -94,16 +94,16 @@ public class UserRequirement4_1 {
 		{
 		
 			//Verifying that the category has been created		
-			System.out.println("2. Confirming creation of the category");
+			logger.debug("2. Confirming creation of the category");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));
-			System.out.println("Found "+aCategoryElements.size()+" elements named aCategory");	
+			logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
 			for(WebElement aCategoryElement: aCategoryElements ) {
 				String text = aCategoryElement.getText();
 				if(text.contains(StringExternalization.LABEL_TEST_CATEGORY)) 
 				{
-					System.out.println("The text *"+text+"* was found. The category was successfully "
+					logger.debug("The text *"+text+"* was found. The category was successfully "
 							+ "created using the keyboard only. ");
 					isCategoryCreated=true;
 				}
@@ -114,7 +114,7 @@ public class UserRequirement4_1 {
 		
 		
 		
-		System.out.println("3. Deletion of a category with the keyboard only.");
+		logger.debug("3. Deletion of a category with the keyboard only.");
 		//Assuming the category location
 		boolean isCategoryFound;
 		try {
@@ -155,15 +155,15 @@ public class UserRequirement4_1 {
 		finally
 		{
 			//Verifying that the category has been deleted
-			System.out.println("4. Confirming that the category has been deleted.");
+			logger.debug("4. Confirming that the category has been deleted.");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement>aCategoryElements = driver.findElements(By.name("aCategory"));
-			System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
+			logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
 			try {
 				for(WebElement aCategoryElement : aCategoryElements) {
 					String text = aCategoryElement.getText();
-					System.out.println(text);
+					logger.debug(text);
 					if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {
 						//if the created category can be found the test is failed    					
 						fail("Found "+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
@@ -191,7 +191,7 @@ public class UserRequirement4_1 {
 	@Ignore
 	@Test(groups = {"creation_deletion_edge_1"})	
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
-		System.out.println("1. Creation of an item with the keyboard only.");
+		logger.debug("1. Creation of an item with the keyboard only.");
 		Robot robot;
 		Actions actions;
 		try {
@@ -232,16 +232,16 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		
-		System.out.println("2. Confirmation of creation.");
+		logger.debug("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		boolean isItemCreated=false;
 		try {
-			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
+			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
 				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {
-					System.out.println("Found "+text+" as text.");
+					logger.debug("Found "+text+" as text.");
 					isItemCreated = true;
 					}
 			}
@@ -255,7 +255,7 @@ public class UserRequirement4_1 {
 		}		
 		assertThat(isItemCreated).isEqualTo(true);
 		
-		System.out.println("3. Deletion of the test item using the keyboard only.");
+		logger.debug("3. Deletion of the test item using the keyboard only.");
 		
 		try {
 			robot = new Robot();	
@@ -278,16 +278,16 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		
-		System.out.println("4. Confirmation of deletion");
+		logger.debug("4. Confirmation of deletion");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
 		try {
 			
-			System.out.println("Found "+anIconToDeleteAnItemElements.size()+" element named 'anItem'");
+			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anIconToDeleteAnItemElements) {
 				String text = anItemElement.getText();
-				System.out.println("Found *"+text+"* as text.");
+				logger.debug("Found *"+text+"* as text.");
 				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) 
 				{
 					fail("Error: the test item label has been found. The test is failed.");
@@ -310,7 +310,7 @@ public class UserRequirement4_1 {
 	@Test(dependsOnGroups = {"creation_deletion_edge_1"})	
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
-		System.out.println("1. Creation of an item with the keyboard only.");
+		logger.debug("1. Creation of an item with the keyboard only.");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		Robot robot;
@@ -352,16 +352,16 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		
-		System.out.println("2. Confirmation of creation.");
+		logger.debug("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		boolean isItemCreated=false;
 		try {
-			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
+			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
 				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {
-					System.out.println("Success. Found "+text+" as text.");
+					logger.debug("Success. Found "+text+" as text.");
 					isItemCreated = true;
 					}
 			}
@@ -376,7 +376,7 @@ public class UserRequirement4_1 {
 		}		
 
 		
-		System.out.println("3. Verification that the item is displayed");
+		logger.debug("3. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
 		try {
@@ -400,12 +400,12 @@ public class UserRequirement4_1 {
 		}
 		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
-			System.out.println("Success. The test label has been found on the screen.");
+			logger.debug("Success. The test label has been found on the screen.");
 		}
 		else{fail("The item label seems to be absent from the screenshot: "+result);};
 		
 		//clicking to hide the item		
-		System.out.println("4. Verification that the item can be hidden.");
+		logger.debug("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.get(StringExternalization.FRONT_END_URL);
 		
@@ -456,7 +456,7 @@ public class UserRequirement4_1 {
 			if(!result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{ 
 				
-				System.out.println("Success: the label couldn't be found in the screenshot: "+result);
+				logger.debug("Success: the label couldn't be found in the screenshot: "+result);
 			}
 			else 
 			{fail("The label was found on the screenshot when the item should have been hidden: "+result);
@@ -476,7 +476,7 @@ public class UserRequirement4_1 {
 		}		
 		
 		//Verification that the item can be displayed by clicking a second time.
-		System.out.println("5. Verification that the item can be displayed");
+		logger.debug("5. Verification that the item can be displayed");
 		try {
 			
 			robot = new Robot();
@@ -502,7 +502,7 @@ public class UserRequirement4_1 {
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{
-				System.out.println("Sucess: the label was found after clicking to display the item: "+result);
+				logger.debug("Sucess: the label was found after clicking to display the item: "+result);
 			}
 			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
@@ -518,18 +518,18 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		//Cleaning up for a potential next test. Using a click for the task
-		System.out.println("6. Suppression of the item.");
+		logger.debug("6. Suppression of the item.");
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 			anIconToDeleteAnItemElement.click();
 		}
 		
-		System.out.println("7. Testing the deletion of the test item");
+		logger.debug("7. Testing the deletion of the test item");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
-		else {System.out.println("Page cleaned from test item.");}
+		else {logger.debug("Page cleaned from test item.");}
 			
 	}
 	

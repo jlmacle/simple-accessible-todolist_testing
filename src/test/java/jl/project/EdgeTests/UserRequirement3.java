@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.pdfbox.jbig2.util.log.Logger;
+import org.apache.pdfbox.jbig2.util.log.LoggerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -26,6 +28,7 @@ import net.sourceforge.tess4j.TesseractException;
  * Class testing the display/hiding of items
  */
 public class UserRequirement3 {
+	Logger logger = LoggerFactory.getLogger(jl.project.EdgeTests.UserRequirement3.class);
 	EdgeDriver driver; 
 		
 	@BeforeClass
@@ -40,12 +43,12 @@ public class UserRequirement3 {
 	@Ignore
 	@Test
 	public void hideAndDisplayItem() {
-		System.out.println(StringExternalization.TEST_ITEM_HIDING_DISPLAY);
+		logger.debug(StringExternalization.TEST_ITEM_HIDING_DISPLAY);
 		boolean isTestItemLabelFound = false;
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		//1. Creation of an item. By default the item is displayed
-		System.out.println("1. Creation of the item");
+		logger.debug("1. Creation of the item");
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
@@ -59,7 +62,7 @@ public class UserRequirement3 {
 		try {
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {System.out.println("Found "+text+" as text."); isTestItemLabelFound=true;}
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {logger.debug("Found "+text+" as text."); isTestItemLabelFound=true;}
 				if(isTestItemLabelFound == false) {fail("The test label was not found. The test of item creation failed.");}
 			}
 			
@@ -74,7 +77,7 @@ public class UserRequirement3 {
 		
 		//2. Verification that the item is displayed
 		//a. code to get a screenshot from the browser
-		System.out.println("2. Verification that the item is displayed");
+		logger.debug("2. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
 		try {
@@ -99,12 +102,12 @@ public class UserRequirement3 {
 		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
 			 
-			System.out.println("Success. The test label has been found on the screen.");
+			logger.debug("Success. The test label has been found on the screen.");
 		}
 		else{fail("The item label seems to be absent from the screenshot: "+result);};
 	
 		//3. Hiding of the item		
-		System.out.println("3. Verification that the item can be hidden.");
+		logger.debug("3. Verification that the item can be hidden.");
 		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
 		//4. Verification that the item is hidden
@@ -116,7 +119,7 @@ public class UserRequirement3 {
 			if(!result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{ 
 				
-				System.out.println("Success: the label couldn't be found in the screenshot: "+result);
+				logger.debug("Success: the label couldn't be found in the screenshot: "+result);
 			}
 			else 
 			{fail("The label was found on the screenshot when the item should have been hidden: "+result);
@@ -136,7 +139,7 @@ public class UserRequirement3 {
 		}		
 		
 		//4. Verification that the item can be displayed 
-		System.out.println("4. Verification that the item can be displayed");
+		logger.debug("4. Verification that the item can be displayed");
 		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
 		
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -150,7 +153,7 @@ public class UserRequirement3 {
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{
-				System.out.println("Sucess: the label was found after clicking to display the item: "+result);
+				logger.debug("Sucess: the label was found after clicking to display the item: "+result);
 			}
 			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
@@ -167,13 +170,13 @@ public class UserRequirement3 {
 		}
 		
 		//5. Suppressing the item to go on with the test suite
-		System.out.println("5. Deletion of the test item");
+		logger.debug("5. Deletion of the test item");
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 				anIconToDeleteAnItemElement.click();
 			}
 			
-		System.out.println("6. Testing the deletion of the test item");
+		logger.debug("6. Testing the deletion of the test item");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));

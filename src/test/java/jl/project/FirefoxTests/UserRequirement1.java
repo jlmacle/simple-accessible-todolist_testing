@@ -7,6 +7,8 @@ import static org.testng.Assert.fail;
 
 import java.util.List;
 
+import org.apache.pdfbox.jbig2.util.log.Logger;
+import org.apache.pdfbox.jbig2.util.log.LoggerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +28,7 @@ import jl.project.StringExternalization;
  *	Class testing the user requirement 1 of creating and deleting a category
  */
 public class UserRequirement1 {
-	
+	Logger logger = LoggerFactory.getLogger(jl.project.FirefoxTests.UserRequirement1.class);
 	FirefoxDriver driver;
 		
 	/**
@@ -34,7 +36,8 @@ public class UserRequirement1 {
 	 * https://testng.org/doc/documentation-main.html
 	 */
 	@BeforeClass	
-	public void setup() {		
+	public void setup() {	
+		logger.info(StringExternalization.TEST_START+StringExternalization.WEBDRIVER_FIREFOX_VALUE);
 		System.setProperty(StringExternalization.WEBDRIVER_FIREFOX_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_FIREFOX_VALUE);
 		driver = new FirefoxDriver();		
@@ -56,24 +59,24 @@ public class UserRequirement1 {
 	 */
 	@Test	
     public void createCategory() {
-		System.out.println(StringExternalization.TEST_CATEGORY_CREATION);
+		logger.debug(StringExternalization.TEST_CATEGORY_CREATION);
     	boolean isCategoryFound = false;
     	
     	
     	driver.findElement(By.id("new-category-input-field")).sendKeys(StringExternalization.LABEL_TEST_CATEGORY);
     	driver.findElement(By.id("add-category-button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
-    	System.out.println("At this point, the test category should have been created.");
+    	logger.debug("At this point, the test category should have been created.");
     	driver.get(StringExternalization.FRONT_END_URL);
     	
     		    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	    	
     	try {
-    		System.out.println("Found "+aCategoryElements.size()+" aCategory elements");
+    		logger.debug("Found "+aCategoryElements.size()+" aCategory elements");
     		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
     		for (WebElement aCategoryElement : aCategoryElements) {
 	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
-				System.out.println("Found text: *"+text+"*");				
+				logger.debug("Found text: *"+text+"*");				
 				if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {isCategoryFound=true;break;}
 				
 			}
@@ -93,23 +96,23 @@ public class UserRequirement1 {
 	 */
 	@Test	
 	public void deleteCategory() {
-		System.out.println(StringExternalization.TEST_CATEGORY_DELETION);
+		logger.debug(StringExternalization.TEST_CATEGORY_DELETION);
 		int testCategoryPositionIntheList = 0;
 		int currentCategoryPosition = 0;
 		boolean isCategoryFound = false;
 		
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	
-		System.out.println("Found "+aCategoryElements.size()+" elements named aCategory");
+		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");
 		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
     	try {    		
     		for (WebElement aCategoryElement : aCategoryElements) {
     			currentCategoryPosition++;
 	    		String text = aCategoryElement.getText().trim();
-	    		System.out.println("Found text: *"+text+"*");
+	    		logger.debug("Found text: *"+text+"*");
 				if (text.equals(StringExternalization.LABEL_TEST_CATEGORY)) {
 					testCategoryPositionIntheList = currentCategoryPosition;
-					System.out.println("Found the text:"+text+" in position: "+testCategoryPositionIntheList);					
+					logger.debug("Found the text:"+text+" in position: "+testCategoryPositionIntheList);					
 					isCategoryFound=true;
 					break;
 				}
@@ -123,21 +126,21 @@ public class UserRequirement1 {
     	}	 
 		    	
     	if(isCategoryFound == true) {
-    		System.out.println("The new category has been successfuly created.");
+    		logger.debug("The new category has been successfuly created.");
     		//2. Deletion of the category created
     			// finding the elements with the name "anIconToDeleteACategory"
     		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name("anIconToDeleteACategory"));
-    		System.out.println("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
+    		logger.debug("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
     		try {
     			currentCategoryPosition=0;    			
     			for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) {
     				currentCategoryPosition++;    				    				
     				if (currentCategoryPosition == testCategoryPositionIntheList) {
-    					System.out.println("Clicking the trash can icon in position: "+currentCategoryPosition);
+    					logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
     					trashCanIconElementInFrontOfCategory.click();
     					break;
     				}
-    				else {System.out.println("Skipping this trash can icon.");}
+    				else {logger.debug("Skipping this trash can icon.");}
     			}
     			
     		}
@@ -152,11 +155,11 @@ public class UserRequirement1 {
     		driver.get(StringExternalization.FRONT_END_URL);
     		
     		aCategoryElements = driver.findElements(By.name("aCategory"));
-    		System.out.println("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
+    		logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
     		try {
     			for(WebElement aCategoryElement : aCategoryElements) {
     				String text = aCategoryElement.getText();
-    				System.out.println(text);
+    				logger.debug(text);
     				if (text.equals(StringExternalization.LABEL_TEST_CATEGORY)) {
     					//if the created category can be found the test is failed    					
     					fail("Found "+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
