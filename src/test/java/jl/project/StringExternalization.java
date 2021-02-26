@@ -9,6 +9,8 @@ public class StringExternalization {
 	public static final String EXCEPTION_APP_NOT_STARTED = "The app wasn't started.";
 	public static final String EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE = 
 			"There should be one item. Number of item found: ";
+	public static final String EXCEPTION_STALE_ELEMENT_REFERENCE = "Caught a StaleElementReferenceException ";
+	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException ";
 	
 	public static final String TEST_START = "Entering test for: ";
 	public static final String TEST_CATEGORY_CREATION = "category creation";

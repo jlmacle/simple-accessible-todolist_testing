@@ -181,7 +181,7 @@ public class UserRequirement4_2 {
 				assertThat(isCategoryFound).isEqualTo(false);
 			}
 			catch(StaleElementReferenceException e) {
-				System.err.println("Caught a StaleElementReferenceException"
+				System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 						+ "while going through the elements related to a trash can icon before a category.");
 				System.err.println(e.getMessage());
 				e.printStackTrace();    			
@@ -255,7 +255,7 @@ public class UserRequirement4_2 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -305,7 +305,7 @@ public class UserRequirement4_2 {
 		}
 		catch(StaleElementReferenceException e) 
 		{
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' ");
 			e.getMessage();
 			e.printStackTrace();
@@ -380,7 +380,7 @@ public class UserRequirement4_2 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
