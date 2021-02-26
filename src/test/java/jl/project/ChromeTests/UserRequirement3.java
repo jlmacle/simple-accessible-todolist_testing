@@ -48,7 +48,7 @@ public class UserRequirement3 {
 		
 		
 		//1. Creation of an item. By default the item is displayed
-		logger.info("1. Creation of the item");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);

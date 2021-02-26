@@ -51,7 +51,7 @@ public class UserRequirement3 {
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		//1. Creation of an item. By default the item is displayed
-		logger.info("1. Creation of the item");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
@@ -95,6 +95,7 @@ public class UserRequirement3 {
 		//https://github.com/tesseract-ocr/tessdata
 		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+		ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
@@ -152,6 +153,7 @@ public class UserRequirement3 {
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
 			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+			ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 

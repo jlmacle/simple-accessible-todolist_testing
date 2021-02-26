@@ -48,7 +48,7 @@ public class UserRequirement2 {
 	public void createItem() throws Exception{	
 		
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_CREATION);	
-		logger.info("1. Item creation");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		boolean isItemCreated=false;
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
@@ -86,7 +86,7 @@ public class UserRequirement2 {
 	@Test
 	public void deleteItem() throws Exception {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
-		logger.info("1. Item deletion");
+		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
 		//Deleting the item
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		
