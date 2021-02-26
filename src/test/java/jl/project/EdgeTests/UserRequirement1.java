@@ -6,8 +6,8 @@ import static org.testng.Assert.fail;
 
 import java.util.List;
 
-import org.apache.pdfbox.jbig2.util.log.Logger;
-import org.apache.pdfbox.jbig2.util.log.LoggerFactory;
+import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +27,7 @@ import jl.project.StringExternalization;
  *	Class testing the user requirement 1 of creating and deleting a category
  */
 public class UserRequirement1 {
-	Logger logger = LoggerFactory.getLogger(jl.project.EdgeTests.UserRequirement1.class);
+	Logger logger = Logger.getLogger(jl.project.EdgeTests.UserRequirement1.class);
 	EdgeDriver driver;
 		
 	/**
@@ -59,17 +59,17 @@ public class UserRequirement1 {
 	 */
 	@Test	
     public void createCategory() {
-		logger.debug(StringExternalization.TEST_CATEGORY_CREATION);
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_CATEGORY_CREATION);
     	boolean isCategoryFound = false;
     	
-    	
+    	logger.info("1. Category creation");
     	driver.findElement(By.id("new-category-input-field")).sendKeys(StringExternalization.LABEL_TEST_CATEGORY);
     	driver.findElement(By.id("add-category-button")).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	logger.debug("At this point, the test category should have been created.");
     	driver.get(StringExternalization.FRONT_END_URL);
     	
-    		    	
+    	logger.info("2. Confirmation of category creation ");	    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	    	
     	try {
     		logger.debug("Found "+aCategoryElements.size()+" aCategory elements");
@@ -96,13 +96,14 @@ public class UserRequirement1 {
 	 */
 	@Test	
 	public void deleteCategory() {
-		logger.debug(StringExternalization.TEST_CATEGORY_DELETION);
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_CATEGORY_DELETION);
 		int testCategoryPositionIntheList = 0;
 		int currentCategoryPosition = 0;
 		boolean isCategoryFound = false;
 		
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
-    	List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	
+		logger.info("1. Category existence confirmation");
+		List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));	
 		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");
 		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
     	try {    		
@@ -129,6 +130,7 @@ public class UserRequirement1 {
     		logger.debug("The new category has been successfuly created.");
     		//2. Deletion of the category created
     			// finding the elements with the name "anIconToDeleteACategory"
+    		logger.info("2. Category deletion");
     		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name("anIconToDeleteACategory"));
     		logger.debug("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
     		try {
@@ -152,6 +154,7 @@ public class UserRequirement1 {
     		}    		
     		
     		//3. confirmation of deletion
+    		logger.info("3. Confirmation of category deletion");
     		driver.get(StringExternalization.FRONT_END_URL);
     		
     		aCategoryElements = driver.findElements(By.name("aCategory"));

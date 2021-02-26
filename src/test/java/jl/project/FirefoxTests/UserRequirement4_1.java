@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.pdfbox.jbig2.util.log.Logger;
-import org.apache.pdfbox.jbig2.util.log.LoggerFactory;
+import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -37,7 +37,7 @@ import net.sourceforge.tess4j.TesseractException;
  */
 public class UserRequirement4_1 {
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
-	Logger logger = LoggerFactory.getLogger(jl.project.FirefoxTests.UserRequirement4_1.class);
+	Logger logger = Logger.getLogger(jl.project.FirefoxTests.UserRequirement4_1.class);
 	FirefoxDriver driver;
 	
 	@BeforeClass
@@ -59,10 +59,12 @@ public class UserRequirement4_1 {
 	@Ignore
 	@Test(groups = {"creation_deletion_firefox_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() {
-		logger.debug(StringExternalization.TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD);	
+		logger.info(StringExternalization.TEST_START
+				+StringExternalization.TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD
+				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);	
 		boolean isCategoryCreated = false;		
 		
-		logger.debug("1. Creation of a category with the keyboard only.");		
+		logger.info("1. Creation of a category with the keyboard only.");		
 		//Tabbing until finding the input field to add the new category label
 		Robot robot;
 		Actions  action = new Actions(driver);
@@ -94,7 +96,7 @@ public class UserRequirement4_1 {
 		{
 		
 			//Verifying that the category has been created		
-			logger.debug("2. Confirming creation of the category");
+			logger.info("2. Confirming creation of the category");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));
@@ -114,7 +116,7 @@ public class UserRequirement4_1 {
 		
 		
 		
-		logger.debug("3. Deletion of a category with the keyboard only.");
+		logger.info("3. Deletion of a category with the keyboard only.");
 		//Assuming the category location
 		boolean isCategoryFound;
 		try {
@@ -155,7 +157,7 @@ public class UserRequirement4_1 {
 		finally
 		{
 			//Verifying that the category has been deleted
-			logger.debug("4. Confirming that the category has been deleted.");
+			logger.info("4. Confirming that the category has been deleted.");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement>aCategoryElements = driver.findElements(By.name("aCategory"));
@@ -191,7 +193,9 @@ public class UserRequirement4_1 {
 	@Ignore
 	@Test(groups = {"creation_deletion_firefox_1"})
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
-		logger.debug("1. Creation of an item with the keyboard only.");
+		logger.info(StringExternalization.TEST_START
+				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
+				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);
 		Robot robot;
 		Actions actions;
 		try {
@@ -232,7 +236,7 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		
-		logger.debug("2. Confirmation of creation.");
+		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		boolean isItemCreated=false;
@@ -255,7 +259,7 @@ public class UserRequirement4_1 {
 		}		
 		assertThat(isItemCreated).isEqualTo(true);
 		
-		logger.debug("3. Deletion of the test item using the keyboard only.");
+		logger.info("3. Deletion of the test item using the keyboard only.");
 		
 		try {
 			robot = new Robot();	
@@ -278,7 +282,7 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		
-		logger.debug("4. Confirmation of deletion");
+		logger.info("4. Confirmation of deletion");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
@@ -310,7 +314,9 @@ public class UserRequirement4_1 {
 	@Test(dependsOnGroups = {"creation_deletion_firefox_1"})	
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
-		logger.debug("1. Creation of an item with the keyboard only.");
+		logger.info(StringExternalization.TEST_START
+				+StringExternalization.TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD
+				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		Robot robot;
@@ -352,7 +358,7 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		
-		logger.debug("2. Confirmation of creation.");
+		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		boolean isItemCreated=false;
@@ -376,7 +382,7 @@ public class UserRequirement4_1 {
 		}		
 
 		
-		logger.debug("3. Verification that the item is displayed");
+		logger.info("3. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
 		try {
@@ -405,7 +411,7 @@ public class UserRequirement4_1 {
 		else{fail("The item label seems to be absent from the screenshot: "+result);};
 		
 		//clicking to hide the item		
-		logger.debug("4. Verification that the item can be hidden.");
+		logger.info("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.get(StringExternalization.FRONT_END_URL);
 		
@@ -476,7 +482,7 @@ public class UserRequirement4_1 {
 		}		
 		
 		//Verification that the item can be displayed by clicking a second time.
-		logger.debug("5. Verification that the item can be displayed");
+		logger.info("5. Verification that the item can be displayed");
 		try {
 			
 			robot = new Robot();
@@ -518,7 +524,7 @@ public class UserRequirement4_1 {
 			e.printStackTrace();
 		}
 		//Cleaning up for a potential next test. Using a click for the task
-		logger.debug("6. Suppression of the item.");
+		logger.info("6. Suppression of the item.");
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 			anIconToDeleteAnItemElement.click();

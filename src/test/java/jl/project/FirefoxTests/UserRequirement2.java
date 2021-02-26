@@ -5,8 +5,8 @@ import static org.assertj.core.api.Assertions.fail;
 
 import java.util.List;
 
-import org.apache.pdfbox.jbig2.util.log.Logger;
-import org.apache.pdfbox.jbig2.util.log.LoggerFactory;
+import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +26,7 @@ import jl.project.StringExternalization;
 
 
 public class UserRequirement2 {
-	Logger logger = LoggerFactory.getLogger(jl.project.FirefoxTests.UserRequirement2.class);
+	Logger logger = Logger.getLogger(jl.project.FirefoxTests.UserRequirement2.class);
 	FirefoxDriver driver;
 		
 	@BeforeClass
@@ -46,8 +46,8 @@ public class UserRequirement2 {
 	@Test
 	public void createItem() throws Exception{		
 		
-		logger.debug(StringExternalization.LABEL_TEST_ITEM);	
-		logger.debug("1. Creation of the item");
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_CREATION);	
+		logger.info("1. Creation of the item");
 		boolean isItemCreated=false;
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
@@ -58,6 +58,7 @@ public class UserRequirement2 {
 		
 				
 		//Checking that the new item creation was successful		
+		logger.info("2. Confirmation of item creation ");
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		try {
 			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
@@ -83,14 +84,16 @@ public class UserRequirement2 {
 	
 	@Test
 	public void deleteItem() throws Exception {
-		logger.debug(StringExternalization.TEST_ITEM_DELETION);
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
 		//Deleting the item
+		logger.info("1. Item deletion");
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		
 		try {			
 			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
 			//There should be only one item
-			if(anIconToDeleteAnItemElements.size() != 1) {System.err.println("Found "+anIconToDeleteAnItemElements.size()+" element(s) instead of 1.");assert(false);}
+			if(anIconToDeleteAnItemElements.size() != 1) 
+				{fail(StringExternalization.EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE+anIconToDeleteAnItemElements.size());}
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {				
 				anIconToDeleteAnItemElement.click();
 				logger.debug("Trash can icon clicked.");
@@ -106,7 +109,7 @@ public class UserRequirement2 {
 			e.printStackTrace();
 		}
 		//Checking the absence of the items
-		logger.debug("3. Confirmation of deletion");
+		logger.info("2. Confirmation of deletion");
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
 		try {
 			

@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.pdfbox.jbig2.util.log.Logger;
-import org.apache.pdfbox.jbig2.util.log.LoggerFactory;
+import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -36,7 +36,7 @@ import net.sourceforge.tess4j.TesseractException;
  * using the keyboard only - Space key used.
  */
 public class UserRequirement4_2 {
-	Logger logger = LoggerFactory.getLogger(jl.project.ChromeTests.UserRequirement4_2.class);
+	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement4_2.class);
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	ChromeDriver driver;	
 	
@@ -59,10 +59,12 @@ public class UserRequirement4_2 {
 	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_2"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() {
-		
+		logger.info(StringExternalization.TEST_START
+				+StringExternalization.TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD
+				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
 		boolean isCategoryCreated = false;		
 		
-		logger.debug("1. Creation of a category with the keyboard only.");		
+		logger.info("1. Creation of a category with the keyboard only.");		
 		//Tabbing until finding the input field to add the new category label
 		driver.get(StringExternalization.FRONT_END_URL);
 		
@@ -97,7 +99,7 @@ public class UserRequirement4_2 {
 		{
 		
 			//Verifying that the category has been created		
-			logger.debug("2. Confirming creation of the category");
+			logger.info("2. Confirming creation of the category");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));
@@ -117,7 +119,7 @@ public class UserRequirement4_2 {
 		
 		
 		
-		logger.debug("3. Deletion of a category with the keyboard only.");
+		logger.info("3. Deletion of a category with the keyboard only.");
 		//Assuming the category location
 		boolean isCategoryFound;
 		try {
@@ -158,7 +160,7 @@ public class UserRequirement4_2 {
 		finally
 		{
 			//Verifying that the category has been deleted
-			logger.debug("4. Confirming that the category has been deleted.");
+			logger.info("4. Confirming that the category has been deleted.");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
 			List<WebElement>aCategoryElements = driver.findElements(By.name("aCategory"));
@@ -194,10 +196,13 @@ public class UserRequirement4_2 {
 	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_2"})					
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() {
-		logger.debug("1. Creation of an item with the keyboard only.");
+		logger.info(StringExternalization.TEST_START
+				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
+				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
 		Robot robot;
 		Actions actions;
 		try {
+			logger.info("1. Item creation.");
 			robot = new Robot();			
 			actions = new Actions(driver);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
@@ -235,7 +240,7 @@ public class UserRequirement4_2 {
 			e.printStackTrace();
 		}
 		
-		logger.debug("2. Confirmation of creation.");
+		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		boolean isItemCreated=false;
@@ -258,7 +263,7 @@ public class UserRequirement4_2 {
 		}		
 		assertThat(isItemCreated).isEqualTo(true);
 		
-		logger.debug("3. Deletion of the test item using the keyboard only.");
+		logger.info("3. Deletion of the test item using the keyboard only.");
 		
 		try {
 			robot = new Robot();	
@@ -281,7 +286,7 @@ public class UserRequirement4_2 {
 			e.printStackTrace();
 		}
 		
-		logger.debug("4. Confirmation of deletion");
+		logger.info("4. Confirmation of deletion");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
@@ -313,12 +318,15 @@ public class UserRequirement4_2 {
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_2"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
-		logger.debug("1. Creation of an item with the keyboard only.");
+		logger.info(StringExternalization.TEST_START
+				+StringExternalization.TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD
+				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		Robot robot;
 		Actions actions;
 		try {
+			logger.info("1. item creation.");
 			robot = new Robot();
 			actions = new Actions(driver);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
@@ -355,7 +363,7 @@ public class UserRequirement4_2 {
 			e.printStackTrace();
 		}
 		
-		logger.debug("2. Confirmation of creation.");
+		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		boolean isItemCreated=false;
@@ -380,7 +388,7 @@ public class UserRequirement4_2 {
 		}		
 
 		
-		logger.debug("3. Verification that the item is displayed");
+		logger.info("3. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
 		try {
@@ -409,7 +417,7 @@ public class UserRequirement4_2 {
 		else{fail("The item label seems to be absent from the screenshot: "+result);};
 		
 		//clicking to hide the item		
-		logger.debug("4. Verification that the item can be hidden.");
+		logger.info("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.get(StringExternalization.FRONT_END_URL);
 		
@@ -480,7 +488,7 @@ public class UserRequirement4_2 {
 		}		
 		
 		//Verification that the item can be displayed by clicking a second time.
-		logger.debug("5. Verification that the item can be displayed");
+		logger.info("5. Verification that the item can be displayed");
 		try {
 			
 			robot = new Robot();
@@ -522,7 +530,7 @@ public class UserRequirement4_2 {
 			e.printStackTrace();
 		}
 		//Cleaning up for a potential next test. Using a click for the task
-		logger.debug("6. Suppression of the item.");
+		logger.info("6. Suppression of the item.");
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 			anIconToDeleteAnItemElement.click();

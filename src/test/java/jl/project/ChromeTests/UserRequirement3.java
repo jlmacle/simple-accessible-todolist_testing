@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.pdfbox.jbig2.util.log.Logger;
-import org.apache.pdfbox.jbig2.util.log.LoggerFactory;
+import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -28,7 +28,7 @@ import net.sourceforge.tess4j.TesseractException;
  * Class testing the display/hiding of items
  */
 public class UserRequirement3 {
-	Logger logger = LoggerFactory.getLogger(jl.project.ChromeTests.UserRequirement3.class);
+	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement3.class);
 	ChromeDriver driver; 	
 	
 	@BeforeClass
@@ -43,13 +43,13 @@ public class UserRequirement3 {
 	@Test
 	@Ignore
 	public void hideAndDisplayItem() {
-		logger.debug(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
 		boolean isTestItemLabelFound = false;
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		
 		//1. Creation of an item. By default the item is displayed
-		logger.debug("1. Creation of the item");
+		logger.info("1. Creation of the item");
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
@@ -78,7 +78,7 @@ public class UserRequirement3 {
 		
 		//2. Verification that the item is displayed
 		//a. code to get a screenshot from the browser
-		logger.debug("2. Verification that the item is displayed");
+		logger.info("2. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
 		try {
@@ -108,7 +108,7 @@ public class UserRequirement3 {
 		else{fail("The item label seems to be absent from the screenshot: "+result);};
 	
 		//3. Hiding of the item		
-		logger.debug("3. Verification that the item can be hidden.");
+		logger.info("3. Verification that the item can be hidden.");
 		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
 		//4. Verification that the item is hidden
@@ -140,7 +140,7 @@ public class UserRequirement3 {
 		}		
 		
 		//4. Verification that the item can be displayed 
-		logger.debug("4. Verification that the item can be displayed");
+		logger.info("4. Verification that the item can be displayed");
 		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
 		
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -171,13 +171,13 @@ public class UserRequirement3 {
 		}
 		
 		//5. Suppressing the item to go on with the test suite
-		logger.debug("5. Deletion of the test item");
+		logger.info("5. Deletion of the test item");
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 				anIconToDeleteAnItemElement.click();
 			}
 			
-		logger.debug("6. Testing the deletion of the test item");
+		logger.info("6. Testing the deletion of the test item");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
