@@ -55,7 +55,7 @@ public class UserRequirement4_2 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test(groups = {"creation_deletion_firefox_2"})	
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() {
 		logger.info(StringExternalization.TEST_START
@@ -192,7 +192,7 @@ public class UserRequirement4_2 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test(groups = {"creation_deletion_firefox_2"})		
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() {
 		logger.info(StringExternalization.TEST_START
@@ -313,7 +313,7 @@ public class UserRequirement4_2 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test(dependsOnGroups = {"creation_deletion_firefox_2"})	
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{

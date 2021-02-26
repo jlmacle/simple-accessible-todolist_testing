@@ -50,12 +50,10 @@ public class UserRequirement4_1 {
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get(StringExternalization.FRONT_END_URL);
-		
+		driver.get(StringExternalization.FRONT_END_URL);		
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() {
 		logger.info(StringExternalization.TEST_START
@@ -190,7 +188,6 @@ public class UserRequirement4_1 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
 		logger.info(StringExternalization.TEST_START
@@ -311,7 +308,6 @@ public class UserRequirement4_1 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_1"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
