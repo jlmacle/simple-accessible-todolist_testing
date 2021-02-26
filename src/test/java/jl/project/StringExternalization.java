@@ -10,7 +10,7 @@ public class StringExternalization {
 	public static final String EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE = 
 			"There should be one item. Number of item found: ";
 	public static final String EXCEPTION_STALE_ELEMENT_REFERENCE = "Caught a StaleElementReferenceException ";
-	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException while doing the OCR";
+	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException while doing the OCR.";
 	public static final String EXCEPTION_IO = "Caught an IOException ";
 	public static final String EXCEPTION_AWT = "Caught an AWTException while using the instance of the Robot class";
 	
@@ -25,6 +25,7 @@ public class StringExternalization {
 			"item creation/deletion with the keyboard";	
 	public static final String TEST_ITEM_HIDING_DISPLAY = "item hiding/display";
 	public static final String TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD = "item hiding/display with keyboard";
+	public static final String TEST_KEYBOARD = " with the keyboard";
 	public static final String TEST_KEYBOARD_ENTER_KEY = " with ENTER key";
 	public static final String TEST_KEYBOARD_SPACE_KEY = " with SPACE key";
 	

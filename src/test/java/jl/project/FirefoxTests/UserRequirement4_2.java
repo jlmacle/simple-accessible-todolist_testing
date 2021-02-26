@@ -198,7 +198,7 @@ public class UserRequirement4_2 {
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
-		logger.info("1. Creation of an item with the keyboard only.");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		Robot robot;
 		Actions actions;
 		try {
@@ -320,7 +320,7 @@ public class UserRequirement4_2 {
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
-		logger.info("1. Creation of an item with the keyboard only.");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		Robot robot;
@@ -402,6 +402,7 @@ public class UserRequirement4_2 {
 		//https://github.com/tesseract-ocr/tessdata
 		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+		ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
@@ -510,6 +511,7 @@ public class UserRequirement4_2 {
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
 			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+			ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 

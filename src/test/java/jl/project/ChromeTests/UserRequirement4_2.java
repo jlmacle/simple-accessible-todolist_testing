@@ -202,7 +202,7 @@ public class UserRequirement4_2 {
 		Robot robot;
 		Actions actions;
 		try {
-			logger.info("1. Item creation.");
+			logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 			robot = new Robot();			
 			actions = new Actions(driver);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
@@ -326,7 +326,7 @@ public class UserRequirement4_2 {
 		Robot robot;
 		Actions actions;
 		try {
-			logger.info("1. item creation.");
+			logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 			robot = new Robot();
 			actions = new Actions(driver);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar

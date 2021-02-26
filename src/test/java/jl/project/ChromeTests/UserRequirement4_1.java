@@ -193,7 +193,7 @@ public class UserRequirement4_1 {
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);
-		logger.info("1. Creation of an item with the keyboard only.");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		Robot robot;
 		Actions actions;
 		try {
@@ -319,7 +319,7 @@ public class UserRequirement4_1 {
 		Robot robot;
 		Actions actions;
 		try {
-			logger.info("1. Item creation.");
+			logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 			robot = new Robot();
 			actions = new Actions(driver);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
