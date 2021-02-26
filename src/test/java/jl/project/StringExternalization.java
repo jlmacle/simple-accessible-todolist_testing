@@ -2,8 +2,8 @@ package jl.project;
 
 public class StringExternalization {
 	public static final String FRONT_END_URL = "http://localhost:4200";
-	public static final String LABEL_TEST_CATEGORY = "Protractor test category";
-	public static final String LABEL_TEST_ITEM = "Protractor test"; 
+	public static final String LABEL_TEST_CATEGORY = "Selenium test category";
+	public static final String LABEL_TEST_ITEM = "Selenium test"; 
 	//the ocr sometimes has an issue to detect the word 'item'.
 		
 	public static final String EXCEPTION_APP_NOT_STARTED = "The app wasn't started.";

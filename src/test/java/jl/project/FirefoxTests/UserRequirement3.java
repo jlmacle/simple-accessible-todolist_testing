@@ -43,7 +43,7 @@ public class UserRequirement3 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test
 	public void hideAndDisplayItem() {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
