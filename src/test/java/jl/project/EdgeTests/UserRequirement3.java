@@ -68,7 +68,7 @@ public class UserRequirement3 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();
 			e.printStackTrace();
@@ -96,7 +96,7 @@ public class UserRequirement3 {
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
-			System.err.println("Exception while doing the OCR.");
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while doing the OCR.");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -133,7 +133,7 @@ public class UserRequirement3 {
 			e.printStackTrace();
 		}
 		 catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click."
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while reading the screenshot taken after the click."
 					+ "(Hiding of the item)");			
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -165,7 +165,7 @@ public class UserRequirement3 {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT+"while reading the screenshot taken after the click"
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
