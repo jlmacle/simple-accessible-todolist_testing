@@ -55,7 +55,7 @@ public class UserRequirement4_2 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test(groups = {"creation_deletion_edge_2"})	
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() {
 		logger.info(StringExternalization.TEST_START
@@ -89,7 +89,7 @@ public class UserRequirement4_2 {
 			robot.delay(1000);
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException when using the robot class");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -151,7 +151,7 @@ public class UserRequirement4_2 {
 			robot.delay(2000);
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -180,7 +180,7 @@ public class UserRequirement4_2 {
 				assertThat(isCategoryFound).isEqualTo(false);
 			}
 			catch(StaleElementReferenceException e) {
-				System.err.println("Caught a StaleElementReferenceException"
+				System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 						+ "while going through the elements related to a trash can icon before a category.");
 				System.err.println(e.getMessage());
 				e.printStackTrace();    			
@@ -191,13 +191,13 @@ public class UserRequirement4_2 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test(groups = {"creation_deletion_edge_2"})					
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() {
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
-		logger.info("1. Creation of an item with the keyboard only.");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		Robot robot;
 		Actions actions;
 		try {
@@ -233,7 +233,7 @@ public class UserRequirement4_2 {
 				
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -254,7 +254,7 @@ public class UserRequirement4_2 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -279,7 +279,7 @@ public class UserRequirement4_2 {
 			actions.sendKeys(" ").build().perform(); //Click to delete the test category
 			//robot.keyPress(KeyEvent.VK_SPACE);//Click to delete the test category
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -304,7 +304,7 @@ public class UserRequirement4_2 {
 		}
 		catch(StaleElementReferenceException e) 
 		{
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' ");
 			e.getMessage();
 			e.printStackTrace();
@@ -312,14 +312,14 @@ public class UserRequirement4_2 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test(dependsOnGroups = {"creation_deletion_edge_2"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
-		logger.info("1. Creation of an item with the keyboard only.");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		Robot robot;
@@ -356,7 +356,7 @@ public class UserRequirement4_2 {
 							
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -379,7 +379,7 @@ public class UserRequirement4_2 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -388,31 +388,32 @@ public class UserRequirement4_2 {
 		
 		logger.info("3. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
-		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
+		File screenshotFile_copy = new File(StringExternalization.TESSERACT_SCREENSHOT_PATH_NEW_ITEM);
 		try {
 			FileUtils.copyFile(screenshotFile, screenshotFile_copy);
 		} catch (IOException e) {
-			System.err.println("IOException while copy and saving the screenshot");
+			System.err.println(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
 			e.printStackTrace();
 		}
 		// code to extract the text from the picture
 		Tesseract ocr = new Tesseract();
 		String result = null;
 		//https://github.com/tesseract-ocr/tessdata
-		ocr.setDatapath("./tessdata");
-		ocr.setLanguage("eng");
+		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
+		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+		ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
-			System.err.println("Exception while doing the OCR.");
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
-			logger.debug("Success. The test label has been found on the screen.");
+			logger.debug(StringExternalization.TESSERACT_FOUND_TEST_ITEM);
 		}
-		else{fail("The item label seems to be absent from the screenshot: "+result);};
+		else{fail(StringExternalization.TESSERACT_NOT_FOUND_TEST_ITEM+result);};
 		
 		//clicking to hide the item		
 		logger.info("4. Verification that the item can be hidden.");
@@ -452,7 +453,7 @@ public class UserRequirement4_2 {
 			actions.sendKeys(" ").build().perform();//Click to hide the item
 			robot.delay(5000);
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -479,7 +480,7 @@ public class UserRequirement4_2 {
 			e.printStackTrace();
 		}
 		 catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click."
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Hiding of the item)");			
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -496,7 +497,7 @@ public class UserRequirement4_2 {
 			//robot.keyPress(KeyEvent.VK_SPACE);//Click to hide the item
 			
 		} catch (AWTException e) {
-			System.err.println("AWTException while using the instance of the class ");
+			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -506,9 +507,10 @@ public class UserRequirement4_2 {
 		
 		try {			
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
-			ocr.setDatapath("./tessdata");
-			ocr.setLanguage("eng");
-			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
+			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
+			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+			ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
+			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);			
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 			{
@@ -517,12 +519,12 @@ public class UserRequirement4_2 {
 			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
 		} catch (IOException e) {
-			System.err.println("An IOException occured while copying the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_IO+"while copying the screenshot taken after the click"
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();

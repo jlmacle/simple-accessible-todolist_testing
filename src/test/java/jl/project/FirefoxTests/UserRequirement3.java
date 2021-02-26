@@ -43,7 +43,7 @@ public class UserRequirement3 {
 	}
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
-	@Ignore
+	
 	@Test
 	public void hideAndDisplayItem() {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
@@ -51,7 +51,7 @@ public class UserRequirement3 {
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 		//1. Creation of an item. By default the item is displayed
-		logger.info("1. Creation of the item");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
 		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
@@ -71,7 +71,7 @@ public class UserRequirement3 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();
 			e.printStackTrace();
@@ -82,32 +82,33 @@ public class UserRequirement3 {
 		//a. code to get a screenshot from the browser
 		logger.info("2. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
-		File screenshotFile_copy = new File("./screenshots/newItemScreenshot.png");
+		File screenshotFile_copy = new File(StringExternalization.TESSERACT_SCREENSHOT_PATH_NEW_ITEM);
 		try {
 			FileUtils.copyFile(screenshotFile, screenshotFile_copy);
 		} catch (IOException e) {
-			System.err.println("IOException while copy and saving the screenshot");
+			System.err.println(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
 			e.printStackTrace();
 		}
 		//b. code to extract the text from the picture
 		Tesseract ocr = new Tesseract();
 		String result = null;
 		//https://github.com/tesseract-ocr/tessdata
-		ocr.setDatapath("./tessdata");
-		ocr.setLanguage("eng");
+		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
+		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+		ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
-			System.err.println("Exception while doing the OCR.");
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT);
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
 			 
-			logger.debug("Success. The test label has been found on the screen.");
+			logger.debug(StringExternalization.TESSERACT_FOUND_TEST_ITEM);
 		}
-		else{fail("The item label seems to be absent from the screenshot: "+result);};
+		else{fail(StringExternalization.TESSERACT_NOT_FOUND_TEST_ITEM+result);};
 	
 		//3. Hiding of the item		
 		logger.info("3. Verification that the item can be hidden.");
@@ -135,7 +136,7 @@ public class UserRequirement3 {
 			e.printStackTrace();
 		}
 		 catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click."
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Hiding of the item)");			
 			System.err.println(e.getMessage());
 			e.printStackTrace();
@@ -150,8 +151,9 @@ public class UserRequirement3 {
 		
 		try {			
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
-			ocr.setDatapath("./tessdata");
-			ocr.setLanguage("eng");
+			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
+			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
+			ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
 			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
 			
 			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
@@ -161,12 +163,12 @@ public class UserRequirement3 {
 			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
 		} catch (IOException e) {
-			System.err.println("An IOException occured while copying the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_IO+"while copying the screenshot taken after the click"
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		} catch (TesseractException e) {
-			System.err.println("TesseractException while reading the screenshot taken after the click"
+			System.err.println(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Display of the item)");
 			System.err.println(e.getMessage());
 			e.printStackTrace();

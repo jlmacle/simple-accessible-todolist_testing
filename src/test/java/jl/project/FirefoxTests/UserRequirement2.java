@@ -47,7 +47,7 @@ public class UserRequirement2 {
 	public void createItem() throws Exception{		
 		
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_CREATION);	
-		logger.info("1. Creation of the item");
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		boolean isItemCreated=false;
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
@@ -73,7 +73,7 @@ public class UserRequirement2 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();
 			e.printStackTrace();
@@ -86,7 +86,7 @@ public class UserRequirement2 {
 	public void deleteItem() throws Exception {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
 		//Deleting the item
-		logger.info("1. Item deletion");
+		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		
 		try {			
@@ -103,7 +103,7 @@ public class UserRequirement2 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anIconToDeleteAnItem' ");
 			e.getMessage();
 			e.printStackTrace();
@@ -123,7 +123,7 @@ public class UserRequirement2 {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println("A StaleElementReferenceException has been caught while searching"
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' ");
 			e.getMessage();
 			e.printStackTrace();

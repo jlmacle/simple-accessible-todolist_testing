@@ -82,7 +82,7 @@ public class UserRequirement1 {
 			}
     	}
     	catch(StaleElementReferenceException e) {
-    		System.err.println("Caught a StaleElementReferenceException "
+    		System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     				+ "while going through the elements with the name aCategory.");
     		e.printStackTrace();
     	}	    	
@@ -120,7 +120,7 @@ public class UserRequirement1 {
 			}
     	}
     	catch(StaleElementReferenceException e) {
-    		System.err.println("Caught a StaleElementReferenceException "
+    		System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     				+ "while going through the anItem elements.");
     		e.getMessage();
     		e.printStackTrace();
@@ -147,7 +147,7 @@ public class UserRequirement1 {
     			
     		}
     		catch(StaleElementReferenceException e) {
-    			System.err.println("Caught a StaleElementReferenceException"
+    			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     					+ "while going through the elements related to a trash can icon in front of a category.");
     			e.getMessage();
     			e.printStackTrace();    			
@@ -175,7 +175,7 @@ public class UserRequirement1 {
     			assertThat(isCategoryFound).isEqualTo(false);
     		}
     		catch(StaleElementReferenceException e) {
-    			System.err.println("Caught a StaleElementReferenceException"
+    			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     					+ "while going through the elements related to a trash can icon before a category.");
     			e.getMessage();
     			e.printStackTrace();    			
