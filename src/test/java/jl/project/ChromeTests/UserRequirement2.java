@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.fail;
 
 import java.util.List;
 
+import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -24,9 +26,8 @@ import jl.project.StringExternalization;
 
 
 public class UserRequirement2 {
-	
-	WebDriver driver;
-	String testItemLabel="Protractor test item";	
+	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement2.class);
+	WebDriver driver;		
 	
 	@BeforeClass
 	public void setup() {		
@@ -44,27 +45,29 @@ public class UserRequirement2 {
 	}
 	
 	@Test
-	public void createItem() throws Exception{		
-			
-		System.out.println("1. Creation of the item");
+	public void createItem() throws Exception{	
+		
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_CREATION);	
+		logger.info("1. Item creation");
 		boolean isItemCreated=false;
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
-		driver.findElement(By.id("item-input-name")).sendKeys(testItemLabel);
+		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id("add-item-button")).click();
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 				
-		//Checking that the new item creation was successful		
+		//Checking that the new item creation was successful
+		logger.info("2. Confirmation of item creation ");
 		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
 		try {
-			System.out.println("Found "+anItemElements.size()+" element named 'anItem'");
+			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
-				if (text.contains(testItemLabel))
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM))
 				{
-					System.out.println("Found "+text+" as text.");
+					logger.debug("Found "+text+" as text.");
 					isItemCreated = true;
 				}
 			}
@@ -82,17 +85,19 @@ public class UserRequirement2 {
 	
 	@Test
 	public void deleteItem() throws Exception {
-		System.out.println("2. Deletion of the item");
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
+		logger.info("1. Item deletion");
 		//Deleting the item
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
 		
 		try {			
-			System.out.println("Found "+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
+			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
 			//There should be only one item
-			if(anIconToDeleteAnItemElements.size() != 1) {System.err.println("Found "+anIconToDeleteAnItemElements.size()+" element(s) instead of 1.");assert(false);}
+			if(anIconToDeleteAnItemElements.size() != 1) 
+				{fail(StringExternalization.EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE+anIconToDeleteAnItemElements.size());}
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {				
 				anIconToDeleteAnItemElement.click();
-				System.out.println("Trash can icon clicked.");
+				logger.debug("Trash can icon clicked.");
 			}
 			driver.get(StringExternalization.FRONT_END_URL);
 			
@@ -105,15 +110,15 @@ public class UserRequirement2 {
 			e.printStackTrace();
 		}
 		//Checking the absence of the items
-		System.out.println("3. Confirmation of deletion");
+		logger.info("2. Confirmation of item deletion");
 		anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
 		try {
 			
-			System.out.println("Found "+anIconToDeleteAnItemElements.size()+" element named 'anItem'");
+			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anIconToDeleteAnItemElements) {
 				String text = anItemElement.getText();
-				System.out.println("Found *"+text+"* as text.");
-				if (text.equals(testItemLabel)) {
+				logger.debug("Found *"+text+"* as text.");
+				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) {
 					fail("Error: the test label has been found.");}
 			}
 			

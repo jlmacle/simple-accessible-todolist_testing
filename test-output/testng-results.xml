@@ -2,60 +2,60 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-25T12:19:08Z" name="Test Suite Firefox" finished-at="2021-02-25T12:19:24Z" duration-ms="15524">
+  <suite started-at="2021-02-26T09:54:10Z" name="Test Suite Firefox" finished-at="2021-02-26T09:54:43Z" duration-ms="33709">
     <groups>
     </groups>
-    <test started-at="2021-02-25T12:19:08Z" name="User Requirement 1" finished-at="2021-02-25T12:19:18Z" duration-ms="10054">
+    <test started-at="2021-02-26T09:54:10Z" name="User Requirement 1" finished-at="2021-02-26T09:54:27Z" duration-ms="17582">
       <class name="jl.project.FirefoxTests.UserRequirement1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@399c4be1]" started-at="2021-02-25T13:19:08Z" name="setup" finished-at="2021-02-25T13:19:15Z" duration-ms="6874" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1f59a598]" started-at="2021-02-26T10:54:10Z" name="setup" finished-at="2021-02-26T10:54:17Z" duration-ms="7523" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@399c4be1]" started-at="2021-02-25T13:19:15Z" name="navigate" finished-at="2021-02-25T13:19:16Z" duration-ms="1044" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1f59a598]" started-at="2021-02-26T10:54:17Z" name="navigate" finished-at="2021-02-26T10:54:19Z" duration-ms="1740" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@399c4be1]" started-at="2021-02-25T13:19:16Z" name="createCategory" finished-at="2021-02-25T13:19:17Z" duration-ms="712" status="PASS">
+        <test-method signature="createCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1f59a598]" started-at="2021-02-26T10:54:19Z" name="createCategory" finished-at="2021-02-26T10:54:21Z" duration-ms="2451" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createCategory -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@399c4be1]" started-at="2021-02-25T13:19:17Z" name="navigate" finished-at="2021-02-25T13:19:17Z" duration-ms="277" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1f59a598]" started-at="2021-02-26T10:54:21Z" name="navigate" finished-at="2021-02-26T10:54:23Z" duration-ms="1693" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="deleteCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@399c4be1]" started-at="2021-02-25T13:19:17Z" name="deleteCategory" finished-at="2021-02-25T13:19:18Z" duration-ms="566" status="PASS">
+        <test-method signature="deleteCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1f59a598]" started-at="2021-02-26T10:54:23Z" name="deleteCategory" finished-at="2021-02-26T10:54:25Z" duration-ms="2264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteCategory -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@399c4be1]" started-at="2021-02-25T13:19:18Z" name="releaseResources" finished-at="2021-02-25T13:19:18Z" duration-ms="564" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1@1f59a598]" started-at="2021-02-26T10:54:25Z" name="releaseResources" finished-at="2021-02-26T10:54:27Z" duration-ms="1844" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
       </class> <!-- jl.project.FirefoxTests.UserRequirement1 -->
     </test> <!-- User Requirement 1 -->
-    <test started-at="2021-02-25T12:19:18Z" name="User Requirement 2" finished-at="2021-02-25T12:19:24Z" duration-ms="5428">
+    <test started-at="2021-02-26T09:54:27Z" name="User Requirement 2" finished-at="2021-02-26T09:54:43Z" duration-ms="16037">
       <class name="jl.project.FirefoxTests.UserRequirement2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@15ca7889]" started-at="2021-02-25T13:19:18Z" name="setup" finished-at="2021-02-25T13:19:21Z" duration-ms="2814" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@6ff29830]" started-at="2021-02-26T10:54:27Z" name="setup" finished-at="2021-02-26T10:54:34Z" duration-ms="6328" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@15ca7889]" started-at="2021-02-25T13:19:21Z" name="navigate" finished-at="2021-02-25T13:19:22Z" duration-ms="439" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@6ff29830]" started-at="2021-02-26T10:54:34Z" name="navigate" finished-at="2021-02-26T10:54:35Z" duration-ms="1667" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@15ca7889]" started-at="2021-02-25T13:19:22Z" name="createItem" finished-at="2021-02-25T13:19:22Z" duration-ms="667" status="PASS">
+        <test-method signature="createItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@6ff29830]" started-at="2021-02-26T10:54:35Z" name="createItem" finished-at="2021-02-26T10:54:38Z" duration-ms="2440" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createItem -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@15ca7889]" started-at="2021-02-25T13:19:22Z" name="navigate" finished-at="2021-02-25T13:19:23Z" duration-ms="279" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@6ff29830]" started-at="2021-02-26T10:54:38Z" name="navigate" finished-at="2021-02-26T10:54:39Z" duration-ms="1368" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="deleteItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@15ca7889]" started-at="2021-02-25T13:19:23Z" name="deleteItem" finished-at="2021-02-25T13:19:23Z" duration-ms="540" status="PASS">
+        <test-method signature="deleteItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@6ff29830]" started-at="2021-02-26T10:54:39Z" name="deleteItem" finished-at="2021-02-26T10:54:41Z" duration-ms="2304" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteItem -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@15ca7889]" started-at="2021-02-25T13:19:23Z" name="releaseResources" finished-at="2021-02-25T13:19:24Z" duration-ms="685" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2@6ff29830]" started-at="2021-02-26T10:54:41Z" name="releaseResources" finished-at="2021-02-26T10:54:43Z" duration-ms="1917" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
