@@ -41,7 +41,6 @@ public class UserRequirement3 {
 	
 	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
 	@Test
-	@Ignore
 	public void hideAndDisplayItem() {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
 		boolean isTestItemLabelFound = false;
