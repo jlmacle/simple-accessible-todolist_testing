@@ -5,6 +5,17 @@ public class StringExternalization {
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";
 	public static final String LABEL_TEST_ITEM = "Selenium test"; 
 	//the ocr sometimes has an issue to detect the word 'item'.
+	
+	public static final String ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD = "new-category-input-field";
+	public static final String ELEMENT_ID_ADD_CATEGORY_BUTTON = "add-category-button";
+	public static final String ELEMENT_ID_CATEGORY_TO_SELECT_FIELD = "category-to-select-field";
+	public static final String ELEMENT_ID_ITEM_INPUT_NAME = "item-input-name";
+	public static final String ELEMENT_ID_ADD_ITEM_BUTTON = "add-item-button";
+	
+	public static final String ELEMENT_NAME_A_CATEGORY = "aCategory";
+	public static final String ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY = "anIconToDeleteACategory";
+	public static final String ELEMENT_NAME_AN_ITEM = "anItem";
+	public static final String ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM = "anIconToDeleteAnItem";
 		
 	public static final String EXCEPTION_APP_NOT_STARTED = "The app wasn't started.";
 	public static final String EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE = 
