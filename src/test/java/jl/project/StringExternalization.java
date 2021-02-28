@@ -3,7 +3,7 @@ package jl.project;
 public class StringExternalization {
 	public static final String FRONT_END_URL = "http://localhost:4200";
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";
-	public static final String LABEL_TEST_ITEM = "Selenium test"; 
+	public static final String LABEL_TEST_ITEM = "test"; 
 	//the ocr sometimes has an issue to detect the word 'item'.
 	
 	public static final String ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD = "new-category-input-field";
@@ -54,23 +54,22 @@ public class StringExternalization {
 	public static final String WEBDRIVER_FIREFOX_KEY = "webdriver.gecko.driver";	
 	public static final String WEBDRIVER_EDGE_KEY = "webdriver.edge.driver";
 
-	// Windows webdrivers	
-	
-	
-	  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
-	  public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
-	  public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; public
-	  static final String WEBDRIVER_SAFARI_VALUE = "";
-	 
-	 
+	// Windows webdrivers		
+	/*
+	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
+	 * public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
+	 * public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; public
+	 * static final String WEBDRIVER_SAFARI_VALUE = "";
+	 */
+	  
 	
 	// Linux webdrivers
-	/*
-	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
-	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
-	 * final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
-	 * String WEBDRIVER_SAFARI_VALUE = "";
-	 */
+	
+	  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; 
+	  public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
+	  public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
+	  public static final String WEBDRIVER_SAFARI_VALUE = "";
+	 
 	 
 	// macOS webdrivers
 	/*

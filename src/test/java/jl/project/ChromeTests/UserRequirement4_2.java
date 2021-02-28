@@ -114,7 +114,7 @@ public class UserRequirement4_2 {
 				}
 			};		
 			
-			assertThat(isCategoryCreated).isEqualTo(true);
+			assertThat(isCategoryCreated).isTrue();
 		}
 		
 		
@@ -179,7 +179,7 @@ public class UserRequirement4_2 {
 				//otherwise the test is successful
 				isCategoryFound = false;
 				
-				assertThat(isCategoryFound).isEqualTo(false);
+				assertThat(isCategoryFound).isFalse();
 			}
 			catch(StaleElementReferenceException e) {
 				System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
@@ -261,7 +261,7 @@ public class UserRequirement4_2 {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}		
-		assertThat(isItemCreated).isEqualTo(true);
+		assertThat(isItemCreated).isTrue();
 		
 		logger.info("3. Deletion of the test item using the keyboard only.");
 		
@@ -377,7 +377,7 @@ public class UserRequirement4_2 {
 					isItemCreated = true;
 					}
 			}
-			assertThat(isItemCreated).isEqualTo(true);
+			assertThat(isItemCreated).isTrue();
 			
 		}
 		catch(StaleElementReferenceException e) {

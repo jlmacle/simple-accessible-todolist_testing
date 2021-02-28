@@ -79,7 +79,7 @@ public class UserRequirement2 {
 			e.getMessage();
 			e.printStackTrace();
 		}	
-		assertThat(isItemCreated).isEqualTo(true);
+		assertThat(isItemCreated).isTrue();
 	}
 	
 	

@@ -87,7 +87,7 @@ public class UserRequirement1 {
     		e.printStackTrace();
     	}	    	
     	
-    	assertThat(isCategoryFound).isEqualTo(true);
+    	assertThat(isCategoryFound).isTrue();
     	
     }
 	
@@ -172,7 +172,7 @@ public class UserRequirement1 {
     			}
     			//otherwise the test is successful
     			isCategoryFound = false;
-    			assertThat(isCategoryFound).isEqualTo(false);
+    			assertThat(isCategoryFound).isFalse();
     		}
     		catch(StaleElementReferenceException e) {
     			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
