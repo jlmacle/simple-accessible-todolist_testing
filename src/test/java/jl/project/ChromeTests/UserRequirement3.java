@@ -52,13 +52,13 @@ public class UserRequirement3 {
 		//Adding an item to the Uncategorized category created at startup
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys("Uncategorized");
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
-		driver.findElement(By.id("add-item-button")).click();
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 				
 		//Checking that the new item creation was successful		
-		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
+		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
@@ -173,7 +173,7 @@ public class UserRequirement3 {
 		
 		//5. Suppressing the item to go on with the test suite
 		logger.info("5. Deletion of the test item");
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 				anIconToDeleteAnItemElement.click();
 			}
@@ -181,7 +181,7 @@ public class UserRequirement3 {
 		logger.info("6. Testing the deletion of the test item");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
-		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");
 		
 		driver.close();		

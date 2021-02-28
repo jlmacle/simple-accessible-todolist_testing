@@ -241,7 +241,7 @@ public class UserRequirement4_2 {
 		
 		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
-		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
+		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		boolean isItemCreated=false;
 		try {
 			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
@@ -288,7 +288,7 @@ public class UserRequirement4_2 {
 		logger.info("4. Confirmation of deletion");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			
 			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anItem'");
@@ -364,7 +364,7 @@ public class UserRequirement4_2 {
 		
 		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
-		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
+		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		boolean isItemCreated=false;
 		try {
 			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
@@ -533,7 +533,7 @@ public class UserRequirement4_2 {
 		}
 		//Cleaning up for a potential next test. Using a click for the task
 		logger.info("6. Suppression of the item.");
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 			anIconToDeleteAnItemElement.click();
 		}
@@ -541,7 +541,7 @@ public class UserRequirement4_2 {
 		logger.debug("7. Testing the deletion of the test item");
 		driver.get(StringExternalization.FRONT_END_URL);
 		
-		anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
 		else {logger.debug("Page cleaned from test item.");}
 			
