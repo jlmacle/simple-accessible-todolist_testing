@@ -99,7 +99,7 @@ public class UserRequirement4_1 {
 			logger.info("2. Confirming creation of the category");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
-			List<WebElement> aCategoryElements = driver.findElements(By.name("aCategory"));
+			List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
 			for(WebElement aCategoryElement: aCategoryElements ) {
 				String text = aCategoryElement.getText();
@@ -160,7 +160,7 @@ public class UserRequirement4_1 {
 			logger.info("4. Confirming that the category has been deleted.");
 			driver.get(StringExternalization.FRONT_END_URL);
 			
-			List<WebElement>aCategoryElements = driver.findElements(By.name("aCategory"));
+			List<WebElement>aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
 			try {
 				for(WebElement aCategoryElement : aCategoryElements) {
