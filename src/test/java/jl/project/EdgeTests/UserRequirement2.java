@@ -50,16 +50,16 @@ public class UserRequirement2 {
 		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		boolean isItemCreated=false;
 		//Adding an item to the Uncategorized category created at startup
-		driver.findElement(By.id("category-to-select-field")).sendKeys("Uncategorized");
-		driver.findElement(By.id("item-input-name")).sendKeys(StringExternalization.LABEL_TEST_ITEM);
-		driver.findElement(By.id("add-item-button")).click();
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys("Uncategorized");
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		//To avoid a StaleElementReferenceException
 		driver.get(StringExternalization.FRONT_END_URL);
 		
 				
 		//Checking that the new item creation was successful		
 		logger.info("2. Confirmation of item creation ");
-		List<WebElement> anItemElements = driver.findElements(By.name("anItem"));
+		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
 			for(WebElement anItemElement: anItemElements) {
@@ -88,7 +88,7 @@ public class UserRequirement2 {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
 		//Deleting the item
 		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name("anIconToDeleteAnItem"));
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		
 		try {			
 			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
@@ -111,7 +111,7 @@ public class UserRequirement2 {
 		}
 		//Checking the absence of the items
 		logger.info("2. Confirmation of deletion");
-		anIconToDeleteAnItemElements = driver.findElements(By.name("anItem"));
+		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			
 			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anItem'");
