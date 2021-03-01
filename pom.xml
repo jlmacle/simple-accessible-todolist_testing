@@ -11,6 +11,7 @@
 	 <testng.version>6.13.1</testng.version>
 	 <maven.compiler.version>3.7.0</maven.compiler.version>
 	 <assertj.version>3.8.0</assertj.version>
+	 
 	</properties>
 	
 	<dependencies>
@@ -34,7 +35,14 @@
 		  <groupId>com.itextpdf</groupId>
 		  <artifactId>pdfocr-tesseract4</artifactId>
 		  <version>1.0.2</version>
+		</dependency>	
+		<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+		<dependency>
+		    <groupId>org.sonarsource.scanner.maven</groupId>
+		    <artifactId>sonar-maven-plugin</artifactId>
+		    <version>3.8.0.2131</version>
 		</dependency>
-	</dependencies>
-  
+							
+	</dependencies>  
+	
 </project>
