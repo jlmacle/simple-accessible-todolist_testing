@@ -143,7 +143,7 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);	
 			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Selenium test category"
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
 			//action.sendKeys("\n").build().perform();//Click to delete the test category
@@ -274,7 +274,7 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Selenium test category"
 			//actions.sendKeys("\n").build().perform(); //Click to delete the test category
 			robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
 		} catch (AWTException e) {
