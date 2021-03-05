@@ -3,15 +3,14 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.ChromeTests.UserRequirement2">
+      <class name="jl.project.ChromeTests.UserRequirement1_Test">
         <methods>
-          <include name="setup"/>
-          <include name="deleteItem"/>
           <include name="navigate"/>
           <include name="releaseResources"/>
-          <include name="createItem"/>
+          <include name="setup"/>
+          <include name="deleteCategory"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement2 -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement1_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

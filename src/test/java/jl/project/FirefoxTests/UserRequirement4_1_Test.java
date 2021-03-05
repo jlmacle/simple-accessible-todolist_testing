@@ -76,8 +76,6 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);
 			robot.delay(1000);
 			action.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();
@@ -127,13 +125,9 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
@@ -143,7 +137,7 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);	
 			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Selenium test category"
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
 			//action.sendKeys("\n").build().perform();//Click to delete the test category
@@ -208,13 +202,9 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			actions.sendKeys("Uncategorized").build().perform();
@@ -274,7 +264,7 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Protractor test category"
+			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Selenium test category"
 			//actions.sendKeys("\n").build().perform(); //Click to delete the test category
 			robot.keyPress(KeyEvent.VK_ENTER);//Click to delete the test category
 		} catch (AWTException e) {
@@ -332,13 +322,9 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);			
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			actions.sendKeys("Uncategorized").build().perform();
@@ -427,15 +413,11 @@ public class UserRequirement4_1_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
+			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new item text
 			robot.delay(1000);

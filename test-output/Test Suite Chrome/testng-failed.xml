@@ -1,42 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" name="Failed suite [Test Suite Chrome]" guice-stage="DEVELOPMENT">
+  <test name="User Requirement 1(failed)">
+    <classes>
+      <class name="jl.project.ChromeTests.UserRequirement1_Test">
+        <methods>
+          <include name="navigate"/>
+          <include name="releaseResources"/>
+          <include name="setup"/>
+          <include name="deleteCategory"/>
+        </methods>
+      </class> <!-- jl.project.ChromeTests.UserRequirement1_Test -->
+    </classes>
+  </test> <!-- User Requirement 1(failed) -->
   <test name="User Requirement 3(failed)">
     <classes>
-      <class name="jl.project.ChromeTests.UserRequirement3">
+      <class name="jl.project.ChromeTests.UserRequirement3_Test">
         <methods>
           <include name="hideAndDisplayItem"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement3 -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement3_Test -->
     </classes>
   </test> <!-- User Requirement 3(failed) -->
   <test name="User Requirement 4 Part 1(failed)">
     <classes>
-      <class name="jl.project.ChromeTests.UserRequirement4_1">
+      <class name="jl.project.ChromeTests.UserRequirement4_1_Test">
         <methods>
-          <include name="releseResources"/>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_EnterKey"/>
-          <include name="setup"/>
-          <include name="navigate"/>
           <include name="createAndDeleteItemWithKeyboardOnly_EnterKey"/>
+          <include name="navigate"/>
+          <include name="releseResources"/>
+          <include name="setup"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_EnterKey"/>
           <include name="HideAndDisplayItemsWithKeyboardOnly_EnterKey"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement4_1 -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement4_1_Test -->
     </classes>
   </test> <!-- User Requirement 4 Part 1(failed) -->
   <test name="User Requirement 4 Part 2(failed)">
     <classes>
-      <class name="jl.project.ChromeTests.UserRequirement4_2">
+      <class name="jl.project.ChromeTests.UserRequirement4_2_Test">
         <methods>
           <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
-          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
+          <include name="setup"/>
           <include name="navigate"/>
+          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
           <include name="releseResources"/>
           <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
-          <include name="setup"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement4_2 -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement4_2_Test -->
     </classes>
   </test> <!-- User Requirement 4 Part 2(failed) -->
 </suite> <!-- Failed suite [Test Suite Chrome] -->
