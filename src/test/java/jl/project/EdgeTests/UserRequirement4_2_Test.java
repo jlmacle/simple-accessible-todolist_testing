@@ -77,8 +77,6 @@ public class UserRequirement4_2_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category input
 			robot.delay(1000);
 			actions.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();
@@ -128,13 +126,9 @@ public class UserRequirement4_2_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
@@ -209,13 +203,9 @@ public class UserRequirement4_2_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			actions.sendKeys("Uncategorized").build().perform();
@@ -333,13 +323,9 @@ public class UserRequirement4_2_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			actions.sendKeys("Uncategorized").build().perform();
@@ -429,13 +415,9 @@ public class UserRequirement4_2_Test {
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
-			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//new category text
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//submit category button
-			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Form label
 			robot.delay(1000);
 			robot.keyPress(KeyEvent.VK_TAB);//category selection
 			robot.delay(1000);
