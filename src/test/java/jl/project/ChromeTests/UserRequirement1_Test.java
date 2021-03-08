@@ -28,6 +28,8 @@ import jl.project.StringExternalization;
  */
 public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement1_Test.class);
+	private boolean gridNotUsed = false;
+	private boolean linuxNodeUsed = true;
 	WebDriver driver;	
 	
 	/**
@@ -40,7 +42,13 @@ public class UserRequirement1_Test {
 		//https://chromedriver.chromium.org/downloads
 		System.setProperty(StringExternalization.WEBDRIVER_CHROME_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_CHROME_VALUE);
-		driver = new ChromeDriver();		
+		
+		if(gridNotUsed) {driver = new ChromeDriver();}
+		else if (linuxNodeUsed) 
+		{
+			
+		}
+		
 		driver.manage().window().maximize();
 	}
 	
