@@ -5,5 +5,7 @@ Instructions for running the end-to-end code are available:
  2. [Windows](https://javafullstackcode.wordpress.com/2021/02/24/windows-10-cloning-and-running-the-end-to-end-testing-code-2/ "[Windows 10] Cloning and running the end-to-end testing code")
  3. [Ubuntu](https://javafullstackcode.wordpress.com/2021/02/24/linux-ubuntu-cloning-and-running-the-end-to-end-testing-code/ "[Linux Ubuntu] Cloning and running the end-to-end testing code")
 
-Note: You will need to download the webdrivers you need.
+Note: You will need to download the webdrivers you need,
+and to comment/uncomment in jl.project.StringExternalization 
+to specify the operating system used.
 
