@@ -50,7 +50,7 @@ public class UserRequirement1_Test {
 	 */
 	@BeforeMethod	
 	public void navigate() {
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
 	
@@ -67,7 +67,7 @@ public class UserRequirement1_Test {
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	logger.debug("At this point, the test category should have been created.");
-    	driver.get(StringExternalization.FRONT_END_URL);
+    	driver.get(StringExternalization.ANGULAR_SERVER_URL);
     	
     	logger.info("2. Confirmation of category creation ");	    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	    	
@@ -155,7 +155,7 @@ public class UserRequirement1_Test {
     		
     		//3. confirmation of deletion
     		logger.info("3. Confirmation of category deletion");
-    		driver.get(StringExternalization.FRONT_END_URL);
+    		driver.get(StringExternalization.ANGULAR_SERVER_URL);
     		
     		aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
     		logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
