@@ -48,7 +48,7 @@ public class UserRequirement3_Test {
 	public void hideAndDisplayItem() {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
 		boolean isTestItemLabelFound = false;
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		//1. Creation of an item. By default the item is displayed
 		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
@@ -57,7 +57,7 @@ public class UserRequirement3_Test {
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		//To avoid a StaleElementReferenceException 
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 				
 		//Checking that the new item creation was successful		
@@ -182,7 +182,7 @@ public class UserRequirement3_Test {
 			}
 			
 		logger.info("6. Testing the deletion of the test item");
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");

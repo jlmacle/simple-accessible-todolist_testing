@@ -50,7 +50,7 @@ public class UserRequirement4_1_Test {
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
 	
@@ -95,7 +95,7 @@ public class UserRequirement4_1_Test {
 		
 			//Verifying that the category has been created		
 			logger.info("2. Confirming creation of the category");
-			driver.get(StringExternalization.FRONT_END_URL);
+			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			
 			List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
@@ -152,7 +152,7 @@ public class UserRequirement4_1_Test {
 		{
 			//Verifying that the category has been deleted
 			logger.info("4. Confirming that the category has been deleted.");
-			driver.get(StringExternalization.FRONT_END_URL);
+			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			
 			List<WebElement>aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
@@ -274,7 +274,7 @@ public class UserRequirement4_1_Test {
 		}
 		
 		logger.info("4. Confirmation of deletion");
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
@@ -308,7 +308,7 @@ public class UserRequirement4_1_Test {
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		Robot robot;
 		Actions actions;
@@ -401,7 +401,7 @@ public class UserRequirement4_1_Test {
 		//clicking to hide the item		
 		logger.info("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		try {
 			robot = new Robot();
@@ -516,7 +516,7 @@ public class UserRequirement4_1_Test {
 		}
 		
 		logger.debug("7. Testing the deletion of the test item");
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}

@@ -1,6 +1,6 @@
-projectKey=AccessibleTodoList_BackEnd:jl.forthem
+projectKey=End-to-endTesting:jl.project
 serverUrl=http://localhost:9000
 serverVersion=8.7.0.41497
-dashboardUrl=http://localhost:9000/dashboard?id=AccessibleTodoList_BackEnd%3Ajl.forthem
-ceTaskId=AXfua-aJo-dhZB7d_2VA
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXfua-aJo-dhZB7d_2VA
+dashboardUrl=http://localhost:9000/dashboard?id=End-to-endTesting%3Ajl.project
+ceTaskId=AXgSyKHCyiD7GnZD4aXP
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXgSyKHCyiD7GnZD4aXP

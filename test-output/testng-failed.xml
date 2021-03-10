@@ -8,6 +8,7 @@
           <include name="navigate"/>
           <include name="releaseResources"/>
           <include name="setup"/>
+          <include name="createCategory"/>
           <include name="deleteCategory"/>
         </methods>
       </class> <!-- jl.project.ChromeTests.UserRequirement1_Test -->

@@ -1,7 +1,41 @@
 package jl.project;
 
 public class StringExternalization {
-	public static final String FRONT_END_URL = "http://localhost:4200";
+	// Windows webdrivers			
+	  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
+	  public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
+	  public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
+	  public static final String WEBDRIVER_SAFARI_VALUE = "";		 
+	  		
+	// Linux webdrivers		
+	/*
+	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
+	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
+	 * public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
+	 * public static final String WEBDRIVER_SAFARI_VALUE = "";
+	 */
+	 
+	 
+	// macOS webdrivers
+	/*
+	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
+	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
+	 * final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
+	 * String WEBDRIVER_SAFARI_VALUE = ""; // /usr/bin/safaridriver to be used instead
+	 */	
+	  
+	
+	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";
+	
+	
+	//Grid 4: beginning
+	public static final String SELENIUM_HUB = "http://192.168.1.15:4444";
+	//public static final String ANGULAR_SERVER_URL = "http://192.168.1.15:4200";	
+	public static final String BROWSER_NAME_CHROME = "chrome";	
+	public static final String BROWSER_NAME_EDGE = "edge";	
+	
+	//Grid 4 : end
+	
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";
 	public static final String LABEL_TEST_ITEM = "test"; 
 	//the ocr sometimes has an issue to detect the word 'item'.
@@ -24,6 +58,7 @@ public class StringExternalization {
 	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException while doing the OCR.";
 	public static final String EXCEPTION_IO = "Caught an IOException ";
 	public static final String EXCEPTION_AWT = "Caught an AWTException while using the instance of the Robot class";
+	public static final String EXCEPTION_MALFORMEDURL = "Caught a MalformedURLException while instantiating the RemoteWebDriver instance";
 	
 	public static final String TEST_START = "Entering test for: ";
 	public static final String TEST_CATEGORY_CREATION = "category creation";
@@ -54,32 +89,7 @@ public class StringExternalization {
 	public static final String WEBDRIVER_FIREFOX_KEY = "webdriver.gecko.driver";	
 	public static final String WEBDRIVER_EDGE_KEY = "webdriver.edge.driver";
 
-	// Windows webdrivers		
 	
-	  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
-	  public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
-	  public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
-	  public static final String WEBDRIVER_SAFARI_VALUE = "";
-	 
-	  
-	
-	// Linux webdrivers
-	
-	/*
-	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
-	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
-	 * public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
-	 * public static final String WEBDRIVER_SAFARI_VALUE = "";
-	 */
-	 
-	 
-	// macOS webdrivers
-	/*
-	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
-	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
-	 * final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
-	 * String WEBDRIVER_SAFARI_VALUE = ""; // /usr/bin/safaridriver to be used instead
-	 */	
 	
 	
 

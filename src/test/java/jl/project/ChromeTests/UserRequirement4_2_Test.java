@@ -8,6 +8,8 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -17,9 +19,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -38,20 +43,37 @@ import net.sourceforge.tess4j.TesseractException;
 public class UserRequirement4_2_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement4_2_Test.class);
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
-	ChromeDriver driver;	
+	private boolean gridNotUsed = true;
+	private boolean linuxNodeUsed = false;
+	WebDriver driver;	
 	
 	@BeforeClass
 	public void setup() {
 		System.setProperty(StringExternalization.WEBDRIVER_CHROME_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_CHROME_VALUE);
-	driver = new ChromeDriver();	
+
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_CHROME);
+		
+		if(gridNotUsed) {driver = new ChromeDriver();}
+		else if (linuxNodeUsed) 
+		{	
+			try {
+				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);
+			} catch (MalformedURLException e) {
+				logger.error(StringExternalization.EXCEPTION_MALFORMEDURL);
+				logger.error(e.getMessage());
+				e.printStackTrace();
+			}			
+		}
+			
 	driver.manage().window().maximize();
 	
 	}
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
 	
@@ -66,7 +88,7 @@ public class UserRequirement4_2_Test {
 		
 		logger.info("1. Creation of a category with the keyboard only.");		
 		//Tabbing until finding the input field to add the new category label
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		Robot robot;
 		Actions  actions = new Actions(driver);
@@ -98,7 +120,7 @@ public class UserRequirement4_2_Test {
 		
 			//Verifying that the category has been created		
 			logger.info("2. Confirming creation of the category");
-			driver.get(StringExternalization.FRONT_END_URL);
+			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			
 			List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
@@ -155,7 +177,7 @@ public class UserRequirement4_2_Test {
 		{
 			//Verifying that the category has been deleted
 			logger.info("4. Confirming that the category has been deleted.");
-			driver.get(StringExternalization.FRONT_END_URL);
+			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			
 			List<WebElement>aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
@@ -277,7 +299,7 @@ public class UserRequirement4_2_Test {
 		}
 		
 		logger.info("4. Confirmation of deletion");
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
@@ -311,7 +333,7 @@ public class UserRequirement4_2_Test {
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		Robot robot;
 		Actions actions;
@@ -406,7 +428,7 @@ public class UserRequirement4_2_Test {
 		//clicking to hide the item		
 		logger.info("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		try {
 			robot = new Robot();
@@ -521,7 +543,7 @@ public class UserRequirement4_2_Test {
 		}
 		
 		logger.debug("7. Testing the deletion of the test item");
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}

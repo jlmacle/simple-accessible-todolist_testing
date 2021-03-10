@@ -4,6 +4,8 @@ import static org.testng.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -13,8 +15,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -29,13 +34,30 @@ import net.sourceforge.tess4j.TesseractException;
  */
 public class UserRequirement3_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement3_Test.class);
-	ChromeDriver driver; 	
+	private boolean gridNotUsed = true;
+	private boolean linuxNodeUsed = false;
+	WebDriver driver; 	
 	
 	@BeforeClass
 	public void setup(){		
 		System.setProperty(StringExternalization.WEBDRIVER_CHROME_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_CHROME_VALUE);
-		driver = new ChromeDriver();
+
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_CHROME);
+		
+		if(gridNotUsed) {driver = new ChromeDriver();}
+		else if (linuxNodeUsed) 
+		{	
+			try {
+				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);
+			} catch (MalformedURLException e) {
+				logger.error(StringExternalization.EXCEPTION_MALFORMEDURL);
+				logger.error(e.getMessage());
+				e.printStackTrace();
+			}			
+		}
+		
 		driver.manage().window().maximize();
 	}
 	
@@ -44,7 +66,7 @@ public class UserRequirement3_Test {
 	public void hideAndDisplayItem() {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
 		boolean isTestItemLabelFound = false;
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		
 		//1. Creation of an item. By default the item is displayed
@@ -54,7 +76,7 @@ public class UserRequirement3_Test {
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		//To avoid a StaleElementReferenceException 
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 				
 		//Checking that the new item creation was successful		
@@ -110,7 +132,7 @@ public class UserRequirement3_Test {
 		//3. Hiding of the item		
 		logger.info("3. Verification that the item can be hidden.");
 		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
+		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
 		//4. Verification that the item is hidden
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
@@ -141,7 +163,7 @@ public class UserRequirement3_Test {
 		
 		//4. Verification that the item can be displayed 
 		logger.info("4. Verification that the item can be displayed");
-		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
+		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
 		
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");
@@ -179,7 +201,7 @@ public class UserRequirement3_Test {
 			}
 			
 		logger.info("6. Testing the deletion of the test item");
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");

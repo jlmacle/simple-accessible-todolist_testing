@@ -39,7 +39,7 @@ public class UserRequirement2_Test {
 	
 	@BeforeMethod
 	public void navigate() {
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
 	
@@ -54,7 +54,7 @@ public class UserRequirement2_Test {
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		//To avoid a StaleElementReferenceException 
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 				
 		//Checking that the new item creation was successful		
@@ -98,7 +98,7 @@ public class UserRequirement2_Test {
 				anIconToDeleteAnItemElement.click();
 				logger.debug("Trash can icon clicked.");
 			}
-			driver.get(StringExternalization.FRONT_END_URL);
+			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			
 			
 		}

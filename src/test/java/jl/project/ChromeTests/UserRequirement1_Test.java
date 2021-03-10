@@ -2,9 +2,10 @@
 package jl.project.ChromeTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -12,6 +13,8 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -28,7 +31,10 @@ import jl.project.StringExternalization;
  */
 public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement1_Test.class);
+	private boolean gridNotUsed = true;
+	private boolean linuxNodeUsed = false;
 	WebDriver driver;	
+	
 	
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  
@@ -40,7 +46,22 @@ public class UserRequirement1_Test {
 		//https://chromedriver.chromium.org/downloads
 		System.setProperty(StringExternalization.WEBDRIVER_CHROME_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_CHROME_VALUE);
-		driver = new ChromeDriver();		
+		
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_CHROME);
+		
+		if(gridNotUsed) {driver = new ChromeDriver();}
+		else if (linuxNodeUsed) 
+		{	
+			try {
+				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);
+			} catch (MalformedURLException e) {
+				logger.error(StringExternalization.EXCEPTION_MALFORMEDURL);
+				logger.error(e.getMessage());
+				e.printStackTrace();
+			}			
+		}
+		
 		driver.manage().window().maximize();
 	}
 	
@@ -50,7 +71,7 @@ public class UserRequirement1_Test {
 	 */
 	@BeforeMethod	
 	public void navigate() {
-		driver.get(StringExternalization.FRONT_END_URL);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
 	
@@ -67,7 +88,7 @@ public class UserRequirement1_Test {
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	logger.debug("At this point, the test category should have been created.");
-    	driver.get(StringExternalization.FRONT_END_URL);
+    	driver.get(StringExternalization.ANGULAR_SERVER_URL);
     	
     	logger.info("2. Confirmation of category creation ");	    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	    	
@@ -155,7 +176,7 @@ public class UserRequirement1_Test {
     		
     		//3. confirmation of deletion
     		logger.info("3. Confirmation of category deletion");
-    		driver.get(StringExternalization.FRONT_END_URL);
+    		driver.get(StringExternalization.ANGULAR_SERVER_URL);
     		
     		aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
     		logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
