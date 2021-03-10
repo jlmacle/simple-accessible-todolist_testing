@@ -26,9 +26,11 @@ public class StringExternalization {
 	  
 	
 	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";
+	public static final boolean GRID_NOT_USED = false;
 	
 	
 	//Grid 4: beginning
+	
 	public static final String SELENIUM_HUB = "http://192.168.1.15:4444";
 	//public static final String ANGULAR_SERVER_URL = "http://192.168.1.15:4200";	
 	public static final String BROWSER_NAME_CHROME = "chrome";	

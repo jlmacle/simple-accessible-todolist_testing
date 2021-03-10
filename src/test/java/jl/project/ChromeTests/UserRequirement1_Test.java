@@ -31,7 +31,6 @@ import jl.project.StringExternalization;
  */
 public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement1_Test.class);
-	private boolean gridNotUsed = true;
 	WebDriver driver;	
 	
 	
@@ -49,7 +48,7 @@ public class UserRequirement1_Test {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_CHROME);
 		
-		if(gridNotUsed) {driver = new ChromeDriver();}
+		if(StringExternalization.GRID_NOT_USED) {driver = new ChromeDriver();}
 		else 
 		{	
 			try {
