@@ -43,8 +43,6 @@ import net.sourceforge.tess4j.TesseractException;
 public class UserRequirement4_2_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement4_2_Test.class);
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
-	private boolean gridNotUsed = true;
-	private boolean linuxNodeUsed = false;
 	WebDriver driver;	
 	
 	@BeforeClass
@@ -55,8 +53,8 @@ public class UserRequirement4_2_Test {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_CHROME);
 		
-		if(gridNotUsed) {driver = new ChromeDriver();}
-		else if (linuxNodeUsed) 
+		if(StringExternalization.GRID_NOT_USED) {driver = new ChromeDriver();}
+		else 
 		{	
 			try {
 				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);

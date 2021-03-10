@@ -30,9 +30,7 @@ import jl.project.StringExternalization;
 
 
 public class UserRequirement2_Test {
-	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement2_Test.class);
-	private boolean gridNotUsed = true;
-	private boolean linuxNodeUsed = false;
+	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement2_Test.class);	
 	WebDriver driver;		
 	
 	@BeforeClass
@@ -43,8 +41,8 @@ public class UserRequirement2_Test {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_CHROME);
 		
-		if(gridNotUsed) {driver = new ChromeDriver();}
-		else if (linuxNodeUsed) 
+		if(StringExternalization.GRID_NOT_USED)  {driver = new ChromeDriver();}
+		else
 		{	
 			try {
 				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);

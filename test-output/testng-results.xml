@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-10T13:59:06Z" name="Default suite" finished-at="2021-03-10T13:59:13Z" duration-ms="6895">
+  <suite started-at="2021-03-10T14:17:32Z" name="Default suite" finished-at="2021-03-10T14:17:38Z" duration-ms="6138">
     <groups>
     </groups>
-    <test started-at="2021-03-10T13:59:06Z" name="Default test" finished-at="2021-03-10T13:59:13Z" duration-ms="6895">
+    <test started-at="2021-03-10T14:17:32Z" name="Default test" finished-at="2021-03-10T14:17:38Z" duration-ms="6138">
       <class name="jl.project.ChromeTests.UserRequirement1_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@a307a8c]" started-at="2021-03-10T07:59:06Z" name="setup" finished-at="2021-03-10T07:59:08Z" duration-ms="1911" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:32Z" name="setup" finished-at="2021-03-10T08:17:34Z" duration-ms="1877" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@a307a8c]" started-at="2021-03-10T07:59:08Z" name="navigate" finished-at="2021-03-10T07:59:11Z" duration-ms="2752" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:34Z" name="navigate" finished-at="2021-03-10T08:17:36Z" duration-ms="2612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@a307a8c]" started-at="2021-03-10T07:59:11Z" name="createCategory" finished-at="2021-03-10T07:59:12Z" duration-ms="1217" status="PASS">
+        <test-method signature="createCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:36Z" name="createCategory" finished-at="2021-03-10T08:17:37Z" duration-ms="518" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createCategory -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@a307a8c]" started-at="2021-03-10T07:59:12Z" name="navigate" finished-at="2021-03-10T07:59:12Z" duration-ms="136" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:37Z" name="navigate" finished-at="2021-03-10T08:17:37Z" duration-ms="142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="deleteCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@a307a8c]" started-at="2021-03-10T07:59:12Z" name="deleteCategory" finished-at="2021-03-10T07:59:13Z" duration-ms="236" status="PASS">
+        <test-method signature="deleteCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:37Z" name="deleteCategory" finished-at="2021-03-10T08:17:37Z" duration-ms="335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteCategory -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@a307a8c]" started-at="2021-03-10T07:59:13Z" name="releaseResources" finished-at="2021-03-10T07:59:13Z" duration-ms="609" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:37Z" name="releaseResources" finished-at="2021-03-10T08:17:38Z" duration-ms="622" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
