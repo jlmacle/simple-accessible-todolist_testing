@@ -31,8 +31,8 @@ import jl.project.StringExternalization;
  */
 public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement1_Test.class);
-	private boolean gridNotUsed = false;
-	private boolean linuxNodeUsed = true;
+	private boolean gridNotUsed = true;
+	private boolean linuxNodeUsed = false;
 	WebDriver driver;	
 	
 	
