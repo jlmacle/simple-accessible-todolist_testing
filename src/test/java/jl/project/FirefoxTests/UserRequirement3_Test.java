@@ -42,7 +42,7 @@ public class UserRequirement3_Test {
 		driver.manage().window().maximize();
 	}
 	
-	// For reasons of software bug issue, this test needs to be ignored on macOS Big Sur
+	
 	
 	@Test
 	public void hideAndDisplayItem() {

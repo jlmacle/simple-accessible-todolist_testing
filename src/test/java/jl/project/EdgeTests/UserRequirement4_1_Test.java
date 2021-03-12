@@ -54,7 +54,7 @@ public class UserRequirement4_1_Test {
 		
 	}
 	
-	// For reasons of software bug issue, this test needs to be ignored on Ubuntu	
+		
 	@Test(groups = {"creation_deletion_edge_1"})	
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() {
 		logger.info(StringExternalization.TEST_START
@@ -180,7 +180,7 @@ public class UserRequirement4_1_Test {
 		
 	}
 	
-	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
+	
 	
 	@Test(groups = {"creation_deletion_edge_1"})	
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() {
@@ -296,7 +296,7 @@ public class UserRequirement4_1_Test {
 		}
 	}
 	
-	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
+	
 	
 	@Test(dependsOnGroups = {"creation_deletion_edge_1"})	
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
