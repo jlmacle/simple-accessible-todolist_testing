@@ -42,7 +42,7 @@ public class UserRequirement3_Test {
 		driver.manage().window().maximize();
 	}
 	
-	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
+	
 	
 	@Test
 	public void hideAndDisplayItem() {

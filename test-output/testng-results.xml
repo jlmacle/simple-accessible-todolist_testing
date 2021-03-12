@@ -1,37 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="8" failed="1" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-10T14:17:32Z" name="Default suite" finished-at="2021-03-10T14:17:38Z" duration-ms="6138">
+  <suite started-at="2021-03-12T18:26:39Z" name="Test Suite Firefox" finished-at="2021-03-12T18:29:26Z" duration-ms="167603">
     <groups>
+      <group name="creation_deletion_firefox_2">
+        <method signature="UserRequirement4_2_Test.createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" class="jl.project.FirefoxTests.UserRequirement4_2_Test"/>
+        <method signature="UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" class="jl.project.FirefoxTests.UserRequirement4_2_Test"/>
+      </group> <!-- creation_deletion_firefox_2 -->
+      <group name="creation_deletion_firefox_1">
+        <method signature="UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" class="jl.project.FirefoxTests.UserRequirement4_1_Test"/>
+        <method signature="UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" name="createAndDeleteItemWithKeyboardOnly_EnterKey" class="jl.project.FirefoxTests.UserRequirement4_1_Test"/>
+      </group> <!-- creation_deletion_firefox_1 -->
     </groups>
-    <test started-at="2021-03-10T14:17:32Z" name="Default test" finished-at="2021-03-10T14:17:38Z" duration-ms="6138">
-      <class name="jl.project.ChromeTests.UserRequirement1_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:32Z" name="setup" finished-at="2021-03-10T08:17:34Z" duration-ms="1877" status="PASS">
+    <test started-at="2021-03-12T18:26:39Z" name="User Requirement 1" finished-at="2021-03-12T18:26:54Z" duration-ms="15171">
+      <class name="jl.project.FirefoxTests.UserRequirement1_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1_Test@37883b97]" started-at="2021-03-12T12:26:39Z" name="setup" finished-at="2021-03-12T12:26:45Z" duration-ms="6300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:34Z" name="navigate" finished-at="2021-03-10T08:17:36Z" duration-ms="2612" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1_Test@37883b97]" started-at="2021-03-12T12:26:45Z" name="navigate" finished-at="2021-03-12T12:26:48Z" duration-ms="2820" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:36Z" name="createCategory" finished-at="2021-03-10T08:17:37Z" duration-ms="518" status="PASS">
+        <test-method signature="createCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1_Test@37883b97]" started-at="2021-03-12T12:26:48Z" name="createCategory" finished-at="2021-03-12T12:26:49Z" duration-ms="1612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createCategory -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:37Z" name="navigate" finished-at="2021-03-10T08:17:37Z" duration-ms="142" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1_Test@37883b97]" started-at="2021-03-12T12:26:49Z" name="navigate" finished-at="2021-03-12T12:26:50Z" duration-ms="1060" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="deleteCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:37Z" name="deleteCategory" finished-at="2021-03-10T08:17:37Z" duration-ms="335" status="PASS">
+        <test-method signature="deleteCategory()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1_Test@37883b97]" started-at="2021-03-12T12:26:50Z" name="deleteCategory" finished-at="2021-03-12T12:26:52Z" duration-ms="1613" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteCategory -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@30bce90b]" started-at="2021-03-10T08:17:37Z" name="releaseResources" finished-at="2021-03-10T08:17:38Z" duration-ms="622" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement1_Test@37883b97]" started-at="2021-03-12T12:26:52Z" name="releaseResources" finished-at="2021-03-12T12:26:54Z" duration-ms="1665" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
-      </class> <!-- jl.project.ChromeTests.UserRequirement1_Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- jl.project.FirefoxTests.UserRequirement1_Test -->
+    </test> <!-- User Requirement 1 -->
+    <test started-at="2021-03-12T18:26:54Z" name="User Requirement 2" finished-at="2021-03-12T18:27:05Z" duration-ms="11450">
+      <class name="jl.project.FirefoxTests.UserRequirement2_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2_Test@fa36558]" started-at="2021-03-12T12:26:54Z" name="setup" finished-at="2021-03-12T12:26:59Z" duration-ms="4956" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2_Test@fa36558]" started-at="2021-03-12T12:26:59Z" name="navigate" finished-at="2021-03-12T12:27:01Z" duration-ms="1886" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2_Test@fa36558]" started-at="2021-03-12T12:27:01Z" name="createItem" finished-at="2021-03-12T12:27:02Z" duration-ms="1267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createItem -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2_Test@fa36558]" started-at="2021-03-12T12:27:02Z" name="navigate" finished-at="2021-03-12T12:27:03Z" duration-ms="757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="deleteItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2_Test@fa36558]" started-at="2021-03-12T12:27:03Z" name="deleteItem" finished-at="2021-03-12T12:27:04Z" duration-ms="997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteItem -->
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement2_Test@fa36558]" started-at="2021-03-12T12:27:04Z" name="releaseResources" finished-at="2021-03-12T12:27:05Z" duration-ms="1582" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releaseResources -->
+      </class> <!-- jl.project.FirefoxTests.UserRequirement2_Test -->
+    </test> <!-- User Requirement 2 -->
+    <test started-at="2021-03-12T18:27:05Z" name="User Requirement 3" finished-at="2021-03-12T18:27:31Z" duration-ms="25313">
+      <class name="jl.project.FirefoxTests.UserRequirement3_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3_Test@2f54a33d]" started-at="2021-03-12T12:27:05Z" name="setup" finished-at="2021-03-12T12:27:10Z" duration-ms="4329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3_Test@2f54a33d]" started-at="2021-03-12T12:27:10Z" name="hideAndDisplayItem" finished-at="2021-03-12T12:27:29Z" duration-ms="19834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hideAndDisplayItem -->
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement3_Test@2f54a33d]" started-at="2021-03-12T12:27:29Z" name="releaseResources" finished-at="2021-03-12T12:27:31Z" duration-ms="1148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releaseResources -->
+      </class> <!-- jl.project.FirefoxTests.UserRequirement3_Test -->
+    </test> <!-- User Requirement 3 -->
+    <test started-at="2021-03-12T18:27:31Z" name="User Requirement 4 Part 1" finished-at="2021-03-12T18:29:09Z" duration-ms="98044">
+      <class name="jl.project.FirefoxTests.UserRequirement4_1_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:27:31Z" name="setup" finished-at="2021-03-12T12:27:34Z" duration-ms="3776" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:27:34Z" name="navigate" finished-at="2021-03-12T12:27:36Z" duration-ms="1407" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:27:36Z" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" finished-at="2021-03-12T12:27:59Z" duration-ms="23546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_EnterKey -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:27:59Z" name="navigate" finished-at="2021-03-12T12:28:00Z" duration-ms="573" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:28:00Z" name="createAndDeleteItemWithKeyboardOnly_EnterKey" finished-at="2021-03-12T12:28:18Z" duration-ms="17887" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteItemWithKeyboardOnly_EnterKey -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:28:18Z" name="navigate" finished-at="2021-03-12T12:28:19Z" duration-ms="801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:28:19Z" name="HideAndDisplayItemsWithKeyboardOnly_EnterKey" depends-on-groups="creation_deletion_firefox_1" finished-at="2021-03-12T12:29:08Z" duration-ms="49000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_EnterKey -->
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_1_Test@3943a2be]" started-at="2021-03-12T12:29:08Z" name="releaseResources" finished-at="2021-03-12T12:29:09Z" duration-ms="1048" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releaseResources -->
+      </class> <!-- jl.project.FirefoxTests.UserRequirement4_1_Test -->
+    </test> <!-- User Requirement 4 Part 1 -->
+    <test started-at="2021-03-12T18:29:09Z" name="User Requirement 4 Part 2" finished-at="2021-03-12T18:29:26Z" duration-ms="17575">
+      <class name="jl.project.FirefoxTests.UserRequirement4_2_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" started-at="2021-03-12T12:29:09Z" name="setup" finished-at="2021-03-12T12:29:12Z" duration-ms="3426" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" started-at="2021-03-12T12:29:12Z" name="navigate" finished-at="2021-03-12T12:29:14Z" duration-ms="1746" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" started-at="2021-03-12T12:29:14Z" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" finished-at="2021-03-12T12:29:26Z" duration-ms="12387" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connectionBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.firefox.FirefoxDriverCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 86.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210222142601, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 7204, moz:profile: C:\Users\jeanl\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}Session ID: 84e11425-ea50-436e-97c6-c5e1d9f889e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connectionBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.firefox.FirefoxDriverCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 86.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210222142601, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 7204, moz:profile: C:\Users\jeanl\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}Session ID: 84e11425-ea50-436e-97c6-c5e1d9f889e2at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)at jl.project.FirefoxTests.UserRequirement4_2_Test.createAndDeleteACategoryWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:155)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_SpaceKey -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" started-at="2021-03-12T12:29:26Z" name="navigate" finished-at="2021-03-12T12:29:26Z" duration-ms="4" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connectionBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.firefox.FirefoxDriverCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 86.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210222142601, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 7204, moz:profile: C:\Users\jeanl\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}Session ID: 84e11425-ea50-436e-97c6-c5e1d9f889e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connectionBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.firefox.FirefoxDriverCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 86.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210222142601, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 7204, moz:profile: C:\Users\jeanl\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}Session ID: 84e11425-ea50-436e-97c6-c5e1d9f889e2at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)at jl.project.FirefoxTests.UserRequirement4_2_Test.navigate(UserRequirement4_2_Test.java:53)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" started-at="2021-03-12T12:29:26Z" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" finished-at="2021-03-12T12:29:26Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connectionBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.firefox.FirefoxDriverCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 86.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210222142601, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 7204, moz:profile: C:\Users\jeanl\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}Session ID: 84e11425-ea50-436e-97c6-c5e1d9f889e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connectionBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.firefox.FirefoxDriverCapabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 86.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210222142601, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 7204, moz:profile: C:\Users\jeanl\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}Session ID: 84e11425-ea50-436e-97c6-c5e1d9f889e2at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)at jl.project.FirefoxTests.UserRequirement4_2_Test.navigate(UserRequirement4_2_Test.java:53)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteItemWithKeyboardOnly_SpaceKey -->
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" started-at="2021-03-12T12:29:26Z" name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey" depends-on-groups="creation_deletion_firefox_2" finished-at="2021-03-12T12:29:26Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf] depends on not successfully finished methods in group "creation_deletion_firefox_2"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf] depends on not successfully finished methods in group "creation_deletion_firefox_2"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_SpaceKey -->
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.FirefoxTests.UserRequirement4_2_Test@55f616cf]" started-at="2021-03-12T12:29:26Z" name="releseResources" finished-at="2021-03-12T12:29:26Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releseResources -->
+      </class> <!-- jl.project.FirefoxTests.UserRequirement4_2_Test -->
+    </test> <!-- User Requirement 4 Part 2 -->
+  </suite> <!-- Test Suite Firefox -->
 </testng-results>
