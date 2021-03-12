@@ -5,7 +5,6 @@ import static org.testng.Assert.fail;
 
 import java.awt.AWTException;
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -14,6 +13,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.log4testng.Logger;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
@@ -54,7 +54,7 @@ public class UserRequirement4_2_Test {
 		
 	}
 	
-	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
+	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
 	
 	@Test(groups = {"creation_deletion_firefox_2"})	
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() {
@@ -68,23 +68,22 @@ public class UserRequirement4_2_Test {
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		Robot robot;
-		Actions  actions = new Actions(driver);
+		Actions  action = new Actions(driver);
 		try {
 			robot = new Robot();
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);
+			action.sendKeys(Keys.TAB).build().perform();
 			robot.delay(1000);
-			actions.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();
+			action.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);
-			robot.delay(1000);
-			//robot.keyPress(KeyEvent.VK_SPACE);
-			actions.sendKeys(" ").build().perform();
+			action.sendKeys(Keys.TAB).build().perform();
+			robot.delay(1000);			
+			action.sendKeys(Keys.SPACE).build().perform();
 			robot.delay(3000);
 			
 		} catch (AWTException e) {
@@ -121,28 +120,27 @@ public class UserRequirement4_2_Test {
 		boolean isCategoryFound;
 		try {
 			robot = new Robot();
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new category text
+			action.sendKeys(Keys.TAB).build().perform();//new category text
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit category button
+			action.sendKeys(Keys.TAB).build().perform();//submit category button
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//category selection
+			action.sendKeys(Keys.TAB).build().perform();//category selection
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new item text
+			action.sendKeys(Keys.TAB).build().perform();//new item text
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit item button
+			action.sendKeys(Keys.TAB).build().perform();//submit item button
 			robot.delay(1000);	
-			robot.keyPress(KeyEvent.VK_TAB);//hyperlink
+			action.sendKeys(Keys.TAB).build().perform();//hyperlink
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Selenium test category"
-			robot.delay(1000);
-			//robot.keyPress(KeyEvent.VK_SPACE);//Click to delete the test category
-			actions.sendKeys(" ").build().perform();//Click to delete the test category
+			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
+			robot.delay(1000);			
+			action.sendKeys(Keys.SPACE).build().perform();//Click to delete the test category
 			robot.delay(2000);
 			
 		} catch (AWTException e) {
@@ -185,7 +183,7 @@ public class UserRequirement4_2_Test {
 		
 	}
 	
-	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
+	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
 	
 	@Test(groups = {"creation_deletion_firefox_2"})		
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() {
@@ -194,31 +192,30 @@ public class UserRequirement4_2_Test {
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
 		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		Robot robot;
-		Actions actions;
+		Actions action;
 		try {
 			robot = new Robot();			
-			actions = new Actions(driver);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action = new Actions(driver);
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new category text
+			action.sendKeys(Keys.TAB).build().perform();//new category text
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit category button
+			action.sendKeys(Keys.TAB).build().perform();//submit category button
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			actions.sendKeys("Uncategorized").build().perform();
+			action.sendKeys(Keys.TAB).build().perform();//category selection
+			action.sendKeys("Uncategorized").build().perform();
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new item text
+			action.sendKeys(Keys.TAB).build().perform();//new item text
 			robot.delay(1000);
-			actions.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
+			action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit item button
-			robot.delay(2000);
-			//robot.keyPress(KeyEvent.VK_SPACE);
-			actions.sendKeys(" ").build().perform();
+			action.sendKeys(Keys.TAB).build().perform();//submit item button
+			robot.delay(2000);			
+			action.sendKeys(Keys.SPACE).build().perform();
 			robot.delay(2000);
 			
 				
@@ -256,19 +253,19 @@ public class UserRequirement4_2_Test {
 		
 		try {
 			robot = new Robot();	
-			actions = new Actions(driver);
+			action = new Actions(driver);
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Uncategorized"
+			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Uncategorized"
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Uncategorized"
+			action.sendKeys(Keys.TAB).build().perform();//plus sign icon: category "Uncategorized"
 			robot.delay(1000);			
-			robot.keyPress(KeyEvent.VK_TAB);//Category "Uncategorized"
+			action.sendKeys(Keys.TAB).build().perform();//Category "Uncategorized"
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
+			action.sendKeys(Keys.TAB).build().perform();//Extra tab 
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Selenium test category"
-			actions.sendKeys(" ").build().perform(); //Click to delete the test category
-			//robot.keyPress(KeyEvent.VK_SPACE);//Click to delete the test category
+			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
+			action.sendKeys(Keys.SPACE).build().perform(); //Click to delete the test category
+			
 		} catch (AWTException e) {
 			System.err.println(StringExternalization.EXCEPTION_AWT);
 			System.err.println(e.getMessage());
@@ -302,7 +299,7 @@ public class UserRequirement4_2_Test {
 		}
 	}
 	
-	// For reasons of Tesseract library issue this test needs to be ignored on Ubuntu
+	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
 	
 	@Test(dependsOnGroups = {"creation_deletion_firefox_2"})	
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
@@ -314,31 +311,30 @@ public class UserRequirement4_2_Test {
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		Robot robot;
-		Actions actions;
+		Actions action;
 		try {
 			robot = new Robot();
-			actions = new Actions(driver);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action = new Actions(driver);
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new category text
+			action.sendKeys(Keys.TAB).build().perform();//new category text
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit category button
+			action.sendKeys(Keys.TAB).build().perform();//submit category button
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//category selection
-			actions.sendKeys("Uncategorized").build().perform();
+			action.sendKeys(Keys.TAB).build().perform();//category selection
+			action.sendKeys("Uncategorized").build().perform();
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new item text
+			action.sendKeys(Keys.TAB).build().perform();//new item text
 			robot.delay(1000);
-			actions.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
+			action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit item button
-			robot.delay(1000);
-			//robot.keyPress(KeyEvent.VK_SPACE);
-			actions.sendKeys(" ").build().perform();
+			action.sendKeys(Keys.TAB).build().perform();//submit item button
+			robot.delay(1000);			
+			action.sendKeys(Keys.SPACE).build().perform();
 			robot.delay(5000);
 							
 			
@@ -409,32 +405,32 @@ public class UserRequirement4_2_Test {
 		
 		try {
 			robot = new Robot();
-			actions = new Actions(driver);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action = new Actions(driver);
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//nav bar
+			action.sendKeys(Keys.TAB).build().perform();//nav bar
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new category text
+			action.sendKeys(Keys.TAB).build().perform();//new category text
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit category button
+			action.sendKeys(Keys.TAB).build().perform();//submit category button
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//category selection
+			action.sendKeys(Keys.TAB).build().perform();//category selection
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//new item text
+			action.sendKeys(Keys.TAB).build().perform();//new item text
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//submit item button
+			action.sendKeys(Keys.TAB).build().perform();//submit item button
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//Extra tab 
+			action.sendKeys(Keys.TAB).build().perform();//Extra tab 
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//trash can icon: category "Uncategorized"
+			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Uncategorized"
 			robot.delay(1000);
-			robot.keyPress(KeyEvent.VK_TAB);//plus sign icon: category "Uncategorized"
+			action.sendKeys(Keys.TAB).build().perform();//plus sign icon: category "Uncategorized"
 			robot.delay(1000);			
 			
-			//robot.keyPress(KeyEvent.VK_SPACE);//Click to hide the item
-			actions.sendKeys(" ").build().perform();//Click to hide the item
+			//Click to hide the item
+			action.sendKeys(Keys.SPACE).build().perform();//Click to hide the item
 			robot.delay(5000);
 		} catch (AWTException e) {
 			System.err.println(StringExternalization.EXCEPTION_AWT);
@@ -475,10 +471,10 @@ public class UserRequirement4_2_Test {
 		try {
 			
 			robot = new Robot();
-			actions = new Actions(driver);
+			action = new Actions(driver);
 			robot.delay(1000);
-			actions.sendKeys(" ").build().perform();//Click to hide the item
-			//robot.keyPress(KeyEvent.VK_SPACE);//Click to hide the item
+			action.sendKeys(Keys.SPACE).build().perform();//Click to hide the item
+			//Click to hide the item
 			
 		} catch (AWTException e) {
 			System.err.println(StringExternalization.EXCEPTION_AWT);

@@ -13,8 +13,8 @@
          <class name = "jl.project.FirefoxTests.UserRequirement2_Test" />
       </classes>
    </test>
-    <!-- User Requirements 3, 4 part 1 and 4 part 2 need to be commented on Linux Ubuntu/macOS Big Sur
-   		due to a Tesseract library issue  -->
+    <!-- User Requirements 4 part 1 and 4 part 2 need to be commented on Linux Ubuntu
+   		due to a software bug  -->
    	<!--    
     <test name = "User Requirement 3">
       <classes>
