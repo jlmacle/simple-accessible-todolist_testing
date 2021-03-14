@@ -33,7 +33,8 @@ public class StringExternalization {
 	public static final String SELENIUM_HUB = "http://192.168.1.16:4444";
 		
 	public static final String BROWSER_NAME_CHROME = "chrome";	
-	public static final String BROWSER_NAME_EDGE = "edge";		
+	public static final String BROWSER_NAME_EDGE = "MicrosoftEdge";	
+	public static final String BROWSER_NAME_FIREFOX = "firefox";
 	//Grid 4 : end
 	
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";

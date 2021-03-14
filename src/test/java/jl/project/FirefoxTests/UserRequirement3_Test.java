@@ -6,6 +6,8 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -15,8 +17,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Ignore;
@@ -32,13 +37,26 @@ import net.sourceforge.tess4j.TesseractException;
  */
 public class UserRequirement3_Test {
 	Logger logger = Logger.getLogger(jl.project.FirefoxTests.UserRequirement3_Test.class);
-	FirefoxDriver driver; 
+	WebDriver driver; 
 	
 	@BeforeClass
 	public void setup(){
 		System.setProperty(StringExternalization.WEBDRIVER_FIREFOX_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_FIREFOX_VALUE);
-		driver = new FirefoxDriver();	
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_FIREFOX);
+		
+		if(StringExternalization.GRID_NOT_USED) {driver = new FirefoxDriver();}
+		else 
+		{	
+			try {
+				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);
+			} catch (MalformedURLException e) {
+				logger.error(StringExternalization.EXCEPTION_MALFORMEDURL);
+				logger.error(e.getMessage());
+				e.printStackTrace();
+			}			
+		}	
 		driver.manage().window().maximize();
 	}
 	
@@ -113,7 +131,7 @@ public class UserRequirement3_Test {
 		//3. Hiding of the item		
 		logger.info("3. Verification that the item can be hidden.");
 		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
+		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
 		//4. Verification that the item is hidden
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
@@ -144,7 +162,7 @@ public class UserRequirement3_Test {
 		
 		//4. Verification that the item can be displayed 
 		logger.info("4. Verification that the item can be displayed");
-		driver.findElementByCssSelector(".foldUnfoldClickArea").click();
+		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
 		
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");

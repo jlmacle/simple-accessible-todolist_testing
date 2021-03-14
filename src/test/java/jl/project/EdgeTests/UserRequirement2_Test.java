@@ -3,6 +3,8 @@ package jl.project.EdgeTests;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.testng.log4testng.Logger;
@@ -11,7 +13,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -27,13 +32,26 @@ import jl.project.StringExternalization;
 
 public class UserRequirement2_Test {
 	Logger logger = Logger.getLogger(jl.project.EdgeTests.UserRequirement2_Test.class);
-	EdgeDriver driver;
+	WebDriver driver;
 		
 	@BeforeClass
 	public void setup() {		
 		System.setProperty(StringExternalization.WEBDRIVER_EDGE_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_EDGE_VALUE);
-		driver = new EdgeDriver();	
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_EDGE);
+		
+		if(StringExternalization.GRID_NOT_USED) {driver = new EdgeDriver();}
+		else 
+		{	
+			try {
+				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);
+			} catch (MalformedURLException e) {
+				logger.error(StringExternalization.EXCEPTION_MALFORMEDURL);
+				logger.error(e.getMessage());
+				e.printStackTrace();
+			}			
+		}
 		driver.manage().window().maximize();
 	}
 	

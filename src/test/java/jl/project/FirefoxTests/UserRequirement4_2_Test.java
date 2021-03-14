@@ -7,6 +7,8 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -17,9 +19,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -38,13 +43,26 @@ import net.sourceforge.tess4j.TesseractException;
 public class UserRequirement4_2_Test {
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	Logger logger = Logger.getLogger(jl.project.FirefoxTests.UserRequirement4_2_Test.class);
-	FirefoxDriver driver;
+	WebDriver driver;
 			
 	@BeforeClass
 	public void setup() {
 		System.setProperty(StringExternalization.WEBDRIVER_FIREFOX_KEY, 
 				StringExternalization.WEBDRIVERS_FOLDER+StringExternalization.WEBDRIVER_FIREFOX_VALUE);
-		driver = new FirefoxDriver();	
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setBrowserName(StringExternalization.BROWSER_NAME_FIREFOX);
+		
+		if(StringExternalization.GRID_NOT_USED) {driver = new FirefoxDriver();}
+		else 
+		{	
+			try {
+				driver = new RemoteWebDriver(new URL(StringExternalization.SELENIUM_HUB), capabilities);
+			} catch (MalformedURLException e) {
+				logger.error(StringExternalization.EXCEPTION_MALFORMEDURL);
+				logger.error(e.getMessage());
+				e.printStackTrace();
+			}			
+		}		
 		driver.manage().window().maximize();
 	}
 	
