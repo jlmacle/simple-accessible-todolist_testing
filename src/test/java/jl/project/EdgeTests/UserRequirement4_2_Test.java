@@ -73,7 +73,7 @@ public class UserRequirement4_2_Test {
 		
 	}
 	
-	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
+	
 	
 	@Test(groups = {"creation_deletion_edge_2"})	
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() {
@@ -203,7 +203,7 @@ public class UserRequirement4_2_Test {
 		
 	}
 	
-	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
+	
 	
 	@Test(groups = {"creation_deletion_edge_2"})					
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() {
@@ -320,7 +320,7 @@ public class UserRequirement4_2_Test {
 		}
 	}
 	
-	// For reasons of software bug issue, this test needs to be ignored on Ubuntu
+	
 	
 	@Test(dependsOnGroups = {"creation_deletion_edge_2"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 

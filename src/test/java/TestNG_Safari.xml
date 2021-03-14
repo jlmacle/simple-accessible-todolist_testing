@@ -12,10 +12,7 @@
       <classes>
          <class name = "jl.project.SafariTests.UserRequirement2_Test" />
       </classes>
-   </test>
-    <!-- User Requirements 4 part 1 and 4 part 2 need to be commented on Linux Ubuntu
-   		due to a software bug  -->
-   	<!--     
+   </test>       
     <test name = "User Requirement 3">
       <classes>
          <class name = "jl.project.SafariTests.UserRequirement3_Test" />
@@ -33,5 +30,5 @@
          <class name = "jl.project.SafariTests.UserRequirement4_2_Test" />
       </classes>
    </test>  
-   -->
+
 </suite>  	
