@@ -85,7 +85,7 @@ public class UserRequirement4_2_Test {
 			robot.delay(1000);
 			
 			action.sendKeys(Keys.SPACE).build().perform();
-			robot.delay(1000);
+			robot.delay(3000);
 			
 		} catch (AWTException e) {
 			System.err.println(StringExternalization.EXCEPTION_AWT);
