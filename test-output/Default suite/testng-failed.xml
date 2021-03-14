@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.ChromeTests.UserRequirement4_1_Test">
+      <class name="jl.project.EdgeTests.UserRequirement1_Test">
         <methods>
-          <include name="createAndDeleteItemWithKeyboardOnly_EnterKey"/>
           <include name="navigate"/>
-          <include name="releseResources"/>
+          <include name="createCategory"/>
+          <include name="releaseResources"/>
           <include name="setup"/>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_EnterKey"/>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_EnterKey"/>
+          <include name="deleteCategory"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement4_1_Test -->
+      </class> <!-- jl.project.EdgeTests.UserRequirement1_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
