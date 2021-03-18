@@ -6,7 +6,10 @@ import static org.testng.Assert.fail;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -15,65 +18,58 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
-public class Pa11yTest {
+/**
+ * @author 
+ *
+ */
+public class UserRequirement5_Pa11yTest {
 	
-	Logger logger = Logger.getLogger(Pa11yTest.class);
+	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest.class);
 	String fileFolder = "pa11yTestFiles/";
-	String frontEndPath = null;
-	String backEndPath = null;
-	String osName = System.getProperty("os.name");
+	String frontEndPath = "..\\AccessibleTodoList_FrontEnd";
+	String backEndPath =  "..\\AccessibleTodoList_Backend";
+	String endToEndPath = "..\\AccessibleTodoList_End2endTests";
+	String osName = System.getProperty("os.name");	
 	Process process_Angular;
 	Process process_Pa11y;
 	Process process_Backend;
-	 
+	boolean pa11yTestPassed = false; 
 	int process_exit_code = -1;
-	String pa11yResult = "";
+	
 	
 	@BeforeClass
 	public void setup()
 	{
 		logger.debug(String.format("OS: %s",osName));
+		String[] command_Angular = null;
+		String[] command_Backend = null;
+		String[] command_Pa11y = null;
+		
 		if (this.osName.contains("Windows"))
-		{
-			frontEndPath = "..\\AccessibleTodoList_FrontEnd";
-			backEndPath = "..\\AccessibleTodoList_Backend";
+		{			
+			command_Angular = new String[]{"cmd.exe","/c","ng","serve","-o", "&"};
+			command_Backend = new String[]{"cmd.exe", "/c", "mvn","spring-boot:run"};
+			command_Pa11y = new String[]{"cmd.exe","/c","pa11y","http://localhost:4200"};
+			
 		}
 		else {fail("OS name not recognized");}
 		
 		try 
-		{			
-			String[] command_Angular = {"cmd.exe","/c","ng","serve","-o", "&"};
-			String[] command_Backend = {"cmd.exe", "/c", "mvn", "spring-boot:run"};
-			String[] command_Pa11y = {"cmd.exe","/c","pa11y","http://localhost:4200"};
-			
+		{		
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
 			logger.debug("Starting back-end server");
-			process_Backend = Runtime.getRuntime().exec(command_Backend, null, new File(backEndPath));
-			logger.debug("Putting the thread to sleep");
-			Thread.sleep(15000);
+			process_Backend = Runtime.getRuntime().exec(command_Backend, null, new File(backEndPath));		
+			process_Backend.getInputStream();			
+			logger.debug("Waiting for the back-end startup.");
+			Thread.sleep(10000);
 			
 			//Testing that the server started
 			logger.debug("Testing that the back-end server has started.");
+			
 			URL backend_categories = new URL("http://localhost:8080/categories");	
-			File categories_file = new File(fileFolder+"categories.txt");
-			FileUtils.copyToFile(backend_categories.openStream(), categories_file);
-			//https://en.wikipedia.org/wiki/UTF-8
-			List<String> lines = FileUtils.readLines(categories_file,"UTF-8");
-			boolean UncategorizedFound = false;
-			for(String line : lines)
-			{
-				if (line.contains("Uncategorized")) 
-				{
-					UncategorizedFound = true;
-					logger.debug(line);
-				}
-			}
-			
-			if(!UncategorizedFound)fail("The backend server might not have been started.");
-			logger.debug("Putting the thread to sleep");
-			Thread.sleep(15000);
-			
-			
+			boolean UncategorizedFound = print_stream(backend_categories.openStream(),"URL", "Uncategorized");				
+			// todo if(!UncategorizedFound)fail("The backend server might not have been started.");
+									
 			logger.debug("Starting Angular server");
 			process_Angular = Runtime.getRuntime().exec(command_Angular, null, new File(this.frontEndPath));		
 			
@@ -84,8 +80,8 @@ public class Pa11yTest {
 				
 				logger.debug("Building and starting the pa11y command."); 				
 				process_Pa11y =	Runtime.getRuntime().exec(command_Pa11y); 
-				process_exit_code = process_Pa11y.waitFor();
-				pa11yResult = this.print_output(process_exit_code, process_Pa11y, true);				
+				process_exit_code = process_Pa11y.waitFor();				
+				pa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), "Pa11y", "No issues found!" );				
 				logger.debug(String.format("Pa11y process exit code: %s",process_exit_code));
 							 
 				
@@ -103,20 +99,60 @@ public class Pa11yTest {
 			logger.debug(e.getMessage());
 			e.printStackTrace();
 		}	
+		
 		catch (InterruptedException e1) 
 		{
-			logger.debug("Caught an InterruptedException while pausing the execution.");
-			e1.printStackTrace();
+		  logger.debug("Caught an InterruptedException while pausing the execution.");
+		  e1.printStackTrace(); 
 		}
+		 
 	}
 	
 	
 	@Test
 	public void pa11yTest()
 	{		
-		assertTrue(pa11yResult.contains("No issues found!"));		
+		assertTrue(pa11yTestPassed);		
 	}
 	
+	
+	/**
+	 * A method that takes an input stream (for example, an output stream or an error stream) and logs its content.
+	 * The method can also test if a String is in the stream.
+	 * @param stream: the InputStream
+	 * @param streamType: the stream type: (regular)output or error
+	 * @param stringToFind: potentially a String to find in the output
+	 * @return returns true if stringToFind
+	 */
+	private boolean print_stream(InputStream stream, String streamType, String stringToFind)	
+	{
+		boolean stringFound =  false;
+		try {
+			logger.debug(String.format("%s stream available %d",streamType,stream.available()));
+			File stream_File = new File("log_"+streamType+".txt");		
+			logger.debug("Before copyInputStreamToFile.");
+			FileUtils.copyToFile(stream, stream_File);//The source stream is not closed with copyToFile.
+			
+			List<String> log_lines = FileUtils.readLines(stream_File,"UTF-8");
+			//https://en.wikipedia.org/wiki/UTF-8 
+			for(String line:log_lines) 
+			{
+			  logger.debug(line); if(line.contains(stringToFind)) {stringFound = true; }
+			  
+			} 
+			logger.debug("All lines read."); 
+			 
+		} 
+		catch (IOException e) 
+		{
+			logger.debug("");
+			e.printStackTrace();
+		}		
+		
+		return stringFound;
+	}
+	
+		
 	private String print_output(int process_exit_code, Process process, boolean returnText)
 	{
 		String text = "";
