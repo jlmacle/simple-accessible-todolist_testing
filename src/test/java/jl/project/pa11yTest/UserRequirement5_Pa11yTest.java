@@ -33,6 +33,7 @@ public class UserRequirement5_Pa11yTest {
 	Process process_Angular;
 	Process process_Pa11y;
 	Process process_Backend;
+	boolean UncategorizedFound = false;
 	boolean pa11yTestPassed = false; 
 	int process_exit_code = -1;
 	
@@ -67,14 +68,11 @@ public class UserRequirement5_Pa11yTest {
 			process_Backend = Runtime.getRuntime().exec(command_Backend, null, new File(backEndPath));		
 			process_Backend.getInputStream();		
 			logger.debug("Waiting for the back-end startup.");
-			Thread.sleep(15000);
+			Thread.sleep(15000);			
 			
-			//Testing that the server started
-			logger.debug("Testing that the back-end server has started.");
 			
-			URL backend_categories = new URL("http://localhost:8080/categories");	
-			boolean UncategorizedFound = print_stream(backend_categories.openStream(),"URL", "Uncategorized");				
-			// todo if(!UncategorizedFound)fail("The backend server might not have been started.");
+			logger.debug("Todo: Testing that the 'Uncategorized' category can be found."); 	
+				 
 									
 			logger.debug("Starting Angular server");
 			process_Angular = Runtime.getRuntime().exec(command_Angular, null, new File(this.frontEndPath));		
@@ -89,7 +87,6 @@ public class UserRequirement5_Pa11yTest {
 				process_exit_code = process_Pa11y.waitFor();				
 				pa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), "Pa11y", "No issues found!" );				
 				logger.debug(String.format("Pa11y process exit code: %s",process_exit_code));
-							 
 				
 			} 
 			catch (InterruptedException e1) 
@@ -158,48 +155,6 @@ public class UserRequirement5_Pa11yTest {
 		return stringFound;
 	}
 	
-		
-	private String print_output(int process_exit_code, Process process, boolean returnText)
-	{
-		String text = "";
-		if (process_exit_code==0)
-		{
-			logger.debug("Reading exit code 0 output");			
-			InputStream command_success_inputStream =process.getInputStream();
-			File process_success_toFile = new File(fileFolder+"success_output.txt");
-			try {
-				FileUtils.copyInputStreamToFile(command_success_inputStream, process_success_toFile);
-				List<String> lines = FileUtils.readLines(process_success_toFile,"UTF-8");
-				for(String line : lines)
-				{
-					if (returnText) text=text+line;
-					logger.debug(line);
-				}
-				
-			} catch (IOException e) {
-				logger.error("Caught an IOException reading the output of the successful process.");
-				e.printStackTrace();
-			}
-		}
-		else if (process_exit_code==1)
-		{
-			logger.debug("Reading exit code 1 output");			
-			InputStream command_error_inputStream = process.getErrorStream();
-			File process_error_toFile = new File(fileFolder+"error_output.txt");
-			try {
-				FileUtils.copyInputStreamToFile(command_error_inputStream, process_error_toFile);
-				List<String> lines = FileUtils.readLines(process_error_toFile,"UTF-8");
-				lines.forEach(line->logger.debug(line));
-			} catch (IOException e) {
-				logger.error("Caught an IOException reading the output of the successful process.");
-				e.printStackTrace();
-			}			
-			
-		}
-		else logger.error(String.format("Exit code case not taken into account: %s",process_exit_code));
-		
-		return text;
-	}
 
 	@AfterClass
 	void release()
