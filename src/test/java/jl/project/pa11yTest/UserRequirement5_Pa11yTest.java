@@ -52,16 +52,22 @@ public class UserRequirement5_Pa11yTest {
 			command_Pa11y = new String[]{"cmd.exe","/c","pa11y","http://localhost:4200"};
 			
 		}
+		else if (this.osName.contains("Mac"))
+		{
+			command_Angular = new String[]{"ng","serve","-o", "&"};
+			command_Backend = new String[]{"mvn","spring-boot:run"};
+			command_Pa11y = new String[]{"pa11y","http://localhost:4200"};
+		}		
 		else {fail("OS name not recognized");}
 		
 		try 
 		{		
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
-			logger.debug("Starting back-end server");
+			logger.debug("Starting back-end server");			
 			process_Backend = Runtime.getRuntime().exec(command_Backend, null, new File(backEndPath));		
-			process_Backend.getInputStream();			
+			process_Backend.getInputStream();		
 			logger.debug("Waiting for the back-end startup.");
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			
 			//Testing that the server started
 			logger.debug("Testing that the back-end server has started.");
