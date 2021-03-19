@@ -29,6 +29,7 @@ import org.testng.log4testng.Logger;
  *  	then starts without the "Uncategorized" category created by default.
  *  	A manual fix is to suppress the process that remained running on port 8080,
  *  	using for example lsof -nP -iTCP -sTCP:LISTEN | grep 8080
+ *  	The issue doesn't appear if the test is terminated.
  * 
  */
 public class UserRequirement5_Pa11yTest {
@@ -44,8 +45,8 @@ public class UserRequirement5_Pa11yTest {
 	String backend_script = "";
 	String angular_script = "";
 	String pa11y_script = ".";
-	String backend_log = "/log_Backend.txt";
-	String angular_server_log = "./log_Angular.txt";
+	File backend_error_log = new File("/log_Backend_error.txt");
+	File angular_server_error_log = new File("./log_Angular.txt");
 	String url_log = "./log_URL.txt";
 	String pa11y_log = "./log_Pa11y.txt";
 	
@@ -87,9 +88,8 @@ public class UserRequirement5_Pa11yTest {
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
 			logger.debug("Starting back-end server");			
 			processBuilder.command(backend_script);		
+			//processBuilder.redirectError(backend_error_log);
 			process_backend = processBuilder.start();		
-			// Test blocked by the use of printstream
-			//this.print_stream(process_backend.getErrorStream(),backend_log, "");
 			logger.debug("Waiting for the back-end server to start.");
 			Thread.sleep(35000);			
 						
@@ -105,10 +105,9 @@ public class UserRequirement5_Pa11yTest {
 			if(!isUncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");
 									
 			logger.debug("Starting Angular server");	
-			processBuilder.command(angular_script);
+			processBuilder.command(angular_script);		
+			//processBuilder.redirectError(angular_server_error_log);
 			process_angular = processBuilder.start();
-			// Test blocked by the use of printstream
-			//this.print_stream(process_angular.getErrorStream(),angular_server_log,"");
 			logger.debug("Waiting for the Angular server to start.");
 			Thread.sleep(35000);	
 			
@@ -119,7 +118,7 @@ public class UserRequirement5_Pa11yTest {
 			Thread.sleep(20000);
 			
 			//if no output, getInputStream() replaced by getErrorStream()
-			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
+			isPa11yTestPassed = this.print_stream(process_Pa11y.getErrorStream(), pa11y_log, "No issues found!");
 				
 					
 			
