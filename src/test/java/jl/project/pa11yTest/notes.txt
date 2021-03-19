@@ -1,0 +1,2 @@
+the .sh files have been made executable with a right-click on the file name from Spring Tool Suite,
+then by choosing properties.

@@ -52,7 +52,10 @@ public class UserRequirement5_Pa11yTest {
 		
 		if (this.osName.contains("Windows"))
 		{			
-			//Todo
+			script_folder = "src/test/java/jl/project/pa11yTest/";
+			backend_script = script_folder+"run_Backend_server-Windows.bat";
+			angular_script = script_folder+"run_Angular_server-Windows.bat";
+			pa11y_script = script_folder+"run_Pa11y_test-Windows.bat";
 			
 		}
 		else if (this.osName.contains("Mac"))
@@ -63,7 +66,7 @@ public class UserRequirement5_Pa11yTest {
 		else if (this.osName.contains("Linux"))
 		{
 			script_folder = "src/test/java/jl/project/pa11yTest/";
-			backend_script = script_folder+"run_Backend_Server-Linux.sh";
+			backend_script = script_folder+"run_Backend_server-Linux.sh";
 			angular_script = script_folder+"run_Angular_server-Linux.sh";
 			pa11y_script = script_folder+"run_Pa11y_test-Linux.sh";
 		}	
@@ -98,8 +101,7 @@ public class UserRequirement5_Pa11yTest {
 			
 			//if(!UncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");
 									
-			logger.debug("Starting Angular server");
-			//process_Angular = Runtime.getRuntime().exec(command_Angular, null, new File(this.frontEndPath));		
+			logger.debug("Starting Angular server");	
 			processBuilder.command(angular_script);
 			process_angular = processBuilder.start();
 						
