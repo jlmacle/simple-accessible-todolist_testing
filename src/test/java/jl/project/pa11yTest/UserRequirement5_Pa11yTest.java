@@ -4,12 +4,13 @@ import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.ReadableByteChannel;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -25,69 +26,108 @@ import org.testng.log4testng.Logger;
 public class UserRequirement5_Pa11yTest {
 	
 	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest.class);
-	String fileFolder = "pa11yTestFiles/";
-	String frontEndPath = "..\\AccessibleTodoList_FrontEnd";
-	String backEndPath =  "..\\AccessibleTodoList_Backend";
-	String endToEndPath = "..\\AccessibleTodoList_End2endTests";
-	String osName = System.getProperty("os.name");	
-	Process process_Angular;
-	Process process_Pa11y;
-	Process process_Backend;
+	String osName = System.getProperty("os.name");		
+		
+	ProcessBuilder processBuilder = new ProcessBuilder();
+	Process process_backend = null;
+	Process process_angular = null;
+	Process process_Pa11y = null;
+	String script_folder;
+	String backend_script = "";
+	String angular_script = "";
+	String pa11y_script = "";
+	String url_log = "./log_URL.txt";
+	String pa11y_log = "./log_Pa11y.txt";
+	
 	boolean UncategorizedFound = false;
 	boolean pa11yTestPassed = false; 
-	int process_exit_code = -1;
-	
+		
 	
 	@BeforeClass
 	public void setup()
 	{
 		logger.debug(String.format("OS: %s",osName));
-		String[] command_Angular = null;
-		String[] command_Backend = null;
-		String[] command_Pa11y = null;
+		logger.debug(String.format("User dir: %s", System.getProperty("user.dir")));
+		
 		
 		if (this.osName.contains("Windows"))
 		{			
-			command_Angular = new String[]{"cmd.exe","/c","ng","serve","-o", "&"};
-			command_Backend = new String[]{"cmd.exe", "/c", "mvn","spring-boot:run"};
-			command_Pa11y = new String[]{"cmd.exe","/c","pa11y","http://localhost:4200"};
+			//Todo
 			
 		}
 		else if (this.osName.contains("Mac"))
 		{
-			command_Angular = new String[]{"ng","serve","-o", "&"};
-			command_Backend = new String[]{"mvn","spring-boot:run"};
-			command_Pa11y = new String[]{"pa11y","http://localhost:4200"};
+			//Todo
 		}		
+		
+		else if (this.osName.contains("Linux"))
+		{
+			script_folder = "src/test/java/jl/project/pa11yTest/";
+			backend_script = script_folder+"run_Backend_Server-Linux.sh";
+			angular_script = script_folder+"run_Angular_server-Linux.sh";
+			pa11y_script = script_folder+"run_Pa11y_test-Linux.sh";
+		}	
 		else {fail("OS name not recognized");}
 		
 		try 
 		{		
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
 			logger.debug("Starting back-end server");			
-			process_Backend = Runtime.getRuntime().exec(command_Backend, null, new File(backEndPath));		
-			process_Backend.getInputStream();		
-			logger.debug("Waiting for the back-end startup.");
-			Thread.sleep(15000);			
+			processBuilder.command(backend_script);		
+			process_backend = processBuilder.start();
+			print_stream(process_backend.getInputStream(), "Backend", "");
+			logger.debug("Waiting for the back-end server to start.");
+			Thread.sleep(35000);			
+						
+			logger.debug("Testing that the 'Uncategorized' category can be found."); 	
+			URL page_url = new URL("http://localhost:8080/categories");	 
+			//https://www.baeldung.com/java-download-file
+			ReadableByteChannel readableByteChannel = Channels.newChannel(page_url.openStream());
+			FileOutputStream url_file_output = new FileOutputStream(url_log);
+			FileChannel fileChannel = url_file_output.getChannel();
+			fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
+			List<String> lines = FileUtils.readLines(new File(url_log), "UTF-8");
+			for(String line:lines)
+			{
+				logger.debug(line);
+				if(line.contains("Uncategorized")) {UncategorizedFound=true;break;}				
+			}
+			readableByteChannel.close();
+			url_file_output.close();
+			fileChannel.close();
 			
-			
-			logger.debug("Todo: Testing that the 'Uncategorized' category can be found."); 	
-				 
+			//if(!UncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");
 									
 			logger.debug("Starting Angular server");
-			process_Angular = Runtime.getRuntime().exec(command_Angular, null, new File(this.frontEndPath));		
-			
+			//process_Angular = Runtime.getRuntime().exec(command_Angular, null, new File(this.frontEndPath));		
+			processBuilder.command(angular_script);
+			process_angular = processBuilder.start();
+						
 			try {
 				// Note: starting the angular server may take a while
-				logger.debug("Putting thread to sleep.");
-				Thread.sleep(30000);	
+				logger.debug("Waiting for the Angular server to start.");
+				Thread.sleep(35000);	
 				
-				logger.debug("Building and starting the pa11y command."); 				
-				process_Pa11y =	Runtime.getRuntime().exec(command_Pa11y); 
-				process_exit_code = process_Pa11y.waitFor();				
-				pa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), "Pa11y", "No issues found!" );				
-				logger.debug(String.format("Pa11y process exit code: %s",process_exit_code));
+				logger.debug("Building and starting the pa11y command."); 
+				processBuilder.command(pa11y_script);
+				process_Pa11y = processBuilder.start();
+				logger.debug("Waiting for the pa11y test to be finished"); 
+				Thread.sleep(20000);
 				
+				//if no output, replace getInputStream() by getErrorStream()
+				readableByteChannel = Channels.newChannel(process_Pa11y.getInputStream());
+				FileOutputStream pa11y_output = new FileOutputStream(pa11y_log);
+				fileChannel = pa11y_output.getChannel();
+				fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
+				lines = FileUtils.readLines(new File(pa11y_log), "UTF-8");
+				for(String line:lines)
+				{
+					logger.debug(line);
+					if(line.contains("No issues found!")) {pa11yTestPassed=true;break;}				
+				}
+				readableByteChannel.close();
+				pa11y_output.close();
+				fileChannel.close();
 			} 
 			catch (InterruptedException e1) 
 			{
@@ -98,7 +138,7 @@ public class UserRequirement5_Pa11yTest {
 		} 
 		catch (IOException e) 
 		{
-			logger.debug("IOException caught while using Runtime.getRuntime().exec");
+			logger.debug("IOException caught.");
 			logger.debug(e.getMessage());
 			e.printStackTrace();
 		}	
@@ -159,9 +199,9 @@ public class UserRequirement5_Pa11yTest {
 	@AfterClass
 	void release()
 	{
-		if(process_Angular.supportsNormalTermination()) {process_Angular.destroy();} else {process_Angular.destroyForcibly();}
-		if(process_Pa11y.supportsNormalTermination()) {process_Pa11y.destroy();} else {process_Pa11y.destroyForcibly();}
-		if(process_Backend.supportsNormalTermination()) {process_Backend.destroy();} else {process_Backend.destroyForcibly();}
+		process_angular.destroy();
+		process_backend.destroy();
+		process_Pa11y.destroy();
 	}
 
 }
