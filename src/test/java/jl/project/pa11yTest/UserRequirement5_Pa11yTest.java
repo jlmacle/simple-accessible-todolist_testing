@@ -45,7 +45,7 @@ public class UserRequirement5_Pa11yTest {
 	String backend_script = "";
 	String angular_script = "";
 	String pa11y_script = ".";
-	File backend_error_log = new File("/log_Backend_error.txt");
+	File backend_error_log = new File("./log_Backend_error.txt");
 	File angular_server_error_log = new File("./log_Angular_error.txt");
 	String url_log = "./log_URL.txt";
 	String pa11y_log = "./log_Pa11y.txt";
@@ -88,7 +88,7 @@ public class UserRequirement5_Pa11yTest {
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
 			logger.debug("Starting back-end server");			
 			processBuilder.command(backend_script);		
-			processBuilder.redirectError(backend_error_log);
+			//processBuilder.redirectError(backend_error_log);
 			process_backend = processBuilder.start();		
 			logger.debug("Waiting for the back-end server to start.");
 			Thread.sleep(35000);			
@@ -106,7 +106,7 @@ public class UserRequirement5_Pa11yTest {
 									
 			logger.debug("Starting Angular server");	
 			processBuilder.command(angular_script);		
-			processBuilder.redirectError(angular_server_error_log);
+			//processBuilder.redirectError(angular_server_error_log);
 			process_angular = processBuilder.start();
 			logger.debug("Waiting for the Angular server to start.");
 			Thread.sleep(35000);	
