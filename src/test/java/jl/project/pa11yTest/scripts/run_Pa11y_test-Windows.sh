@@ -1,1 +1,1 @@
-cmd.exe /c "cd ../AccessibleTodoList_FrontEnd/node_modules/pa11y/bin && pa11y http://localhost:4200"
+cmd.exe /c "pa11y http://localhost:4200"

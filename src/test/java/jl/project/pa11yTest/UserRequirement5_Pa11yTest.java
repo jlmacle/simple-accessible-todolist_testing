@@ -9,7 +9,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.nio.channels.Channel;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
@@ -23,7 +22,14 @@ import org.testng.log4testng.Logger;
 
 /**
  * @author 
- *
+ * This class has some issues and needs to be re-factored at some point:
+ *  - using the methods redirectError and redirectInput form ProcessBuilder.
+ *  	the print-stream method sometimes block the execution of the code.
+ *  - there is an issue with the back-end that starts normally at the first run of the test,
+ *  	then starts without the "Uncategorized" category created by default.
+ *  	A manual fix is to suppress the process that remained running on port 8080,
+ *  	using for example lsof -nP -iTCP -sTCP:LISTEN | grep 8080
+ * 
  */
 public class UserRequirement5_Pa11yTest {
 	
@@ -92,7 +98,8 @@ public class UserRequirement5_Pa11yTest {
 			isUncategorizedFound = this.print_stream(page_url.openStream(), url_log, "Uncategorized");
 			// Issue: case where the back-end starts with no Uncategorized category
 			// If this happens, finding and suppressing the process still running on port 8080
-			// should solve the issue   lsof -nP -iTCP -sTCP:LISTEN | grep 8080
+			// should solve the issue   
+			// lsof -nP -iTCP -sTCP:LISTEN | grep 8080
 			
 
 			if(!isUncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");
