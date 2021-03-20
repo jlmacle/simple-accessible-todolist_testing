@@ -23,9 +23,7 @@ import org.testng.log4testng.Logger;
 /**
  * @author 
  * This class has some issues and needs to be re-factored at some point:
- *  - using the methods redirectError and redirectInput form ProcessBuilder.
- *  	the print-stream method sometimes block the execution of the code.
- *  - there is an issue with the back-end that starts normally at the first run of the test,
+ *   - there is an issue with the back-end that starts normally at the first run of the test,
  *  	then starts without the "Uncategorized" category created by default.
  *  	A manual fix is to suppress the process that remained running on port 8080,
  *  	using for example
@@ -33,6 +31,7 @@ import org.testng.log4testng.Logger;
  *  			or
  *  		 netstat -ano | findstr 8080
  *  	The issue doesn't appear if the test is terminated.
+ *  - A recurrent issue for the code to run on Windows.
  * 
  */
 public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
