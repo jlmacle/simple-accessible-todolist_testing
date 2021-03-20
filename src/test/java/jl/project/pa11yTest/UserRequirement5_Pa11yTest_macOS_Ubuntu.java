@@ -35,9 +35,9 @@ import org.testng.log4testng.Logger;
  *  	The issue doesn't appear if the test is terminated.
  * 
  */
-public class UserRequirement5_Pa11yTest_macOS {
+public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 	
-	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest_macOS.class);
+	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest_macOS_Ubuntu.class);
 	String osName = System.getProperty("os.name");		
 		
 	ProcessBuilder processBuilder = new ProcessBuilder();	
@@ -91,12 +91,8 @@ public class UserRequirement5_Pa11yTest_macOS {
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
 			logger.debug("Starting back-end server");			
 			processBuilder.command(backend_script);					
-			process_backend = processBuilder.start();	
-			//String[] command = {"cmd.exe","/c","mvn","spring-boot:run","&&", "pwd"};
-			//process_backend = Runtime.getRuntime().exec(command, null, new File("../AccessibleTodoList_Backend"));
-			//readableByteChannel = Channels.newChannel(process_backend.getInputStream());
-			//this.print_stream_trick(process_backend.getInputStream(), "log_Backend_input.txt", "");
-			Channels.newChannel(process_backend.getInputStream());
+			process_backend = processBuilder.start();				
+			Channels.newChannel(process_backend.getInputStream());//Added to get the code to run on Windows.
 			logger.debug("Waiting for the back-end server to start.");
 			Thread.sleep(25000);			
 						
@@ -124,7 +120,7 @@ public class UserRequirement5_Pa11yTest_macOS {
 			processBuilder.command(pa11y_script);
 			process_Pa11y = processBuilder.start();
 			logger.debug("Waiting for the pa11y test to be finished"); 
-			Thread.sleep(30000);
+			Thread.sleep(35000);//not too much time for a slow computer.
 			
 			//if no output, getInputStream() replaced by getErrorStream()
 			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
@@ -144,22 +140,8 @@ public class UserRequirement5_Pa11yTest_macOS {
 		  e.printStackTrace(); 
 		}
 		 
-	}
+	}	
 	
-	/**
-	 * 
-	 * @param input: an InputStream
-	 * @param log_path: the path to log the output of the stream (from getInputStrem() or getErrorStream())
-	 * @param stringToFind: a string to find in the output
-	 * @return true if the string has been found in the output, false otherwise.
-	 */
-	private void print_stream_trick(InputStream inputStream, String log_path, String stringToFind)
-	{
-		
-		ReadableByteChannel readableByteChannel = Channels.newChannel(inputStream);
-		
-		
-	}
 	/**
 	 * @param input: an InputStream
 	 * @param log_path: the path to log the output of the stream (from getInputStrem() or getErrorStream())
@@ -187,8 +169,8 @@ public class UserRequirement5_Pa11yTest_macOS {
 			}
 			 
 			readableByteChannel.close();
-			//fileChannel.close();
-			//fileOutputStream.close();
+			fileChannel.close();
+			fileOutputStream.close();
 			
 		} catch (FileNotFoundException e) {
 			logger.debug("Caught a FileNotFoundException in print_stream");

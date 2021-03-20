@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.pa11yTest.UserRequirement5_Pa11yTest">
+      <class name="jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu">
         <methods>
-          <include name="setup"/>
           <include name="pa11yTest"/>
           <include name="release"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- jl.project.pa11yTest.UserRequirement5_Pa11yTest -->
+      </class> <!-- jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
