@@ -35,9 +35,9 @@ import org.testng.log4testng.Logger;
  *  	The issue doesn't appear if the test is terminated.
  * 
  */
-public class UserRequirement5_Pa11yTest_Windows {
+public class UserRequirement5_Pa11yTest_macOS {
 	
-	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest_Windows.class);
+	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest_macOS.class);
 	String osName = System.getProperty("os.name");		
 		
 	ProcessBuilder processBuilder = new ProcessBuilder();	
