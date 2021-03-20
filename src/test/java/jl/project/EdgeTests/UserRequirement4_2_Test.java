@@ -5,7 +5,6 @@ import static org.testng.Assert.fail;
 
 import java.awt.AWTException;
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
