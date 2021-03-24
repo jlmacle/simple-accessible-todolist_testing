@@ -24,7 +24,7 @@ public class SpeechToTextConverter_IBM
 		apikey = apikey.replace("\n", "");
 		
 		String textRecognized  = null;	
-		ArrayList<String> command;
+		ArrayList<String> command = new ArrayList<String>();
 		String audioFileParameter = "@"+System.getProperty("user.dir")+"/src/test/java/jl/project/ScreenReadersTest/"+pathToAudioFile;		
 		//Works on Windows, not on macOS
 		//ArrayList<String> command_common_arguments = new ArrayList<String>(List.of("curl","-X","POST","-u", this.apikey ,"--header","\"Content-Type:audio/flac\"","--data-binary",audioFileParameter,"\"https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/08dcb5ed-d57f-410f-98ef-11ae645b5a04/v1/recognize\""));
@@ -35,10 +35,11 @@ public class SpeechToTextConverter_IBM
 		Process process = null;
 		
 		logger.debug(String.format("OS: %s",os_name));
+		/*
 		if(os_name.contains("Windows"))
 		{
 			//command = new ArrayList<String>(List.of("cmd.exe","/c"));		
-			command = new ArrayList<String>();	
+			command =  new ArrayList<String>();
 		}
 		else if (os_name.contains("Mac"))
 		{
@@ -50,13 +51,13 @@ public class SpeechToTextConverter_IBM
 			command = new ArrayList<String>(List.of("#!/bin/bash","-c"));		
 		}
 		else {throw new Exception(String.format("Unrecognized OS : %s",os_name));}
+		*/
 		
 		logger.debug(String.format("audioFileParameter: %s",audioFileParameter));
 		logger.debug(String.format("Command root: %s", command));
 		logger.debug(String.format("Adding command_common_arguments: %s", command_common_arguments));		
 		command.addAll(command_common_arguments);		
 		logger.debug(String.format("Using command: %s", command));
-		//command = new ArrayList<String>(List.of("cmd.exe","/c","pa11y","http://localhost:4200"));
 		processBuilder.command(command);
 		//processBuilder.redirectOutput(new File("curl_output.txt"));
 		//processBuilder.redirectInput(new File("curl_input.txt"));
