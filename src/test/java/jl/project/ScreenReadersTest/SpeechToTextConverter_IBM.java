@@ -28,7 +28,7 @@ public class SpeechToTextConverter_IBM
 		String audioFileParameter = "@"+System.getProperty("user.dir")+"/src/test/java/jl/project/ScreenReadersTest/"+pathToAudioFile;		
 		//Works on Windows, not on macOS
 		//ArrayList<String> command_common_arguments = new ArrayList<String>(List.of("curl","-X","POST","-u", this.apikey ,"--header","\"Content-Type:audio/flac\"","--data-binary",audioFileParameter,"\"https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/08dcb5ed-d57f-410f-98ef-11ae645b5a04/v1/recognize\""));
-		//Works on macOS
+		//Works on macOS, and Windows
 		ArrayList<String> command_common_arguments = new ArrayList<String>(List.of("curl","-X","POST","-u", this.apikey ,"--header","\"Content-Type:audio/flac\"","--data-binary",audioFileParameter,"https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/08dcb5ed-d57f-410f-98ef-11ae645b5a04/v1/recognize"));
 		String os_name = System.getProperty("os.name");
 		ProcessBuilder processBuilder = new ProcessBuilder();
@@ -72,7 +72,10 @@ public class SpeechToTextConverter_IBM
 		
 		logger.debug(String.format("Input stream %s",new String(process.getInputStream().readAllBytes())));
 		
-			
+		logger.debug(String.format("Process is alive : %b", process.isAlive()));		
+		if (process.supportsNormalTermination()) process.destroy(); else process.destroyForcibly();
+		
+					
 		
 		return textRecognized;
 	}
