@@ -39,11 +39,13 @@ public class SpeechToTextConverter_IBM
 		}
 		else if (os_name.contains("Mac"))
 		{
-			command = new ArrayList<String>(List.of("#!/bin/zsh","-c")); 			
+			//command = new ArrayList<String>(List.of("#!/bin/zsh","-c"));
+			command = new ArrayList<String>();	
 		}
 		else if (os_name.contains("Linux"))
 		{
-			command = new ArrayList<String>(List.of("#!/bin/bash","-c"));		
+			//command = new ArrayList<String>(List.of("#!/bin/bash","-c"));		
+			command = new ArrayList<String>();	
 		}
 		else {throw new Exception(String.format("Unrecognized OS : %s",os_name));}
 		logger.debug(String.format("Command root: %s", command));
@@ -63,7 +65,9 @@ public class SpeechToTextConverter_IBM
 		//process.waitFor();
 		Thread.sleep(5000);
 		//textRecognized = new String(process.getInputStream().readAllBytes());
-		//logger.debug(String.format("Error stream %s",new String(process.getErrorStream().readAllBytes())));
+		logger.debug(String.format("Error stream %s",new String(process.getErrorStream().readAllBytes())));
+		
+		//Stream that gives the output on Windows		
 		logger.debug(String.format("Input stream %s",new String(process.getInputStream().readAllBytes())));
 		
 			
