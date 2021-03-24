@@ -31,7 +31,7 @@ import org.testng.log4testng.Logger;
  *  			or
  *  		 netstat -ano | findstr 8080
  *  	The issue doesn't appear if the test is terminated.
- *  - A recurrent issue for the code to run on Windows.
+ *  - A different behavior if the code is run on Windows.
  * 
  */
 public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
