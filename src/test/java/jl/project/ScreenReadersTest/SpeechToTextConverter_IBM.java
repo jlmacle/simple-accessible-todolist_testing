@@ -25,17 +25,20 @@ public class SpeechToTextConverter_IBM
 		
 		String textRecognized  = null;	
 		ArrayList<String> command = new ArrayList<String>();
-		String audioFileParameter = "@"+System.getProperty("user.dir")+"/src/test/java/jl/project/ScreenReadersTest/"+pathToAudioFile;		
+		String audioFileParameter = "@"+"src/test/java/jl/project/ScreenReadersTest/"+pathToAudioFile;		
 		//Works on Windows, not on macOS
 		//ArrayList<String> command_common_arguments = new ArrayList<String>(List.of("curl","-X","POST","-u", this.apikey ,"--header","\"Content-Type:audio/flac\"","--data-binary",audioFileParameter,"\"https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/08dcb5ed-d57f-410f-98ef-11ae645b5a04/v1/recognize\""));
 		//Works on macOS, and Windows
-		ArrayList<String> command_common_arguments = new ArrayList<String>(List.of("curl","-X","POST","-u", this.apikey ,"--header","\"Content-Type:audio/flac\"","--data-binary",audioFileParameter,"https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/08dcb5ed-d57f-410f-98ef-11ae645b5a04/v1/recognize"));
+			//url ok for windows
+		ArrayList<String> command_common_arguments = new ArrayList<String>(List.of("curl","-X","POST","-u", this.apikey ,"--header","\"Content-Type:audio/flac\"","--data-binary",audioFileParameter,"\"https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/08dcb5ed-d57f-410f-98ef-11ae645b5a04/v1/recognize\""));
+		//ArrayList<String> command_common_arguments = new ArrayList<String>(List.of("pwd"));
+		
 		String os_name = System.getProperty("os.name");
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		Process process = null;
 		
 		logger.debug(String.format("OS: %s",os_name));
-		/*
+		
 		if(os_name.contains("Windows"))
 		{
 			//command = new ArrayList<String>(List.of("cmd.exe","/c"));		
@@ -43,15 +46,15 @@ public class SpeechToTextConverter_IBM
 		}
 		else if (os_name.contains("Mac"))
 		{
-			//command = new ArrayList<String>(List.of("#!/bin/zsh","-c"));
-			command = new ArrayList<String>();	
+			//command = new ArrayList<String>(List.of("zsh","-c"));
+			//command = new ArrayList<String>();	
 		}
 		else if (os_name.contains("Linux"))
 		{
-			command = new ArrayList<String>(List.of("#!/bin/bash","-c"));		
+			//command = new ArrayList<String>(List.of("bash","-c"));		
 		}
 		else {throw new Exception(String.format("Unrecognized OS : %s",os_name));}
-		*/
+		
 		
 		logger.debug(String.format("audioFileParameter: %s",audioFileParameter));
 		logger.debug(String.format("Command root: %s", command));

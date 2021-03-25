@@ -44,6 +44,7 @@ public class SoundRecorderExample
 					line = mixer.getLine(lineInfo); // Using the instance of Line.info as the key to get a line
 					logger.debug("Line: "+line);
 					
+					//To be adapted for your microphone or an other audio recording line.
 					if(mixerInfo.getName() == "Port Microphone Array (Realtek(R) Au" )
 					{
 						logger.debug("Port Microphone Array mixer found.");
