@@ -4,10 +4,6 @@
 
 package jl.project.ScreenReadersTest;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,7 +28,7 @@ public class SpeechToTextConverter_IBM
 		logger.debug(String.format("OS: %s",os_name));		
 		if(os_name.contains("Windows"))
 		{
-			
+			processBuilder.command("src/test/java/jl/project/ScreenReadersTest/scripts/script_IBM_STT_Windows.bat");
 		}
 		else if (os_name.contains("Mac"))
 		{

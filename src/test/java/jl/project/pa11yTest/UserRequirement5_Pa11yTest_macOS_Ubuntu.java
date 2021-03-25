@@ -113,7 +113,7 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			processBuilder.redirectInput(angular_server_input_log);
 			process_angular = processBuilder.start();
 			logger.debug("Waiting for the Angular server to start.");
-			Thread.sleep(40000);	
+			Thread.sleep(35000);	
 			
 			logger.debug("Building and starting the pa11y command."); 
 			processBuilder.command(pa11y_script);
@@ -154,8 +154,11 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 		FileOutputStream fileOutputStream;
 		try {
 			fileOutputStream = new FileOutputStream(log_path);
-			FileChannel fileChannel = fileOutputStream.getChannel();			
+			FileChannel fileChannel = fileOutputStream.getChannel();
+			logger.debug("Before transfer to file");
 			fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
+			logger.debug("Transfer to file done");
+			
 			
 			List<String> lines = FileUtils.readLines(new File(log_path), "UTF-8"); 
 			for(String line:lines) 
