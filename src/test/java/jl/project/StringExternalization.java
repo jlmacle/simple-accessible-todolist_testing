@@ -52,7 +52,8 @@ public class StringExternalization {
 	public static final String ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY = "anIconToDeleteACategory";
 	public static final String ELEMENT_NAME_AN_ITEM = "anItem";
 	public static final String ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM = "anIconToDeleteAnItem";
-		
+	
+	public static final String EXCEPTION = "Caught an exception";
 	public static final String EXCEPTION_APP_NOT_STARTED = "The app wasn't started.";
 	public static final String EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE = 
 			"There should be one item. Number of item found: ";

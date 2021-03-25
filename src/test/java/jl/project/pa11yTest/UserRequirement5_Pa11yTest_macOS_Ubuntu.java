@@ -31,7 +31,7 @@ import org.testng.log4testng.Logger;
  *  			or
  *  		 netstat -ano | findstr 8080
  *  	The issue doesn't appear if the test is terminated.
- *  - A recurrent issue for the code to run on Windows.
+ *  - A different behavior if the code is run on Windows.
  * 
  */
 public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
@@ -196,9 +196,13 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 	@AfterClass
 	void release()
 	{		
-		process_angular.destroy();
-		process_backend.destroy();
-		process_Pa11y.destroy();
+		if (process_angular.supportsNormalTermination()) process_angular.destroy(); else process_angular.destroyForcibly();
+		if (process_backend.supportsNormalTermination())  process_backend.destroy(); else process_backend.destroyForcibly();
+		if (process_Pa11y.supportsNormalTermination()) process_Pa11y.destroy(); else process_Pa11y.destroyForcibly();
+		
+		logger.debug(String.format("process_angular is alive : %b", process_angular.isAlive()));
+		logger.debug(String.format("process_backend is alive : %b", process_backend.isAlive()));
+		logger.debug(String.format("process_Pa11y is alive : %b", process_Pa11y.isAlive()));
 	}
 
 }
