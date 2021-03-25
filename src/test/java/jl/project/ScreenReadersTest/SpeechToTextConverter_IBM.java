@@ -24,8 +24,7 @@ public class SpeechToTextConverter_IBM
 		apikey_param = apikey_param.replace("\n", "");
 		
 		String textRecognized  = null;			
-		String audioFileParameter = "@"+"src/test/java/jl/project/ScreenReadersTest/"+pathToAudioFile;	
-		
+				
 		String os_name = System.getProperty("os.name");
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		Process process = null;
@@ -37,11 +36,11 @@ public class SpeechToTextConverter_IBM
 		}
 		else if (os_name.contains("Mac"))
 		{
-			
+			processBuilder.command("src/test/java/jl/project/ScreenReadersTest/scripts/script_IBM_STT_macOS.zsh");
 		}
 		else if (os_name.contains("Linux"))
 		{
-			processBuilder.command("src/test/java/jl/project/ScreenReadersTest/script_IBM_STT_Ubuntu.sh");
+			processBuilder.command("src/test/java/jl/project/ScreenReadersTest/scripts/script_IBM_STT_Ubuntu.sh");
 
 		}
 		else {throw new Exception(String.format("Unrecognized OS : %s",os_name));}

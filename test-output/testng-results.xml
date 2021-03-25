@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-25T16:53:22Z" name="Default suite" finished-at="2021-03-25T16:55:03Z" duration-ms="100534">
+  <suite started-at="2021-03-25T17:08:47Z" name="Default suite" finished-at="2021-03-25T17:10:27Z" duration-ms="100335">
     <groups>
     </groups>
-    <test started-at="2021-03-25T16:53:22Z" name="Default test" finished-at="2021-03-25T16:55:03Z" duration-ms="100534">
+    <test started-at="2021-03-25T17:08:47Z" name="Default test" finished-at="2021-03-25T17:10:27Z" duration-ms="100335">
       <class name="jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu@490caf5f]" started-at="2021-03-25T17:53:22Z" name="setup" finished-at="2021-03-25T17:55:03Z" duration-ms="100432" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu@27d5a580]" started-at="2021-03-25T18:08:47Z" name="setup" finished-at="2021-03-25T18:10:27Z" duration-ms="100280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="pa11yTest()[pri:0, instance:jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu@490caf5f]" started-at="2021-03-25T17:55:03Z" name="pa11yTest" finished-at="2021-03-25T17:55:03Z" duration-ms="69" status="PASS">
+        <test-method signature="pa11yTest()[pri:0, instance:jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu@27d5a580]" started-at="2021-03-25T18:10:27Z" name="pa11yTest" finished-at="2021-03-25T18:10:27Z" duration-ms="39" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pa11yTest -->
-        <test-method is-config="true" signature="release()[pri:0, instance:jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu@490caf5f]" started-at="2021-03-25T17:55:03Z" name="release" finished-at="2021-03-25T17:55:03Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="release()[pri:0, instance:jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu@27d5a580]" started-at="2021-03-25T18:10:27Z" name="release" finished-at="2021-03-25T18:10:27Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- release -->
