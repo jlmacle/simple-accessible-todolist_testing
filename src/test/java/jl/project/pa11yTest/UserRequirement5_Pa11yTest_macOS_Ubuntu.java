@@ -113,7 +113,7 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			processBuilder.redirectInput(angular_server_input_log);
 			process_angular = processBuilder.start();
 			logger.debug("Waiting for the Angular server to start.");
-			Thread.sleep(35000);	
+			Thread.sleep(40000);	
 			
 			logger.debug("Building and starting the pa11y command."); 
 			processBuilder.command(pa11y_script);
@@ -154,11 +154,8 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 		FileOutputStream fileOutputStream;
 		try {
 			fileOutputStream = new FileOutputStream(log_path);
-			FileChannel fileChannel = fileOutputStream.getChannel();
-			logger.debug("Before transfer to file");
+			FileChannel fileChannel = fileOutputStream.getChannel();			
 			fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
-			logger.debug("Transfer to file done");
-			
 			
 			List<String> lines = FileUtils.readLines(new File(log_path), "UTF-8"); 
 			for(String line:lines) 
@@ -196,9 +193,13 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 	@AfterClass
 	void release()
 	{		
-		process_angular.destroy();
-		process_backend.destroy();
-		process_Pa11y.destroy();
+		if (process_angular.supportsNormalTermination()) process_angular.destroy(); else process_angular.destroyForcibly();
+		if (process_backend.supportsNormalTermination())  process_backend.destroy(); else process_backend.destroyForcibly();
+		if (process_Pa11y.supportsNormalTermination()) process_Pa11y.destroy(); else process_Pa11y.destroyForcibly();
+		
+		logger.debug(String.format("process_angular is alive : %b", process_angular.isAlive()));
+		logger.debug(String.format("process_backend is alive : %b", process_backend.isAlive()));
+		logger.debug(String.format("process_Pa11y is alive : %b", process_Pa11y.isAlive()));
 	}
 
 }

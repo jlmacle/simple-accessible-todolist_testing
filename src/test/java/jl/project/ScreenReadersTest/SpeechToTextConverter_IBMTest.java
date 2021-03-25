@@ -12,10 +12,11 @@ import jl.project.StringExternalization;
 public class SpeechToTextConverter_IBMTest {
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverter_IBMTest.class);
 	SpeechToTextConverter_IBM converter = new SpeechToTextConverter_IBM();	
+	String textRecognized;
 	
 	@Test
 	public void convertAudioToTextTest() {
-		String textRecognized;
+		
 		try {
 			textRecognized = converter.convertAudioToText("audioFiles/audio-file.flac");
 			logger.debug(String.format("Text recognized: *%s*",textRecognized));
@@ -26,7 +27,7 @@ public class SpeechToTextConverter_IBMTest {
 			e.printStackTrace();
 		}
 		
-		fail("Not yet implemented");
+		assertTrue(textRecognized.contains("several tornadoes touched down as a line of severe thunderstorms swept through Colorado on Sunday "));
 	}
 
 }
