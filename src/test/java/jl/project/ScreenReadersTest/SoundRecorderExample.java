@@ -36,8 +36,6 @@ public class SoundRecorderExample
 {
 	static Logger logger = LoggerFactory.getLogger(SoundRecorderExample.class);
 	
-	
-	
 	public static void main(String[] args) {
 		// from https://stackoverflow.com/questions/3705581/java-sound-api-capturing-microphone
 		//Retrieves audio information from the operating system
@@ -52,18 +50,19 @@ public class SoundRecorderExample
 			{
 				logger.debug(String.format("**** Name of the mixer: *%s*",mixerInfo.getName()));
 				logger.debug("Line info: "+lineInfo);
-				TargetDataLine line;
+				Line line;
 				try 
 				{
-					line = (TargetDataLine)mixer.getLine(lineInfo); // Using the instance of Line.info as the key to get a line
+					line = mixer.getLine(lineInfo); // Using the instance of Line.info as the key to get a line
 					logger.debug("Line: "+line);		
 					
 					//To be adapted for your microphone or an other audio recording line.					
-					if(mixerInfo.getName() == "Port Microphone Array (Realtek(R) Au" )
+					if(mixerInfo.getName().equals("Port Microphone Array (Realtek(R) Au"))
+					//if(false)
 					{
 						logger.debug("Port Microphone Array mixer found.");
 						logger.debug("Defining the target line, from which an application can receive the data.");
-						line_microphone = line;
+						line_microphone = (TargetDataLine)line;
 						// Planning to record the streamed audio input from the microphone in flac format
 						// https://en.wikipedia.org/wiki/FLAC
 						// The FLAC format supports only integer samples, not floating-point. 
@@ -81,23 +80,29 @@ public class SoundRecorderExample
 						// A single microphone can produce one channel of audio, and a single speaker can accept one channel of audio, for example."
 						boolean isSigned = true;
 						AudioFormat flacFormat = new AudioFormat(100, 24, 1, isSigned, false);
-						line.open(flacFormat);
+						line_microphone.open(flacFormat);
 						//https://docs.oracle.com/javase/tutorial/sound/capturing.html
 						logger.debug("Starting the audio capture");
-						line.start();
-						
+						line_microphone.start();
+						logger.debug("Recording started.");
 						int numBytesRead;
-						byte[] data = new byte[line.getBufferSize()/5];
+						byte[] data = new byte[line_microphone.getBufferSize()/5];
 						ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 						FileOutputStream fileOutputStream = new FileOutputStream("recording.flac");
 						outputStream.writeTo(fileOutputStream);
 						
 						boolean keepRecording = true;
-						LocalTime start = LocalTime.now();
+						LocalTime startTime = LocalTime.now();
+						int startMinutes= startTime.getMinute();
+						
 						while (!keepRecording) { 
-							numBytesRead = line.read(data, 0,  data.length); 
+							numBytesRead = line_microphone.read(data, 0,  data.length); 
 							outputStream.write(data, 0, numBytesRead);
 							LocalTime nowTime = LocalTime.now();
+							int nowMinutes = nowTime.getMinute();
+							if(Math.abs(startMinutes-nowMinutes) == 1) logger.debug("Math.abs(startMinutes-nowMinutes) = 1 ");
+							if(Math.abs(startMinutes-nowMinutes) > 1)keepRecording=false;
+							
 							
 						}
   
