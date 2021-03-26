@@ -96,7 +96,8 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			Thread.sleep(25000);			
 						
 			logger.debug("Testing that the 'Uncategorized' category can be found."); 	
-			URL page_url = new URL("http://localhost:8080/categories");	 			
+			URL page_url = new URL("http://localhost:8080/categories");	 
+			logger.debug("Before print_stream");
 			isUncategorizedFound = this.print_stream(page_url.openStream(), url_log, "Uncategorized");
 			// Issue: case where the back-end starts with no Uncategorized category
 			// If this happens, finding and suppressing the process still running on port 8080
@@ -149,8 +150,11 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 	 */
 	private boolean print_stream(InputStream inputStream, String log_path, String stringToFind)
 	{
+		logger.debug("Entering print_stream");
 		boolean isStringFound = false;
+		logger.debug("Before readableByteChannel");
 		ReadableByteChannel readableByteChannel = Channels.newChannel(inputStream);
+		logger.debug("After readableByteChannel");
 		FileOutputStream fileOutputStream;
 		try {
 			fileOutputStream = new FileOutputStream(log_path);
