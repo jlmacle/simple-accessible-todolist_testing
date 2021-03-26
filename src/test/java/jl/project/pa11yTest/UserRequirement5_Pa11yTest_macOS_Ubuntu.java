@@ -96,7 +96,8 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			Thread.sleep(25000);			
 						
 			logger.debug("Testing that the 'Uncategorized' category can be found."); 	
-			URL page_url = new URL("http://localhost:8080/categories");	 
+			URL page_url = new URL("http://localhost:8080/categories");	 	
+			logger.debug("After URL creation");
 			logger.debug("Before print_stream");
 			isUncategorizedFound = this.print_stream(page_url.openStream(), url_log, "Uncategorized");
 			// Issue: case where the back-end starts with no Uncategorized category
