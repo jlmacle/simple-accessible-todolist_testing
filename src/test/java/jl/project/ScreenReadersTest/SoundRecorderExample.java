@@ -18,9 +18,10 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioFormat.Encoding;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.Line;
-import javax.sound.sampled.Line.Info;
+
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.Mixer;
+import javax.sound.sampled.Mixer.Info;
 import javax.sound.sampled.TargetDataLine;
 import javax.sound.sampled.AudioSystem;
 
@@ -42,18 +43,47 @@ public class SoundRecorderExample
 		TargetDataLine line_microphone = null;
 		logger.debug("Getting the available MixerInfo from the AudioSystem class");
 		Mixer.Info[] mixerInfos = AudioSystem.getMixerInfo();
+		
 		for (Mixer.Info mixerInfo: mixerInfos)
 		{
 			Mixer mixer = AudioSystem.getMixer(mixerInfo); // Using the instance of Mixer.Info as the key to get a mixer
-			Info[] lineInfos = mixer.getSourceLineInfo();
-			for (Line.Info lineInfo:lineInfos)
+			javax.sound.sampled.Line.Info[] lineInfos = mixer.getSourceLineInfo();
+			for (javax.sound.sampled.Line.Info info:lineInfos)
 			{
 				logger.debug(String.format("**** Name of the mixer: *%s*",mixerInfo.getName()));
-				logger.debug("Line info: "+lineInfo);
-				Line line;
+				logger.debug("Line info: "+info);
+				TargetDataLine line;
 				try 
 				{
-					line = mixer.getLine(lineInfo); // Using the instance of Line.info as the key to get a line
+					
+					//	https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioFormat.Encoding.html
+					//	" Besides PCM, other encodings include mu-law and a-law, 
+					//	which are nonlinear mappings of the sound amplitude 
+					//	that are often used for recording speech."
+					//	According to this source: https://docs.oracle.com/cd/A87860_01/doc/inter.817/a85336/mm_audfm.htm
+					//	aiff, and wav have a Linear PCM encoding, and au can have a mu-law encoding.					
+					//	https://en.wikipedia.org/wiki/Au_file_format
+					//  Originally it was headerless, being simply 8-bit μ-law-encoded data at an 8000 Hz sample rate
+					//  All fields are stored in big-endian format, including the sample data.
+					//  https://en.wikipedia.org/wiki/Endianness#Current_architectures
+					
+					// AudioFormat auFormat = new AudioFormat(8000, 8, 1, isSigned, isBigEndian);
+					// console output: Line unsupported: interface TargetDataLine supporting format PCM_UNSIGNED 8000.0 Hz, 8 bit, mono, 1 bytes/frame
+					
+					//AudioFormat auFormat = new AudioFormat(8000, 32, 1, isSigned, isBigEndian);
+					// console output
+					
+					//	https://en.wikipedia.org/wiki/WAV
+					// "Though a WAV file can contain compressed audio, 
+					//	the most common WAV audio format is uncompressed audio in the linear pulse-code modulation (LPCM) format. 
+					//	LPCM is also the standard audio coding format for audio CDs, 
+					//	which store two-channel LPCM audio sampled at 44,100 Hz with 16 bits per sample."
+					//	"There are some inconsistencies in the WAV format: for example, 8-bit data is unsigned while 16-bit data is signed"
+					boolean isSigned = true;
+					boolean isBigEndian = false;
+					AudioFormat wavFormat = new AudioFormat(44100, 16, 2,isSigned, isBigEndian);
+					
+					line = (TargetDataLine)AudioSystem.getTargetDataLine(wavFormat, mixerInfo);
 					logger.debug("Line: "+line);		
 					
 					//To be adapted for your microphone or an other audio recording line.					
@@ -63,24 +93,10 @@ public class SoundRecorderExample
 						logger.debug("Port Microphone Array mixer found.");
 						logger.debug("Defining the target line, from which an application can receive the data.");
 						line_microphone = (TargetDataLine)line;
-						// Planning to record the streamed audio input from the microphone in flac format
-						// https://en.wikipedia.org/wiki/FLAC
-						// The FLAC format supports only integer samples, not floating-point. 
-						// It can handle any PCM bit resolution from 4 to 32 bits per sample, 
-						// any sampling rate from 1 Hz to 65,535 Hz in 1 Hz increments or from 10 Hz to 655,350 Hz in 10 Hz increments, 
-						// and any number of channels from 1 to 8.[10] 
-						// To date (version 1.3.3 of the reference encoder), 
-						// FLAC encoding is limited to 24 bits per sample since no encoder for 32 bits per sample exists.
-						// "any number of channels from 1 to 8"
-						// https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioFormat.Encoding.html
-						//"When I export my song as FLAC, I get asked to choose a Subformat, signed 8, 16 or 24 Bit PCM."
-						// https://en.wikipedia.org/wiki/Bit_rate
-						// https://www.wildlifeacoustics.com/resources/faqs/what-is-an-audio-channel
-						// "A channel is a representation of sound coming from or going to a single point. 
-						// A single microphone can produce one channel of audio, and a single speaker can accept one channel of audio, for example."
-						boolean isSigned = true;
-						AudioFormat flacFormat = new AudioFormat(100, 24, 1, isSigned, false);
-						line_microphone.open(flacFormat);
+						
+						
+						
+						line_microphone.open(wavFormat);
 						//https://docs.oracle.com/javase/tutorial/sound/capturing.html
 						logger.debug("Starting the audio capture");
 						line_microphone.start();
@@ -88,8 +104,17 @@ public class SoundRecorderExample
 						int numBytesRead;
 						byte[] data = new byte[line_microphone.getBufferSize()/5];
 						ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-						FileOutputStream fileOutputStream = new FileOutputStream("recording.flac");
+									
+						// https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioFormat.Encoding.html
+						// https://en.wikipedia.org/wiki/Bit_rate
+						// https://www.wildlifeacoustics.com/resources/faqs/what-is-an-audio-channel
+						// "A channel is a representation of sound coming from or going to a single point. 
+						// A single microphone can produce one channel of audio, and a single speaker can accept one channel of audio, for example."
+						FileOutputStream fileOutputStream = new FileOutputStream("recording.wav");
 						outputStream.writeTo(fileOutputStream);
+						
+						//getLine(Line.Info) - Static method in class javax.sound.sampled.AudioSystem
+						//Obtains a line that matches the description in the specified Line.Info object.
 						
 						boolean keepRecording = true;
 						LocalTime startTime = LocalTime.now();
