@@ -18,10 +18,10 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioFormat.Encoding;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.Line;
+import javax.sound.sampled.Line.Info;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.Mixer;
-import javax.sound.sampled.Mixer.Info;
 import javax.sound.sampled.TargetDataLine;
 import javax.sound.sampled.AudioSystem;
 
@@ -48,7 +48,7 @@ public class SoundRecorderExample
 		{
 			Mixer mixer = AudioSystem.getMixer(mixerInfo); // Using the instance of Mixer.Info as the key to get a mixer
 			javax.sound.sampled.Line.Info[] lineInfos = mixer.getSourceLineInfo();
-			for (javax.sound.sampled.Line.Info info:lineInfos)
+			for (Info info:lineInfos)
 			{
 				logger.debug(String.format("**** Name of the mixer: *%s*",mixerInfo.getName()));
 				logger.debug("Line info: "+info);
@@ -80,8 +80,9 @@ public class SoundRecorderExample
 					//	which store two-channel LPCM audio sampled at 44,100 Hz with 16 bits per sample."
 					//	"There are some inconsistencies in the WAV format: for example, 8-bit data is unsigned while 16-bit data is signed"
 					boolean isSigned = true;
-					boolean isBigEndian = false;
-					AudioFormat wavFormat = new AudioFormat(44100, 16, 2,isSigned, isBigEndian);
+					boolean isBigEndian = true;
+					//https://www.codejava.net/coding/capture-and-record-sound-into-wav-file-with-java-sound-api
+					AudioFormat wavFormat = new AudioFormat(16000, 8, 2,isSigned, isBigEndian);
 					
 					line = (TargetDataLine)AudioSystem.getTargetDataLine(wavFormat, mixerInfo);
 					logger.debug("Line: "+line);		
