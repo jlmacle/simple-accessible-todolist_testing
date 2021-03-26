@@ -161,6 +161,7 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			fileOutputStream = new FileOutputStream(log_path);
 			FileChannel fileChannel = fileOutputStream.getChannel();
 			logger.debug("Before transfer to file");
+			//I do not know if Long.MAX_VALUE is the best value here.
 			fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
 			logger.debug("Transfer to file done");
 			

@@ -5,11 +5,14 @@ package jl.project.ScreenReadersTest;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
+import java.time.LocalTime;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioFormat.Encoding;
@@ -79,13 +82,34 @@ public class SoundRecorderExample
 						boolean isSigned = true;
 						AudioFormat flacFormat = new AudioFormat(100, 24, 1, isSigned, false);
 						line.open(flacFormat);
+						//https://docs.oracle.com/javase/tutorial/sound/capturing.html
 						logger.debug("Starting the audio capture");
 						line.start();
-						FileOutputStream fileOutputStrem = new FileOutputStream("recording.flac");
-						FileChannel fileChannel = fileOutputStrem.getChannel(); 
+						
+						int numBytesRead;
+						byte[] data = new byte[line.getBufferSize()/5];
 						ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-						WritableByteChannel writableByteChannel = Channels.newChannel((OutputStream)outputStream);
-						//fileChannel.trans
+						FileOutputStream fileOutputStream = new FileOutputStream("recording.flac");
+						outputStream.writeTo(fileOutputStream);
+						
+						boolean keepRecording = true;
+						LocalTime start = LocalTime.now();
+						while (!keepRecording) { 
+							numBytesRead = line.read(data, 0,  data.length); 
+							outputStream.write(data, 0, numBytesRead);
+							LocalTime nowTime = LocalTime.now();
+							
+						}
+  
+						/*
+						 * //Opening of a FileChannel to write the output in a file
+						 * 
+						 * FileChannel fileChannel = fileOutputStream.getChannel(); //need to transfer
+						 * the data from the line to a readableByteChannel ReadableByteChannel
+						 * readableByteChannel = Channels.newChannel(inputStream);
+						 * fileChannel.transferFrom(readableByteChannel, 0, 1024);
+						 */
+						 
 						
 					}
 				} 
@@ -95,6 +119,9 @@ public class SoundRecorderExample
 					e.printStackTrace();
 				} catch (FileNotFoundException e) {
 					logger.debug("Caught a FileNotFoundException");
+					e.printStackTrace();
+				} catch (IOException e) {
+					logger.debug("Caught a IOException");
 					e.printStackTrace();
 				}
 			}
