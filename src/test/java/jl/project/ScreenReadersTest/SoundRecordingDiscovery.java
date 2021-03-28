@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 /**
  * @author 
  * Class designed to discover some concepts related to audio recording
+ * With thanks to DannyM
+ * https://stackoverflow.com/questions/3705581/java-sound-api-capturing-microphone
  */
 public class SoundRecordingDiscovery 
 {

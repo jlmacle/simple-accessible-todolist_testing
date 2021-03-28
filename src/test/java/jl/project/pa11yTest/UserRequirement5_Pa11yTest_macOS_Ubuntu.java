@@ -1,7 +1,9 @@
 package jl.project.pa11yTest;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.fail;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,6 +15,8 @@ import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.testng.annotations.AfterClass;
@@ -88,12 +92,12 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 		try 
 		{		
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
-			logger.debug("Starting back-end server");			
+			logger.debug("Starting back-end server");	
 			processBuilder.command(backend_script);					
-			process_backend = processBuilder.start();				
+			process_backend = processBuilder.start();							
 			Channels.newChannel(process_backend.getInputStream());//Added to get the code to run on Windows.
 			logger.debug("Waiting for the back-end server to start.");
-			Thread.sleep(25000);			
+			await().atMost(25, TimeUnit.SECONDS);					
 						
 			logger.debug("Testing that the 'Uncategorized' category can be found."); 	
 			URL page_url = new URL("http://localhost:8080/categories");	 	
@@ -107,21 +111,20 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			// netstat -ano | findstr 8080
 			
 
-			if(!isUncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");
-									
+			if(!isUncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");									
 			logger.debug("Starting Angular server");	
-			processBuilder.command(angular_script);		
+			processBuilder.command(angular_script);
 			processBuilder.redirectError(angular_server_error_log);
-			processBuilder.redirectInput(angular_server_input_log);
-			process_angular = processBuilder.start();
+			processBuilder.redirectInput(angular_server_input_log); process_angular =
+			processBuilder.start();
 			logger.debug("Waiting for the Angular server to start.");
-			Thread.sleep(35000);	
+			await().atMost(35,TimeUnit.SECONDS);			
 			
 			logger.debug("Building and starting the pa11y command."); 
 			processBuilder.command(pa11y_script);
 			process_Pa11y = processBuilder.start();
 			logger.debug("Waiting for the pa11y test to be finished"); 
-			Thread.sleep(35000);//not too much time for a slow computer.
+			await().atMost(45,TimeUnit.SECONDS);			
 			
 			//if no output, getInputStream() replaced by getErrorStream()
 			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
@@ -133,16 +136,37 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			logger.debug(e.getMessage());
 			e.printStackTrace();
 		}	
-		
-		catch (InterruptedException e) 
-		{
-		  logger.debug("Caught an InterruptedException while pausing the execution.");
-		  logger.debug(e.getMessage());
-		  e.printStackTrace(); 
-		}
-		 
 	}	
 	
+	
+	
+	
+	private Callable<Boolean> stoppedTheBackendServer()
+	{
+		return new Callable<Boolean>()
+		{
+			public Boolean call() throws Exception
+			{
+				if (process_backend.supportsNormalTermination())  process_backend.destroy(); else {process_backend.destroyForcibly();}
+				return !process_backend.isAlive();
+			}
+		};
+	}
+
+	private Callable<Boolean> stoppedTheAngularServer()
+	{
+		return new Callable<Boolean>()
+		{
+			public Boolean call() throws Exception
+			{
+				if (process_angular.supportsNormalTermination()) process_angular.destroy(); else process_angular.destroyForcibly();
+				return !process_angular.isAlive();
+			}
+		};
+		
+	}
+	
+			
 	/**
 	 * @param input: an InputStream
 	 * @param log_path: the path to log the output of the stream (from getInputStrem() or getErrorStream())
@@ -201,9 +225,9 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 
 	@AfterClass
 	void release()
-	{		
-		if (process_angular.supportsNormalTermination()) process_angular.destroy(); else process_angular.destroyForcibly();
-		if (process_backend.supportsNormalTermination())  process_backend.destroy(); else process_backend.destroyForcibly();
+	{	
+		await().atMost(20, TimeUnit.SECONDS).until(stoppedTheBackendServer());
+		await().atMost(5,TimeUnit.SECONDS).until(stoppedTheAngularServer());		
 		if (process_Pa11y.supportsNormalTermination()) process_Pa11y.destroy(); else process_Pa11y.destroyForcibly();
 		
 		logger.debug(String.format("process_angular is alive : %b", process_angular.isAlive()));
