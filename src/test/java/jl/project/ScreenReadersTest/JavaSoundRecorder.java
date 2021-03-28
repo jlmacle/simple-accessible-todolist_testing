@@ -57,6 +57,7 @@ public class JavaSoundRecorder {
             // Helped by this code : https://www.developer.com/java/other/article.php/1579071
             //Windows            
             line = (TargetDataLine) AudioSystem.getMixer(mixer_infos[5]).getLine(dataline_info);
+
             line.open(format);
             line.start();   // start capturing
  

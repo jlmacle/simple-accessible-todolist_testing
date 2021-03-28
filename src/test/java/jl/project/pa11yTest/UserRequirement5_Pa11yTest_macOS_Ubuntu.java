@@ -4,7 +4,6 @@ import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -92,16 +91,15 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 		try 
 		{		
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
-			logger.debug("Starting back-end server");	
+			logger.debug("Starting back-end server");			
 			processBuilder.command(backend_script);					
-			process_backend = processBuilder.start();							
+			process_backend = processBuilder.start();				
 			Channels.newChannel(process_backend.getInputStream());//Added to get the code to run on Windows.
 			logger.debug("Waiting for the back-end server to start.");
-			await().atMost(25, TimeUnit.SECONDS);					
+			Thread.sleep(25000);			
 						
 			logger.debug("Testing that the 'Uncategorized' category can be found."); 	
-			URL page_url = new URL("http://localhost:8080/categories");	 	
-			logger.debug("After URL creation");
+			URL page_url = new URL("http://localhost:8080/categories");	 
 			logger.debug("Before print_stream");
 			isUncategorizedFound = this.print_stream(page_url.openStream(), url_log, "Uncategorized");
 			// Issue: case where the back-end starts with no Uncategorized category
@@ -111,20 +109,21 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			// netstat -ano | findstr 8080
 			
 
-			if(!isUncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");									
+			if(!isUncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");
+									
 			logger.debug("Starting Angular server");	
-			processBuilder.command(angular_script);
+			processBuilder.command(angular_script);		
 			processBuilder.redirectError(angular_server_error_log);
-			processBuilder.redirectInput(angular_server_input_log); process_angular =
-			processBuilder.start();
+			processBuilder.redirectInput(angular_server_input_log);
+			process_angular = processBuilder.start();
 			logger.debug("Waiting for the Angular server to start.");
-			await().atMost(35,TimeUnit.SECONDS);			
+			Thread.sleep(35000);	
 			
 			logger.debug("Building and starting the pa11y command."); 
 			processBuilder.command(pa11y_script);
 			process_Pa11y = processBuilder.start();
 			logger.debug("Waiting for the pa11y test to be finished"); 
-			await().atMost(45,TimeUnit.SECONDS);			
+			Thread.sleep(35000);//not too much time for a slow computer.
 			
 			//if no output, getInputStream() replaced by getErrorStream()
 			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
@@ -136,37 +135,16 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			logger.debug(e.getMessage());
 			e.printStackTrace();
 		}	
+		
+		catch (InterruptedException e) 
+		{
+		  logger.debug("Caught an InterruptedException while pausing the execution.");
+		  logger.debug(e.getMessage());
+		  e.printStackTrace(); 
+		}
+		 
 	}	
 	
-	
-	
-	
-	private Callable<Boolean> stoppedTheBackendServer()
-	{
-		return new Callable<Boolean>()
-		{
-			public Boolean call() throws Exception
-			{
-				if (process_backend.supportsNormalTermination())  process_backend.destroy(); else {process_backend.destroyForcibly();}
-				return !process_backend.isAlive();
-			}
-		};
-	}
-
-	private Callable<Boolean> stoppedTheAngularServer()
-	{
-		return new Callable<Boolean>()
-		{
-			public Boolean call() throws Exception
-			{
-				if (process_angular.supportsNormalTermination()) process_angular.destroy(); else process_angular.destroyForcibly();
-				return !process_angular.isAlive();
-			}
-		};
-		
-	}
-	
-			
 	/**
 	 * @param input: an InputStream
 	 * @param log_path: the path to log the output of the stream (from getInputStrem() or getErrorStream())
@@ -185,7 +163,6 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 			fileOutputStream = new FileOutputStream(log_path);
 			FileChannel fileChannel = fileOutputStream.getChannel();
 			logger.debug("Before transfer to file");
-			//I do not know if Long.MAX_VALUE is the best value here.
 			fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
 			logger.debug("Transfer to file done");
 			
@@ -222,10 +199,35 @@ public class UserRequirement5_Pa11yTest_macOS_Ubuntu {
 		assertTrue(isPa11yTestPassed);		
 	}	
 	
+	private Callable<Boolean> stoppedTheBackendServer()
+	{
+		return new Callable<Boolean>()
+		{
+			public Boolean call() throws Exception
+			{
+				if (process_backend.supportsNormalTermination())  process_backend.destroy(); else {process_backend.destroyForcibly();}
+				return !process_backend.isAlive();
+			}
+		};
+	}
+
+	private Callable<Boolean> stoppedTheAngularServer()
+	{
+		return new Callable<Boolean>()
+		{
+			public Boolean call() throws Exception
+			{
+				if (process_angular.supportsNormalTermination()) process_angular.destroy(); else process_angular.destroyForcibly();
+				return !process_angular.isAlive();
+			}
+		};
+		
+	}
+	
 
 	@AfterClass
 	void release()
-	{	
+	{		
 		await().atMost(20, TimeUnit.SECONDS).until(stoppedTheBackendServer());
 		await().atMost(5,TimeUnit.SECONDS).until(stoppedTheAngularServer());		
 		if (process_Pa11y.supportsNormalTermination()) process_Pa11y.destroy(); else process_Pa11y.destroyForcibly();

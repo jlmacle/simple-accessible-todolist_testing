@@ -2,13 +2,13 @@ package jl.project;
 
 public class StringExternalization {
 	// Windows webdrivers			
-	
-	  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
-	  public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
-	  public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
-	  public static final String WEBDRIVER_SAFARI_VALUE = "";
-	 
-	  		
+	/*
+	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
+	 * public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
+	 * public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; public
+	 * static final String WEBDRIVER_SAFARI_VALUE = "";
+	 * 
+	 */  		
 	// Linux webdrivers		
 	/*
 	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
@@ -20,13 +20,12 @@ public class StringExternalization {
 	 
 	 
 	// macOS webdrivers	
-	/*
-	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
-	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
-	 * final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
-	 * String WEBDRIVER_SAFARI_VALUE = ""; // /usr/bin/safaridriver to be used
-	 * instead
-	 */
+	
+	  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
+	  static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
+	  final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
+	  String WEBDRIVER_SAFARI_VALUE = ""; // /usr/bin/safaridriver to be used instead
+	 
 	  
 	public static final boolean GRID_NOT_USED = false;
 	//public static final String ANGULAR_SERVER_URL = "http://localhost:4200";	
