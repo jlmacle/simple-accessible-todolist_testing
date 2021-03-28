@@ -14,7 +14,7 @@ public class JavaSoundRecorder {
     static final long RECORD_TIME = 60000;  // 1 minute
  
     // path of the wav file
-    File wavFile = new File("CodeJavaRecordAudio.wav");
+    File wavFile = new File("./src/test/java/jl/project/ScreenReadersTest/audioFiles/CodeJavaRecordAudio.wav");
  
     // format of audio file
     AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
@@ -42,16 +42,21 @@ public class JavaSoundRecorder {
     void start() {
         try {
             AudioFormat format = getAudioFormat();
-            DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+            DataLine.Info dataline_info = new DataLine.Info(TargetDataLine.class, format);
  
             // checks if system supports the data line
-            if (!AudioSystem.isLineSupported(info)) {
+            if (!AudioSystem.isLineSupported(dataline_info)) {
                 System.out.println("Line not supported");
                 System.exit(0);
             }
             //line = (TargetDataLine) AudioSystem.getLine(info);
             Info[] mixer_infos = AudioSystem.getMixerInfo();
-            line = (TargetDataLine) AudioSystem.getLine(mixer_infos[0]);
+            
+            // Addition to the original code in an intent to capture the sound from the speakers,
+            // instead of the microphone
+            // Helped by this code : https://www.developer.com/java/other/article.php/1579071
+            //Windows            
+            line = (TargetDataLine) AudioSystem.getMixer(mixer_infos[5]).getLine(dataline_info);
             line.open(format);
             line.start();   // start capturing
  
