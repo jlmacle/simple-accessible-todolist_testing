@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>User Requirement 4 Part 2</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Mar 25 13:59:19 CDT 2021</td>
+<td>Started on:</td><td>Sun Mar 28 11:46:35 CEST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>95 seconds (95421 ms)</td>
+<tr><td>Total time:</td><td>39 seconds (39973 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,50 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey()'><b>createAndDeleteItemWithKeyboardOnly_SpaceKey</b><br>Test class: jl.project.ChromeTests.UserRequirement4_2_Test</td>
+<td><div><pre>java.lang.AssertionError: Error: the test item label has been found. The test is failed.
+	at jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:307)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1690915968", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1690915968'><pre>java.lang.AssertionError: Error: the test item label has been found. The test is failed.
+	at org.testng.Assert.fail(Assert.java:96)
+	at jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:307)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.runSuites(TestNG.java:1028)
+	at org.testng.TestNG.run(TestNG.java:996)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>17</td>
+<td>jl.project.ChromeTests.UserRequirement4_2_Test@5552768b</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,20 +119,44 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='jl.project.ChromeTests.UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()'><b>HideAndDisplayItemsWithKeyboardOnly_SpaceKey</b><br>Test class: jl.project.ChromeTests.UserRequirement4_2_Test</td>
-<td></td>
-<td>52</td>
-<td>jl.project.ChromeTests.UserRequirement4_2_Test@3c947bc5</td></tr>
-<tr>
 <td title='jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteACategoryWithKeyboardOnly_SpaceKey()'><b>createAndDeleteACategoryWithKeyboardOnly_SpaceKey</b><br>Test class: jl.project.ChromeTests.UserRequirement4_2_Test</td>
 <td></td>
-<td>20</td>
-<td>jl.project.ChromeTests.UserRequirement4_2_Test@3c947bc5</td></tr>
+<td>19</td>
+<td>jl.project.ChromeTests.UserRequirement4_2_Test@5552768b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey()'><b>createAndDeleteItemWithKeyboardOnly_SpaceKey</b><br>Test class: jl.project.ChromeTests.UserRequirement4_2_Test</td>
-<td></td>
-<td>17</td>
-<td>jl.project.ChromeTests.UserRequirement4_2_Test@3c947bc5</td></tr>
+<td title='jl.project.ChromeTests.UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()'><b>HideAndDisplayItemsWithKeyboardOnly_SpaceKey</b><br>Test class: jl.project.ChromeTests.UserRequirement4_2_Test</td>
+<td><div><pre>java.lang.Throwable: Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@5552768b] depends on not successfully finished methods in group &quot;creation_deletion_Chrome_2&quot;
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace877788296", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace877788296'><pre>java.lang.Throwable: Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@5552768b] depends on not successfully finished methods in group &quot;creation_deletion_Chrome_2&quot;
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.runSuites(TestNG.java:1028)
+	at org.testng.TestNG.run(TestNG.java:996)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
 </table><p>
 </body>
 </html>
