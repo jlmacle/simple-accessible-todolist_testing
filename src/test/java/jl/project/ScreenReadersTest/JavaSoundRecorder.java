@@ -51,7 +51,7 @@ public class JavaSoundRecorder {
             }
             //line = (TargetDataLine) AudioSystem.getLine(info);
             Info[] mixer_infos = AudioSystem.getMixerInfo();
-            line = (TargetDataLine) AudioSystem.getLine(mixer_infos[0]);
+            //line = (TargetDataLine) AudioSystem.getLine(mixer_infos[0]);
             line.open(format);
             line.start();   // start capturing
  
