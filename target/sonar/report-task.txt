@@ -2,5 +2,5 @@ projectKey=End-to-endTesting:jl.project
 serverUrl=http://localhost:9000
 serverVersion=8.7.0.41497
 dashboardUrl=http://localhost:9000/dashboard?id=End-to-endTesting%3Ajl.project
-ceTaskId=AXg3U5okGQujTqGrKHrA
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXg3U5okGQujTqGrKHrA
+ceTaskId=AXhvoXWvzOHKyZz2ZYXD
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXhvoXWvzOHKyZz2ZYXD
