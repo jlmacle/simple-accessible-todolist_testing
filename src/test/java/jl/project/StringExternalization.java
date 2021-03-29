@@ -28,7 +28,7 @@ public class StringExternalization {
 	 * instead
 	 */
 	  
-	public static final boolean GRID_NOT_USED = false;
+	public static final boolean GRID_NOT_USED = true;
 	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";	
 	//Grid 4: beginning	
 	//public static final String ANGULAR_SERVER_URL = "http://192.168.1.16:4200";
