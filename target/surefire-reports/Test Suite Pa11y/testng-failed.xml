@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [Test Suite Pa11y]" guice-stage="DEVELOPMENT" verbose="0">
+  <test name="Pa11y Test(failed)" verbose="0">
+    <classes>
+      <class name="jl.project.Pa11yTest.UserRequirement5_Pa11yTest">
+        <methods>
+          <include name="pa11yTest"/>
+          <include name="release"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jl.project.Pa11yTest.UserRequirement5_Pa11yTest -->
+    </classes>
+  </test> <!-- Pa11y Test(failed) -->
+</suite> <!-- Failed suite [Test Suite Pa11y] -->
