@@ -17,14 +17,12 @@
                 <version>2.22.2</version>
                 <configuration>
                     <!-- Suite testng xml file to consider for test execution -->                    
-                    <suiteXmlFiles>
-                    <!--  
+                    <suiteXmlFiles>                    
                         <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>
-                     -->
-                      <suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile> 
-                      <!-- <suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile> -->
+                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>                     
+                       	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile> 
+                      	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     
                     
