@@ -3,13 +3,11 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.Pa11yTest.UserRequirement5_Pa11yTest">
+      <class name="jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest">
         <methods>
-          <include name="pa11yTest"/>
-          <include name="release"/>
-          <include name="setup"/>
+          <include name="convertAudioToTextTest"/>
         </methods>
-      </class> <!-- jl.project.Pa11yTest.UserRequirement5_Pa11yTest -->
+      </class> <!-- jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
