@@ -1,17 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="0" failed="9" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-31T01:38:01Z" name="Test Suite Screen Readers Test" finished-at="2021-03-31T01:38:17Z" duration-ms="15084">
+  <suite started-at="2021-03-31T02:32:56Z" name="Test Suite Chrome" finished-at="2021-03-31T02:34:00Z" duration-ms="63259">
     <groups>
+      <group name="creation_deletion_Chrome_1">
+        <method signature="UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" class="jl.project.ChromeTests.UserRequirement4_1_Test"/>
+        <method signature="UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" name="createAndDeleteItemWithKeyboardOnly_EnterKey" class="jl.project.ChromeTests.UserRequirement4_1_Test"/>
+      </group> <!-- creation_deletion_Chrome_1 -->
+      <group name="creation_deletion_Chrome_2">
+        <method signature="UserRequirement4_2_Test.createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" class="jl.project.ChromeTests.UserRequirement4_2_Test"/>
+        <method signature="UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" class="jl.project.ChromeTests.UserRequirement4_2_Test"/>
+      </group> <!-- creation_deletion_Chrome_2 -->
     </groups>
-    <test started-at="2021-03-31T01:38:01Z" name="Speech To TextConverter Test IBM" finished-at="2021-03-31T01:38:17Z" duration-ms="15084">
-      <class name="jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest">
-        <test-method signature="convertAudioToTextTest()[pri:0, instance:jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest@61001b64]" started-at="2021-03-31T03:38:02Z" name="convertAudioToTextTest" finished-at="2021-03-31T03:38:17Z" duration-ms="15049" status="PASS">
+    <test started-at="2021-03-31T02:32:56Z" name="User Requirement 1" finished-at="2021-03-31T02:33:02Z" duration-ms="5083">
+      <class name="jl.project.ChromeTests.UserRequirement1_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@3571b748]" started-at="2021-03-31T04:32:56Z" name="setup" finished-at="2021-03-31T04:32:59Z" duration-ms="2970" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- convertAudioToTextTest -->
-      </class> <!-- jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest -->
-    </test> <!-- Speech To TextConverter Test IBM -->
-  </suite> <!-- Test Suite Screen Readers Test -->
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@3571b748]" started-at="2021-03-31T04:32:59Z" name="navigate" finished-at="2021-03-31T04:33:00Z" duration-ms="869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@3571b748]" started-at="2021-03-31T04:33:00Z" name="createCategory" finished-at="2021-03-31T04:33:01Z" duration-ms="719" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The app wasn't started.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The app wasn't started.at org.testng.Assert.fail(Assert.java:96)at jl.project.ChromeTests.UserRequirement1_Test.createCategory(UserRequirement1_Test.java:95)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCategory -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@3571b748]" started-at="2021-03-31T04:33:01Z" name="navigate" finished-at="2021-03-31T04:33:01Z" duration-ms="319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="deleteCategory()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@3571b748]" started-at="2021-03-31T04:33:01Z" name="deleteCategory" finished-at="2021-03-31T04:33:01Z" duration-ms="82" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The app wasn't started.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The app wasn't started.at org.testng.Assert.fail(Assert.java:96)at jl.project.ChromeTests.UserRequirement1_Test.deleteCategory(UserRequirement1_Test.java:127)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCategory -->
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement1_Test@3571b748]" started-at="2021-03-31T04:33:01Z" name="releaseResources" finished-at="2021-03-31T04:33:02Z" duration-ms="85" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releaseResources -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement1_Test -->
+    </test> <!-- User Requirement 1 -->
+    <test started-at="2021-03-31T02:33:02Z" name="User Requirement 2" finished-at="2021-03-31T02:33:05Z" duration-ms="3118">
+      <class name="jl.project.ChromeTests.UserRequirement2_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@4a668b6e]" started-at="2021-03-31T04:33:02Z" name="setup" finished-at="2021-03-31T04:33:03Z" duration-ms="1101" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@4a668b6e]" started-at="2021-03-31T04:33:03Z" name="navigate" finished-at="2021-03-31T04:33:04Z" duration-ms="781" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createItem()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@4a668b6e]" started-at="2021-03-31T04:33:04Z" name="createItem" finished-at="2021-03-31T04:33:04Z" duration-ms="835" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<[tru]e> but was:<[fals]e>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<[tru]e> but was:<[fals]e>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at jl.project.ChromeTests.UserRequirement2_Test.createItem(UserRequirement2_Test.java:100)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createItem -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@4a668b6e]" started-at="2021-03-31T04:33:04Z" name="navigate" finished-at="2021-03-31T04:33:05Z" duration-ms="267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="deleteItem()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@4a668b6e]" started-at="2021-03-31T04:33:05Z" name="deleteItem" finished-at="2021-03-31T04:33:05Z" duration-ms="39" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There should be one item. Number of item found: 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There should be one item. Number of item found: 0at jl.project.ChromeTests.UserRequirement2_Test.deleteItem(UserRequirement2_Test.java:115)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteItem -->
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@4a668b6e]" started-at="2021-03-31T04:33:05Z" name="releaseResources" finished-at="2021-03-31T04:33:05Z" duration-ms="86" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releaseResources -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement2_Test -->
+    </test> <!-- User Requirement 2 -->
+    <test started-at="2021-03-31T02:33:05Z" name="User Requirement 3" finished-at="2021-03-31T02:33:14Z" duration-ms="8758">
+      <class name="jl.project.ChromeTests.UserRequirement3_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement3_Test@524d6d96]" started-at="2021-03-31T04:33:05Z" name="setup" finished-at="2021-03-31T04:33:06Z" duration-ms="1101" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.project.ChromeTests.UserRequirement3_Test@524d6d96]" started-at="2021-03-31T04:33:06Z" name="hideAndDisplayItem" finished-at="2021-03-31T04:33:14Z" duration-ms="7654" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The item label seems to be absent from the screenshot: To-Do List Credits Works you might likePlease use this form to add a new category.Add the categoryThe next form is for adding a new item.Add the item to the categoryCredits:« # The trash can icon by Google Inc is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.« © The plus sign icon by Font Awesome is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.« Source of the retriever puppies picture, by Chevanon photography.« Link to the description of the Creative Commons BY 4.0 LicenseWorks vou miaht like to know about: -]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The item label seems to be absent from the screenshot: To-Do List Credits Works you might likePlease use this form to add a new category.Add the categoryThe next form is for adding a new item.Add the item to the categoryCredits:« # The trash can icon by Google Inc is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.« © The plus sign icon by Font Awesome is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.« Source of the retriever puppies picture, by Chevanon photography.« Link to the description of the Creative Commons BY 4.0 LicenseWorks vou miaht like to know about: -at org.testng.Assert.fail(Assert.java:96)at jl.project.ChromeTests.UserRequirement3_Test.hideAndDisplayItem(UserRequirement3_Test.java:128)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hideAndDisplayItem -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement3_Test -->
+    </test> <!-- User Requirement 3 -->
+    <test started-at="2021-03-31T02:33:14Z" name="User Requirement 4 Part 1" finished-at="2021-03-31T02:33:37Z" duration-ms="23126">
+      <class name="jl.project.ChromeTests.UserRequirement4_1_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" started-at="2021-03-31T04:33:14Z" name="setup" finished-at="2021-03-31T04:33:15Z" duration-ms="1021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" started-at="2021-03-31T04:33:15Z" name="navigate" finished-at="2021-03-31T04:33:16Z" duration-ms="939" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" started-at="2021-03-31T04:33:16Z" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" finished-at="2021-03-31T04:33:24Z" duration-ms="8349" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<[tru]e> but was:<[fals]e>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<[tru]e> but was:<[fals]e>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at jl.project.ChromeTests.UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey(UserRequirement4_1_Test.java:129)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_EnterKey -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" started-at="2021-03-31T04:33:24Z" name="navigate" finished-at="2021-03-31T04:33:24Z" duration-ms="333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" started-at="2021-03-31T04:33:24Z" name="createAndDeleteItemWithKeyboardOnly_EnterKey" finished-at="2021-03-31T04:33:37Z" duration-ms="12353" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<[tru]e> but was:<[fals]e>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<[tru]e> but was:<[fals]e>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at jl.project.ChromeTests.UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey(UserRequirement4_1_Test.java:266)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteItemWithKeyboardOnly_EnterKey -->
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" started-at="2021-03-31T04:33:37Z" name="HideAndDisplayItemsWithKeyboardOnly_EnterKey" depends-on-groups="creation_deletion_Chrome_1" finished-at="2021-03-31T04:33:37Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method UserRequirement4_1_Test.HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24] depends on not successfully finished methods in group "creation_deletion_Chrome_1"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method UserRequirement4_1_Test.HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24] depends on not successfully finished methods in group "creation_deletion_Chrome_1"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_EnterKey -->
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24]" started-at="2021-03-31T04:33:37Z" name="releseResources" finished-at="2021-03-31T04:33:37Z" duration-ms="121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releseResources -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement4_1_Test -->
+    </test> <!-- User Requirement 4 Part 1 -->
+    <test started-at="2021-03-31T02:33:37Z" name="User Requirement 4 Part 2" finished-at="2021-03-31T02:34:00Z" duration-ms="22984">
+      <class name="jl.project.ChromeTests.UserRequirement4_2_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" started-at="2021-03-31T04:33:37Z" name="setup" finished-at="2021-03-31T04:33:38Z" duration-ms="1103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" started-at="2021-03-31T04:33:38Z" name="navigate" finished-at="2021-03-31T04:33:39Z" duration-ms="1113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" started-at="2021-03-31T04:33:39Z" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" finished-at="2021-03-31T04:33:47Z" duration-ms="8011" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<[tru]e> but was:<[fals]e>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<[tru]e> but was:<[fals]e>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteACategoryWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:134)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_SpaceKey -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" started-at="2021-03-31T04:33:47Z" name="navigate" finished-at="2021-03-31T04:33:47Z" duration-ms="299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" started-at="2021-03-31T04:33:47Z" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" finished-at="2021-03-31T04:34:00Z" duration-ms="12336" status="FAIL">
+          <exception class="org.junit.ComparisonFailure">
+            <message>
+              <![CDATA[expected:<[tru]e> but was:<[fals]e>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.junit.ComparisonFailure: expected:<[tru]e> but was:<[fals]e>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:270)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.junit.ComparisonFailure -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteItemWithKeyboardOnly_SpaceKey -->
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" started-at="2021-03-31T04:34:00Z" name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey" depends-on-groups="creation_deletion_Chrome_2" finished-at="2021-03-31T04:34:00Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6] depends on not successfully finished methods in group "creation_deletion_Chrome_2"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6] depends on not successfully finished methods in group "creation_deletion_Chrome_2"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_SpaceKey -->
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6]" started-at="2021-03-31T04:34:00Z" name="releseResources" finished-at="2021-03-31T04:34:00Z" duration-ms="112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releseResources -->
+      </class> <!-- jl.project.ChromeTests.UserRequirement4_2_Test -->
+    </test> <!-- User Requirement 4 Part 2 -->
+  </suite> <!-- Test Suite Chrome -->
 </testng-results>

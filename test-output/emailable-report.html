@@ -8,11 +8,61 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Test Suite Screen Readers Test</th></tr>
-<tr><td><a href="#t0">Speech To TextConverter Test IBM</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">15,084</td><td></td><td></td></tr>
+<tr><th colspan="7">Test Suite Chrome</th></tr>
+<tr><td><a href="#t0">User Requirement 1</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">5,083</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">User Requirement 2</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">3,118</td><td></td><td></td></tr>
+<tr><td><a href="#t2">User Requirement 3</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">8,758</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">User Requirement 4 Part 1</a></td><td class="num">0</td><td class="num attn">1</td><td class="num attn">2</td><td class="num">23,126</td><td></td><td></td></tr>
+<tr><td><a href="#t4">User Requirement 4 Part 2</a></td><td class="num">0</td><td class="num attn">1</td><td class="num attn">2</td><td class="num">22,984</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">0</th><th class="num attn">2</th><th class="num attn">9</th><th class="num">63,069</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test Suite Screen Readers Test</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Speech To TextConverter Test IBM &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest</td><td><a href="#m0">convertAudioToTextTest</a></td><td rowspan="1">1617154682028</td><td rowspan="1">15049</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test Suite Chrome</th></tr></tbody><tbody id="t0"><tr><th colspan="4">User Requirement 1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">jl.project.ChromeTests.UserRequirement1_Test</td><td><a href="#m0">createCategory</a></td><td rowspan="1">1617157980804</td><td rowspan="1">719</td></tr><tr class="failedeven"><td><a href="#m1">deleteCategory</a></td><td rowspan="1">1617157981847</td><td rowspan="1">82</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">User Requirement 2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">jl.project.ChromeTests.UserRequirement2_Test</td><td><a href="#m2">createItem</a></td><td rowspan="1">1617157984047</td><td rowspan="1">835</td></tr><tr class="failedeven"><td><a href="#m3">deleteItem</a></td><td rowspan="1">1617157985153</td><td rowspan="1">39</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">User Requirement 3 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">jl.project.ChromeTests.UserRequirement3_Test</td><td><a href="#m4">hideAndDisplayItem</a></td><td rowspan="1">1617157986399</td><td rowspan="1">7654</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">User Requirement 4 Part 1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">jl.project.ChromeTests.UserRequirement4_1_Test</td><td><a href="#m5">createAndDeleteACategoryWithKeyboardOnly_EnterKey</a></td><td rowspan="1">1617157996030</td><td rowspan="1">8349</td></tr><tr class="failedeven"><td><a href="#m6">createAndDeleteItemWithKeyboardOnly_EnterKey</a></td><td rowspan="1">1617158004715</td><td rowspan="1">12353</td></tr><tr><th colspan="4">User Requirement 4 Part 1 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">jl.project.ChromeTests.UserRequirement4_1_Test</td><td><a href="#m7">HideAndDisplayItemsWithKeyboardOnly_EnterKey</a></td><td rowspan="1">1617158017070</td><td rowspan="1">0</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">User Requirement 4 Part 2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">jl.project.ChromeTests.UserRequirement4_2_Test</td><td><a href="#m8">createAndDeleteACategoryWithKeyboardOnly_SpaceKey</a></td><td rowspan="1">1617158019431</td><td rowspan="1">8011</td></tr><tr class="failedeven"><td><a href="#m9">createAndDeleteItemWithKeyboardOnly_SpaceKey</a></td><td rowspan="1">1617158027745</td><td rowspan="1">12336</td></tr><tr><th colspan="4">User Requirement 4 Part 2 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">jl.project.ChromeTests.UserRequirement4_2_Test</td><td><a href="#m10">HideAndDisplayItemsWithKeyboardOnly_SpaceKey</a></td><td rowspan="1">1617158040082</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Speech To TextConverter Test IBM</h2><h3 id="m0">jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest#convertAudioToTextTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 1</h2><h3 id="m0">jl.project.ChromeTests.UserRequirement1_Test#createCategory</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The app wasn&apos;t started.
+	at jl.project.ChromeTests.UserRequirement1_Test.createCategory(UserRequirement1_Test.java:95)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">jl.project.ChromeTests.UserRequirement1_Test#deleteCategory</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The app wasn&apos;t started.
+	at jl.project.ChromeTests.UserRequirement1_Test.deleteCategory(UserRequirement1_Test.java:127)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 2</h2><h3 id="m2">jl.project.ChromeTests.UserRequirement2_Test#createItem</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.junit.ComparisonFailure: expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;
+	at jl.project.ChromeTests.UserRequirement2_Test.createItem(UserRequirement2_Test.java:100)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">jl.project.ChromeTests.UserRequirement2_Test#deleteItem</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: There should be one item. Number of item found: 0
+	at jl.project.ChromeTests.UserRequirement2_Test.deleteItem(UserRequirement2_Test.java:115)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 3</h2><h3 id="m4">jl.project.ChromeTests.UserRequirement3_Test#hideAndDisplayItem</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The item label seems to be absent from the screenshot: To-Do List Credits Works you might like
+Please use this form to add a new category.
+Add the category
+The next form is for adding a new item.
+Add the item to the category
+Credits:
+« # The trash can icon by Google Inc is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.
+« © The plus sign icon by Font Awesome is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.
+« Source of the retriever puppies picture, by Chevanon photography.
+« Link to the description of the Creative Commons BY 4.0 License
+Works vou miaht like to know about: -
+
+	at jl.project.ChromeTests.UserRequirement3_Test.hideAndDisplayItem(UserRequirement3_Test.java:128)
+... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 4 Part 1</h2><h3 id="m5">jl.project.ChromeTests.UserRequirement4_1_Test#createAndDeleteACategoryWithKeyboardOnly_EnterKey</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.junit.ComparisonFailure: expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;
+	at jl.project.ChromeTests.UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey(UserRequirement4_1_Test.java:129)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">jl.project.ChromeTests.UserRequirement4_1_Test#createAndDeleteItemWithKeyboardOnly_EnterKey</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.junit.ComparisonFailure: expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;
+	at jl.project.ChromeTests.UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey(UserRequirement4_1_Test.java:266)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">jl.project.ChromeTests.UserRequirement4_1_Test#HideAndDisplayItemsWithKeyboardOnly_EnterKey</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method UserRequirement4_1_Test.HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_1_Test@3541cb24] depends on not successfully finished methods in group &quot;creation_deletion_Chrome_1&quot;
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 4 Part 2</h2><h3 id="m8">jl.project.ChromeTests.UserRequirement4_2_Test#createAndDeleteACategoryWithKeyboardOnly_SpaceKey</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.junit.ComparisonFailure: expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;
+	at jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteACategoryWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:134)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">jl.project.ChromeTests.UserRequirement4_2_Test#createAndDeleteItemWithKeyboardOnly_SpaceKey</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.junit.ComparisonFailure: expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;
+	at jl.project.ChromeTests.UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:270)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">jl.project.ChromeTests.UserRequirement4_2_Test#HideAndDisplayItemsWithKeyboardOnly_SpaceKey</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.ChromeTests.UserRequirement4_2_Test@865dd6] depends on not successfully finished methods in group &quot;creation_deletion_Chrome_2&quot;
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
