@@ -19,7 +19,7 @@ public class SpeechToTextConverterIBM
 		//Needed to fix an new line issue in the environment variable value in Windows.
 		apikey_param = apikey_param.replace("\n", "");
 		
-		String textRecognized  = null;			
+		String informationReturned  = null;			
 				
 		String os_name = System.getProperty("os.name");
 		ProcessBuilder processBuilder = new ProcessBuilder();
@@ -51,12 +51,16 @@ public class SpeechToTextConverterIBM
 		//Stream that gives the output 		
 		//logger.debug(String.format("Input stream %s",new String(process.getInputStream().readAllBytes())));
 		
-		textRecognized = new String(process.getInputStream().readAllBytes());
 		
-				
+		// readAllBytes() since Java 1.9
+		// https://docs.oracle.com/javase/9/docs/api/java/io/InputStream.html#readAllBytes--
+		informationReturned = new String(process.getInputStream().readAllBytes());
+		
+		// supportsNormalTermination() since Java 1.9
+		// https://docs.oracle.com/javase/9/docs/api/java/lang/Process.html#supportsNormalTermination--
 		if (process.supportsNormalTermination()) process.destroy(); else process.destroyForcibly();
 		logger.debug(String.format("Process is alive : %b", process.isAlive()));				
 		
-		return textRecognized;
+		return informationReturned;
 	}
 }

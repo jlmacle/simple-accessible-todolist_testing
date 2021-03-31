@@ -8,17 +8,19 @@ import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
 
+
+
 public class SpeechToTextConverterIBMTest {
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverterIBMTest.class);
 	SpeechToTextConverterIBM converter = new SpeechToTextConverterIBM();	
-	String textRecognized;
+	String informationReturned;
 	
 	@Test
 	public void convertAudioToTextTest() {
 		
 		try {
-			textRecognized = converter.convertAudioToText("audioFiles/audio-file.flac");
-			logger.debug(String.format("Text recognized: *%s*",textRecognized));
+			informationReturned = converter.convertAudioToText("audioFiles/audio-file.flac");
+			logger.debug(String.format("Information returned: %s",informationReturned));
 			
 		} catch (Exception e) {
 			logger.debug(String.format("%s %s",StringExternalization.EXCEPTION," in convertAudioToText"));
@@ -26,7 +28,7 @@ public class SpeechToTextConverterIBMTest {
 			e.printStackTrace();
 		}
 		
-		assertTrue(textRecognized.contains("several tornadoes touched down as a line of severe thunderstorms swept through Colorado on Sunday "));
+		assertTrue(informationReturned.contains("several tornadoes touched down as a line of severe thunderstorms swept through Colorado on Sunday "));
 	}
 
 }
