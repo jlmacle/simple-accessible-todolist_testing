@@ -1,1 +1,0 @@
-cmd.exe /c "cd ../AccessibleTodoList_FrontEnd && ng serve -o"

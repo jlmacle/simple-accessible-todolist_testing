@@ -1,11 +1,10 @@
 package jl.project.ScreenReadersTests;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertTrue;
 
-
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
 

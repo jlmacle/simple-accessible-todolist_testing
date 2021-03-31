@@ -28,15 +28,15 @@ public class SpeechToTextConverterIBM
 		logger.debug(String.format("OS: %s",os_name));		
 		if(os_name.contains("Windows"))
 		{
-			processBuilder.command("src/test/java/jl/project/ScreenReadersTest/scripts/script_IBM_STT_Windows.bat");
+			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Windows.bat");
 		}
 		else if (os_name.contains("Mac"))
 		{
-			processBuilder.command("src/test/java/jl/project/ScreenReadersTest/scripts/script_IBM_STT_macOS.zsh");
+			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_macOS.zsh");
 		}
 		else if (os_name.contains("Linux"))
 		{
-			processBuilder.command("src/test/java/jl/project/ScreenReadersTest/scripts/script_IBM_STT_Ubuntu.sh");
+			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Ubuntu.sh");
 
 		}
 		else {throw new Exception(String.format("Unrecognized OS : %s",os_name));}
@@ -45,7 +45,7 @@ public class SpeechToTextConverterIBM
 		logger.debug("Process started");
 		
 		logger.debug("Waiting for results.");
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		
 		//logger.debug(String.format("Error stream %s",new String(process.getErrorStream().readAllBytes())));		
 		//Stream that gives the output 		

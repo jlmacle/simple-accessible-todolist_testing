@@ -46,7 +46,7 @@ public class UserRequirement5_Pa11yTest {
 	Process process_backend = null;
 	Process process_angular = null;
 	Process process_Pa11y = null;
-	String script_folder = "src/test/java/jl/project/pa11yTest/scripts/";
+	String script_folder = "src/test/java/jl/project/Pa11yTest/scripts/";
 	String backend_script = "";
 	String angular_script = "";
 	String pa11y_script = "";	
@@ -123,7 +123,7 @@ public class UserRequirement5_Pa11yTest {
 			processBuilder.command(pa11y_script);
 			process_Pa11y = processBuilder.start();
 			logger.debug("Waiting for the pa11y test to be finished"); 
-			Thread.sleep(35000);//not too much time for a slow computer.
+			Thread.sleep(40000);//not too much time for a slow computer.
 			
 			//if no output, getInputStream() replaced by getErrorStream()
 			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
