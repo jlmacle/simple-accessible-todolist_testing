@@ -22,5 +22,5 @@ cd .. && sleep 120 && mvn test && kill$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 
 #  to be excluded if their  state  name(s) are  in  the  list (s) preceded by a `^'; 
 #  or included if their name(s) are not preceded by a `^'.
 
-
+# https://maven.apache.org/install.html
 
