@@ -17,14 +17,12 @@
                 <version>2.22.2</version>
                 <configuration>
                     <!-- Suite testng xml file to consider for test execution -->                    
-                    <suiteXmlFiles>
-                    <!--  
+                    <suiteXmlFiles>                    
                         <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>
-                     -->
-                      <suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile> 
-                      <!-- <suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile> -->
+                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>                     
+                       	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile> 
+                      	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     
                     
@@ -33,29 +31,28 @@
             <!-- Compiler plugin configures the java version to be used for compiling the code -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>                	
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
+                <version>3.8.1</version>                
             </plugin>                 
         </plugins>
     </build>
+    
   <properties>
-	 <java.version>1.8</java.version>
+	 <java.version>9</java.version>
+	 <maven.compiler.target>9</maven.compiler.target>
+	 <maven.compiler.source>9</maven.compiler.source>
+	 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	 <selenium.version>3.13.0</selenium.version>
-	 <testng.version>6.13.1</testng.version>
-	 <maven.compiler.version>3.7.0</maven.compiler.version>
-	 <assertj.version>3.8.0</assertj.version>
-	 
+	 <testng.version>6.13.1</testng.version>	 
+	 <assertj.version>3.8.0</assertj.version>	 
 	</properties>
 	<repositories>
-	  <repository>
+	
+	<repository>
 	    <id>jcenter</id>
 	    <name>bintray</name>
 	    <url>https://jcenter.bintray.com</url>
-	  </repository>
-	</repositories>
+    </repository></repositories>
 	
 	
 	<dependencies>

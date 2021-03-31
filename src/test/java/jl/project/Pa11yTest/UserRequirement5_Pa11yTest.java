@@ -46,14 +46,16 @@ public class UserRequirement5_Pa11yTest {
 	Process process_backend = null;
 	Process process_angular = null;
 	Process process_Pa11y = null;
-	String script_folder = "src/test/java/jl/project/pa11yTest/scripts/";
+	String root_folder = "src/test/java/jl/project/Pa11yTest";
+	String script_folder = "/scripts/";
+	String log_folder = "/logs/";
 	String backend_script = "";
 	String angular_script = "";
-	String pa11y_script = "";	
-	File angular_server_error_log = new File("./log_Angular_error.txt");
-	File angular_server_input_log = new File("./log_Angular_input.txt");
-	String url_log = "./log_URL.txt";
-	String pa11y_log = "./log_Pa11y.txt";
+	String pa11y_script = "";		
+	File angular_server_error_log = new File(log_folder+"log_Angular_error.txt");
+	File angular_server_input_log = new File(log_folder+"log_Angular_input.txt");
+	String url_log = log_folder+"log_URL.txt";
+	String pa11y_log = log_folder+"log_Pa11y.txt";
 	
 	boolean isUncategorizedFound = false;
 	boolean isPa11yTestPassed = false; 
@@ -123,7 +125,7 @@ public class UserRequirement5_Pa11yTest {
 			processBuilder.command(pa11y_script);
 			process_Pa11y = processBuilder.start();
 			logger.debug("Waiting for the pa11y test to be finished"); 
-			Thread.sleep(35000);//not too much time for a slow computer.
+			Thread.sleep(40000);//not too much time for a slow computer.
 			
 			//if no output, getInputStream() replaced by getErrorStream()
 			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
@@ -229,7 +231,9 @@ public class UserRequirement5_Pa11yTest {
 	void release()
 	{		
 		await().atMost(20, TimeUnit.SECONDS).until(stoppedTheBackendServer());
-		await().atMost(5,TimeUnit.SECONDS).until(stoppedTheAngularServer());		
+		await().atMost(5,TimeUnit.SECONDS).until(stoppedTheAngularServer());	
+		// readAllBytes since Java 1.9
+		// https://docs.oracle.com/javase/9/docs/api/java/io/InputStream.html#readAllBytes--
 		if (process_Pa11y.supportsNormalTermination()) process_Pa11y.destroy(); else process_Pa11y.destroyForcibly();
 		
 		logger.debug(String.format("process_angular is alive : %b", process_angular.isAlive()));
