@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 31 16:08:24 CEST 2021</td>
+<td>Started on:</td><td>Wed Mar 31 13:18:05 CDT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (29 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (531 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,6 +68,40 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='jl.project.Pa11yTest.UserRequirement5_Pa11yTest.release()'><b>release</b><br>Test class: jl.project.Pa11yTest.UserRequirement5_Pa11yTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Process.supportsNormalTermination()&quot; because &quot;this.this$0.process_backend&quot; is null
+	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest$1.call(UserRequirement5_Pa11yTest.java:210)
+	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest$1.call(UserRequirement5_Pa11yTest.java:1)
+	at org.awaitility.core.CallableCondition$ConditionEvaluationWrapper.eval(CallableCondition.java:99)
+	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:203)
+	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:190)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+</pre></div><a href='#' onClick='toggleBox("stack-trace888287133", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace888287133'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.lang.Process.supportsNormalTermination()&quot; because &quot;this.this$0.process_backend&quot; is null
+	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest$1.call(UserRequirement5_Pa11yTest.java:210)
+	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest$1.call(UserRequirement5_Pa11yTest.java:1)
+	at org.awaitility.core.CallableCondition$ConditionEvaluationWrapper.eval(CallableCondition.java:99)
+	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:203)
+	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:190)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+</pre></div></td>
+<td>0</td>
+<td>jl.project.Pa11yTest.UserRequirement5_Pa11yTest@5a9f4771</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -75,11 +109,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest.convertAudioToTextTest()'><b>convertAudioToTextTest</b><br>Test class: jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest</td>
-<td><div><pre>java.lang.Error: Unresolved compilation problem: 
-	StringExternalization cannot be resolved to a variable
-
-	at jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest.convertAudioToTextTest(SpeechToTextConverterIBMTest.java:25)
+<td title='jl.project.Pa11yTest.UserRequirement5_Pa11yTest.pa11yTest()'><b>pa11yTest</b><br>Test class: jl.project.Pa11yTest.UserRequirement5_Pa11yTest</td>
+<td><div><pre>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest.pa11yTest(UserRequirement5_Pa11yTest.java:201)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -105,11 +140,12 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace408069119", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace408069119'><pre>java.lang.Error: Unresolved compilation problem: 
-	StringExternalization cannot be resolved to a variable
-
-	at jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest.convertAudioToTextTest(SpeechToTextConverterIBMTest.java:25)
+</pre></div><a href='#' onClick='toggleBox("stack-trace738677855", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace738677855'><pre>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest.pa11yTest(UserRequirement5_Pa11yTest.java:201)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -137,7 +173,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest@554e218</td></tr>
+<td>jl.project.Pa11yTest.UserRequirement5_Pa11yTest@5a9f4771</td></tr>
 </table><p>
 </body>
 </html>

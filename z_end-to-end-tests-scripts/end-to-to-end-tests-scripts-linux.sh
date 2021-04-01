@@ -1,12 +1,8 @@
-#!/bin/zsh
-echo "Starting the backend server" &&\
-cd ../../AccessibleTodoList_Backend && mvn spring-boot:run &> ../AccessibleTodoList_End2endTests/end-to-end-tests-scripts/log_SpringBoot-script.txt & #Re-directing both error and standard output to the file. 
-
-echo "Starting the front-end server"  &&\
-cd ../AccessibleTodoList_FrontEnd && ng serve -o &> ../AccessibleTodoList_End2endTests/end-to-end-tests-scripts/log_Angular-end-to-end-test-script.txt  & 
-
-echo "Starting the test suites"  &&\
-cd ../AccessibleTodoList_End2endTests && sleep 120 && mvn test && kill$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jean-louis.*//') && kill$(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jean-louis.*//')
+#!/bin/bash
+pwd
+cd ../../AccessibleTodoList_Backend && mvn spring-boot:run &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_SpringBoot-script.txt & #Re-directing both error and standard output to the file. 
+cd ../../AccessibleTodoList_FrontEnd && ng serve -o &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_Angular-end-to-end-test-script.txt  & 
+cd .. && sleep 120 && mvn test && ./z_end-to-end-tests-scripts/stop_existing_Angular_Spring_server_processes-linux.sh 
 
 #lsof
 # -n inhibits the conversion of network numbers to host names for network files.  
@@ -26,5 +22,5 @@ cd ../AccessibleTodoList_End2endTests && sleep 120 && mvn test && kill$(lsof -nP
 #  to be excluded if their  state  name(s) are  in  the  list (s) preceded by a `^'; 
 #  or included if their name(s) are not preceded by a `^'.
 
-# https://maven.apache.org/install.html
+
 

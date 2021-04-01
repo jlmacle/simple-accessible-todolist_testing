@@ -20,8 +20,9 @@
                     <suiteXmlFiles>                    
                         <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>                     
-                       	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile> 
+                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>    
+                        <!-- Issue to fix to be able to run the TestNG Pa11y test on Windows -->                 
+                       	<!-- <suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>  -->
                       	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     

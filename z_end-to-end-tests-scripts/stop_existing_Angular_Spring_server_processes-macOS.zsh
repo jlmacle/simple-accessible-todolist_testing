@@ -1,10 +1,22 @@
 #!/bin/bash
-pwd
-cd ../../AccessibleTodoList_Backend && mvn spring-boot:run &> ../AccessibleTodoList_End2endTests/end-to-end-tests-scripts/logs/log_SpringBoot-script.txt & #Re-directing both error and standard output to the file. 
-cd ../../AccessibleTodoList_FrontEnd && ng serve -o &> ../AccessibleTodoList_End2endTests/end-to-end-tests-scripts/logs/log_Angular-end-to-end-test-script.txt  & 
-cd .. && sleep 120 && mvn test && kill$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jl.*//') && kill$(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jl.*//')
+IsAngularRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jean-louis.*//')
+isSpringBootRunning=(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jean-louis.*//')
 
-#lsof
+if [ -z $IsAngularRunning ] 
+	then 
+		echo "No Angular server process currently running on port 4200." 
+	else
+		kill $IsAngularRunning && echo "The Angular server process that was running on port 4200 has been suppressed." 
+fi
+
+if [ -z $isSpringBootRunning]
+	then
+		echo "No SpringBoot server process currently running on port 8080."
+	else
+		kill $isSpringBootRunning && echo "The SpringBoot server process that was running on port 8080  has been suppressed." 
+fi
+
+# lsof
 # -n inhibits the conversion of network numbers to host names for network files.  
 #  Inhibiting conversion may make lsof run faster.   
 #  It  is  also  useful when host name lookup is not working properly.
@@ -22,5 +34,6 @@ cd .. && sleep 120 && mvn test && kill$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 
 #  to be excluded if their  state  name(s) are  in  the  list (s) preceded by a `^'; 
 #  or included if their name(s) are not preceded by a `^'.
 
+# https://maven.apache.org/install.html
 
 

@@ -47,8 +47,8 @@ public class UserRequirement5_Pa11yTest {
 	Process process_angular = null;
 	Process process_Pa11y = null;
 	String root_folder = "src/test/java/jl/project/Pa11yTest";
-	String script_folder = "/scripts/";
-	String log_folder = "/logs/";
+	String script_folder = root_folder+"/scripts/";
+	String log_folder = root_folder+"/logs/";
 	String backend_script = "";
 	String angular_script = "";
 	String pa11y_script = "";		
