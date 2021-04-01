@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 31 04:33:05 CEST 2021</td>
+<td>Started on:</td><td>Thu Apr 01 10:36:50 CDT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>8 seconds (8758 ms)</td>
+<tr><td>Total time:</td><td>3 seconds (3482 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,34 +76,44 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='jl.project.ChromeTests.UserRequirement3_Test.hideAndDisplayItem()'><b>hideAndDisplayItem</b><br>Test class: jl.project.ChromeTests.UserRequirement3_Test</td>
-<td><div><pre>java.lang.AssertionError: The item label seems to be absent from the screenshot: To-Do List Credits Works you might like
-Please use this form to add a new category.
-Add the category
-The next form is for adding a new item.
-Add the item to the category
-Credits:
-« # The trash can icon by Google Inc is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.
-« © The plus sign icon by Font Awesome is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.
-« Source of the retriever puppies picture, by Chevanon photography.
-« Link to the description of the Creative Commons BY 4.0 License
-Works vou miaht like to know about: -
-
-	at jl.project.ChromeTests.UserRequirement3_Test.hideAndDisplayItem(UserRequirement3_Test.java:128)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace373682836", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace373682836'><pre>java.lang.AssertionError: The item label seems to be absent from the screenshot: To-Do List Credits Works you might like
-Please use this form to add a new category.
-Add the category
-The next form is for adding a new item.
-Add the item to the category
-Credits:
-« # The trash can icon by Google Inc is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.
-« © The plus sign icon by Font Awesome is licensed under a Creative Commons BY 4.0 license. No changes were made to the icon.
-« Source of the retriever puppies picture, by Chevanon photography.
-« Link to the description of the Creative Commons BY 4.0 License
-Works vou miaht like to know about: -
-
-	at org.testng.Assert.fail(Assert.java:96)
-	at jl.project.ChromeTests.UserRequirement3_Test.hideAndDisplayItem(UserRequirement3_Test.java:128)
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=89.0.4389.114)
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-CL5VKH3&apos;, ip: &apos;192.168.1.15&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\jeanl\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58714}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a5f39c88a89c15e57a8699c686ca0c2e
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)
+	at jl.project.ChromeTests.UserRequirement3_Test.hideAndDisplayItem(UserRequirement3_Test.java:67)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace778337881", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace778337881'><pre>org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=89.0.4389.114)
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-CL5VKH3&apos;, ip: &apos;192.168.1.15&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\jeanl\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58714}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a5f39c88a89c15e57a8699c686ca0c2e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)
+	at jl.project.ChromeTests.UserRequirement3_Test.hideAndDisplayItem(UserRequirement3_Test.java:67)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,8 +140,8 @@ Works vou miaht like to know about: -
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>7</td>
-<td>jl.project.ChromeTests.UserRequirement3_Test@524d6d96</td></tr>
+<td>1</td>
+<td>jl.project.ChromeTests.UserRequirement3_Test@2beee7ff</td></tr>
 </table><p>
 </body>
 </html>

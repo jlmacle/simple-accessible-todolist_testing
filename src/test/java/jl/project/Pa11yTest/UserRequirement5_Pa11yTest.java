@@ -70,9 +70,9 @@ public class UserRequirement5_Pa11yTest {
 		
 		if (this.osName.contains("Windows"))		{			
 			
-			backend_script = script_folder+"run_Backend_server-Windows.bat";
-			angular_script = script_folder+"run_Angular_server-Windows.bat";
-			pa11y_script = script_folder+"run_Pa11y_test-Windows.bat";
+			backend_script = script_folder+"run_Backend_server-windows.bat";
+			angular_script = script_folder+"run_Angular_server-windows.bat";
+			pa11y_script = script_folder+"run_Pa11y_test-windows.bat";
 			
 		}
 		else if (this.osName.contains("Mac"))
