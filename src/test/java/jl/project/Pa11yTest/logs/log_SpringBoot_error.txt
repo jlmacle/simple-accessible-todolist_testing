@@ -1,8 +1,8 @@
 src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 4: [: missing `]'
 src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: jl: arguments must be process or job IDs
-src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: 72u: arguments must be process or job IDs
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: 70u: arguments must be process or job IDs
 src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: IPv6: arguments must be process or job IDs
-src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: (378076) - No such process
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: (460309) - No such process
 src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: 0t0: arguments must be process or job IDs
 src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: TCP: arguments must be process or job IDs
 src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: *:8080: arguments must be process or job IDs
