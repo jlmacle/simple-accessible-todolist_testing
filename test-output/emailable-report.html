@@ -8,52 +8,30 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">27,434</td><td></td><td></td></tr>
+<tr><th colspan="7">Test Suite Edge</th></tr>
+<tr><td><a href="#t0">User Requirement 1</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3,727</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">User Requirement 2</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3,277</td><td></td><td></td></tr>
+<tr><td><a href="#t2">User Requirement 3</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">9,693</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">User Requirement 4 Part 1</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">78,840</td><td></td><td></td></tr>
+<tr><td><a href="#t4">User Requirement 4 Part 2</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">81,181</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">11</th><th class="num">0</th><th class="num">0</th><th class="num">176,718</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">jl.project.Pa11yTest.UserRequirement5_Pa11yTest</td><td><a href="#m0">release</a></td><td rowspan="1">1617351174672</td><td rowspan="1">282</td></tr><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">jl.project.Pa11yTest.UserRequirement5_Pa11yTest</td><td><a href="#m1">pa11yTest</a></td><td rowspan="1">1617351174648</td><td rowspan="1">17</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test Suite Edge</th></tr></tbody><tbody id="t0"><tr><th colspan="4">User Requirement 1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">jl.project.EdgeTests.UserRequirement1_Test</td><td><a href="#m0">createCategory</a></td><td rowspan="1">1617371897064</td><td rowspan="1">545</td></tr><tr class="passedeven"><td><a href="#m1">deleteCategory</a></td><td rowspan="1">1617371897752</td><td rowspan="1">318</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">User Requirement 2 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">jl.project.EdgeTests.UserRequirement2_Test</td><td><a href="#m2">createItem</a></td><td rowspan="1">1617371900423</td><td rowspan="1">486</td></tr><tr class="passedeven"><td><a href="#m3">deleteItem</a></td><td rowspan="1">1617371901102</td><td rowspan="1">279</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">User Requirement 3 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">jl.project.EdgeTests.UserRequirement3_Test</td><td><a href="#m4">hideAndDisplayItem</a></td><td rowspan="1">1617371902836</td><td rowspan="1">8339</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">User Requirement 4 Part 1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">jl.project.EdgeTests.UserRequirement4_1_Test</td><td><a href="#m5">HideAndDisplayItemsWithKeyboardOnly_EnterKey</a></td><td rowspan="1">1617371951059</td><td rowspan="1">38715</td></tr><tr class="passedeven"><td><a href="#m6">createAndDeleteACategoryWithKeyboardOnly_EnterKey</a></td><td rowspan="1">1617371913403</td><td rowspan="1">19997</td></tr><tr class="passedeven"><td><a href="#m7">createAndDeleteItemWithKeyboardOnly_EnterKey</a></td><td rowspan="1">1617371933529</td><td rowspan="1">17388</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">User Requirement 4 Part 2 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">jl.project.EdgeTests.UserRequirement4_2_Test</td><td><a href="#m8">HideAndDisplayItemsWithKeyboardOnly_SpaceKey</a></td><td rowspan="1">1617372030740</td><td rowspan="1">40239</td></tr><tr class="passedeven"><td><a href="#m9">createAndDeleteACategoryWithKeyboardOnly_SpaceKey</a></td><td rowspan="1">1617371992233</td><td rowspan="1">20808</td></tr><tr class="passedeven"><td><a href="#m10">createAndDeleteItemWithKeyboardOnly_SpaceKey</a></td><td rowspan="1">1617372013200</td><td rowspan="1">17428</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">jl.project.Pa11yTest.UserRequirement5_Pa11yTest#release</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Process.supportsNormalTermination()&quot; because &quot;this.this$0.process_angular&quot; is null
-	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest$2.call(UserRequirement5_Pa11yTest.java:222)
-	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest$2.call(UserRequirement5_Pa11yTest.java:1)
-	at org.awaitility.core.CallableCondition$ConditionEvaluationWrapper.eval(CallableCondition.java:99)
-	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:203)
-	at org.awaitility.core.ConditionAwaiter$ConditionPoller.call(ConditionAwaiter.java:190)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">jl.project.Pa11yTest.UserRequirement5_Pa11yTest#pa11yTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at jl.project.Pa11yTest.UserRequirement5_Pa11yTest.pa11yTest(UserRequirement5_Pa11yTest.java:201)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 1</h2><h3 id="m0">jl.project.EdgeTests.UserRequirement1_Test#createCategory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">jl.project.EdgeTests.UserRequirement1_Test#deleteCategory</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 2</h2><h3 id="m2">jl.project.EdgeTests.UserRequirement2_Test#createItem</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">jl.project.EdgeTests.UserRequirement2_Test#deleteItem</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 3</h2><h3 id="m4">jl.project.EdgeTests.UserRequirement3_Test#hideAndDisplayItem</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 4 Part 1</h2><h3 id="m5">jl.project.EdgeTests.UserRequirement4_1_Test#HideAndDisplayItemsWithKeyboardOnly_EnterKey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">jl.project.EdgeTests.UserRequirement4_1_Test#createAndDeleteACategoryWithKeyboardOnly_EnterKey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">jl.project.EdgeTests.UserRequirement4_1_Test#createAndDeleteItemWithKeyboardOnly_EnterKey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>User Requirement 4 Part 2</h2><h3 id="m8">jl.project.EdgeTests.UserRequirement4_2_Test#HideAndDisplayItemsWithKeyboardOnly_SpaceKey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">jl.project.EdgeTests.UserRequirement4_2_Test#createAndDeleteACategoryWithKeyboardOnly_SpaceKey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">jl.project.EdgeTests.UserRequirement4_2_Test#createAndDeleteItemWithKeyboardOnly_SpaceKey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

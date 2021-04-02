@@ -52,6 +52,8 @@ public class UserRequirement5_Pa11yTest {
 	String backend_script = "";
 	String angular_script = "";
 	String pa11y_script = "";		
+	File backend_server_error_log = new File(log_folder+"log_SpringBoot_error.txt");
+	File backend_server_input_log = new File(log_folder+"log_SpringBoot_input.txt");
 	File angular_server_error_log = new File(log_folder+"log_Angular_error.txt");
 	File angular_server_input_log = new File(log_folder+"log_Angular_input.txt");
 	String url_log = log_folder+"log_URL.txt";
@@ -77,9 +79,9 @@ public class UserRequirement5_Pa11yTest {
 		}
 		else if (this.osName.contains("Mac"))
 		{
-			backend_script = script_folder+"run_Backend_server-mac.zsh";
-			angular_script = script_folder+"run_Angular_server-mac.zsh";
-			pa11y_script = script_folder+"run_Pa11y_test-mac.zsh";
+			backend_script = script_folder+"run_Backend_server-macOS.zsh";
+			angular_script = script_folder+"run_Angular_server-macOS.zsh";
+			pa11y_script = script_folder+"run_Pa11y_test-macOS.zsh";
 		}		
 		
 		else if (this.osName.contains("Linux"))		{
@@ -94,7 +96,9 @@ public class UserRequirement5_Pa11yTest {
 		{		
 			//https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html
 			logger.debug("Starting back-end server");			
-			processBuilder.command(backend_script);					
+			processBuilder.command(backend_script);		
+			processBuilder.redirectError(backend_server_error_log);
+			processBuilder.redirectInput(backend_server_input_log);
 			process_backend = processBuilder.start();				
 			Channels.newChannel(process_backend.getInputStream());//Added to get the code to run on Windows.
 			logger.debug("Waiting for the back-end server to start.");
@@ -157,16 +161,12 @@ public class UserRequirement5_Pa11yTest {
 	{
 		logger.debug("Entering print_stream");
 		boolean isStringFound = false;
-		logger.debug("Before readableByteChannel");
 		ReadableByteChannel readableByteChannel = Channels.newChannel(inputStream);
-		logger.debug("After readableByteChannel");
 		FileOutputStream fileOutputStream;
 		try {
 			fileOutputStream = new FileOutputStream(log_path);
 			FileChannel fileChannel = fileOutputStream.getChannel();
-			logger.debug("Before transfer to file");
 			fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
-			logger.debug("Transfer to file done");
 			
 			
 			List<String> lines = FileUtils.readLines(new File(log_path), "UTF-8"); 
