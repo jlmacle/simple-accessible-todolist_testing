@@ -129,7 +129,7 @@ public class UserRequirement5_Pa11yTest {
 			processBuilder.command(pa11y_script);
 			process_Pa11y = processBuilder.start();
 			logger.debug("Waiting for the pa11y test to be finished"); 
-			Thread.sleep(45000);//not too much time for a slow computer.
+			Thread.sleep(46000);//not too much time for a slow computer.
 			
 			//if no output, getInputStream() replaced by getErrorStream()
 			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
