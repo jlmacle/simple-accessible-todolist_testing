@@ -4,6 +4,8 @@ package jl.project.EdgeTests;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -33,6 +35,7 @@ import jl.project.StringExternalization;
 public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.EdgeTests.UserRequirement1_Test.class);
 	WebDriver driver;
+	Robot robot;
 		
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  
@@ -103,6 +106,17 @@ public class UserRequirement1_Test {
     				+ "while going through the elements with the name aCategory.");
     		e.printStackTrace();
     	}	    	
+    	
+    	// Giving time for the item to be displayed
+    	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
+    	try {
+			robot = new Robot();
+			robot.delay(3000);
+		} catch (AWTException e) {
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
+    	
     	
     	assertThat(isCategoryFound).isTrue();
     	

@@ -1,25 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="5" failed="4" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-02T14:19:58Z" name="Default suite" finished-at="2021-04-02T14:21:39Z" duration-ms="101256">
+  <suite started-at="2021-04-04T11:13:19Z" name="Test Suite Edge" finished-at="2021-04-04T11:15:32Z" duration-ms="133390">
     <groups>
+      <group name="creation_deletion_edge_1">
+        <method signature="UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" class="jl.project.EdgeTests.UserRequirement4_1_Test"/>
+        <method signature="UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" name="createAndDeleteItemWithKeyboardOnly_EnterKey" class="jl.project.EdgeTests.UserRequirement4_1_Test"/>
+      </group> <!-- creation_deletion_edge_1 -->
+      <group name="creation_deletion_edge_2">
+        <method signature="UserRequirement4_2_Test.createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" class="jl.project.EdgeTests.UserRequirement4_2_Test"/>
+        <method signature="UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" class="jl.project.EdgeTests.UserRequirement4_2_Test"/>
+      </group> <!-- creation_deletion_edge_2 -->
     </groups>
-    <test started-at="2021-04-02T14:19:58Z" name="Default test" finished-at="2021-04-02T14:21:39Z" duration-ms="101256">
-      <class name="jl.project.Pa11yTest.UserRequirement5_Pa11yTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.Pa11yTest.UserRequirement5_Pa11yTest@332729ad]" started-at="2021-04-02T16:19:58Z" name="setup" finished-at="2021-04-02T16:21:38Z" duration-ms="100751" status="PASS">
+    <test started-at="2021-04-04T11:13:19Z" name="User Requirement 1" finished-at="2021-04-04T11:13:28Z" duration-ms="9152">
+      <class name="jl.project.EdgeTests.UserRequirement1_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.EdgeTests.UserRequirement1_Test@60015ef5]" started-at="2021-04-04T06:13:19Z" name="setup" finished-at="2021-04-04T06:13:22Z" duration-ms="3536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="pa11yTest()[pri:0, instance:jl.project.Pa11yTest.UserRequirement5_Pa11yTest@332729ad]" started-at="2021-04-02T16:21:38Z" name="pa11yTest" finished-at="2021-04-02T16:21:38Z" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement1_Test@60015ef5]" started-at="2021-04-04T06:13:22Z" name="navigate" finished-at="2021-04-04T06:13:25Z" duration-ms="3168" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- pa11yTest -->
-        <test-method is-config="true" signature="release()[pri:0, instance:jl.project.Pa11yTest.UserRequirement5_Pa11yTest@332729ad]" started-at="2021-04-02T16:21:38Z" name="release" finished-at="2021-04-02T16:21:39Z" duration-ms="465" status="PASS">
+        </test-method> <!-- navigate -->
+        <test-method signature="createCategory()[pri:0, instance:jl.project.EdgeTests.UserRequirement1_Test@60015ef5]" started-at="2021-04-04T06:13:25Z" name="createCategory" finished-at="2021-04-04T06:13:26Z" duration-ms="806" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- release -->
-      </class> <!-- jl.project.Pa11yTest.UserRequirement5_Pa11yTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- createCategory -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement1_Test@60015ef5]" started-at="2021-04-04T06:13:26Z" name="navigate" finished-at="2021-04-04T06:13:26Z" duration-ms="323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="deleteCategory()[pri:0, instance:jl.project.EdgeTests.UserRequirement1_Test@60015ef5]" started-at="2021-04-04T06:13:26Z" name="deleteCategory" finished-at="2021-04-04T06:13:27Z" duration-ms="457" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCategory -->
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.EdgeTests.UserRequirement1_Test@60015ef5]" started-at="2021-04-04T06:13:27Z" name="releaseResources" finished-at="2021-04-04T06:13:28Z" duration-ms="828" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releaseResources -->
+      </class> <!-- jl.project.EdgeTests.UserRequirement1_Test -->
+    </test> <!-- User Requirement 1 -->
+    <test started-at="2021-04-04T11:13:28Z" name="User Requirement 2" finished-at="2021-04-04T11:13:36Z" duration-ms="7976">
+      <class name="jl.project.EdgeTests.UserRequirement2_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.EdgeTests.UserRequirement2_Test@2cdd0d4b]" started-at="2021-04-04T06:13:28Z" name="setup" finished-at="2021-04-04T06:13:30Z" duration-ms="2374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement2_Test@2cdd0d4b]" started-at="2021-04-04T06:13:30Z" name="navigate" finished-at="2021-04-04T06:13:33Z" duration-ms="3265" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createItem()[pri:0, instance:jl.project.EdgeTests.UserRequirement2_Test@2cdd0d4b]" started-at="2021-04-04T06:13:33Z" name="createItem" finished-at="2021-04-04T06:13:34Z" duration-ms="918" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createItem -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement2_Test@2cdd0d4b]" started-at="2021-04-04T06:13:34Z" name="navigate" finished-at="2021-04-04T06:13:35Z" duration-ms="218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="deleteItem()[pri:0, instance:jl.project.EdgeTests.UserRequirement2_Test@2cdd0d4b]" started-at="2021-04-04T06:13:35Z" name="deleteItem" finished-at="2021-04-04T06:13:35Z" duration-ms="69" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There should be one item. Number of item found: 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There should be one item. Number of item found: 0at jl.project.EdgeTests.UserRequirement2_Test.deleteItem(UserRequirement2_Test.java:114)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteItem -->
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.EdgeTests.UserRequirement2_Test@2cdd0d4b]" started-at="2021-04-04T06:13:35Z" name="releaseResources" finished-at="2021-04-04T06:13:36Z" duration-ms="1126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releaseResources -->
+      </class> <!-- jl.project.EdgeTests.UserRequirement2_Test -->
+    </test> <!-- User Requirement 2 -->
+    <test started-at="2021-04-04T11:13:36Z" name="User Requirement 3" finished-at="2021-04-04T11:14:00Z" duration-ms="24649">
+      <class name="jl.project.EdgeTests.UserRequirement3_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.EdgeTests.UserRequirement3_Test@2beee7ff]" started-at="2021-04-04T06:13:36Z" name="setup" finished-at="2021-04-04T06:13:38Z" duration-ms="2291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.project.EdgeTests.UserRequirement3_Test@2beee7ff]" started-at="2021-04-04T06:13:38Z" name="hideAndDisplayItem" finished-at="2021-04-04T06:14:00Z" duration-ms="22354" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: element is not attached to the page document  (Session info: MicrosoftEdge=89.0.774.68)For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.htmlBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.edge.EdgeDriverCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 89.0.774.68, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:49986}, msedge: {msedgedriverVersion: 89.0.774.48 (af55a1c97a2b24..., userDataDir: C:\Users\jeanl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}Session ID: a4298d04e8d2a5d49a79bd60e35f5961]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document  (Session info: MicrosoftEdge=89.0.774.68)For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.htmlBuild info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'System info: host: 'DESKTOP-CL5VKH3', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'Driver info: org.openqa.selenium.edge.EdgeDriverCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 89.0.774.68, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:49986}, msedge: {msedgedriverVersion: 89.0.774.48 (af55a1c97a2b24..., userDataDir: C:\Users\jeanl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}Session ID: a4298d04e8d2a5d49a79bd60e35f5961at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)at jl.project.EdgeTests.UserRequirement3_Test.hideAndDisplayItem(UserRequirement3_Test.java:196)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hideAndDisplayItem -->
+      </class> <!-- jl.project.EdgeTests.UserRequirement3_Test -->
+    </test> <!-- User Requirement 3 -->
+    <test started-at="2021-04-04T11:14:00Z" name="User Requirement 4 Part 1" finished-at="2021-04-04T11:14:45Z" duration-ms="44921">
+      <class name="jl.project.EdgeTests.UserRequirement4_1_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" started-at="2021-04-04T06:14:00Z" name="setup" finished-at="2021-04-04T06:14:03Z" duration-ms="2303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" started-at="2021-04-04T06:14:03Z" name="navigate" finished-at="2021-04-04T06:14:06Z" duration-ms="3105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" started-at="2021-04-04T06:14:06Z" name="createAndDeleteACategoryWithKeyboardOnly_EnterKey" finished-at="2021-04-04T06:14:26Z" duration-ms="20389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_EnterKey -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" started-at="2021-04-04T06:14:26Z" name="navigate" finished-at="2021-04-04T06:14:27Z" duration-ms="225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" started-at="2021-04-04T06:14:27Z" name="createAndDeleteItemWithKeyboardOnly_EnterKey" finished-at="2021-04-04T06:14:45Z" duration-ms="18008" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Error: the test item label has been found. The test is failed.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Error: the test item label has been found. The test is failed.at org.testng.Assert.fail(Assert.java:96)at jl.project.EdgeTests.UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey(UserRequirement4_1_Test.java:302)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteItemWithKeyboardOnly_EnterKey -->
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" started-at="2021-04-04T06:14:45Z" name="HideAndDisplayItemsWithKeyboardOnly_EnterKey" depends-on-groups="creation_deletion_edge_1" finished-at="2021-04-04T06:14:45Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method UserRequirement4_1_Test.HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12] depends on not successfully finished methods in group "creation_deletion_edge_1"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method UserRequirement4_1_Test.HideAndDisplayItemsWithKeyboardOnly_EnterKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12] depends on not successfully finished methods in group "creation_deletion_edge_1"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_EnterKey -->
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_1_Test@5fa07e12]" started-at="2021-04-04T06:14:45Z" name="releseResources" finished-at="2021-04-04T06:14:45Z" duration-ms="883" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releseResources -->
+      </class> <!-- jl.project.EdgeTests.UserRequirement4_1_Test -->
+    </test> <!-- User Requirement 4 Part 1 -->
+    <test started-at="2021-04-04T11:14:45Z" name="User Requirement 4 Part 2" finished-at="2021-04-04T11:15:32Z" duration-ms="46572">
+      <class name="jl.project.EdgeTests.UserRequirement4_2_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" started-at="2021-04-04T06:14:45Z" name="setup" finished-at="2021-04-04T06:14:48Z" duration-ms="2309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" started-at="2021-04-04T06:14:48Z" name="navigate" finished-at="2021-04-04T06:14:51Z" duration-ms="3715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteACategoryWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" started-at="2021-04-04T06:14:51Z" name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey" finished-at="2021-04-04T06:15:13Z" duration-ms="21538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteACategoryWithKeyboardOnly_SpaceKey -->
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" started-at="2021-04-04T06:15:13Z" name="navigate" finished-at="2021-04-04T06:15:13Z" duration-ms="201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="createAndDeleteItemWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" started-at="2021-04-04T06:15:13Z" name="createAndDeleteItemWithKeyboardOnly_SpaceKey" finished-at="2021-04-04T06:15:31Z" duration-ms="17811" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Error: the test item label has been found. The test is failed.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Error: the test item label has been found. The test is failed.at org.testng.Assert.fail(Assert.java:96)at jl.project.EdgeTests.UserRequirement4_2_Test.createAndDeleteItemWithKeyboardOnly_SpaceKey(UserRequirement4_2_Test.java:307)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.base/java.lang.reflect.Method.invoke(Method.java:564)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndDeleteItemWithKeyboardOnly_SpaceKey -->
+        <test-method signature="HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" started-at="2021-04-04T06:15:31Z" name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey" depends-on-groups="creation_deletion_edge_2" finished-at="2021-04-04T06:15:31Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8] depends on not successfully finished methods in group "creation_deletion_edge_2"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8] depends on not successfully finished methods in group "creation_deletion_edge_2"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HideAndDisplayItemsWithKeyboardOnly_SpaceKey -->
+        <test-method is-config="true" signature="releseResources()[pri:0, instance:jl.project.EdgeTests.UserRequirement4_2_Test@51f116b8]" started-at="2021-04-04T06:15:31Z" name="releseResources" finished-at="2021-04-04T06:15:32Z" duration-ms="993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releseResources -->
+      </class> <!-- jl.project.EdgeTests.UserRequirement4_2_Test -->
+    </test> <!-- User Requirement 4 Part 2 -->
+  </suite> <!-- Test Suite Edge -->
 </testng-results>

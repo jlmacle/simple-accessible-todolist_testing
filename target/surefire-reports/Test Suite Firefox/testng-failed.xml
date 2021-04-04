@@ -9,7 +9,6 @@
           <include name="navigate"/>
           <include name="setup"/>
           <include name="releaseResources"/>
-          <include name="createItem"/>
         </methods>
       </class> <!-- jl.project.FirefoxTests.UserRequirement2_Test -->
     </classes>
