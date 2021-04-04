@@ -3,6 +3,8 @@ package jl.project.EdgeTests;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -32,6 +34,7 @@ import jl.project.StringExternalization;
 public class UserRequirement2_Test {
 	Logger logger = Logger.getLogger(jl.project.EdgeTests.UserRequirement2_Test.class);
 	WebDriver driver;
+	Robot robot;
 		
 	@BeforeClass
 	public void setup() {		
@@ -103,6 +106,7 @@ public class UserRequirement2_Test {
 	public void deleteItem() throws Exception {
 		
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		//Deleting the item
 		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
@@ -126,6 +130,15 @@ public class UserRequirement2_Test {
 			e.getMessage();
 			e.printStackTrace();
 		}
+		
+		try {
+			robot = new Robot();
+			robot.delay(5000);
+		} catch (AWTException e) {
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
+		
 		//Checking the absence of the items
 		logger.info("2. Confirmation of deletion");
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
@@ -146,6 +159,8 @@ public class UserRequirement2_Test {
 			e.getMessage();
 			e.printStackTrace();
 		}
+		
+		
 	}
 	
 

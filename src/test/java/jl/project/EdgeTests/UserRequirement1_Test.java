@@ -4,6 +4,8 @@ package jl.project.EdgeTests;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -33,6 +35,7 @@ import jl.project.StringExternalization;
 public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.EdgeTests.UserRequirement1_Test.class);
 	WebDriver driver;
+	Robot robot;
 		
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  
@@ -85,6 +88,14 @@ public class UserRequirement1_Test {
     	//The category has been added. The display of the existing categories is being refreshed.
     	logger.debug("At this point, the test category should have been created.");
     	driver.get(StringExternalization.ANGULAR_SERVER_URL);
+    	
+    	try {
+			robot = new Robot();
+			robot.delay(3000);
+		} catch (AWTException e) {
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
     	
     	logger.info("2. Confirmation of category creation ");	    	
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	    	
@@ -148,6 +159,7 @@ public class UserRequirement1_Test {
     		//2. Deletion of the category created
     			// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
     		logger.info("2. Category deletion");
+    		driver.get(StringExternalization.ANGULAR_SERVER_URL);
     		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
     		logger.debug("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
     		try {
@@ -188,6 +200,14 @@ public class UserRequirement1_Test {
     				   				
     			}
     			//otherwise the test is successful
+    			try {
+					robot = new Robot();
+					robot.delay(5000);
+				} catch (AWTException e) {
+					logger.debug(StringExternalization.EXCEPTION_AWT);
+					e.printStackTrace();
+				}
+    			
     			isCategoryFound = false;
     			assertThat(isCategoryFound).isFalse();
     		}
