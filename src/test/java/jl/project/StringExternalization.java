@@ -2,6 +2,7 @@ package jl.project;
 
 public class StringExternalization {
 	// Windows webdrivers			
+<<<<<<< HEAD
 	/*
 	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
 	 * public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
@@ -12,6 +13,30 @@ public class StringExternalization {
 	   		
 		  		
 	// Linux webdrivers		
+=======
+	
+	  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
+	  public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
+	  public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
+	  public static final String WEBDRIVER_SAFARI_VALUE = "";
+	  
+	 
+	   		
+		  		
+	// Linux webdrivers		
+	/*
+	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
+	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
+	 * final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
+	 * String WEBDRIVER_SAFARI_VALUE = "";
+	 * 
+	 * 
+	 */
+	 
+	 
+	// macOS webdrivers	
+	
+>>>>>>> 18309756c8d01fd2e6d36c2571d49f6f0ddb4990
 	/*
 	 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
 	 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static

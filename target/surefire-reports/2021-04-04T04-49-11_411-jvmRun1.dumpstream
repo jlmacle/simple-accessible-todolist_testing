@@ -1,0 +1,40 @@
+# Created at 2021-04-04T05:00:19.213
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+# Created at 2021-04-04T05:00:20.613
+Unexpected IOException with stream: 05:00:20.608 [main] DEBUG jl.project.ScreenReadersTests.SpeechToTextConverterIBM - Process is alive : false
+
+
+# Created at 2021-04-04T05:00:20.621
+Unexpected IOException with stream: 05:00:20.618 [main] DEBUG jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest - Information returned: 
+C:\_Synchronized_Code\ATL\AccessibleTodoList_End2endTests>cmd.exe /c "curl -X POST -u apikey:7XTa-F82GxjIe6sDz0G6ZkKhbbdRSMzImwYM1XJta5Ph --header Content-Type:audio/flac --data-binary @src/test/java/jl/project/ScreenReadersTests/audioFiles/audio-file.flac https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/08dcb5ed-d57f-410f-98ef-11ae645b5a04/v1/recognize" 
+{
+   "result_index": 0,
+   "results": [
+      {
+         "final": true,
+         "alternatives": [
+            {
+               "transcript": "several tornadoes touched down as a line of severe thunderstorms swept through Colorado on Sunday ",
+               "confidence": 0.94
+            }
+         ]
+      }
+   ]
+}
+
+
+# Created at 2021-04-04T05:00:20.628
+Unexpected IOException: 6,1,jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest,convertAudioToTextTest(jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest),null,null,null
+
+
+# Created at 2021-04-04T05:00:21.753
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+

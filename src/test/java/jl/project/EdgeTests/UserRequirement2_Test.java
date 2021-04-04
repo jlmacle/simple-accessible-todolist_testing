@@ -75,6 +75,16 @@ public class UserRequirement2_Test {
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		//To avoid a StaleElementReferenceException
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		// Giving time for the item to be displayed
+    	// Issue with undetected created item.
+    	try {
+			robot = new Robot();
+			robot.delay(3000);
+		} catch (AWTException e) {
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
+		
 		
 				
 		//Checking that the new item creation was successful		
@@ -98,6 +108,18 @@ public class UserRequirement2_Test {
 			e.getMessage();
 			e.printStackTrace();
 		}	
+		
+		// Giving time for the item to be displayed
+    	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
+    	try {
+			robot = new Robot();
+			robot.delay(3000);
+		} catch (AWTException e) {
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
+    	
+		
 		assertThat(isItemCreated).isTrue();
 	}
 	

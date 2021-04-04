@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ---------------< jl.forthem:AccessibleTodoList_BackEnd >----------------
@@ -127,3 +128,5 @@ Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item
 [ERROR] 
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+=======
+>>>>>>> 18309756c8d01fd2e6d36c2571d49f6f0ddb4990

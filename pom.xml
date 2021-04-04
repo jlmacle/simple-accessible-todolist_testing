@@ -16,6 +16,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
+<<<<<<< HEAD
                     <!-- TestNG XML files in the test suite -->    
                     <!-- All tests should be able to pass on Linux Ubuntu -->       
                     <!-- All tests should be able to pass on Windows 10, but the Pa11y test -->     
@@ -34,6 +35,22 @@
                        	<!--
                       	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
                       	 --> 
+=======
+                    <!-- Suite testng xml file to consider for test execution -->                    
+                    <suiteXmlFiles>                    
+                        <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>    
+                        <!-- Issue to fix to be able to run the TestNG Pa11y test on Windows -->   
+                        <!--               
+                       	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>
+                       	-->
+                       	<!-- The SpeechToText conversion test is commented 
+                       	to shorten the testing time.  -->                       	
+                       	<!--
+                      	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
+                      	-->
+>>>>>>> 18309756c8d01fd2e6d36c2571d49f6f0ddb4990
                     </suiteXmlFiles>
                     
                     

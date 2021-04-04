@@ -115,6 +115,17 @@ public class UserRequirement1_Test {
     		e.printStackTrace();
     	}	    	
     	
+    	// Giving time for the item to be displayed
+    	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
+    	try {
+			robot = new Robot();
+			robot.delay(3000);
+		} catch (AWTException e) {
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
+    	
+    	
     	assertThat(isCategoryFound).isTrue();
     	
     }
