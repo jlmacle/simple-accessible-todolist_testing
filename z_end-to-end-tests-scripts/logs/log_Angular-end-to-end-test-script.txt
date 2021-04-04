@@ -13,7 +13,7 @@ styles.css          | styles        |   1.00 kB
 
 | Initial Total |   4.20 MB
 
-Build at: 2021-04-02T16:07:07.746Z - Hash: 221a27c21e043668c7ff - Time: 20701ms
+Build at: 2021-04-04T09:03:03.759Z - Hash: 221a27c21e043668c7ff - Time: 20272ms
 
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
 
