@@ -1,0 +1,67 @@
+# Created at 2021-04-05T11:08:11.886
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+# Created at 2021-04-05T11:08:28.146
+Unexpected IOException with stream: Apr 05, 2021 11:08:28 AM org.openqa.selenium.os.OsProcess checkForError
+SEVERE: org.apache.commons.exec.ExecuteException: Execution failed (Exit value: -559038737. Caused by java.io.IOException: Cannot run program "C:\_Synchronized_Code\ATL\webdrivers\msedgedriver" (in directory "."): CreateProcess error=193, %1 is not a valid Win32 application)
+
+
+# Created at 2021-04-05T11:08:28.149
+Unexpected IOException: 8,1,jl.project.EdgeTests.UserRequirement1_Test,setup(jl.project.EdgeTests.UserRequirement1_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,UserRequirement1_Test.setup:53 \00BB WebDriver Timed out waiting for driver server...,org.openqa.selenium.WebDriverException: \000ATimed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver\000A\0009at jl.project.EdgeTests.UserRequirement1_Test.setup(UserRequirement1_Test.java:53)\000ACaused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:42518/status] to be available after 20013 ms\000A\0009at jl.project.EdgeTests.UserRequirement1_Test.setup(UserRequirement1_Test.java:53)\000ACaused by: java.util.concurrent.TimeoutException\000A\0009at jl.project.EdgeTests.UserRequirement1_Test.setup(UserRequirement1_Test.java:53)\000A
+
+
+# Created at 2021-04-05T11:08:28.152
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement1_Test,navigate(jl.project.EdgeTests.UserRequirement1_Test),null,null,null
+
+
+# Created at 2021-04-05T11:08:28.154
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement1_Test,createCategory(jl.project.EdgeTests.UserRequirement1_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null
+
+
+# Created at 2021-04-05T11:08:28.156
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement1_Test,navigate(jl.project.EdgeTests.UserRequirement1_Test),null,null,null
+
+
+# Created at 2021-04-05T11:08:28.158
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement1_Test,deleteCategory(jl.project.EdgeTests.UserRequirement1_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null
+
+
+# Created at 2021-04-05T11:08:28.162
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement1_Test,releaseResources(jl.project.EdgeTests.UserRequirement1_Test),null,null,null
+
+
+# Created at 2021-04-05T11:08:48.217
+Unexpected IOException with stream: Apr 05, 2021 11:08:48 AM org.openqa.selenium.os.OsProcess checkForError
+SEVERE: org.apache.commons.exec.ExecuteException: Execution failed (Exit value: -559038737. Caused by java.io.IOException: Cannot run program "C:\_Synchronized_Code\ATL\webdrivers\msedgedriver" (in directory "."): CreateProcess error=193, %1 is not a valid Win32 application)
+
+
+# Created at 2021-04-05T11:08:48.220
+Unexpected IOException: 8,1,jl.project.EdgeTests.UserRequirement2_Test,setup(jl.project.EdgeTests.UserRequirement2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,UserRequirement2_Test.setup:46 \00BB WebDriver Timed out waiting for driver server...,org.openqa.selenium.WebDriverException: \000ATimed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver\000A\0009at jl.project.EdgeTests.UserRequirement2_Test.setup(UserRequirement2_Test.java:46)\000ACaused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:25220/status] to be available after 20013 ms\000A\0009at jl.project.EdgeTests.UserRequirement2_Test.setup(UserRequirement2_Test.java:46)\000ACaused by: java.util.concurrent.TimeoutException\000A\0009at jl.project.EdgeTests.UserRequirement2_Test.setup(UserRequirement2_Test.java:46)\000A
+
+
+# Created at 2021-04-05T11:08:48.223
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement2_Test,navigate(jl.project.EdgeTests.UserRequirement2_Test),null,null,null
+
+
+# Created at 2021-04-05T11:08:48.225
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement2_Test,createItem(jl.project.EdgeTests.UserRequirement2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null
+
+
+# Created at 2021-04-05T11:08:48.227
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement2_Test,navigate(jl.project.EdgeTests.UserRequirement2_Test),null,null,null
+
+
+# Created at 2021-04-05T11:08:48.229
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement2_Test,deleteItem(jl.project.EdgeTests.UserRequirement2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null
+
+
+# Created at 2021-04-05T11:08:48.232
+Unexpected IOException: 9,1,jl.project.EdgeTests.UserRequirement2_Test,releaseResources(jl.project.EdgeTests.UserRequirement2_Test),null,null,null
+
+

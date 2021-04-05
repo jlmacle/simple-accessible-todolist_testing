@@ -161,9 +161,9 @@ public class UserRequirement4_1_Test {
 		action.sendKeys(Keys.TAB).build().perform();//submit item button
 		robot.delay(1000);	
 		action.sendKeys(Keys.TAB).build().perform();//hyperlink
-		robot.delay(1000);
+		robot.delay(2000);
 		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
-		robot.delay(1000);			
+		robot.delay(2000);			
 		action.sendKeys(Keys.ENTER).build().perform();//Click to delete the test category
 		robot.delay(2000);
 		

@@ -118,7 +118,7 @@ public class UserRequirement4_2_Test {
 		//Verifying that the category has been created		
 		logger.info("2. Confirming creation of the category");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		
+		robot.delay(3000);
 		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
 		for(WebElement aCategoryElement: aCategoryElements ) {
@@ -155,14 +155,14 @@ public class UserRequirement4_2_Test {
 		action.sendKeys(Keys.TAB).build().perform();//new item text
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//submit item button
-		robot.delay(1000);	
+		robot.delay(2000);	
 		action.sendKeys(Keys.TAB).build().perform();//hyperlink
-		robot.delay(1000);
+		robot.delay(2000);
 		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
-		robot.delay(1000);
+		robot.delay(2000);
 		
 		action.sendKeys(Keys.SPACE).build().perform();//Click to delete the test category
-		robot.delay(2000);
+		robot.delay(3000);
 	
 		//Verifying that the category has been deleted
 		logger.info("4. Confirming that the category has been deleted.");

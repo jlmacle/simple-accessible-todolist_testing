@@ -130,7 +130,7 @@ public class UserRequirement2_Test {
 		//Deleting the item
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
-		
+		robot.delay(2000);
 		try {			
 			logger.debug("Found "+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
 			//There should be only one item

@@ -1,0 +1,38 @@
+# Created at 2021-04-05T11:05:31.722
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+# Created at 2021-04-05T11:05:44.574
+Unexpected IOException with stream: Apr 05, 2021 11:05:44 AM org.openqa.selenium.os.OsProcess checkForError
+SEVERE: org.apache.commons.exec.ExecuteException: Execution failed (Exit value: -559038737. Caused by java.io.IOException: Cannot run program "C:\_Synchronized_Code\ATL\webdrivers\chromedriver" (in directory "."): CreateProcess error=193, %1 is not a valid Win32 application)
+
+
+# Created at 2021-04-05T11:05:44.576
+Unexpected IOException: 8,1,jl.project.ChromeTests.UserRequirement2_Test,setup(jl.project.ChromeTests.UserRequirement2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: ChromeDriver,null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: ChromeDriver,UserRequirement2_Test.setup:47 \00BB WebDriver Timed out waiting for driver server...,org.openqa.selenium.WebDriverException: \000ATimed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: ChromeDriver\000A\0009at jl.project.ChromeTests.UserRequirement2_Test.setup(UserRequirement2_Test.java:47)\000ACaused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:4027/status] to be available after 20005 ms\000A\0009at jl.project.ChromeTests.UserRequirement2_Test.setup(UserRequirement2_Test.java:47)\000ACaused by: java.util.concurrent.TimeoutException\000A\0009at jl.project.ChromeTests.UserRequirement2_Test.setup(UserRequirement2_Test.java:47)\000A
+
+
+# Created at 2021-04-05T11:05:44.578
+Unexpected IOException: 9,1,jl.project.ChromeTests.UserRequirement2_Test,navigate(jl.project.ChromeTests.UserRequirement2_Test),null,null,null
+
+
+# Created at 2021-04-05T11:05:44.579
+Unexpected IOException: 9,1,jl.project.ChromeTests.UserRequirement2_Test,createItem(jl.project.ChromeTests.UserRequirement2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: ChromeDriver,null
+
+
+# Created at 2021-04-05T11:05:44.580
+Unexpected IOException: 9,1,jl.project.ChromeTests.UserRequirement2_Test,navigate(jl.project.ChromeTests.UserRequirement2_Test),null,null,null
+
+
+# Created at 2021-04-05T11:05:44.581
+Unexpected IOException: 9,1,jl.project.ChromeTests.UserRequirement2_Test,deleteItem(jl.project.ChromeTests.UserRequirement2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: ChromeDriver,null
+
+
+# Created at 2021-04-05T11:05:44.583
+Unexpected IOException: 9,1,jl.project.ChromeTests.UserRequirement2_Test,releaseResources(jl.project.ChromeTests.UserRequirement2_Test),null,null,null
+
+
