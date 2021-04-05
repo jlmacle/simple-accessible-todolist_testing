@@ -60,14 +60,25 @@ public class UserRequirement3_Test {
 		}
 		
 		driver.manage().window().maximize();
+		
+		try 
+		{
+			robot = new Robot();
+		} 
+		catch (AWTException e) 
+		{
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
 	}
 	
 	
 	@Test
 	public void hideAndDisplayItem() {
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
-		boolean isTestItemLabelFound = false;
+		boolean isTestItemLabelFound = false;		
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		driver.navigate().refresh();
 		
 		
 		//1. Creation of an item. By default the item is displayed
@@ -79,15 +90,9 @@ public class UserRequirement3_Test {
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		// Giving time for the item to be displayed
-    	// Issue with undetected created item.
-    	try {
-			robot = new Robot();
-			robot.delay(3000);
-		} catch (AWTException e) {
-			logger.debug(StringExternalization.EXCEPTION_AWT);
-			e.printStackTrace();
-		}
-		
+    	// Issue with undetected created item.    	
+		robot.delay(3000);
+				
 				
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
@@ -203,8 +208,14 @@ public class UserRequirement3_Test {
 			e.printStackTrace();
 		}
 		
+		
+		
 		//5. Suppressing the item to go on with the test suite
 		logger.info("5. Deletion of the test item");
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		//Issue with an item not deleted while considered so
+		robot.delay(3000);
+		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 				anIconToDeleteAnItemElement.click();

@@ -8,4 +8,6 @@ if [ -z $IsAngularRunning ]
 		kill $IsAngularRunning && echo "The Angular server process that was running on port 4200 has been suppressed." 
 fi
 
-cd ../AccessibleTodoList_FrontEnd && ng serve  
+echo "Starting a fresh instance of the server."
+
+cd ../../../../../../../../AccessibleTodoList_FrontEnd && ng serve  &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_Angular-end-to-end-test-script.txt

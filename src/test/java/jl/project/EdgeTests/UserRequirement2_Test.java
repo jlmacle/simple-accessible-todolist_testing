@@ -55,6 +55,16 @@ public class UserRequirement2_Test {
 			}			
 		}
 		driver.manage().window().maximize();
+		
+		try 
+		{
+			robot = new Robot();
+		} 
+		catch (AWTException e) 
+		{
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
 	}
 	
 	@BeforeMethod
@@ -77,16 +87,10 @@ public class UserRequirement2_Test {
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		// Giving time for the item to be displayed
     	// Issue with undetected created item.
-    	try {
-			robot = new Robot();
-			robot.delay(3000);
-		} catch (AWTException e) {
-			logger.debug(StringExternalization.EXCEPTION_AWT);
-			e.printStackTrace();
-		}
 		
+		robot.delay(3000);
 		
-				
+    					
 		//Checking that the new item creation was successful		
 		logger.info("2. Confirmation of item creation ");
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
@@ -111,14 +115,9 @@ public class UserRequirement2_Test {
 		
 		// Giving time for the item to be displayed
     	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
-    	try {
-			robot = new Robot();
-			robot.delay(3000);
-		} catch (AWTException e) {
-			logger.debug(StringExternalization.EXCEPTION_AWT);
-			e.printStackTrace();
-		}
-    	
+		
+		robot.delay(3000);
+    	   	
 		
 		assertThat(isItemCreated).isTrue();
 	}
@@ -128,9 +127,9 @@ public class UserRequirement2_Test {
 	public void deleteItem() throws Exception {
 		
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		//Deleting the item
 		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
+		//Deleting the item
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		
 		try {			
@@ -141,8 +140,10 @@ public class UserRequirement2_Test {
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {				
 				anIconToDeleteAnItemElement.click();
 				logger.debug("Trash can icon clicked.");
+				//Issue with an undeleted test item
+				robot.delay(3000);
 			}
-			driver.get(StringExternalization.ANGULAR_SERVER_URL);
+			
 			
 			
 		}
@@ -153,16 +154,13 @@ public class UserRequirement2_Test {
 			e.printStackTrace();
 		}
 		
-		try {
-			robot = new Robot();
-			robot.delay(5000);
-		} catch (AWTException e) {
-			logger.debug(StringExternalization.EXCEPTION_AWT);
-			e.printStackTrace();
-		}
+		
+		
+		
 		
 		//Checking the absence of the items
 		logger.info("2. Confirmation of deletion");
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			
@@ -181,6 +179,9 @@ public class UserRequirement2_Test {
 			e.getMessage();
 			e.printStackTrace();
 		}
+		
+		//Issue with an undeleted test item
+		robot.delay(3000);
 		
 		
 	}

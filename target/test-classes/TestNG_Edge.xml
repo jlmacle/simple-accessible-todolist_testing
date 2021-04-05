@@ -6,15 +6,13 @@
       <classes>
          <class name = "jl.project.EdgeTests.UserRequirement1_Test" />
       </classes>
-   </test>
-  
+   </test>  
     <test name = "User Requirement 2">
       <classes>
          <class name = "jl.project.EdgeTests.UserRequirement2_Test" />
       </classes>
    </test>
-   <!-- Tests involving Tesseract that were previously passing, are now failing on my macOS computer (?) -->
-   <!-- 
+  
     <test name = "User Requirement 3">
       <classes>
          <class name = "jl.project.EdgeTests.UserRequirement3_Test" />
@@ -32,5 +30,5 @@
          <class name = "jl.project.EdgeTests.UserRequirement4_2_Test" />
       </classes>
    </test>  
-   -->
+  
 </suite>  	

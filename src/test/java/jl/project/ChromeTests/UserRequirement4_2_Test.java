@@ -44,6 +44,7 @@ public class UserRequirement4_2_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement4_2_Test.class);
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	WebDriver driver;	
+	Robot robot;
 	
 	@BeforeClass
 	public void setup() {
@@ -65,7 +66,17 @@ public class UserRequirement4_2_Test {
 			}			
 		}
 			
-	driver.manage().window().maximize();
+		driver.manage().window().maximize();
+		
+		try 
+		{
+			robot = new Robot();
+		} 
+		catch (AWTException e) 
+		{
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
 	
 	}
 	
@@ -86,121 +97,103 @@ public class UserRequirement4_2_Test {
 		
 		logger.info("1. Creation of a category with the keyboard only.");		
 		//Tabbing until finding the input field to add the new category label
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
+		
+		Actions  action = new Actions(driver);
+	
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);	
+		action.sendKeys(Keys.TAB).build().perform();//category input
+		robot.delay(1000);
+		action.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();
+		robot.delay(1000);
+		action.sendKeys(Keys.SPACE).build().perform();			
+		robot.delay(1000);
+		
+	
+	
+		//Verifying that the category has been created		
+		logger.info("2. Confirming creation of the category");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
-		Robot robot;
-		Actions  action = new Actions(driver);
-		try {
-			robot = new Robot();
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);	
-			action.sendKeys(Keys.TAB).build().perform();//category input
-			robot.delay(1000);
-			action.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();
-			robot.delay(1000);
-			action.sendKeys(Keys.SPACE).build().perform();			
-			robot.delay(1000);
-			
-		} catch (AWTException e) {
-			System.err.println(StringExternalization.EXCEPTION_AWT);
-			System.err.println(e.getMessage());
-			e.printStackTrace();
-		}
-		finally 
-		{
+		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
+		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
+		for(WebElement aCategoryElement: aCategoryElements ) {
+			String text = aCategoryElement.getText();
+			if(text.contains(StringExternalization.LABEL_TEST_CATEGORY)) 
+			{
+				logger.debug("The text *"+text+"* was found. The category was successfully "
+						+ "created using the keyboard only. ");
+				isCategoryCreated=true;
+			}
+		};		
 		
-			//Verifying that the category has been created		
-			logger.info("2. Confirming creation of the category");
-			driver.get(StringExternalization.ANGULAR_SERVER_URL);
-			
-			List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
-			logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
-			for(WebElement aCategoryElement: aCategoryElements ) {
-				String text = aCategoryElement.getText();
-				if(text.contains(StringExternalization.LABEL_TEST_CATEGORY)) 
-				{
-					logger.debug("The text *"+text+"* was found. The category was successfully "
-							+ "created using the keyboard only. ");
-					isCategoryCreated=true;
-				}
-			};		
-			
-			assertThat(isCategoryCreated).isTrue();
-		}
+		assertThat(isCategoryCreated).isTrue();
 		
-		
-		
+				
 		logger.info("3. Deletion of a category with the keyboard only.");
 		//Assuming the category location
 		boolean isCategoryFound;
+	
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new category text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//category selection
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new item text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit item button
+		robot.delay(1000);	
+		action.sendKeys(Keys.TAB).build().perform();//hyperlink
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
+		robot.delay(1000);			
+		action.sendKeys(Keys.SPACE).build().perform();//Click to delete the test category
+		robot.delay(2000);
+	
+		//Verifying that the category has been deleted
+		logger.info("4. Confirming that the category has been deleted.");
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		
+		aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
+		logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
 		try {
-			robot = new Robot();
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new category text
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit category button
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//category selection
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new item text
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit item button
-			robot.delay(1000);	
-			action.sendKeys(Keys.TAB).build().perform();//hyperlink
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
-			robot.delay(1000);			
-			action.sendKeys(Keys.SPACE).build().perform();//Click to delete the test category
-			robot.delay(2000);
-			
-		} catch (AWTException e) {
-			System.err.println(StringExternalization.EXCEPTION_AWT);
-			System.err.println(e.getMessage());
-			e.printStackTrace();
-		}
-		finally
-		{
-			//Verifying that the category has been deleted
-			logger.info("4. Confirming that the category has been deleted.");
-			driver.get(StringExternalization.ANGULAR_SERVER_URL);
-			
-			List<WebElement>aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
-			logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
-			try {
-				for(WebElement aCategoryElement : aCategoryElements) {
-					String text = aCategoryElement.getText();
-					logger.debug(text);
-					if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {
-						//if the created category can be found the test is failed    					
-						fail("Found "+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
-								+ "The test is failed.");
-					}
-					   				
+			for(WebElement aCategoryElement : aCategoryElements) {
+				String text = aCategoryElement.getText();
+				logger.debug(text);
+				if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {
+					//if the created category can be found the test is failed    					
+					fail("Found "+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
+							+ "The test is failed.");
 				}
-				//otherwise the test is successful
-				isCategoryFound = false;
-				
-				assertThat(isCategoryFound).isFalse();
+				   				
 			}
-			catch(StaleElementReferenceException e) {
-				System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-						+ "while going through the elements related to a trash can icon before a category.");
-				System.err.println(e.getMessage());
-				e.printStackTrace();    			
-			}  
+			//otherwise the test is successful
+			isCategoryFound = false;
 			
+			assertThat(isCategoryFound).isFalse();
 		}
+		catch(StaleElementReferenceException e) {
+			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+					+ "while going through the elements related to a trash can icon before a category.");
+			System.err.println(e.getMessage());
+			e.printStackTrace();    			
+		}  
+			
+		
 		
 	}
 	
@@ -210,41 +203,34 @@ public class UserRequirement4_2_Test {
 		logger.info(StringExternalization.TEST_START
 				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
-		Robot robot;
+		
 		Actions action;
-		try {
-			logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
-			robot = new Robot();			
-			action = new Actions(driver);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new category text
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit category button
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//category selection
-			action.sendKeys("Uncategorized").build().perform();
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new item text
-			robot.delay(1000);
-			action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit item button
-			robot.delay(2000);			
-			action.sendKeys(Keys.SPACE).build().perform();
-			robot.delay(2000);
-			
+		
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 				
-			
-		} catch (AWTException e) {
-			System.err.println(StringExternalization.EXCEPTION_AWT);
-			System.err.println(e.getMessage());
-			e.printStackTrace();
-		}
+		action = new Actions(driver);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new category text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//category selection
+		action.sendKeys("Uncategorized").build().perform();
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new item text
+		robot.delay(1000);
+		action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit item button
+		robot.delay(2000);			
+		action.sendKeys(Keys.SPACE).build().perform();
+		robot.delay(2000);
+				
 		
 		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
@@ -271,26 +257,20 @@ public class UserRequirement4_2_Test {
 		
 		logger.info("3. Deletion of the test item using the keyboard only.");
 		
-		try {
-			robot = new Robot();	
-			action = new Actions(driver);
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Uncategorized"
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//plus sign icon: category "Uncategorized"
-			robot.delay(1000);			
-			action.sendKeys(Keys.TAB).build().perform();//Category "Uncategorized"
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//hyperlink
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
-			action.sendKeys(Keys.SPACE).build().perform(); //Click to delete the test category
-			
-		} catch (AWTException e) {
-			System.err.println(StringExternalization.EXCEPTION_AWT);
-			System.err.println(e.getMessage());
-			e.printStackTrace();
-		}
+		
+		action = new Actions(driver);
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Uncategorized"
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//plus sign icon: category "Uncategorized"
+		robot.delay(1000);			
+		action.sendKeys(Keys.TAB).build().perform();//Category "Uncategorized"
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//hyperlink
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
+		action.sendKeys(Keys.SPACE).build().perform(); //Click to delete the test category
+		
 		
 		logger.info("4. Confirmation of deletion");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
@@ -329,40 +309,33 @@ public class UserRequirement4_2_Test {
 				+StringExternalization.TEST_KEYBOARD_SPACE_KEY);
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
-		Robot robot;
 		Actions action;
-		try {
-			logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
-			robot = new Robot();
-			action = new Actions(driver);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new category text
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit category button
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//category selection
-			action.sendKeys("Uncategorized").build().perform();
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new item text
-			robot.delay(1000);
-			action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit item button
-			robot.delay(1000);			
-			action.sendKeys(Keys.SPACE).build().perform();
-			robot.delay(5000);
-							
-			
-		} catch (AWTException e) {
-			System.err.println(StringExternalization.EXCEPTION_AWT);
-			System.err.println(e.getMessage());
-			e.printStackTrace();
-		}
+		
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
+		
+		action = new Actions(driver);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new category text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//category selection
+		action.sendKeys("Uncategorized").build().perform();
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new item text
+		robot.delay(1000);
+		action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit item button
+		robot.delay(1000);			
+		action.sendKeys(Keys.SPACE).build().perform();
+		robot.delay(5000);			
+		
 		
 		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
@@ -423,39 +396,34 @@ public class UserRequirement4_2_Test {
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
-		try {
-			robot = new Robot();
-			action = new Actions(driver);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new category text
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit category button
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//category selection
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new item text
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit item button
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//hyperlink
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Uncategorized"
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//plus sign icon: category "Uncategorized"
-			robot.delay(1000);			
-			//Click to hide the item
-			action.sendKeys(Keys.SPACE).build().perform();//Click to hide the item
-			robot.delay(5000);
-		} catch (AWTException e) {
-			System.err.println(StringExternalization.EXCEPTION_AWT);
-			System.err.println(e.getMessage());
-			e.printStackTrace();
-		}
+		
+		action = new Actions(driver);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new category text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//category selection
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new item text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit item button
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//hyperlink
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Uncategorized"
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//plus sign icon: category "Uncategorized"
+		robot.delay(1000);			
+		//Click to hide the item
+		action.sendKeys(Keys.SPACE).build().perform();//Click to hide the item
+		robot.delay(5000);
+		
 		// Verification that the item is hidden
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
@@ -487,19 +455,12 @@ public class UserRequirement4_2_Test {
 		
 		//Verification that the item can be displayed by clicking a second time.
 		logger.info("5. Verification that the item can be displayed");
-		try {
-			
-			robot = new Robot();
-			action = new Actions(driver);
-			robot.delay(1000);
-			action.sendKeys(Keys.SPACE).build().perform();//Click to hide the item
-			//Click to hide the item
-			
-		} catch (AWTException e) {
-			System.err.println(StringExternalization.EXCEPTION_AWT);
-			System.err.println(e.getMessage());
-			e.printStackTrace();
-		}
+		
+		action = new Actions(driver);
+		robot.delay(1000);
+		action.sendKeys(Keys.SPACE).build().perform();//Click to hide the item
+		//Click to hide the item
+		
 		
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");
@@ -541,6 +502,10 @@ public class UserRequirement4_2_Test {
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
 		else {logger.debug("Page cleaned from test item.");}
+		
+		//Useful to verify that all test objects have been effectively deleted.
+		robot.delay(5000);
+		
 			
 	}
 	
