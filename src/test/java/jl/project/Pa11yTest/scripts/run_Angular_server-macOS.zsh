@@ -10,4 +10,4 @@ fi
 
 echo "Starting a fresh instance of the server."
 
-cd ../../../../../../../../AccessibleTodoList_FrontEnd && ng serve  &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_Angular-end-to-end-test-script.txt
+cd ../AccessibleTodoList_FrontEnd && ng serve  &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_Angular-end-to-end-test-script.txt

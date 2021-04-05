@@ -4,6 +4,8 @@ import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -23,6 +25,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 
+import jl.project.StringExternalization;
+
 /**
  * @author 
  * This class has some issues and needs to be re-factored at some point:
@@ -41,6 +45,7 @@ public class UserRequirement5_Pa11yTest {
 	
 	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest.class);
 	String osName = System.getProperty("os.name");		
+	Robot robot;
 		
 	ProcessBuilder processBuilder = new ProcessBuilder();	
 	Process process_backend = null;
@@ -68,6 +73,14 @@ public class UserRequirement5_Pa11yTest {
 	{
 		logger.debug(String.format("OS: %s",osName));
 		logger.debug(String.format("User dir: %s", System.getProperty("user.dir")));
+		
+		//Used to avoid the deprecated Thread.stop();
+		try {
+			robot = new Robot();
+		} catch (AWTException e1) {
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e1.printStackTrace();
+		}
 		
 		
 		if (this.osName.contains("Windows"))		{			
@@ -102,7 +115,7 @@ public class UserRequirement5_Pa11yTest {
 			process_backend = processBuilder.start();				
 			Channels.newChannel(process_backend.getInputStream());//Added to get the code to run on Windows.
 			logger.debug("Waiting for the back-end server to start.");
-			Thread.sleep(25000);			
+			robot.delay(25000);			
 						
 			logger.debug("Testing that the 'Uncategorized' category can be found."); 	
 			URL page_url = new URL("http://localhost:8080/categories");	 
@@ -123,13 +136,13 @@ public class UserRequirement5_Pa11yTest {
 			processBuilder.redirectInput(angular_server_input_log);
 			process_angular = processBuilder.start();
 			logger.debug("Waiting for the Angular server to start.");
-			Thread.sleep(35000);	
+			robot.delay(35000);	
 			
 			logger.debug("Building and starting the pa11y command."); 
 			processBuilder.command(pa11y_script);
 			process_Pa11y = processBuilder.start();
 			logger.debug("Waiting for the pa11y test to be finished"); 
-			Thread.sleep(46000);//not too much time for a slow computer.
+			robot.delay(46000);//not too much time for a slow computer.
 			
 			//if no output, getInputStream() replaced by getErrorStream()
 			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
@@ -142,12 +155,7 @@ public class UserRequirement5_Pa11yTest {
 			e.printStackTrace();
 		}	
 		
-		catch (InterruptedException e) 
-		{
-		  logger.debug("Caught an InterruptedException while pausing the execution.");
-		  logger.debug(e.getMessage());
-		  e.printStackTrace(); 
-		}
+		
 		 
 	}	
 	
