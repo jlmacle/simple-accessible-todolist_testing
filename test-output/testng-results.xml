@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-05T14:02:10Z" name="Default suite" finished-at="2021-04-05T14:02:37Z" duration-ms="27013">
+  <suite started-at="2021-04-05T17:56:11Z" name="Default suite" finished-at="2021-04-05T17:57:59Z" duration-ms="107598">
     <groups>
     </groups>
-    <test started-at="2021-04-05T14:02:10Z" name="Default test" finished-at="2021-04-05T14:02:37Z" duration-ms="27013">
-      <class name="jl.project.EdgeTests.UserRequirement3_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.EdgeTests.UserRequirement3_Test@21129f1f]" started-at="2021-04-05T16:02:10Z" name="setup" finished-at="2021-04-05T16:02:17Z" duration-ms="6877" status="PASS">
+    <test started-at="2021-04-05T17:56:11Z" name="Default test" finished-at="2021-04-05T17:57:59Z" duration-ms="107598">
+      <class name="jl.project.Pa11yTest.UserRequirement5_Pa11yTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.Pa11yTest.UserRequirement5_Pa11yTest@18e36d14]" started-at="2021-04-05T19:56:11Z" name="setup" finished-at="2021-04-05T19:57:58Z" duration-ms="106986" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="hideAndDisplayItem()[pri:0, instance:jl.project.EdgeTests.UserRequirement3_Test@21129f1f]" started-at="2021-04-05T16:02:17Z" name="hideAndDisplayItem" finished-at="2021-04-05T16:02:37Z" duration-ms="20119" status="PASS">
+        <test-method signature="pa11yTest()[pri:0, instance:jl.project.Pa11yTest.UserRequirement5_Pa11yTest@18e36d14]" started-at="2021-04-05T19:57:58Z" name="pa11yTest" finished-at="2021-04-05T19:57:58Z" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- hideAndDisplayItem -->
-      </class> <!-- jl.project.EdgeTests.UserRequirement3_Test -->
+        </test-method> <!-- pa11yTest -->
+        <test-method is-config="true" signature="release()[pri:0, instance:jl.project.Pa11yTest.UserRequirement5_Pa11yTest@18e36d14]" started-at="2021-04-05T19:57:58Z" name="release" finished-at="2021-04-05T19:57:59Z" duration-ms="566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- release -->
+      </class> <!-- jl.project.Pa11yTest.UserRequirement5_Pa11yTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
