@@ -30,9 +30,9 @@
                 <configuration>
                     <!-- Suite testng xml file to consider for test execution -->                    
                     <suiteXmlFiles>     
-                        <!--      -->                                   
+                        <!--  -->                                      
                         <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>  
-                                                         
+                                                          
                         <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>   
                                                
                           

@@ -142,6 +142,8 @@ public class UserRequirement1_Test {
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
 		logger.info("1. Category existence confirmation");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		//Issue with a category deletion
+		robot.delay(1000);
 		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	
 		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");
 		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
@@ -171,6 +173,8 @@ public class UserRequirement1_Test {
     			// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
     		logger.info("2. Category deletion");
     		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+    		//Issue with a category deletion
+    		robot.delay(1000);
     		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
     		logger.debug("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
     		try {
