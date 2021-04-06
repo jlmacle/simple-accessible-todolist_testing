@@ -35,6 +35,7 @@ public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement1_Test.class);
 	WebDriver driver;	
 	Robot robot;
+
 	
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  
@@ -125,7 +126,6 @@ public class UserRequirement1_Test {
     	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
     	
 		robot.delay(3000);    	
-
     	
     	assertThat(isCategoryFound).isTrue();
     	

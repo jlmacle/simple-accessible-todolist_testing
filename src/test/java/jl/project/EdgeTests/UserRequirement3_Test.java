@@ -91,7 +91,6 @@ public class UserRequirement3_Test {
 		// Giving time for the item to be displayed
     	// Issue with undetected created item.
 		robot.delay(3000);
-    					
 
 		//Checking that the new item creation was successful		
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));

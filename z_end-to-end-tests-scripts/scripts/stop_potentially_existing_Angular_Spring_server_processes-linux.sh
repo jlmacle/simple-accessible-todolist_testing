@@ -1,6 +1,6 @@
 #!/bin/bash
-IsAngularRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jean-louis.*//' | sed 's/ *//' | sed 's/ //')
-isSpringBootRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jean-louis.*//' | sed 's/ *//' | sed 's/ //')
+IsAngularRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jl.*//' | sed 's/ *//' | sed 's/ //')
+isSpringBootRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jl.*//' | sed 's/ *//' | sed 's/ //')
 
 if [ -z $IsAngularRunning ] 
 	then 

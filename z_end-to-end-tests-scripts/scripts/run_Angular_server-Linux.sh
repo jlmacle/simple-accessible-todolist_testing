@@ -1,5 +1,5 @@
 #!/bin/bash
-IsAngularRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jean-louis.*//')
+IsAngularRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jl.*//' | sed 's/ *//' | sed 's/ //')
 
 if [ -z $IsAngularRunning ] 
 	then 
@@ -9,5 +9,5 @@ if [ -z $IsAngularRunning ]
 fi
 
 echo "Starting a fresh instance of the server."
-
-cd ../AccessibleTodoList_FrontEnd && ng serve  
+cd ../../../AccessibleTodoList_FrontEnd 
+ng serve  &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_Angular-end-to-end-test-script.txt &

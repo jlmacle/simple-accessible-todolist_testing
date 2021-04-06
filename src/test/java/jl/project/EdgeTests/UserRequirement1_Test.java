@@ -120,7 +120,6 @@ public class UserRequirement1_Test {
     		e.printStackTrace();
     	}	    	
     	
-
     	// Giving time for the item to be displayed
     	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
     	

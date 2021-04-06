@@ -93,7 +93,6 @@ public class UserRequirement3_Test {
 		// Giving time for the item to be displayed
     	// Issue with undetected created item.    	
 		robot.delay(3000);
-				
 
 				
 		//Checking that the new item creation was successful		

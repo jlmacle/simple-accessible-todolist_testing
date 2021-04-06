@@ -1,5 +1,5 @@
 #!/bin/bash
-isSpringBootRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jean-louis.*//')
+isSpringBootRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jl.*//' | sed 's/ *//' | sed 's/ //')
 
 if [ -z $isSpringBootRunning]
 	then
@@ -9,4 +9,6 @@ if [ -z $isSpringBootRunning]
 fi
 
 echo "Starting a fresh instance of the server."
-cd ../AccessibleTodoList_Backend && mvn spring-boot:run
+cd ../../../AccessibleTodoList_Backend 
+mvn spring-boot:run &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_SpringBoot-end-to-end-test-script.txt &
+

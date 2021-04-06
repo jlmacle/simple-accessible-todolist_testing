@@ -40,23 +40,23 @@ WARNING: All illegal access operations will be denied in a future release
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.3.RELEASE)
 
-- INFO  j.f.AccessibleTodoListBackEndApplication : Starting AccessibleTodoListBackEndApplication on jl-Ubuntu with PID 13217 (/home/jl/Documents/ATL/AccessibleTodoList_Backend/target/classes started by jl in /home/jl/Documents/ATL/AccessibleTodoList_Backend)
+- INFO  j.f.AccessibleTodoListBackEndApplication : Starting AccessibleTodoListBackEndApplication on jl-Ubuntu with PID 11924 (/home/jl/Documents/ATL/AccessibleTodoList_Backend/target/classes started by jl in /home/jl/Documents/ATL/AccessibleTodoList_Backend)
 -- INFO  j.f.AccessibleTodoListBackEndApplication : No active profile set, falling back to default profiles: default
 -- INFO  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
--- INFO  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78ms. Found 2 JPA repository interfaces.
+-- INFO  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70ms. Found 2 JPA repository interfaces.
 -- INFO  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
 -- INFO  o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 -- INFO  org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
 -- INFO  o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
--- INFO  w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1846 ms
+-- INFO  w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1570 ms
 -- INFO  o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 -- INFO  o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
 -- WARN  JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 -- INFO  org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
 -- INFO  o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 -- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
--- WARN  ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
--- INFO  j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+-- INFO  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+-- INFO  DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
 -- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 -- INFO  org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
 -Hibernate: alter table tdl_item drop constraint FKfxay8ru369ndhyrhr8jsfjs30
@@ -67,37 +67,17 @@ Hibernate: create table tdl_item (item_id  serial not null, category_id int4, it
 Hibernate: alter table tdl_item add constraint FKfxay8ru369ndhyrhr8jsfjs30 foreign key (category_id) references tdl_category
 - INFO  o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 -- INFO  j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+-- INFO  DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+-- INFO  j.f.AccessibleTodoListBackEndApplication : Started AccessibleTodoListBackEndApplication in 4.405 seconds (JVM running for 4.955)
+-Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
+Hibernate: insert into tdl_category (category_name) values (?)
+- INFO  j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 -- INFO  o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 -- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 -- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
--- INFO  o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
--- INFO  ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
---ERROR  o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
 -[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  8.754 s
-[[1;34mINFO[m] Finished at: 2021-04-06T03:08:55+02:00
+[[1;34mINFO[m] Total time:  13:06 min
+[[1;34mINFO[m] Finished at: 2021-04-06T11:19:41+02:00
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:2.3.3.RELEASE:run[m [1m(default-cli)[m on project [36mAccessibleTodoList_BackEnd[m: [1;31mApplication finished with exit code: 1[m -> [1m[Help 1][m
-[[1;31mERROR[m] 
-[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
-[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
-[[1;31mERROR[m] 
-[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
-[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

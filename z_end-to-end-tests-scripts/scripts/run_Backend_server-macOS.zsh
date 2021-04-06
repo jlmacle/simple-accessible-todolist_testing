@@ -10,4 +10,4 @@ fi
 
 echo "Starting a fresh instance of the server."
 cd ../../../AccessibleTodoList_Backend 
-mvn spring-boot:run &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_SpringBoot-script.txt 
+mvn spring-boot:run &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_SpringBoot-end-to-end-test-script.txt

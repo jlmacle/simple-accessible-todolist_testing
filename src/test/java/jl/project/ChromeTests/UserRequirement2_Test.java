@@ -91,7 +91,6 @@ public class UserRequirement2_Test {
 		// Giving time for the item to be displayed
     	// Issue with undetected created item.    	
 		robot.delay(3000);
-
 		
 				
 		//Checking that the new item creation was successful
@@ -115,12 +114,10 @@ public class UserRequirement2_Test {
 			e.getMessage();
 			e.printStackTrace();
 		}	
-
 		
 		// Giving time for the item to be displayed
     	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
     	robot.delay(3000);
-		
 
 		assertThat(isItemCreated).isTrue();
 	}
