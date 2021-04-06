@@ -43,8 +43,7 @@
                         <!--           
                        	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>
 						-->  
-                       	<!-- The SpeechToText conversion test is commented 
-                       	to shorten the testing time.  -->                       	
+                       	<!-- API key needed to run this test.  -->                       	
                        	<!--   
                       	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
                       	-->
