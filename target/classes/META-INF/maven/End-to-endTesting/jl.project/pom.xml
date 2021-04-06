@@ -8,6 +8,20 @@
   <build>        
   		<!-- Source directory configuration -->
         <sourceDirectory>src/test/java</sourceDirectory>
+        <!-- https://maven.apache.org/pom.html#Resources -->
+        
+        <!-- 	Added to avoid adding /usr/local/lib where the Tesseract lib is.
+        			The Tesseract related files have been added to a folder local to the end-to-end testing code.
+         -->	
+        <!-- 
+        <resources>
+        	<resource>
+        	
+        		<directory>${user.dir}/z_end-to-end-tests-scripts/tesseract_lib_macOS</directory>
+	        	
+        	</resource>        	
+        </resources>
+       -->
         <!--  https://maven.apache.org/plugins/index.html -->
         <plugins>
             <!-- Following plugin executes the testng tests -->
@@ -16,24 +30,24 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <!-- TestNG XML files in the test suite -->    
-                    <!-- All tests should be able to pass on Linux Ubuntu -->       
-                    <!-- All tests should be able to pass on Windows 10, but the Pa11y test -->     
-                    <!-- Tests that were able to pass on macOS Big Sur are not passing anymore (?) -->                
+                    <!-- Suite testng xml file to consider for test execution -->                    
+
                     <suiteXmlFiles>     
-                   		<!-- Recent issues with passing the tests with Chrome and Firefox on macOS -->
-                   		<!-- The tests are commented to avoid assuming the operating system used by the person cloning the code. -->
-                    	 <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>      
-                    	<!--                
-                        <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>                        
-                        <suiteXmlFile>src/test/java/TestNG_Firefox.xml</suiteXmlFile>   
-                         -->   
-                        <!-- Issue to fix to be able to run the TestNG Pa11y test on Windows -->                 
-                       	<!-- <suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile> -->  
-                       	<!--  The server is sometimes slow to answer. The test is commented by convenience. 	--> 
-                       	<!--
+                        <!--                                      
+                        <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>  
+                                                           
+                        <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>   
+                        -->                       
+                          
+                        <!-- Issue to fix to be able to run the TestNG Pa11y test on Windows -->   
+                        <!--      -->       
+                       	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>
+                       	
+                       	<!-- The SpeechToText conversion test is commented 
+                       	to shorten the testing time.  -->                       	
+                       	<!--   
                       	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
-                      	 --> 
+                      	-->
                     </suiteXmlFiles>
                     
                     
@@ -98,7 +112,8 @@
 		  <groupId>com.itextpdf</groupId>
 		  <artifactId>pdfocr-tesseract4</artifactId>
 		  <version>1.0.2</version>
-		</dependency>	
+		</dependency>			
+	  
 		<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
 		<dependency>
 		    <groupId>org.sonarsource.scanner.maven</groupId>

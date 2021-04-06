@@ -1,1 +1,14 @@
-src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-macOS.zsh:[:4: ']' expected
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 4: [: missing `]'
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: jl: arguments must be process or job IDs
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: 70u: arguments must be process or job IDs
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: IPv6: arguments must be process or job IDs
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: (527747) - No such process
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: 0t0: arguments must be process or job IDs
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: TCP: arguments must be process or job IDs
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: *:8080: arguments must be process or job IDs
+src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh: line 8: kill: (LISTEN): arguments must be process or job IDs
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release

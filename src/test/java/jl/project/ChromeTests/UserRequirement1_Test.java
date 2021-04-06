@@ -4,6 +4,8 @@ package jl.project.ChromeTests;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -32,7 +34,7 @@ import jl.project.StringExternalization;
 public class UserRequirement1_Test {
 	Logger logger = Logger.getLogger(jl.project.ChromeTests.UserRequirement1_Test.class);
 	WebDriver driver;	
-	
+	Robot robot;
 	
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  
@@ -61,6 +63,16 @@ public class UserRequirement1_Test {
 		}
 		
 		driver.manage().window().maximize();
+		
+		try 
+		{
+			robot = new Robot();
+		} 
+		catch (AWTException e) 
+		{
+			logger.debug(StringExternalization.EXCEPTION_AWT);
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -86,9 +98,12 @@ public class UserRequirement1_Test {
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
     	//The category has been added. The display of the existing categories is being refreshed.
     	logger.debug("At this point, the test category should have been created.");
-    	driver.get(StringExternalization.ANGULAR_SERVER_URL);
+    	//Issue with a category created not recognized   
+    	robot.delay(3000);
     	
-    	logger.info("2. Confirmation of category creation ");	    	
+    	logger.info("2. Confirmation of category creation ");	 
+    	  		
+		
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	    	
     	try {
     		logger.debug("Found "+aCategoryElements.size()+" aCategory elements");
@@ -105,6 +120,12 @@ public class UserRequirement1_Test {
     				+ "while going through the elements with the name aCategory.");
     		e.printStackTrace();
     	}	    	
+
+    	// Giving time for the item to be displayed
+    	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
+    	
+		robot.delay(3000);    	
+
     	
     	assertThat(isCategoryFound).isTrue();
     	
@@ -122,6 +143,7 @@ public class UserRequirement1_Test {
 		
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
     	logger.info("1. Category existence confirmation");
+    	driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	
 		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");
 		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
@@ -146,10 +168,11 @@ public class UserRequirement1_Test {
     	}	 
 		    	
     	if(isCategoryFound == true) {
-    		logger.debug("The new category has been successfuly created.");
+    		logger.debug("The new category has been successfuly created.");    		
     		//2. Deletion of the category created
     			// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
     		logger.info("2. Category deletion");
+    		robot.delay(10000);
     		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
     		logger.debug("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
     		try {
@@ -159,6 +182,8 @@ public class UserRequirement1_Test {
     				if (currentCategoryPosition == testCategoryPositionIntheList) {
     					logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
     					trashCanIconElementInFrontOfCategory.click();
+    					//Issue with undeleted category
+    		    		robot.delay(3000);
     					break;
     				}
     				else {logger.debug("Skipping this trash can icon.");}
@@ -170,7 +195,8 @@ public class UserRequirement1_Test {
     					+ "while going through the elements related to a trash can icon in front of a category.");
     			e.getMessage();
     			e.printStackTrace();    			
-    		}    		
+    		}    	
+    		
     		
     		//3. confirmation of deletion
     		logger.info("3. Confirmation of category deletion");

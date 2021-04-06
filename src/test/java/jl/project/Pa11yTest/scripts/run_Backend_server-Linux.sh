@@ -7,4 +7,6 @@ if [ -z $isSpringBootRunning]
 	else
 		kill $isSpringBootRunning && echo "The SpringBoot server process that was running on port 8080  has been suppressed." 
 fi
+
+echo "Starting a fresh instance of the server."
 cd ../AccessibleTodoList_Backend && mvn spring-boot:run
