@@ -1,54 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [Test Suite Chrome]" guice-stage="DEVELOPMENT">
-  <test name="User Requirement 2(failed)">
+<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.ChromeTests.UserRequirement2_Test">
+<<<<<<< HEAD
+      <class name="jl.project.EdgeTests.UserRequirement3_Test">
         <methods>
           <include name="setup"/>
-          <include name="navigate"/>
-          <include name="releaseResources"/>
-          <include name="deleteItem"/>
-        </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement2_Test -->
-    </classes>
-  </test> <!-- User Requirement 2(failed) -->
-  <test name="User Requirement 3(failed)">
-    <classes>
-      <class name="jl.project.ChromeTests.UserRequirement3_Test">
-        <methods>
           <include name="hideAndDisplayItem"/>
-          <include name="setup"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement3_Test -->
-    </classes>
-  </test> <!-- User Requirement 3(failed) -->
-  <test name="User Requirement 4 Part 1(failed)">
-    <classes>
-      <class name="jl.project.ChromeTests.UserRequirement4_1_Test">
+      </class> <!-- jl.project.EdgeTests.UserRequirement3_Test -->
+=======
+      <class name="jl.project.Pa11yTest.UserRequirement5_Pa11yTest">
         <methods>
-          <include name="createAndDeleteItemWithKeyboardOnly_EnterKey"/>
-          <include name="navigate"/>
-          <include name="releseResources"/>
+          <include name="pa11yTest"/>
+          <include name="release"/>
           <include name="setup"/>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_EnterKey"/>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_EnterKey"/>
         </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement4_1_Test -->
+      </class> <!-- jl.project.Pa11yTest.UserRequirement5_Pa11yTest -->
+>>>>>>> parent of 18309756... Test of the end-to-end testing script on Windows.
     </classes>
-  </test> <!-- User Requirement 4 Part 1(failed) -->
-  <test name="User Requirement 4 Part 2(failed)">
-    <classes>
-      <class name="jl.project.ChromeTests.UserRequirement4_2_Test">
-        <methods>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
-          <include name="setup"/>
-          <include name="navigate"/>
-          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
-          <include name="releseResources"/>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
-        </methods>
-      </class> <!-- jl.project.ChromeTests.UserRequirement4_2_Test -->
-    </classes>
-  </test> <!-- User Requirement 4 Part 2(failed) -->
-</suite> <!-- Failed suite [Test Suite Chrome] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

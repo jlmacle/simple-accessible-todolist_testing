@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" name="Failed suite [Test Suite Edge]" guice-stage="DEVELOPMENT">
+  <test name="User Requirement 1(failed)">
+    <classes>
+      <class name="jl.project.EdgeTests.UserRequirement1_Test">
+        <methods>
+          <include name="navigate"/>
+          <include name="createCategory"/>
+          <include name="releaseResources"/>
+          <include name="setup"/>
+          <include name="deleteCategory"/>
+        </methods>
+      </class> <!-- jl.project.EdgeTests.UserRequirement1_Test -->
+    </classes>
+  </test> <!-- User Requirement 1(failed) -->
   <test name="User Requirement 2(failed)">
     <classes>
       <class name="jl.project.EdgeTests.UserRequirement2_Test">
         <methods>
+          <include name="createItem"/>
           <include name="setup"/>
           <include name="deleteItem"/>
           <include name="navigate"/>
@@ -13,42 +27,4 @@
       </class> <!-- jl.project.EdgeTests.UserRequirement2_Test -->
     </classes>
   </test> <!-- User Requirement 2(failed) -->
-  <test name="User Requirement 3(failed)">
-    <classes>
-      <class name="jl.project.EdgeTests.UserRequirement3_Test">
-        <methods>
-          <include name="setup"/>
-          <include name="hideAndDisplayItem"/>
-        </methods>
-      </class> <!-- jl.project.EdgeTests.UserRequirement3_Test -->
-    </classes>
-  </test> <!-- User Requirement 3(failed) -->
-  <test name="User Requirement 4 Part 1(failed)">
-    <classes>
-      <class name="jl.project.EdgeTests.UserRequirement4_1_Test">
-        <methods>
-          <include name="navigate"/>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_EnterKey"/>
-          <include name="setup"/>
-          <include name="releseResources"/>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_EnterKey"/>
-          <include name="createAndDeleteItemWithKeyboardOnly_EnterKey"/>
-        </methods>
-      </class> <!-- jl.project.EdgeTests.UserRequirement4_1_Test -->
-    </classes>
-  </test> <!-- User Requirement 4 Part 1(failed) -->
-  <test name="User Requirement 4 Part 2(failed)">
-    <classes>
-      <class name="jl.project.EdgeTests.UserRequirement4_2_Test">
-        <methods>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
-          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
-          <include name="navigate"/>
-          <include name="releseResources"/>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- jl.project.EdgeTests.UserRequirement4_2_Test -->
-    </classes>
-  </test> <!-- User Requirement 4 Part 2(failed) -->
 </suite> <!-- Failed suite [Test Suite Edge] -->

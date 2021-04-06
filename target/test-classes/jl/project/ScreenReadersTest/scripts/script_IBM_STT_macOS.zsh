@@ -1,2 +1,0 @@
-#!/bin/zsh
-curl -X POST -u "apikey:"$IBM_SpeechToText_KEY --header "Content-Type:audio/flac" --data-binary @src/test/java/jl/project/ScreenReadersTest/audioFiles/audio-file.flac $IBM_SpeechToText_URL"/v1/recognize"

@@ -1,0 +1,10 @@
+[default]
+name=Default
+runtime=host
+config-opts=
+run-opts=
+prefix=/home/jl/.cache/gnome-builder/install/.circleci/host
+app-id=
+postbuild=
+prebuild=
+default=true
