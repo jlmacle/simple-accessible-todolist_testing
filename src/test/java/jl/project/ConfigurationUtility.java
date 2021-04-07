@@ -5,6 +5,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 
@@ -16,9 +17,11 @@ public class ConfigurationUtility {
 
 	public static void main(String[] args) 
 	{
-		String path_to_folder = System.getProperty("user.dir")+"/src/test/java/jl/project";
-		Path stringExternlizationFile_path = FileSystems.getDefault().getPath(path_to_folder,"StringExternalization.java");
-		String stringExternlizationFile_swp ="StringExternalization_swap.txt";
+		String path_to_baseFolder = System.getProperty("user.dir")+"/src/test/java/jl/project/";
+		String path_to_tmp_folder = path_to_baseFolder+"/tmp";
+		Path stringExternlizationFile_path = FileSystems.getDefault().getPath(path_to_baseFolder,"StringExternalization.java");
+		Path stringExternlizationFile_swp_path = FileSystems.getDefault().getPath(path_to_tmp_folder, "StringExternalization_swap.txt");
+		String tab = "\t";
 		List<String> lines = null; 		
 		String webdrivers_opening_tag = "//<webdrivers>";
 		String webdrivers_closing_tag = "//</webdrivers>";
@@ -30,6 +33,8 @@ public class ConfigurationUtility {
 		
 		try 
 		{
+			Files.deleteIfExists(stringExternlizationFile_swp_path);
+			Files.createFile(stringExternlizationFile_swp_path);
 			lines = Files.readAllLines(stringExternlizationFile_path);
 			logger.debug(String.format("The file has %d lines.",lines.size()));
 			
@@ -45,40 +50,53 @@ public class ConfigurationUtility {
 				}
 				else if(line.contains(webdrivers_closing_tag))
 				{
-					isAWebDriverTag = false;
 					isAWebDriverTag = true;
+					betweenTags = false;
+					
 					String webdrivers="";
 					
 					if(osName.contains("Windows"))
 					{
-						webdrivers ="public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; \r\n"
-								+ "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; \r\n"
-								+ "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; \r\n";
+						webdrivers = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\";"+ System.lineSeparator()
+								+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
+								+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; ";
 					}
 					else if (osName.contains("MacOS"))
 					{
-						webdrivers ="public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\";  \r\n "
-								+ "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; \r\n"
-								+ "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; \r\n"
-								+ "public static final String WEBDRIVER_SAFARI_VALUE = \"\" \r\n; // /usr/bin/safaridriver to be used instead \r\n";
+						webdrivers =tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
+								+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
+								+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
+								+ tab +  "public static final String WEBDRIVER_SAFARI_VALUE = \"\" \r\n; // /usr/bin/safaridriver to be used instead";
 					}
 					else if (osName.contains("Linux"))
 					{
-						webdrivers="public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; \r\n"
-								+ "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; \r\n"
-								+ "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; \r\n";
+						webdrivers=tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
+								+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
+								+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; ";
 					}
 					else {
 						logger.error("Unrecognized operating system: %s",osName);
 					}
 					//Adding the webdrivers information
-					line = webdrivers +"\r\n"+ line; 
+					line = webdrivers + System.lineSeparator()+ line; 
 					
 				}
-				logger.debug(line);
-				if(!betweenTags ||  isAWebDriverTag)Files.write(Paths.get(path_to_folder,stringExternlizationFile_swp), line.getBytes(),StandardOpenOption.APPEND);
+				else
+				{
+					isAWebDriverTag = false;
+				}
+				
+				if(!betweenTags ||  isAWebDriverTag) 
+				{
+					line = line + System.lineSeparator();
+					Files.write(stringExternlizationFile_swp_path, line.getBytes(),StandardOpenOption.APPEND);
+					logger.debug(line);
+				}
 			}
 			logger.debug("---> All lines read.");
+			
+			//Replacing the previous version of StringExternalization
+			Files.copy(stringExternlizationFile_swp_path, stringExternlizationFile_path, StandardCopyOption.REPLACE_EXISTING);
 		} 
 		catch (IOException e) 
 		{
