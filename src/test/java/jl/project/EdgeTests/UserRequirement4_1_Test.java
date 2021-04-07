@@ -120,7 +120,7 @@ public class UserRequirement4_1_Test {
 		//Verifying that the category has been created		
 		logger.info("2. Confirming creation of the category");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		
+		robot.delay(2000);
 		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");	
 		for(WebElement aCategoryElement: aCategoryElements ) {
@@ -171,6 +171,7 @@ public class UserRequirement4_1_Test {
 		//Verifying that the category has been deleted
 		logger.info("4. Confirming that the category has been deleted.");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		
 		aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 		logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
@@ -239,7 +240,10 @@ public class UserRequirement4_1_Test {
 		
 		logger.info("2. Confirmation of creation.");
 		//Checking that the new item creation was successful		
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
+		
 		boolean isItemCreated=false;
 		try {
 			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
@@ -264,6 +268,21 @@ public class UserRequirement4_1_Test {
 		
 		
 		action = new Actions(driver);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new category text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//category selection
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//new item text
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();//submit item button
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Uncategorized"
 		robot.delay(1000);
@@ -274,12 +293,14 @@ public class UserRequirement4_1_Test {
 		action.sendKeys(Keys.TAB).build().perform();//Extra tab 
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//trash can icon: category "Selenium test category"
+		robot.delay(1000);
 		action.sendKeys(Keys.ENTER).build().perform(); //Click to delete the test category
 			
 		
 		
 		logger.info("4. Confirmation of deletion");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
@@ -343,7 +364,9 @@ public class UserRequirement4_1_Test {
 						
 		
 		logger.info("2. Confirmation of creation.");
-		//Checking that the new item creation was successful		
+		//Checking that the new item creation was successful	
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		boolean isItemCreated=false;
 		try {
@@ -493,13 +516,17 @@ public class UserRequirement4_1_Test {
 		}
 		//Cleaning up for a potential next test. Using a click for the task
 		logger.info("6. Suppression of the item.");
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 			anIconToDeleteAnItemElement.click();
+			robot.delay(2000);
 		}
 		
 		logger.debug("7. Testing the deletion of the test item");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
