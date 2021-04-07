@@ -15,7 +15,9 @@ echo "Waiting 50s for the servers to be done starting, before starting the end-t
 echo "The time value can be changed in the end-to-to-end-tests-scripts-linux.sh file located in the z_end-to-end-tests-scripts folder."
 sleep 50
 
-cd ../..
+pwd
+
+cd ../.. 
 mvn test 
 
 z_end-to-end-tests-scripts/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh 

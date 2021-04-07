@@ -87,15 +87,12 @@ public class UserRequirement3_Test {
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys("Uncategorized");
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
+		
+				
+		//Checking that the new item creation was successful	
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-
-		// Giving time for the item to be displayed
-    	// Issue with undetected created item.    	
-		robot.delay(3000);
-
-				
-		//Checking that the new item creation was successful		
+		robot.delay(2000);
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			for(WebElement anItemElement: anItemElements) {
@@ -213,20 +210,22 @@ public class UserRequirement3_Test {
 		
 		//5. Suppressing the item to go on with the test suite
 		logger.info("5. Deletion of the test item");
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		//Issue with an item not deleted while considered so
-		robot.delay(3000);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
+		robot.delay(2000);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 				anIconToDeleteAnItemElement.click();
+				robot.delay(2000);
 			}
 			
 		logger.info("6. Testing the deletion of the test item");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		if(!(anIconToDeleteAnItemElements.size() == 0)) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");
+		else {logger.debug(String.format("The test item has been deleted, the number is items found with thwe name %s is: %d ",StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM,anIconToDeleteAnItemElements.size() ));}
 		
 		driver.close();		
 		driver.quit();

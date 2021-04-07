@@ -26,6 +26,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/usr/local/lib"/>
+	<classpathentry kind="src" output="target/classes" path="Users/jean-louis/Desktop/AccessibleTodoList_End2endTests">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>

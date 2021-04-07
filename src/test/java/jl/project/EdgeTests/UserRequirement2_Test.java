@@ -94,6 +94,8 @@ public class UserRequirement2_Test {
     					
 		//Checking that the new item creation was successful		
 		logger.info("2. Confirmation of item creation ");
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			logger.debug("Found "+anItemElements.size()+" element named 'anItem'");
@@ -130,8 +132,10 @@ public class UserRequirement2_Test {
 		
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
 		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
-		//Deleting the item
+		
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
+		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		robot.delay(2000);
 		try {			
@@ -142,8 +146,7 @@ public class UserRequirement2_Test {
 			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {				
 				anIconToDeleteAnItemElement.click();
 				logger.debug("Trash can icon clicked.");
-				//Issue with an undeleted test item
-				robot.delay(3000);
+				robot.delay(2000);
 			}
 			
 			
@@ -163,6 +166,7 @@ public class UserRequirement2_Test {
 		//Checking the absence of the items
 		logger.info("2. Confirmation of deletion");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		try {
 			
