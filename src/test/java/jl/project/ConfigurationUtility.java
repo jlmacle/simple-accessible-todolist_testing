@@ -14,8 +14,15 @@ import org.slf4j.LoggerFactory;
 
 public class ConfigurationUtility {
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
-
+	
 	public static void main(String[] args) 
+	{
+		//configure_StringExternalization();
+		configure_pom();
+		
+	}
+
+	public static void configure_StringExternalization() 
 	{
 		String path_to_baseFolder = System.getProperty("user.dir")+"/src/test/java/jl/project/";
 		String path_to_tmp_folder = path_to_baseFolder+"/tmp";
@@ -57,9 +64,9 @@ public class ConfigurationUtility {
 					
 					if(osName.contains("Windows"))
 					{
-						webdrivers = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\";"+ System.lineSeparator()
-								+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
-								+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; ";
+						webdrivers = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver.exe\";"+ System.lineSeparator()
+								+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver.exe\"; "+ System.lineSeparator()
+								+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver.exe\"; ";
 					}
 					else if (osName.contains("MacOS"))
 					{
@@ -106,4 +113,10 @@ public class ConfigurationUtility {
 		
 	}	
 
+	public static void configure_pom()
+	{
+		Path pom_path = FileSystems.getDefault().getPath(System.getProperty("user.dir"), "pom.xml");
+		
+		
+	}
 }
