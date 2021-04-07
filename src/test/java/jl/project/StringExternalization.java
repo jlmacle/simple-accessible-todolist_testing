@@ -4,9 +4,38 @@ public class StringExternalization {
 	
 	//Used by the ConfigurationUtility class to add the proper webdrivers to this class	
 	//<webdrivers>
-	//nmnmn
-	//kjkjkj
-	//kjkjkj
+	// Windows webdrivers			
+
+		
+		  public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
+		  public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe";
+		  public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
+		  public static final String WEBDRIVER_SAFARI_VALUE = "";
+		  
+		 
+		   		
+			  		
+		// Linux webdrivers		
+
+		/*
+		 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
+		 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
+		 * final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
+		 * String WEBDRIVER_SAFARI_VALUE = "";
+		 * 
+		 */
+		 
+		 
+		 
+		// macOS webdrivers	
+		
+		/*
+		 * public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; public
+		 * static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; public static
+		 * final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; public static final
+		 * String WEBDRIVER_SAFARI_VALUE = ""; // /usr/bin/safaridriver to be used
+		 * instead
+		 */
 	//</webdrivers>
  
 	public static final boolean GRID_NOT_USED = true;
