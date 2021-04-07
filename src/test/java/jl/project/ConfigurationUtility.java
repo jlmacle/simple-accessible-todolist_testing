@@ -17,8 +17,8 @@ public class ConfigurationUtility {
 	
 	public static void main(String[] args) 
 	{
-		//configure_StringExternalization();
-		configure_pom();
+		configure_StringExternalization();
+		
 		
 	}
 
@@ -112,11 +112,5 @@ public class ConfigurationUtility {
 		}		
 		
 	}	
-
-	public static void configure_pom()
-	{
-		Path pom_path = FileSystems.getDefault().getPath(System.getProperty("user.dir"), "pom.xml");
-		
-		
-	}
+	
 }
