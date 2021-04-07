@@ -102,7 +102,8 @@ public class UserRequirement1_Test {
     	
     	
     	logger.info("2. Confirmation of category creation ");	 
-    	driver.get(StringExternalization.ANGULAR_SERVER_URL);    	
+    	driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);	
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	    	
     	try {
     		logger.debug("Found "+aCategoryElements.size()+" aCategory elements");
@@ -142,8 +143,7 @@ public class UserRequirement1_Test {
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
 		logger.info("1. Category existence confirmation");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		//Issue with a category deletion
-		robot.delay(1000);
+		robot.delay(2000);
 		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	
 		logger.debug("Found "+aCategoryElements.size()+" elements named aCategory");
 		if(aCategoryElements.size() == 0 ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
@@ -173,7 +173,6 @@ public class UserRequirement1_Test {
     			// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
     		logger.info("2. Category deletion");
     		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-    		//Issue with a category deletion
     		robot.delay(1000);
     		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
     		logger.debug("Found "+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
@@ -184,8 +183,7 @@ public class UserRequirement1_Test {
     				if (currentCategoryPosition == testCategoryPositionIntheList) {
     					logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
     					trashCanIconElementInFrontOfCategory.click();
-    					//Issue with undeleted category
-    		    		robot.delay(3000);
+    		    		robot.delay(2000);
     					break;
     				}
     				else {logger.debug("Skipping this trash can icon.");}
@@ -203,6 +201,7 @@ public class UserRequirement1_Test {
     		//3. confirmation of deletion
     		logger.info("3. Confirmation of category deletion");
     		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+    		robot.delay(2000);
     		
     		aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
     		logger.debug("Found "+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
