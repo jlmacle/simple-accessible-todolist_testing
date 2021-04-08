@@ -96,7 +96,9 @@ public class UserRequirement1_Test {
     	
     	logger.info("1. Category creation");
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD)).sendKeys(StringExternalization.LABEL_TEST_CATEGORY);
+    	robot.delay(1000);
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
+    	robot.delay(1000);
     	//The category has been added. The display of the existing categories is being refreshed.
     	logger.debug("At this point, the test category should have been created.");
     	   	
