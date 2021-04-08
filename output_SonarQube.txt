@@ -1,0 +1,791 @@
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /Users/jean-louis/installations/apache-maven-3.6.3
+Java version: 11.0.10, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.16", arch: "x86_64", family: "mac"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.inject.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.util.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from /Users/jean-louis/installations/apache-maven-3.6.3/conf/settings.xml
+[DEBUG] Reading user settings from /Users/jean-louis/.m2/settings.xml
+[DEBUG] Reading global toolchains from /Users/jean-louis/installations/apache-maven-3.6.3/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /Users/jean-louis/.m2/toolchains.xml
+[DEBUG] Using local repository at /Users/jean-louis/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /Users/jean-louis/.m2/repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project End-to-endTesting:jl.project:jar:0.0.1-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Resolving plugin prefix sonar from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Could not find metadata org.apache.maven.plugins/maven-metadata.xml in local (/Users/jean-louis/.m2/repository)
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Could not find metadata org.codehaus.mojo/maven-metadata.xml in local (/Users/jean-louis/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin prefix sonar to org.codehaus.mojo:sonar-maven-plugin from repository central
+[DEBUG] Could not find metadata org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml in local (/Users/jean-louis/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.codehaus.mojo:sonar-maven-plugin to 3.8.0.2131 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: End-to-endTesting:jl.project:jar:0.0.1-SNAPSHOT
+[DEBUG] Tasks:   [sonar:sonar]
+[DEBUG] Style:   Aggregating
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] --------------------< End-to-endTesting:jl.project >--------------------
+[INFO] Building End-to-end testing for the Accessible Todo List Front-End 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Resolving plugin prefix sonar from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Could not find metadata org.apache.maven.plugins/maven-metadata.xml in local (/Users/jean-louis/.m2/repository)
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Could not find metadata org.codehaus.mojo/maven-metadata.xml in local (/Users/jean-louis/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin prefix sonar to org.codehaus.mojo:sonar-maven-plugin from repository central
+[DEBUG] Could not find metadata org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml in local (/Users/jean-louis/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo:sonar-maven-plugin/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.codehaus.mojo:sonar-maven-plugin to 3.8.0.2131 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       End-to-endTesting:jl.project:0.0.1-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [jcenter (https://jcenter.bintray.com, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar (default-cli)
+[DEBUG] Style:         Aggregating
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${sonar.skip}</skip>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=1135012, ConflictMarker.markTime=707620, ConflictMarker.nodeCount=325, ConflictIdSorter.graphTime=596411, ConflictIdSorter.topsortTime=293624, ConflictIdSorter.conflictIdCount=114, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=11331730, ConflictResolver.conflictItemCount=254, DefaultDependencyCollector.collectTime=620891677, DefaultDependencyCollector.transformTime=15530237}
+[DEBUG] End-to-endTesting:jl.project:jar:0.0.1-SNAPSHOT
+[DEBUG]    org.seleniumhq.selenium:selenium-java:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-api:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-chrome-driver:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-edge-driver:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-firefox-driver:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-ie-driver:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-opera-driver:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-remote-driver:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-safari-driver:jar:3.13.0:compile
+[DEBUG]       org.seleniumhq.selenium:selenium-support:jar:3.13.0:compile
+[DEBUG]       net.bytebuddy:byte-buddy:jar:1.8.3:compile
+[DEBUG]       org.apache.commons:commons-exec:jar:1.3:compile
+[DEBUG]       commons-codec:commons-codec:jar:1.10:compile
+[DEBUG]       commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]       com.google.code.gson:gson:jar:2.8.4:compile
+[DEBUG]       com.google.guava:guava:jar:25.0-jre:compile
+[DEBUG]          com.google.code.findbugs:jsr305:jar:1.3.9:compile
+[DEBUG]          org.checkerframework:checker-compat-qual:jar:2.0.0:compile
+[DEBUG]          com.google.errorprone:error_prone_annotations:jar:2.1.3:compile
+[DEBUG]          com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[DEBUG]          org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[DEBUG]       org.apache.httpcomponents:httpclient:jar:4.5.5:compile
+[DEBUG]       org.apache.httpcomponents:httpcore:jar:4.4.9:compile
+[DEBUG]       com.squareup.okhttp3:okhttp:jar:3.10.0:compile
+[DEBUG]       com.squareup.okio:okio:jar:1.14.1:compile
+[DEBUG]    com.beust:jcommander:jar:1.72:compile
+[DEBUG]    org.testng:testng:jar:6.13.1:compile
+[DEBUG]    junit:junit:jar:4.13.2:compile
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.3:compile
+[DEBUG]    org.assertj:assertj-core:jar:3.8.0:compile
+[DEBUG]    com.itextpdf:pdfocr-tesseract4:jar:1.0.2:compile
+[DEBUG]       com.itextpdf:pdfocr-api:jar:1.0.2:compile
+[DEBUG]          com.itextpdf:layout:jar:7.1.13:compile
+[DEBUG]          com.itextpdf:pdfa:jar:7.1.13:compile
+[DEBUG]          org.apache.commons:commons-imaging:jar:1.0-alpha1:compile
+[DEBUG]       com.itextpdf:styled-xml-parser:jar:7.1.13:compile
+[DEBUG]          com.itextpdf:io:jar:7.1.13:compile
+[DEBUG]          com.itextpdf:kernel:jar:7.1.13:compile
+[DEBUG]             org.bouncycastle:bcpkix-jdk15on:jar:1.64:compile
+[DEBUG]             org.bouncycastle:bcprov-jdk15on:jar:1.64:compile
+[DEBUG]       net.sourceforge.tess4j:tess4j:jar:4.5.1:compile
+[DEBUG]          net.java.dev.jna:jna:jar:5.5.0:compile
+[DEBUG]          com.github.jai-imageio:jai-imageio-core:jar:1.4.0:compile
+[DEBUG]          org.apache.pdfbox:pdfbox:jar:2.0.18:compile
+[DEBUG]             org.apache.pdfbox:fontbox:jar:2.0.18:compile
+[DEBUG]          org.apache.pdfbox:pdfbox-tools:jar:2.0.18:compile
+[DEBUG]             org.apache.pdfbox:pdfbox-debugger:jar:2.0.18:compile
+[DEBUG]          org.apache.pdfbox:jbig2-imageio:jar:3.0.3:compile
+[DEBUG]          commons-io:commons-io:jar:2.6:compile
+[DEBUG]          net.sourceforge.lept4j:lept4j:jar:1.13.0:compile
+[DEBUG]          org.jboss:jboss-vfs:jar:3.2.15.Final:compile
+[DEBUG]             org.jboss.logging:jboss-logging:jar:3.1.4.GA:compile
+[DEBUG]          ch.qos.logback:logback-classic:jar:1.2.3:compile
+[DEBUG]             ch.qos.logback:logback-core:jar:1.2.3:compile
+[DEBUG]          org.slf4j:jul-to-slf4j:jar:1.7.30:compile
+[DEBUG]          org.slf4j:jcl-over-slf4j:jar:1.7.30:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.13:compile
+[DEBUG]    org.sonarsource.scanner.maven:sonar-maven-plugin:jar:3.8.0.2131:compile
+[DEBUG]       org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4:compile
+[DEBUG]          org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.2.1:compile
+[DEBUG]       org.sonarsource.scanner.api:sonar-scanner-api:jar:2.16.0.226:compile
+[DEBUG]       commons-lang:commons-lang:jar:2.6:compile
+[DEBUG]    org.awaitility:awaitility:jar:4.0.0:compile
+[DEBUG]       org.hamcrest:hamcrest:jar:2.1:compile
+[DEBUG]       org.objenesis:objenesis:jar:2.6:compile
+[DEBUG]    org.apache.maven.plugins:maven-compiler-plugin:jar:3.8.1:compile
+[DEBUG]       org.apache.maven:maven-plugin-api:jar:3.0:compile
+[DEBUG]          org.apache.maven:maven-model:jar:3.0:compile
+[DEBUG]          org.sonatype.sisu:sisu-inject-plexus:jar:1.4.2:compile
+[DEBUG]             org.sonatype.sisu:sisu-inject-bean:jar:1.4.2:compile
+[DEBUG]                org.sonatype.sisu:sisu-guice:jar:noaop:2.1.7:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.0:compile
+[DEBUG]       org.apache.maven:maven-core:jar:3.0:compile
+[DEBUG]          org.apache.maven:maven-settings:jar:3.0:compile
+[DEBUG]          org.apache.maven:maven-settings-builder:jar:3.0:compile
+[DEBUG]          org.apache.maven:maven-repository-metadata:jar:3.0:compile
+[DEBUG]          org.apache.maven:maven-model-builder:jar:3.0:compile
+[DEBUG]          org.apache.maven:maven-aether-provider:jar:3.0:runtime
+[DEBUG]          org.sonatype.aether:aether-impl:jar:1.7:compile
+[DEBUG]             org.sonatype.aether:aether-spi:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-api:jar:1.7:compile
+[DEBUG]          org.sonatype.aether:aether-util:jar:1.7:compile
+[DEBUG]          org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[DEBUG]          org.codehaus.plexus:plexus-classworlds:jar:2.2.3:compile
+[DEBUG]          org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-utils:jar:3.2.1:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-java:jar:0.9.10:compile
+[DEBUG]          org.ow2.asm:asm:jar:6.2:compile
+[DEBUG]          com.thoughtworks.qdox:qdox:jar:2.0-M8:compile
+[DEBUG]       org.codehaus.plexus:plexus-compiler-api:jar:2.8.4:compile
+[DEBUG]       org.codehaus.plexus:plexus-compiler-manager:jar:2.8.4:compile
+[DEBUG]       org.codehaus.plexus:plexus-compiler-javac:jar:2.8.4:runtime
+[INFO] 
+[INFO] --- sonar-maven-plugin:3.8.0.2131:sonar (default-cli) @ jl.project ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=135618, ConflictMarker.markTime=41002, ConflictMarker.nodeCount=7, ConflictIdSorter.graphTime=11748, ConflictIdSorter.topsortTime=8743, ConflictIdSorter.conflictIdCount=6, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=164879, ConflictResolver.conflictItemCount=7, DefaultDependencyCollector.collectTime=2836715, DefaultDependencyCollector.transformTime=402913}
+[DEBUG] org.sonarsource.scanner.maven:sonar-maven-plugin:jar:3.8.0.2131
+[DEBUG]    org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4:compile
+[DEBUG]       org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.2.1:compile
+[DEBUG]    org.sonarsource.scanner.api:sonar-scanner-api:jar:2.16.0.226:compile
+[DEBUG]    commons-lang:commons-lang:jar:2.6:compile
+[DEBUG] Created new class realm plugin>org.codehaus.mojo:sonar-maven-plugin:3.8.0.2131
+[DEBUG] Importing foreign packages into class realm plugin>org.codehaus.mojo:sonar-maven-plugin:3.8.0.2131
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.codehaus.mojo:sonar-maven-plugin:3.8.0.2131
+[DEBUG]   Included: org.sonarsource.scanner.maven:sonar-maven-plugin:jar:3.8.0.2131
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.2.1
+[DEBUG]   Included: org.sonarsource.scanner.api:sonar-scanner-api:jar:2.16.0.226
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.6
+[DEBUG] Configuring mojo org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar from plugin realm ClassRealm[plugin>org.codehaus.mojo:sonar-maven-plugin:3.8.0.2131, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@4b85612c]
+[DEBUG] Configuring mojo 'org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar' with basic configurator -->
+[DEBUG]   (f) mojoExecution = org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar {execution: default-cli}
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@45bf6f39
+[DEBUG]   (f) skip = false
+[DEBUG] -- end configuration --
+[DEBUG] 16:53:26.097 keyStore is : 
+[DEBUG] 16:53:26.099 keyStore type is : pkcs12
+[DEBUG] 16:53:26.099 keyStore provider is : 
+[DEBUG] 16:53:26.100 init keystore
+[DEBUG] 16:53:26.100 init keymanager of type SunX509
+[DEBUG] 16:53:26.168 Create: /Users/jean-louis/.sonar/cache
+[INFO] 16:53:26.169 User cache: /Users/jean-louis/.sonar/cache
+[DEBUG] 16:53:26.169 Create: /Users/jean-louis/.sonar/cache/_tmp
+[DEBUG] 16:53:26.171 Extract sonar-scanner-api-batch in temp...
+[DEBUG] 16:53:26.174 Get bootstrap index...
+[DEBUG] 16:53:26.174 Download: http://localhost:9000/batch/index
+[DEBUG] 16:53:26.221 Get bootstrap completed
+[DEBUG] 16:53:26.225 Create isolated classloader...
+[DEBUG] 16:53:26.229 Start temp cleaning...
+[DEBUG] 16:53:26.232 Temp cleaning done
+[DEBUG] 16:53:26.233 Execution getVersion
+[INFO] 16:53:26.242 SonarQube version: 8.7.0
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[INFO] 16:53:26.276 Default locale: "en_US", source code encoding: "UTF-8"
+[DEBUG] 16:53:26.277 Work directory: /Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/target/sonar
+[DEBUG] 16:53:26.278 Execution execute
+[DEBUG] 16:53:26.438 Community 8.7.0.41497
+[INFO] 16:53:26.622 Load global settings
+[DEBUG] 16:53:26.685 GET 200 http://localhost:9000/api/settings/values.protobuf | time=62ms
+[INFO] 16:53:26.723 Load global settings (done) | time=101ms
+[INFO] 16:53:26.725 Server id: BF41A1F2-AXfyMAN00GiqaefRfaoE
+[INFO] 16:53:26.727 User cache: /Users/jean-louis/.sonar/cache
+[INFO] 16:53:26.730 Load/download plugins
+[INFO] 16:53:26.730 Load plugins index
+[DEBUG] 16:53:26.740 GET 200 http://localhost:9000/api/plugins/installed | time=10ms
+[INFO] 16:53:26.775 Load plugins index (done) | time=45ms
+[INFO] 16:53:26.835 Load/download plugins (done) | time=104ms
+[DEBUG] 16:53:26.871 Plugins:
+[DEBUG] 16:53:26.871   * Python Code Quality and Security 3.2.0.7856 (python)
+[DEBUG] 16:53:26.872   * CSS Code Quality and Security 1.3.2.1782 (cssfamily)
+[DEBUG] 16:53:26.872   * Go Code Quality and Security 1.8.2.1946 (go)
+[DEBUG] 16:53:26.873   * JaCoCo 1.1.0.898 (jacoco)
+[DEBUG] 16:53:26.873   * Kotlin Code Quality and Security 1.8.2.1946 (kotlin)
+[DEBUG] 16:53:26.873   * JavaScript/TypeScript Code Quality and Security 7.2.0.14938 (javascript)
+[DEBUG] 16:53:26.874   * Ruby Code Quality and Security 1.8.2.1946 (ruby)
+[DEBUG] 16:53:26.874   * Scala Code Quality and Security 1.8.2.1946 (sonarscala)
+[DEBUG] 16:53:26.874   * C# Code Quality and Security 8.18.0.27296 (csharp)
+[DEBUG] 16:53:26.875   * Java Code Quality and Security 6.12.0.24852 (java)
+[DEBUG] 16:53:26.875   * HTML Code Quality and Security 3.3.0.2534 (web)
+[DEBUG] 16:53:26.875   * Flex Code Quality and Security 2.6.0.2294 (flex)
+[DEBUG] 16:53:26.876   * SonarXML 2.0.1.2020 (xml)
+[DEBUG] 16:53:26.876   * PHP Code Quality and Security 3.15.0.7197 (php)
+[DEBUG] 16:53:26.876   * VB.NET Code Quality and Security 8.18.0.27296 (vbnet)
+[INFO] 16:53:27.209 Process project properties
+[INFO] 16:53:27.218 Process project properties (done) | time=9ms
+[INFO] 16:53:27.219 Execute project builders
+[DEBUG] 16:53:27.219 Execute project builder: org.sonar.plugins.csharp.CSharpGlobalProtobufFileProcessor
+[DEBUG] 16:53:27.220 Execute project builder: org.sonar.plugins.vbnet.VbNetGlobalProtobufFileProcessor
+[INFO] 16:53:27.221 Execute project builders (done) | time=2ms
+[INFO] 16:53:27.223 Project key: End-to-endTesting:jl.project
+[INFO] 16:53:27.223 Base dir: /Users/jean-louis/Desktop/AccessibleTodoList_End2endTests
+[INFO] 16:53:27.223 Working dir: /Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/target/sonar
+[DEBUG] 16:53:27.224 Project global encoding: UTF-8, default locale: en_US
+[DEBUG] 16:53:27.226 Creating module hierarchy
+[DEBUG] 16:53:27.226   Init module 'End-to-end testing for the Accessible Todo List Front-End'
+[DEBUG] 16:53:27.227     Base dir: /Users/jean-louis/Desktop/AccessibleTodoList_End2endTests
+[DEBUG] 16:53:27.227     Working dir: /Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/target/sonar
+[DEBUG] 16:53:27.228     Module global encoding: UTF-8, default locale: en_US
+[INFO] 16:53:27.343 Load project settings for component key: 'End-to-endTesting:jl.project'
+[DEBUG] 16:53:27.368 GET 200 http://localhost:9000/api/settings/values.protobuf?component=End-to-endTesting%3Ajl.project | time=25ms
+[INFO] 16:53:27.369 Load project settings for component key: 'End-to-endTesting:jl.project' (done) | time=26ms
+[DEBUG] 16:53:27.395 Available languages:
+[DEBUG] 16:53:27.395   * Python => "py"
+[DEBUG] 16:53:27.396   * CSS => "css"
+[DEBUG] 16:53:27.396   * Go => "go"
+[DEBUG] 16:53:27.396   * Kotlin => "kotlin"
+[DEBUG] 16:53:27.396   * JavaScript => "js"
+[DEBUG] 16:53:27.396   * TypeScript => "ts"
+[DEBUG] 16:53:27.397   * Ruby => "ruby"
+[DEBUG] 16:53:27.397   * Scala => "scala"
+[DEBUG] 16:53:27.397   * C# => "cs"
+[DEBUG] 16:53:27.397   * Java => "java"
+[DEBUG] 16:53:27.398   * HTML => "web"
+[DEBUG] 16:53:27.398   * JSP => "jsp"
+[DEBUG] 16:53:27.398   * Flex => "flex"
+[DEBUG] 16:53:27.398   * XML => "xml"
+[DEBUG] 16:53:27.398   * PHP => "php"
+[DEBUG] 16:53:27.399   * VB.NET => "vbnet"
+[INFO] 16:53:27.403 Load quality profiles
+[DEBUG] 16:53:27.430 GET 200 http://localhost:9000/api/qualityprofiles/search.protobuf?project=End-to-endTesting%3Ajl.project | time=25ms
+[INFO] 16:53:27.448 Load quality profiles (done) | time=45ms
+[INFO] 16:53:27.461 Load active rules
+[DEBUG] 16:53:27.511 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFNh0GiqaefRfeGh&ps=500&p=1 | time=50ms
+[DEBUG] 16:53:27.630 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFPD0GiqaefRfeH9&ps=500&p=1 | time=38ms
+[DEBUG] 16:53:27.657 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFP_0GiqaefRfeId&ps=500&p=1 | time=22ms
+[DEBUG] 16:53:27.703 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFQF0GiqaefRfeJY&ps=500&p=1 | time=45ms
+[DEBUG] 16:53:27.748 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFRE0GiqaefRfeK5&ps=500&p=1 | time=40ms
+[DEBUG] 16:53:27.841 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFSr0GiqaefRfeQV&ps=500&p=1 | time=90ms
+[DEBUG] 16:53:27.983 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFXc0GiqaefRfegF&ps=500&p=1 | time=120ms
+[DEBUG] 16:53:28.037 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFZM0GiqaefRfejM&ps=500&p=1 | time=45ms
+[DEBUG] 16:53:28.165 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFau0GiqaefRferk&ps=500&p=1 | time=126ms
+[DEBUG] 16:53:28.476 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFfF0GiqaefRfe9m&ps=500&p=1 | time=288ms
+[DEBUG] 16:53:28.544 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFjg0GiqaefRffFc&ps=500&p=1 | time=47ms
+[DEBUG] 16:53:28.597 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFmx0GiqaefRffHu&ps=500&p=1 | time=51ms
+[DEBUG] 16:53:28.638 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFl00GiqaefRffGD&ps=500&p=1 | time=39ms
+[DEBUG] 16:53:28.735 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFoJ0GiqaefRffMy&ps=500&p=1 | time=95ms
+[DEBUG] 16:53:28.802 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFsX0GiqaefRffVK&ps=500&p=1 | time=63ms
+[DEBUG] 16:53:28.901 GET 200 http://localhost:9000/api/rules/search.protobuf?f=repo,name,severity,lang,internalKey,templateKey,params,actives,createdAt,updatedAt&activation=true&qprofile=AXfyMFuL0GiqaefRffbk&ps=500&p=1 | time=95ms
+[INFO] 16:53:28.909 Load active rules (done) | time=1449ms
+[DEBUG] 16:53:28.974 Declared extensions of language Python were converted to sonar.lang.patterns.py : **/*.py
+[DEBUG] 16:53:28.975 Declared extensions of language CSS were converted to sonar.lang.patterns.css : **/*.css,**/*.less,**/*.scss
+[DEBUG] 16:53:28.976 Declared extensions of language Go were converted to sonar.lang.patterns.go : **/*.go
+[DEBUG] 16:53:28.977 Declared extensions of language Kotlin were converted to sonar.lang.patterns.kotlin : **/*.kt
+[DEBUG] 16:53:28.978 Declared extensions of language JavaScript were converted to sonar.lang.patterns.js : **/*.js,**/*.jsx,**/*.mjs
+[DEBUG] 16:53:28.979 Declared extensions of language TypeScript were converted to sonar.lang.patterns.ts : **/*.ts,**/*.tsx,**/*.vue
+[DEBUG] 16:53:28.980 Declared extensions of language Ruby were converted to sonar.lang.patterns.ruby : **/*.rb
+[DEBUG] 16:53:28.981 Declared extensions of language Scala were converted to sonar.lang.patterns.scala : **/*.scala
+[DEBUG] 16:53:28.981 Declared extensions of language C# were converted to sonar.lang.patterns.cs : **/*.cs
+[DEBUG] 16:53:28.982 Declared extensions of language Java were converted to sonar.lang.patterns.java : **/*.java,**/*.jav
+[DEBUG] 16:53:28.983 Declared extensions of language HTML were converted to sonar.lang.patterns.web : **/*.html,**/*.xhtml,**/*.cshtml,**/*.vbhtml,**/*.aspx,**/*.ascx,**/*.rhtml,**/*.erb,**/*.shtm,**/*.shtml
+[DEBUG] 16:53:28.985 Declared extensions of language JSP were converted to sonar.lang.patterns.jsp : **/*.jsp,**/*.jspf,**/*.jspx
+[DEBUG] 16:53:28.986 Declared extensions of language Flex were converted to sonar.lang.patterns.flex : **/*.as
+[DEBUG] 16:53:28.986 Declared extensions of language XML were converted to sonar.lang.patterns.xml : **/*.xml,**/*.xsd,**/*.xsl
+[DEBUG] 16:53:28.987 Declared extensions of language PHP were converted to sonar.lang.patterns.php : **/*.php,**/*.php3,**/*.php4,**/*.php5,**/*.phtml,**/*.inc
+[DEBUG] 16:53:28.988 Declared extensions of language VB.NET were converted to sonar.lang.patterns.vbnet : **/*.vb
+[DEBUG] 16:53:28.991 Will ignore generated code
+[DEBUG] 16:53:28.992 Will ignore generated code
+[INFO] 16:53:28.993 Indexing files...
+[INFO] 16:53:28.994 Project configuration:
+[DEBUG] 16:53:29.007 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, create new FileSnapshot: lastRead=2021-04-08 16:53:29.006213000, lastModified=2021-03-31 13:30:46.107939000, size=480, fileKey=(dev=1000005,ino=6191849)
+[DEBUG] 16:53:29.012 file=null, size changed from -1 to 389 bytes
+[DEBUG] 16:53:29.013 loading config FileBasedConfig[/Users/jean-louis/.config/jgit/config]
+[DEBUG] 16:53:29.013 file=/Users/jean-louis/.config/jgit/config, create new FileSnapshot: lastRead=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, size=389, fileKey=(dev=1000005,ino=7196870)
+[DEBUG] 16:53:29.015 readpipe [/usr/local/bin/git, --version],/usr/local/bin
+[DEBUG] 16:53:29.032 readpipe may return 'git version 2.30.1'
+[DEBUG] 16:53:29.037 remaining output:
+
+[DEBUG] 16:53:29.038 readpipe [/usr/local/bin/git, config, --system, --edit],/usr/local/bin
+[DEBUG] 16:53:29.050 readpipe may return '/usr/local/etc/gitconfig'
+[DEBUG] 16:53:29.051 remaining output:
+
+[DEBUG] 16:53:29.052 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.053 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.054 file=null, size changed from -1 to 0 bytes
+[DEBUG] 16:53:29.054 loading config FileBasedConfig[/usr/local/etc/gitconfig]
+[DEBUG] 16:53:29.055 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.056 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.057 file=/usr/local/etc/gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.054999000, lastModified=1970-01-01 01:00:00.000000000, delta=1617893609054999000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.058 file=/usr/local/etc/gitconfig, is unmodified
+[DEBUG] 16:53:29.059 file=null, size changed from -1 to 156 bytes
+[DEBUG] 16:53:29.059 loading config FileBasedConfig[/Users/jean-louis/.gitconfig]
+[DEBUG] 16:53:29.060 file=/Users/jean-louis/.gitconfig, create new FileSnapshot: lastRead=2021-04-08 16:53:29.060278000, lastModified=2021-02-25 11:27:27.513367000, size=156, fileKey=(dev=1000005,ino=3947563)
+[DEBUG] 16:53:29.062 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, create new FileSnapshot: lastRead=2021-04-08 16:53:29.062758000, lastModified=2021-03-31 13:30:46.107939000, size=480, fileKey=(dev=1000005,ino=6191849)
+[DEBUG] 16:53:29.065 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.066 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.067 file=/usr/local/etc/gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.054999000, lastModified=1970-01-01 01:00:00.000000000, delta=1617893609054999000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.068 file=/usr/local/etc/gitconfig, is unmodified
+[DEBUG] 16:53:29.069 file=/Users/jean-louis/.gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.060278000, lastModified=2021-02-25 11:27:27.513367000, delta=3644761546911000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.070 file=/Users/jean-louis/.gitconfig, is unmodified
+[DEBUG] 16:53:29.071 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, isRacyClean=false, read=2021-04-08 16:53:29.062758000, lastModified=2021-03-31 13:30:46.107939000, delta=703362954819000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.072 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, is unmodified
+[DEBUG] 16:53:29.089 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.090 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.091 file=/usr/local/etc/gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.054999000, lastModified=1970-01-01 01:00:00.000000000, delta=1617893609054999000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.092 file=/usr/local/etc/gitconfig, is unmodified
+[DEBUG] 16:53:29.092 file=/Users/jean-louis/.gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.060278000, lastModified=2021-02-25 11:27:27.513367000, delta=3644761546911000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.093 file=/Users/jean-louis/.gitconfig, is unmodified
+[DEBUG] 16:53:29.094 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/index, create new FileSnapshot: lastRead=2021-04-08 16:53:29.086917000, lastModified=2021-04-08 16:07:30.738615000, size=34004, fileKey=(dev=1000005,ino=7452312)
+[DEBUG] 16:53:29.105 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.106 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.106 file=/usr/local/etc/gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.054999000, lastModified=1970-01-01 01:00:00.000000000, delta=1617893609054999000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.107 file=/usr/local/etc/gitconfig, is unmodified
+[DEBUG] 16:53:29.108 file=/Users/jean-louis/.gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.060278000, lastModified=2021-02-25 11:27:27.513367000, delta=3644761546911000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.108 file=/Users/jean-louis/.gitconfig, is unmodified
+[DEBUG] 16:53:29.109 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, isRacyClean=false, read=2021-04-08 16:53:29.062758000, lastModified=2021-03-31 13:30:46.107939000, delta=703362954819000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.110 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, is unmodified
+[DEBUG] 16:53:29.112 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.113 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.114 file=/usr/local/etc/gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.054999000, lastModified=1970-01-01 01:00:00.000000000, delta=1617893609054999000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.115 file=/usr/local/etc/gitconfig, is unmodified
+[DEBUG] 16:53:29.115 file=/Users/jean-louis/.gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.060278000, lastModified=2021-02-25 11:27:27.513367000, delta=3644761546911000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.116 file=/Users/jean-louis/.gitconfig, is unmodified
+[DEBUG] 16:53:29.116 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, isRacyClean=false, read=2021-04-08 16:53:29.062758000, lastModified=2021-03-31 13:30:46.107939000, delta=703362954819000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.117 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, is unmodified
+[DEBUG] 16:53:29.125 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.126 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.127 file=/usr/local/etc/gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.054999000, lastModified=1970-01-01 01:00:00.000000000, delta=1617893609054999000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.128 file=/usr/local/etc/gitconfig, is unmodified
+[DEBUG] 16:53:29.129 file=/Users/jean-louis/.gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.060278000, lastModified=2021-02-25 11:27:27.513367000, delta=3644761546911000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.130 file=/Users/jean-louis/.gitconfig, is unmodified
+[DEBUG] 16:53:29.130 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, isRacyClean=false, read=2021-04-08 16:53:29.062758000, lastModified=2021-03-31 13:30:46.107939000, delta=703362954819000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.131 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, is unmodified
+[DEBUG] 16:53:29.134 file=/Users/jean-louis/.config/jgit/config, isRacyClean=false, read=2021-04-08 16:53:29.013623000, lastModified=2021-04-06 18:02:48.040251000, delta=168640973372000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.135 file=/Users/jean-louis/.config/jgit/config, is unmodified
+[DEBUG] 16:53:29.136 file=/usr/local/etc/gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.054999000, lastModified=1970-01-01 01:00:00.000000000, delta=1617893609054999000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.137 file=/usr/local/etc/gitconfig, is unmodified
+[DEBUG] 16:53:29.137 file=/Users/jean-louis/.gitconfig, isRacyClean=false, read=2021-04-08 16:53:29.060278000, lastModified=2021-02-25 11:27:27.513367000, delta=3644761546911000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.139 file=/Users/jean-louis/.gitconfig, is unmodified
+[DEBUG] 16:53:29.139 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, isRacyClean=false, read=2021-04-08 16:53:29.062758000, lastModified=2021-03-31 13:30:46.107939000, delta=703362954819000 ns, racy<=2500000000 ns
+[DEBUG] 16:53:29.140 file=/Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/.git/config, is unmodified
+[DEBUG] 16:53:29.177 271 non excluded files in this Git repository
+[DEBUG] 16:53:29.188 'tessdata/eng.traineddata' indexed with no language
+[DEBUG] 16:53:29.190 'screenshots/AfterClickToDisplayScreenshot.png' indexed with no language
+[DEBUG] 16:53:29.191 'screenshots/newItemScreenshot.png' indexed with no language
+[DEBUG] 16:53:29.192 'screenshots/AfterClickToHideScreenshot.png' indexed with no language
+[DEBUG] 16:53:29.193 'output_SonarQube.txt' indexed with no language
+[DEBUG] 16:53:29.194 'mvnw.cmd' indexed with no language
+[DEBUG] 16:53:29.195 'target/sonar/scanner-report/analysis.log' indexed with no language
+[DEBUG] 16:53:29.196 'pom.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.197 'README.md' indexed with no language
+[DEBUG] 16:53:29.198 'test-output/skipped.png' indexed with no language
+[DEBUG] 16:53:29.199 'test-output/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.200 'test-output/testng-results.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.201 'test-output/junitreports/TEST-jl.project.pa11yTest.UserRequirement5_Pa11yTest.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.202 'test-output/junitreports/TEST-jl.project.ChromeTests.UserRequirement4_1_Test.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.204 'test-output/junitreports/TEST-jl.project.pa11yTest.UserRequirement5_Pa11yTest_macOS_Ubuntu.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.205 'test-output/junitreports/TEST-jl.project.pa11yTest.UserRequirement5_Pa11yTest_Windows.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.206 'test-output/junitreports/TEST-jl.project.pa11yTest.Pa11yTest.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.207 'test-output/junitreports/TEST-jl.project.ChromeTests.UserRequirement1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.209 'test-output/junitreports/TEST-jl.project.ChromeTests.UserRequirement3.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.210 'test-output/junitreports/TEST-jl.project.ChromeTests.UserRequirement2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.212 'test-output/junitreports/TEST-jl.project.ChromeTests.UserRequirement4_2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.213 'test-output/junitreports/TEST-jl.project.ChromeTests.UserRequirement4_1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.214 'test-output/junitreports/TEST-jl.project.FirefoxTests.UserRequirement1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.215 'test-output/junitreports/TEST-jl.project.EdgeTests.UserRequirement4_2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.216 'test-output/junitreports/TEST-jl.project.EdgeTests.UserRequirement4_1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.218 'test-output/junitreports/TEST-jl.project.ScreenReadersTests.SpeechToTextConverterIBMTest.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.219 'test-output/junitreports/TEST-jl.project.EdgeTests.UserRequirement3.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.220 'test-output/junitreports/TEST-jl.project.UserRequirement1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.221 'test-output/junitreports/TEST-jl.project.EdgeTests.UserRequirement2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.223 'test-output/junitreports/TEST-jl.project.UserRequirement2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.224 'test-output/junitreports/TEST-jl.project.UserRequirement3.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.225 'test-output/junitreports/TEST-jl.project.EdgeTests.UserRequirement1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.226 'test-output/junitreports/TEST-jl.project.ChromeTests.Debug.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.227 'test-output/junitreports/TEST-jl.project.UserRequirement4_1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.228 'test-output/junitreports/TEST-jl.project.UserRequirement4_2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.229 'test-output/failed.png' indexed with no language
+[DEBUG] 16:53:29.229 'test-output/Test Suite Edge/testng-failed.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.230 'test-output/bullet_point.png' indexed with no language
+[DEBUG] 16:53:29.231 'test-output/old/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.232 'test-output/old/Test Suite Edge/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.233 'test-output/old/Test Suite Edge/User Requirement 1.properties' indexed with no language
+[DEBUG] 16:53:29.234 'test-output/old/Test Suite Edge/groups.html' indexed with language 'web'
+[DEBUG] 16:53:29.235 'test-output/old/Test Suite Edge/methods-not-run.html' indexed with language 'web'
+[DEBUG] 16:53:29.236 'test-output/old/Test Suite Edge/User Requirement 4 Part 1.properties' indexed with no language
+[DEBUG] 16:53:29.237 'test-output/old/Test Suite Edge/reporter-output.html' indexed with language 'web'
+[DEBUG] 16:53:29.238 'test-output/old/Test Suite Edge/User Requirement 3.properties' indexed with no language
+[DEBUG] 16:53:29.239 'test-output/old/Test Suite Edge/User Requirement 4 Part 2.properties' indexed with no language
+[DEBUG] 16:53:29.240 'test-output/old/Test Suite Edge/main.html' indexed with language 'web'
+[DEBUG] 16:53:29.241 'test-output/old/Test Suite Edge/classes.html' indexed with language 'web'
+[DEBUG] 16:53:29.243 'test-output/old/Test Suite Edge/User Requirement 2.properties' indexed with no language
+[DEBUG] 16:53:29.245 'test-output/old/Default suite/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.246 'test-output/old/Default suite/toc.html' indexed with language 'web'
+[DEBUG] 16:53:29.247 'test-output/old/Default suite/groups.html' indexed with language 'web'
+[DEBUG] 16:53:29.248 'test-output/old/Default suite/methods-not-run.html' indexed with language 'web'
+[DEBUG] 16:53:29.250 'test-output/old/Default suite/reporter-output.html' indexed with language 'web'
+[DEBUG] 16:53:29.251 'test-output/old/Default suite/methods.html' indexed with language 'web'
+[DEBUG] 16:53:29.252 'test-output/old/Default suite/Default test.properties' indexed with no language
+[DEBUG] 16:53:29.253 'test-output/old/Default suite/main.html' indexed with language 'web'
+[DEBUG] 16:53:29.254 'test-output/old/Default suite/classes.html' indexed with language 'web'
+[DEBUG] 16:53:29.255 'test-output/old/Default suite/methods-alphabetical.html' indexed with language 'web'
+[DEBUG] 16:53:29.256 'test-output/old/Default suite/testng.xml.html' indexed with language 'web'
+[DEBUG] 16:53:29.258 'test-output/old/Test Suite Chrome/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.259 'test-output/old/Test Suite Chrome/User Requirement 1.properties' indexed with no language
+[DEBUG] 16:53:29.260 'test-output/old/Test Suite Chrome/groups.html' indexed with language 'web'
+[DEBUG] 16:53:29.261 'test-output/old/Test Suite Chrome/methods-not-run.html' indexed with language 'web'
+[DEBUG] 16:53:29.262 'test-output/old/Test Suite Chrome/User Requirement 4 Part 1.properties' indexed with no language
+[DEBUG] 16:53:29.263 'test-output/old/Test Suite Chrome/reporter-output.html' indexed with language 'web'
+[DEBUG] 16:53:29.264 'test-output/old/Test Suite Chrome/User Requirement 3.properties' indexed with no language
+[DEBUG] 16:53:29.265 'test-output/old/Test Suite Chrome/User Requirement 4 Part 2.properties' indexed with no language
+[DEBUG] 16:53:29.266 'test-output/old/Test Suite Chrome/main.html' indexed with language 'web'
+[DEBUG] 16:53:29.267 'test-output/old/Test Suite Chrome/classes.html' indexed with language 'web'
+[DEBUG] 16:53:29.267 'test-output/old/Test Suite Chrome/testng.xml.html' indexed with language 'web'
+[DEBUG] 16:53:29.268 'test-output/old/Test Suite Chrome/User Requirement 2.properties' indexed with no language
+[DEBUG] 16:53:29.269 'test-output/old/Test Suite Firefox/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.270 'test-output/old/Test Suite Firefox/User Requirement 1.properties' indexed with no language
+[DEBUG] 16:53:29.271 'test-output/old/Test Suite Firefox/toc.html' indexed with language 'web'
+[DEBUG] 16:53:29.272 'test-output/old/Test Suite Firefox/groups.html' indexed with language 'web'
+[DEBUG] 16:53:29.272 'test-output/old/Test Suite Firefox/methods-not-run.html' indexed with language 'web'
+[DEBUG] 16:53:29.273 'test-output/old/Test Suite Firefox/User Requirement 4 Part 1.properties' indexed with no language
+[DEBUG] 16:53:29.274 'test-output/old/Test Suite Firefox/reporter-output.html' indexed with language 'web'
+[DEBUG] 16:53:29.275 'test-output/old/Test Suite Firefox/methods.html' indexed with language 'web'
+[DEBUG] 16:53:29.276 'test-output/old/Test Suite Firefox/User Requirement 3.properties' indexed with no language
+[DEBUG] 16:53:29.277 'test-output/old/Test Suite Firefox/User Requirement 4 Part 2.properties' indexed with no language
+[DEBUG] 16:53:29.278 'test-output/old/Test Suite Firefox/main.html' indexed with language 'web'
+[DEBUG] 16:53:29.278 'test-output/old/Test Suite Firefox/classes.html' indexed with language 'web'
+[DEBUG] 16:53:29.279 'test-output/old/Test Suite Firefox/methods-alphabetical.html' indexed with language 'web'
+[DEBUG] 16:53:29.280 'test-output/old/Test Suite Firefox/testng.xml.html' indexed with language 'web'
+[DEBUG] 16:53:29.281 'test-output/old/Test Suite Firefox/User Requirement 2.properties' indexed with no language
+[DEBUG] 16:53:29.282 'test-output/old/Test Suite Screen Readers Test/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.283 'test-output/old/Test Suite Screen Readers Test/toc.html' indexed with language 'web'
+[DEBUG] 16:53:29.284 'test-output/old/Test Suite Screen Readers Test/groups.html' indexed with language 'web'
+[DEBUG] 16:53:29.285 'test-output/old/Test Suite Screen Readers Test/methods-not-run.html' indexed with language 'web'
+[DEBUG] 16:53:29.286 'test-output/old/Test Suite Screen Readers Test/reporter-output.html' indexed with language 'web'
+[DEBUG] 16:53:29.287 'test-output/old/Test Suite Screen Readers Test/methods.html' indexed with language 'web'
+[DEBUG] 16:53:29.288 'test-output/old/Test Suite Screen Readers Test/Speech To TextConverter Test IBM.properties' indexed with no language
+[DEBUG] 16:53:29.288 'test-output/old/Test Suite Screen Readers Test/main.html' indexed with language 'web'
+[DEBUG] 16:53:29.289 'test-output/old/Test Suite Screen Readers Test/classes.html' indexed with language 'web'
+[DEBUG] 16:53:29.290 'test-output/old/Test Suite Screen Readers Test/methods-alphabetical.html' indexed with language 'web'
+[DEBUG] 16:53:29.291 'test-output/old/Test Suite Screen Readers Test/testng.xml.html' indexed with language 'web'
+[DEBUG] 16:53:29.292 'test-output/old/Test Suite Pa11y/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.293 'test-output/old/Test Suite Pa11y/toc.html' indexed with language 'web'
+[DEBUG] 16:53:29.293 'test-output/old/Test Suite Pa11y/groups.html' indexed with language 'web'
+[DEBUG] 16:53:29.294 'test-output/old/Test Suite Pa11y/Pa11y Test.properties' indexed with no language
+[DEBUG] 16:53:29.295 'test-output/old/Test Suite Pa11y/methods-not-run.html' indexed with language 'web'
+[DEBUG] 16:53:29.296 'test-output/old/Test Suite Pa11y/reporter-output.html' indexed with language 'web'
+[DEBUG] 16:53:29.297 'test-output/old/Test Suite Pa11y/methods.html' indexed with language 'web'
+[DEBUG] 16:53:29.297 'test-output/old/Test Suite Pa11y/main.html' indexed with language 'web'
+[DEBUG] 16:53:29.298 'test-output/old/Test Suite Pa11y/classes.html' indexed with language 'web'
+[DEBUG] 16:53:29.299 'test-output/old/Test Suite Pa11y/methods-alphabetical.html' indexed with language 'web'
+[DEBUG] 16:53:29.300 'test-output/old/Test Suite Pa11y/testng.xml.html' indexed with language 'web'
+[DEBUG] 16:53:29.300 'test-output/testng-failed.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.301 'test-output/navigator-bullet.png' indexed with no language
+[DEBUG] 16:53:29.302 'test-output/emailable-report.html' indexed with language 'web'
+[INFO] 16:53:29.314 Load project repositories
+[DEBUG] 16:53:29.325 GET 200 http://localhost:9000/batch/project.protobuf?key=End-to-endTesting%3Ajl.project | time=11ms
+[INFO] 16:53:29.332 Load project repositories (done) | time=18ms
+[DEBUG] 16:53:29.332 'test-output/testng-reports.css' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.333 'test-output/testng-reports.css' indexed with language 'css'
+[DEBUG] 16:53:29.337 File [file:///Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/test-output/jquery-1.7.1.min.js] looks like a minified file and will not be analyzed
+[DEBUG] 16:53:29.338 'test-output/jquery-1.7.1.min.js' excluded by org.sonar.plugins.javascript.JavaScriptExclusionsFileFilter
+[DEBUG] 16:53:29.339 'test-output/Default suite/Default test.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.340 'test-output/Default suite/Default test.html' indexed with language 'web'
+[DEBUG] 16:53:29.340 'test-output/Default suite/testng-failed.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.341 'test-output/Test Suite Chrome/testng-failed.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.342 'test-output/passed.png' indexed with no language
+[DEBUG] 16:53:29.348 'test-output/testng-reports.js' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.349 'test-output/testng-reports.js' indexed with language 'js'
+[DEBUG] 16:53:29.349 'test-output/collapseall.gif' indexed with no language
+[DEBUG] 16:53:29.350 'test-output/Test Suite Screen Readers Test/Speech To TextConverter Test IBM.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.351 'test-output/Test Suite Screen Readers Test/Speech To TextConverter Test IBM.html' indexed with language 'web'
+[DEBUG] 16:53:29.354 'test-output/testng.css' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.355 'test-output/testng.css' indexed with language 'css'
+[DEBUG] 16:53:29.356 'test-output/Test Suite Pa11y/Pa11y Test.html' indexed with language 'web'
+[DEBUG] 16:53:29.357 'test-output/Test Suite Pa11y/Pa11y Test.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.358 'test-output/Test Suite Pa11y/testng-failed.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.359 'hs_err_pid21783.log' indexed with no language
+[DEBUG] 16:53:29.359 'debug.log' indexed with no language
+[DEBUG] 16:53:29.360 'z_end-to-end-tests-scripts/end-to-to-end-tests-scripts-linux.sh' indexed with no language
+[DEBUG] 16:53:29.361 'z_end-to-end-tests-scripts/end-to-to-end-tests-scripts-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.362 'z_end-to-end-tests-scripts/end-to-to-end-tests-scripts-windows.bat' indexed with no language
+[DEBUG] 16:53:29.363 'z_end-to-end-tests-scripts/test-output/skipped.png' indexed with no language
+[DEBUG] 16:53:29.364 'z_end-to-end-tests-scripts/test-output/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.364 'z_end-to-end-tests-scripts/test-output/testng-results.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.365 'z_end-to-end-tests-scripts/test-output/failed.png' indexed with no language
+[DEBUG] 16:53:29.366 'z_end-to-end-tests-scripts/test-output/bullet_point.png' indexed with no language
+[DEBUG] 16:53:29.367 'z_end-to-end-tests-scripts/test-output/old/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.368 'z_end-to-end-tests-scripts/test-output/navigator-bullet.png' indexed with no language
+[DEBUG] 16:53:29.369 'z_end-to-end-tests-scripts/test-output/emailable-report.html' indexed with language 'web'
+[DEBUG] 16:53:29.373 'z_end-to-end-tests-scripts/test-output/testng-reports.css' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.374 'z_end-to-end-tests-scripts/test-output/testng-reports.css' indexed with language 'css'
+[DEBUG] 16:53:29.377 File [file:///Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/test-output/jquery-1.7.1.min.js] looks like a minified file and will not be analyzed
+[DEBUG] 16:53:29.378 'z_end-to-end-tests-scripts/test-output/jquery-1.7.1.min.js' excluded by org.sonar.plugins.javascript.JavaScriptExclusionsFileFilter
+[DEBUG] 16:53:29.379 'z_end-to-end-tests-scripts/test-output/passed.png' indexed with no language
+[DEBUG] 16:53:29.382 'z_end-to-end-tests-scripts/test-output/testng-reports.js' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.383 'z_end-to-end-tests-scripts/test-output/testng-reports.js' indexed with language 'js'
+[DEBUG] 16:53:29.384 'z_end-to-end-tests-scripts/test-output/collapseall.gif' indexed with no language
+[DEBUG] 16:53:29.386 'z_end-to-end-tests-scripts/test-output/testng.css' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.386 'z_end-to-end-tests-scripts/test-output/testng.css' indexed with language 'css'
+[DEBUG] 16:53:29.387 'z_end-to-end-tests-scripts/logs/log_SpringBoot-script.txt' indexed with no language
+[DEBUG] 16:53:29.388 'z_end-to-end-tests-scripts/logs/log_SpringBoot-end-to-end-test-script.txt' indexed with no language
+[DEBUG] 16:53:29.389 'z_end-to-end-tests-scripts/logs/log_Angular-end-to-end-test-script.txt' indexed with no language
+[DEBUG] 16:53:29.390 'z_end-to-end-tests-scripts/scripts/run_Pa11y_test-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.391 'z_end-to-end-tests-scripts/scripts/run_Angular_server-windows_forAngularServerStartup.bat' indexed with no language
+[DEBUG] 16:53:29.392 'z_end-to-end-tests-scripts/scripts/run_Backend_server-Linux.sh' indexed with no language
+[DEBUG] 16:53:29.393 'z_end-to-end-tests-scripts/scripts/run_Angular_server-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.393 'z_end-to-end-tests-scripts/scripts/run_Pa11y_test-windows.bat' indexed with no language
+[DEBUG] 16:53:29.394 'z_end-to-end-tests-scripts/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh' indexed with no language
+[DEBUG] 16:53:29.396 'z_end-to-end-tests-scripts/scripts/run_Backend_server-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.396 'z_end-to-end-tests-scripts/scripts/run_Angular_server-Linux.sh' indexed with no language
+[DEBUG] 16:53:29.398 'z_end-to-end-tests-scripts/scripts/stop_potentially_existing_Angular_Spring_server_processes-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.399 'z_end-to-end-tests-scripts/scripts/run_Backend_server-windows.bat' indexed with no language
+[DEBUG] 16:53:29.400 'z_end-to-end-tests-scripts/scripts/run_Angular_server-windows.bat' indexed with no language
+[DEBUG] 16:53:29.401 'z_end-to-end-tests-scripts/scripts/stop_potentially_existing_Angular_Spring_server_processes-windows.bat' indexed with no language
+[DEBUG] 16:53:29.402 'z_end-to-end-tests-scripts/scripts/run_Pa11y_test-Linux.sh' indexed with no language
+[DEBUG] 16:53:29.403 'z_end-to-end-tests-scripts/tesseract_lib_macOS/libtesseract.dylib' indexed with no language
+[DEBUG] 16:53:29.403 'z_end-to-end-tests-scripts/tesseract_lib_macOS/libtesseract.a' indexed with no language
+[DEBUG] 16:53:29.404 'z_end-to-end-tests-scripts/tesseract_lib_macOS/libtesseract.4.dylib' indexed with no language
+[DEBUG] 16:53:29.405 'mvnw' indexed with no language
+[DEBUG] 16:53:29.406 'z_code_to_push-scripts/code_to_push-linux.sh' indexed with no language
+[DEBUG] 16:53:29.407 'z_code_to_push-scripts/code_to_push-windows.bat' indexed with no language
+[DEBUG] 16:53:29.408 'tmp/StringExternalization.java.txt' indexed with no language
+[DEBUG] 16:53:29.409 'src/test/java/log4testng.properties' indexed with no language
+[DEBUG] 16:53:29.410 'src/test/java/TestNG_z_Pa11y.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.410 'src/test/java/TestNG_z_ScreenReaders.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.411 'src/test/java/test-output/skipped.png' indexed with no language
+[DEBUG] 16:53:29.412 'src/test/java/test-output/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.412 'src/test/java/test-output/testng-results.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.413 'src/test/java/test-output/failed.png' indexed with no language
+[DEBUG] 16:53:29.413 'src/test/java/test-output/bullet_point.png' indexed with no language
+[DEBUG] 16:53:29.414 'src/test/java/test-output/old/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.415 'src/test/java/test-output/old/Test Suite Chrome/index.html' indexed with language 'web'
+[DEBUG] 16:53:29.416 'src/test/java/test-output/old/Test Suite Chrome/User Requirement 1.properties' indexed with no language
+[DEBUG] 16:53:29.417 'src/test/java/test-output/old/Test Suite Chrome/toc.html' indexed with language 'web'
+[DEBUG] 16:53:29.417 'src/test/java/test-output/old/Test Suite Chrome/groups.html' indexed with language 'web'
+[DEBUG] 16:53:29.418 'src/test/java/test-output/old/Test Suite Chrome/methods-not-run.html' indexed with language 'web'
+[DEBUG] 16:53:29.419 'src/test/java/test-output/old/Test Suite Chrome/User Requirement 4 Part 1.properties' indexed with no language
+[DEBUG] 16:53:29.420 'src/test/java/test-output/old/Test Suite Chrome/reporter-output.html' indexed with language 'web'
+[DEBUG] 16:53:29.421 'src/test/java/test-output/old/Test Suite Chrome/methods.html' indexed with language 'web'
+[DEBUG] 16:53:29.422 'src/test/java/test-output/old/Test Suite Chrome/User Requirement 3.properties' indexed with no language
+[DEBUG] 16:53:29.423 'src/test/java/test-output/old/Test Suite Chrome/User Requirement 4 Part 2.properties' indexed with no language
+[DEBUG] 16:53:29.423 'src/test/java/test-output/old/Test Suite Chrome/main.html' indexed with language 'web'
+[DEBUG] 16:53:29.424 'src/test/java/test-output/old/Test Suite Chrome/classes.html' indexed with language 'web'
+[DEBUG] 16:53:29.425 'src/test/java/test-output/old/Test Suite Chrome/methods-alphabetical.html' indexed with language 'web'
+[DEBUG] 16:53:29.426 'src/test/java/test-output/old/Test Suite Chrome/testng.xml.html' indexed with language 'web'
+[DEBUG] 16:53:29.427 'src/test/java/test-output/old/Test Suite Chrome/User Requirement 2.properties' indexed with no language
+[DEBUG] 16:53:29.428 'src/test/java/test-output/navigator-bullet.png' indexed with no language
+[DEBUG] 16:53:29.428 'src/test/java/test-output/emailable-report.html' indexed with language 'web'
+[DEBUG] 16:53:29.432 'src/test/java/test-output/testng-reports.css' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.432 'src/test/java/test-output/testng-reports.css' indexed with language 'css'
+[DEBUG] 16:53:29.435 File [file:///Users/jean-louis/Desktop/AccessibleTodoList_End2endTests/src/test/java/test-output/jquery-1.7.1.min.js] looks like a minified file and will not be analyzed
+[DEBUG] 16:53:29.436 'src/test/java/test-output/jquery-1.7.1.min.js' excluded by org.sonar.plugins.javascript.JavaScriptExclusionsFileFilter
+[DEBUG] 16:53:29.437 'src/test/java/test-output/Test Suite Chrome/User Requirement 4 Part 2.html' indexed with language 'web'
+[DEBUG] 16:53:29.438 'src/test/java/test-output/Test Suite Chrome/User Requirement 3.html' indexed with language 'web'
+[DEBUG] 16:53:29.439 'src/test/java/test-output/Test Suite Chrome/User Requirement 2.html' indexed with language 'web'
+[DEBUG] 16:53:29.440 'src/test/java/test-output/Test Suite Chrome/User Requirement 4 Part 1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.440 'src/test/java/test-output/Test Suite Chrome/User Requirement 4 Part 2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.441 'src/test/java/test-output/Test Suite Chrome/User Requirement 1.html' indexed with language 'web'
+[DEBUG] 16:53:29.442 'src/test/java/test-output/Test Suite Chrome/User Requirement 4 Part 1.html' indexed with language 'web'
+[DEBUG] 16:53:29.443 'src/test/java/test-output/Test Suite Chrome/User Requirement 1.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.444 'src/test/java/test-output/Test Suite Chrome/User Requirement 2.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.445 'src/test/java/test-output/Test Suite Chrome/User Requirement 3.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.445 'src/test/java/test-output/passed.png' indexed with no language
+[DEBUG] 16:53:29.448 'src/test/java/test-output/testng-reports.js' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.448 'src/test/java/test-output/testng-reports.js' indexed with language 'js'
+[DEBUG] 16:53:29.449 'src/test/java/test-output/collapseall.gif' indexed with no language
+[DEBUG] 16:53:29.451 'src/test/java/test-output/testng.css' generated metadata with charset 'UTF-8'
+[DEBUG] 16:53:29.452 'src/test/java/test-output/testng.css' indexed with language 'css'
+[DEBUG] 16:53:29.453 'src/test/java/jl/project/Pa11yTest/UserRequirement5_Pa11yTest.java' indexed with language 'java'
+[DEBUG] 16:53:29.454 'src/test/java/jl/project/Pa11yTest/logs/log_Angular_input.txt' indexed with no language
+[DEBUG] 16:53:29.454 'src/test/java/jl/project/Pa11yTest/logs/log_Angular_error.txt' indexed with no language
+[DEBUG] 16:53:29.455 'src/test/java/jl/project/Pa11yTest/logs/log_Pa11y.txt' indexed with no language
+[DEBUG] 16:53:29.456 'src/test/java/jl/project/Pa11yTest/logs/log_SpringBoot_error.txt' indexed with no language
+[DEBUG] 16:53:29.456 'src/test/java/jl/project/Pa11yTest/logs/log_URL.txt' indexed with no language
+[DEBUG] 16:53:29.457 'src/test/java/jl/project/Pa11yTest/logs/log_SpringBoot_input.txt' indexed with no language
+[DEBUG] 16:53:29.458 'src/test/java/jl/project/Pa11yTest/scripts/run_Pa11y_test-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.459 'src/test/java/jl/project/Pa11yTest/scripts/run_Angular_server-windows_forAngularServerStartup.bat' indexed with no language
+[DEBUG] 16:53:29.460 'src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-Linux.sh' indexed with no language
+[DEBUG] 16:53:29.460 'src/test/java/jl/project/Pa11yTest/scripts/run_Angular_server-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.461 'src/test/java/jl/project/Pa11yTest/scripts/run_Pa11y_test-windows.bat' indexed with no language
+[DEBUG] 16:53:29.462 'src/test/java/jl/project/Pa11yTest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh' indexed with no language
+[DEBUG] 16:53:29.463 'src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.464 'src/test/java/jl/project/Pa11yTest/scripts/run_Angular_server-Linux.sh' indexed with no language
+[DEBUG] 16:53:29.465 'src/test/java/jl/project/Pa11yTest/scripts/stop_potentially_existing_Angular_Spring_server_processes-macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.465 'src/test/java/jl/project/Pa11yTest/scripts/run_Backend_server-windows.bat' indexed with no language
+[DEBUG] 16:53:29.466 'src/test/java/jl/project/Pa11yTest/scripts/run_Angular_server-windows.bat' indexed with no language
+[DEBUG] 16:53:29.467 'src/test/java/jl/project/Pa11yTest/scripts/stop_potentially_existing_Angular_Spring_server_processes-windows.bat' indexed with no language
+[DEBUG] 16:53:29.468 'src/test/java/jl/project/Pa11yTest/scripts/run_Pa11y_test-Linux.sh' indexed with no language
+[DEBUG] 16:53:29.469 'src/test/java/jl/project/ChromeTests/UserRequirement4_2_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.470 'src/test/java/jl/project/ChromeTests/UserRequirement2_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.471 'src/test/java/jl/project/ChromeTests/UserRequirement3_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.471 'src/test/java/jl/project/ChromeTests/UserRequirement4_1_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.472 'src/test/java/jl/project/ChromeTests/UserRequirement1_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.473 'src/test/java/jl/project/ScreenReadersTests/UserRequirement6_ScreenReaderTest.java' indexed with language 'java'
+[DEBUG] 16:53:29.474 'src/test/java/jl/project/ScreenReadersTests/SpeechToTextConverterIBMTest.java' indexed with language 'java'
+[DEBUG] 16:53:29.475 'src/test/java/jl/project/ScreenReadersTests/SpeechToTextConverterIBM.java' indexed with language 'java'
+[DEBUG] 16:53:29.476 'src/test/java/jl/project/ScreenReadersTests/SoundRecordingDiscovery.java' indexed with language 'java'
+[DEBUG] 16:53:29.477 'src/test/java/jl/project/ScreenReadersTests/audioFiles/audio-file.flac' indexed with no language
+[DEBUG] 16:53:29.477 'src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Ubuntu.sh' indexed with no language
+[DEBUG] 16:53:29.478 'src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Windows.bat' indexed with no language
+[DEBUG] 16:53:29.479 'src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_macOS.zsh' indexed with no language
+[DEBUG] 16:53:29.480 'src/test/java/jl/project/EdgeTests/UserRequirement4_2_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.481 'src/test/java/jl/project/EdgeTests/UserRequirement2_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.482 'src/test/java/jl/project/EdgeTests/UserRequirement3_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.482 'src/test/java/jl/project/EdgeTests/UserRequirement4_1_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.483 'src/test/java/jl/project/EdgeTests/UserRequirement1_Test.java' indexed with language 'java'
+[DEBUG] 16:53:29.484 'src/test/java/jl/project/ConfigurationUtility.java' indexed with language 'java'
+[DEBUG] 16:53:29.485 'src/test/java/jl/project/StringExternalization.java' indexed with language 'java'
+[DEBUG] 16:53:29.485 'src/test/java/TestNG_Chrome.xml' indexed with language 'xml'
+[DEBUG] 16:53:29.486 'src/test/java/TestNG_Edge.xml' indexed with language 'xml'
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.681 s
+[INFO] Finished at: 2021-04-08T16:53:29+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar (default-cli) on project jl.project: File src/test/java/log4testng.properties can't be indexed twice. Please check that inclusion/exclusion patterns produce disjoint sets for main and test files -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar (default-cli) on project jl.project: File src/test/java/log4testng.properties can't be indexed twice. Please check that inclusion/exclusion patterns produce disjoint sets for main and test files
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.apache.maven.plugin.MojoExecutionException: File src/test/java/log4testng.properties can't be indexed twice. Please check that inclusion/exclusion patterns produce disjoint sets for main and test files
+    at org.sonarsource.scanner.maven.bootstrap.ScannerBootstrapper.execute (ScannerBootstrapper.java:67)
+    at org.sonarsource.scanner.maven.SonarQubeMojo.execute (SonarQubeMojo.java:108)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.sonar.api.utils.MessageException: File src/test/java/log4testng.properties can't be indexed twice. Please check that inclusion/exclusion patterns produce disjoint sets for main and test files
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
