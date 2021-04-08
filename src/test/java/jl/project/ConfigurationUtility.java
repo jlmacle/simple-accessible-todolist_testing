@@ -68,12 +68,12 @@ public class ConfigurationUtility {
 								+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver.exe\"; "+ System.lineSeparator()
 								+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver.exe\"; ";
 					}
-					else if (osName.contains("MacOS"))
+					else if (osName.contains("Mac OS"))
 					{
 						webdrivers =tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 								+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 								+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
-								+ tab +  "public static final String WEBDRIVER_SAFARI_VALUE = \"\" \r\n; // /usr/bin/safaridriver to be used instead";
+								+ tab +  "public static final String WEBDRIVER_SAFARI_VALUE = \"\" ; // /usr/bin/safaridriver to be used instead";
 					}
 					else if (osName.contains("Linux"))
 					{
