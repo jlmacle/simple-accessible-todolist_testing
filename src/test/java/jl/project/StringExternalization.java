@@ -4,17 +4,25 @@ public class StringExternalization {
 	
 	//Used by the ConfigurationUtility class to add the proper webdrivers to this class	
 	//<webdrivers>
-	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; 
-	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
-	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
-	public static final String WEBDRIVER_SAFARI_VALUE = "" ; // /usr/bin/safaridriver to be used instead
+	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
+	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe"; 
+	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
 	//</webdrivers>
- 
+	
+	
+	//Used by the ConfigurationUtility class to make sure that the default configuration doesn't use Selenium Grid 4.
+	//<seleniumGrid4>
 	public static final boolean GRID_NOT_USED = true;
-	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";	
-	//Grid 4: beginning	
-	//public static final String ANGULAR_SERVER_URL = "http://192.168.1.15:4200";
+	//</seleniumGrid4>
+	
+	//<angularServer>
+	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";
+	//</angularServer>
+	
+	/* Selenium Grid 4 configuration : begin */
 	public static final String SELENIUM_HUB = "http://192.168.1.15:4444";
+	/* Selenium Grid 4 configuration : end */
+	
 	public static final String BROWSER_NAME_CHROME = "chrome";	
 	public static final String BROWSER_NAME_EDGE = "MicrosoftEdge";	
 	public static final String BROWSER_NAME_FIREFOX = "firefox";
