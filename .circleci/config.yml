@@ -11,7 +11,7 @@ commands:
           echo "Starting the configuration check." 
           && cd src/test/java/jl/project/
           && grep "public static final boolean GRID_NOT_USED = true;" ./StringExternalization.java 
-          && grep "public static final String ANGULAR_SERVER_URL = "http://localhost:4200" ./StringExternalization.java 
+          && grep "public static final String ANGULAR_SERVER_URL = \"http://localhost:4200\";" ./StringExternalization.java 
           
 executors:
   end-to-end-tests-executor:
