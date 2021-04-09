@@ -13,11 +13,29 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/***
+ * 
+ * @author 
+ * Class that sets Selenium webdriver, Angular, and grid default configurations. 
+ *
+ */
 public class ConfigurationUtility {
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
+	static String tmp_folder_by_arg = null;
 	
+	/***
+	 * The arguments are used for scripting. 
+	 * The first expected argument is the path to the tmp folder	 * 
+	 */
 	public static void main(String[] args) 
 	{
+		if (args.length!=0)
+		{
+			logger.debug(String.format("Value for arg[0]: %s", args[0]));
+			tmp_folder_by_arg = args[0];
+		}
+		
+		
 		String tab = "\t";
 		//configure_StringExternalization();
 		String webdrivers_value_Windows = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver.exe\";"+ System.lineSeparator()
@@ -58,7 +76,9 @@ public class ConfigurationUtility {
 	public static void replace_tag_by_data(String tagValue, String file_folder, String file_name, String value_Windows, String value_MacOS, String value_Linux)
 	{
 		//temporary folder
-		String path_to_tmp_folder = "tmp";
+		String path_to_tmp_folder = null;
+		if (tmp_folder_by_arg !=null) path_to_tmp_folder = tmp_folder_by_arg;
+		else path_to_tmp_folder = "tmp";
 		Path file_swp_path = FileSystems.getDefault().getPath(path_to_tmp_folder, file_name+".txt");
 		
 		Path file_path = FileSystems.getDefault().getPath( System.getProperty("user.dir")+file_folder, file_name);
