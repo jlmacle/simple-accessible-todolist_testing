@@ -17,11 +17,16 @@ import org.slf4j.LoggerFactory;
  * 
  * @author 
  * Class that sets Selenium webdriver, Angular, and grid default configurations. 
+ * The args that can be expected by the method main are:
+ * - the path to the tmp folder
+ * - the path the the StringExternalization.java file
  *
  */
 public class ConfigurationUtility {
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
 	static String tmp_folder_by_arg = null;
+	static String stringExternalization_folder_by_arg = null;
+	static String stringExternalization_folder = "/src/test/java/jl/project/";
 	
 	/***
 	 * The arguments are used for scripting. 
@@ -53,11 +58,11 @@ public class ConfigurationUtility {
 		
 		String angular_server = tab +  "public static final String ANGULAR_SERVER_URL = \"http://localhost:4200\";";
 		
-		replace_tag_by_data("webdrivers","/src/test/java/jl/project/", "StringExternalization.java",webdrivers_value_Windows,webdrivers_value_MacOS,webdrivers_value_Linux);
+		replace_tag_by_data("webdrivers",stringExternalization_folder, "StringExternalization.java",webdrivers_value_Windows,webdrivers_value_MacOS,webdrivers_value_Linux);
 		
-		replace_tag_by_data("seleniumGrid4","/src/test/java/jl/project/", "StringExternalization.java",selenium_Grid_not_used,selenium_Grid_not_used,selenium_Grid_not_used);
+		replace_tag_by_data("seleniumGrid4",stringExternalization_folder, "StringExternalization.java",selenium_Grid_not_used,selenium_Grid_not_used,selenium_Grid_not_used);
 		
-		replace_tag_by_data("angularServer","/src/test/java/jl/project/", "StringExternalization.java",angular_server,angular_server,angular_server);
+		replace_tag_by_data("angularServer",stringExternalization_folder, "StringExternalization.java",angular_server,angular_server,angular_server);
 		
 	}
 	

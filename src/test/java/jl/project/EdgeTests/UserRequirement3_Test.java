@@ -132,7 +132,7 @@ public class UserRequirement3_Test {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
-		if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
+		if(result != null && result.contains(StringExternalization.LABEL_TEST_ITEM)) 
 		{
 			 
 			logger.debug(StringExternalization.TESSERACT_FOUND_TEST_ITEM);
