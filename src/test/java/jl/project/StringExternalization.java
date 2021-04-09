@@ -20,7 +20,7 @@ public class StringExternalization {
 	//</angularServer>
 	
 	/* Selenium Grid 4 configuration : begin */
-	public static final String SELENIUM_HUB = "http://192.168.1.15:4444";
+	public static final String SELENIUM_HUB = "http://<static IP>:4444";
 	/* Selenium Grid 4 configuration : end */
 	
 	public static final String BROWSER_NAME_CHROME = "chrome";	
