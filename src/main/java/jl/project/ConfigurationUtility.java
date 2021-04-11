@@ -34,15 +34,14 @@ public class ConfigurationUtility {
 	{
 		if (args.length!=0)
 		{
-			logger.debug(String.format("Value for arg[0]: %s", args[0]));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Value for arg[0]: %s", args[0]));
 			pathToTmpFolderByArg = args[0];
-			logger.debug(String.format("Value for arg[1]: %s", args[1]));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Value for arg[1]: %s", args[1]));
 			stringExternalizationFolderByArg = args[1];
 		}
 		
 		
 		String tab = "\t";
-		//configure_StringExternalization();
 		String webdriversValueWindows = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver.exe\";"+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver.exe\"; "+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver.exe\"; ";
@@ -99,7 +98,7 @@ public class ConfigurationUtility {
 		boolean isATag = false;
 		boolean betweenTags = false;
 		String osName = System.getProperty("os.name");
-		logger.debug(String.format("Operating system: %s", osName));
+		if (logger.isDebugEnabled())  logger.debug(String.format("Operating system: %s", osName));
 		
 		
 		try 
@@ -107,7 +106,7 @@ public class ConfigurationUtility {
 			Files.deleteIfExists(fileSwpPath);
 			Files.createFile(fileSwpPath);
 			lines = Files.readAllLines(filePath);
-			logger.debug(String.format("The file has %d lines.",lines.size()));
+			if (logger.isDebugEnabled())  logger.debug(String.format("The file has %d lines.",lines.size()));
 			
 			for(String line:lines)
 			{	
@@ -139,7 +138,7 @@ public class ConfigurationUtility {
 						confData= valueLinux;
 					}
 					else {
-						logger.error("Unrecognized operating system: %s",osName);
+						logger.error(String.format("Unrecognized operating system: %s",osName));
 					}
 					//Adding the configuration information
 					line = confData + System.lineSeparator()+ line; 

@@ -65,7 +65,7 @@ public class SpeechToTextConverterIBM
 		// supportsNormalTermination() since Java 1.9
 		// https://docs.oracle.com/javase/9/docs/api/java/lang/Process.html#supportsNormalTermination--
 		if (process.supportsNormalTermination()) process.destroy(); else process.destroyForcibly();
-		logger.debug(String.format("Process is alive : %b", process.isAlive()));				
+		if (logger.isDebugEnabled()) logger.debug(String.format("Process is alive : %b", process.isAlive()));				
 		
 		return informationReturned;
 	}
