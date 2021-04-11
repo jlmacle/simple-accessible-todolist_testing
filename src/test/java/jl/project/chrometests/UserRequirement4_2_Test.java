@@ -28,7 +28,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
+
 import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
@@ -188,9 +188,9 @@ public class UserRequirement4_2_Test {
 			assertThat(isCategoryFound).isFalse();
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "while going through the elements related to a trash can icon before a category.");
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();    			
 		}  
 			
@@ -251,9 +251,9 @@ public class UserRequirement4_2_Test {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}		
 		assertThat(isItemCreated).isTrue();
@@ -312,7 +312,7 @@ public class UserRequirement4_2_Test {
 		}
 		catch(StaleElementReferenceException e) 
 		{
-			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' ");
 			e.getMessage();
 			e.printStackTrace();
@@ -365,7 +365,7 @@ public class UserRequirement4_2_Test {
 		boolean isItemCreated=false;
 		try {
 			logger.debug(StringExternalization.DEBUG_FOUND+anItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
-			if(anItemElements.size()==0) {fail("Failure of element creation test during the hiding/diplay test.	");}
+			if(anItemElements.size()==0) {fail("Failure of element creation test during the hiding/diplay test.");}
 			for(WebElement anItemElement: anItemElements) {
 				String text = anItemElement.getText();				
 				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {
@@ -377,9 +377,9 @@ public class UserRequirement4_2_Test {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}		
 
@@ -390,7 +390,7 @@ public class UserRequirement4_2_Test {
 		try {
 			FileUtils.copyFile(screenshotFile, screenshotFile_copy);
 		} catch (IOException e) {
-			System.err.println(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
+			logger.error(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
 			e.printStackTrace();
 		}
 		// code to extract the text from the picture
@@ -403,8 +403,8 @@ public class UserRequirement4_2_Test {
 		try {
 			result = ocr.doOCR(screenshotFile_copy);
 		} catch (TesseractException e) {
-			System.err.println(StringExternalization.EXCEPTION_TESSERACT);
-			System.err.println(e.getMessage());
+			logger.error(StringExternalization.EXCEPTION_TESSERACT);
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		if(result != null && result.contains(StringExternalization.LABEL_TEST_ITEM)) 
@@ -463,15 +463,15 @@ public class UserRequirement4_2_Test {
 			}
 			
 		} catch (IOException e) {
-			System.err.println("An IOExeption occured while copying the screenshot taken after the click"				
+			logger.error("An IOExeption occured while copying the screenshot taken after the click"				
 					+ "(Hiding of the item).");
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		 catch (TesseractException e) {
-			System.err.println(StringExternalization.EXCEPTION_TESSERACT
+			logger.error(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Hiding of the item)");			
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}		
 		
@@ -501,14 +501,14 @@ public class UserRequirement4_2_Test {
 			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
 		} catch (IOException e) {
-			System.err.println(StringExternalization.EXCEPTION_IO+"while copying the screenshot taken after the click"
+			logger.error(StringExternalization.EXCEPTION_IO+"while copying the screenshot taken after the click"
 					+ "(Display of the item)");
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		} catch (TesseractException e) {
-			System.err.println(StringExternalization.EXCEPTION_TESSERACT
+			logger.error(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Display of the item)");
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 		//Cleaning up for a potential next test. Using a click for the task
@@ -526,7 +526,7 @@ public class UserRequirement4_2_Test {
 		robot.delay(2000);
 		
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
-		if(!(anIconToDeleteAnItemElements.size() == 0)) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
+		if(!anIconToDeleteAnItemElements.isEmpty()) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
 		else {logger.debug("Page cleaned from test item.");}
 		
 		//Useful to verify that all test objects have been effectively deleted.

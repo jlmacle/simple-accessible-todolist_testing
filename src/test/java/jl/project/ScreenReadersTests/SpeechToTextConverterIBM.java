@@ -14,14 +14,14 @@ public class SpeechToTextConverterIBM
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverterIBM.class);
 	Robot robot;
 	ProcessBuilder processBuilder = new ProcessBuilder();	
-	String apikey_param="\"apikey:"+System.getenv("IBM_SpeechToText")+"\"";	
+	String apikeyParam="\"apikey:"+System.getenv("IBM_SpeechToText")+"\"";	
 	
 	
 	
 	public String convertAudioToText(String pathToAudioFile) throws Exception
 	{
 		//Needed to fix an new line issue in the environment variable value in Windows.
-		apikey_param = apikey_param.replace("\n", "");
+		apikeyParam = apikeyParam.replace("\n", "");
 		
 		String informationReturned  = null;			
 				

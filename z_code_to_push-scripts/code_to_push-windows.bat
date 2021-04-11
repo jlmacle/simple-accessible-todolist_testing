@@ -9,8 +9,9 @@ StartSonar.bat 1> sonarqube_log.txt 2>&1
 	:: Running the analysis
 cd ..
 timeout /T 200
-mvn sonar:sonar -Dsonar.projectKey=End-to-endTesting:jl.project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=%SONARQUBE_E2E% 1> sonarqube_analysis_log.txt 2>&1
+mvn sonar:sonar -Dsonar.projectKey=End-to-endTesting:jl.project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=%SONARQUBE_E2E% 1> sonarqube_analysis_log.txt 2>&1 &
 	:: Starting a browser to check the result of the analysis
+echo "Starting a browser to check the result of the analysis."
 	start msedge http://localhost:9000 
 	
 

@@ -110,7 +110,7 @@ public class UserRequirement2_Test {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();
 			e.printStackTrace();
@@ -128,7 +128,7 @@ public class UserRequirement2_Test {
 	
 	
 	@Test
-	public void deleteItem() throws Exception {
+	public void deleteItem() {
 		
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
 		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
@@ -153,7 +153,7 @@ public class UserRequirement2_Test {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anIconToDeleteAnItem' ");
 			e.getMessage();
 			e.printStackTrace();
@@ -180,7 +180,7 @@ public class UserRequirement2_Test {
 			
 		}
 		catch(StaleElementReferenceException e) {
-			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' ");
 			e.getMessage();
 			e.printStackTrace();

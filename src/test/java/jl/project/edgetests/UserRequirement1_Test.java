@@ -109,7 +109,7 @@ public class UserRequirement1_Test {
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	    	
     	try {
     		logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" aCategory elements");
-    		if(aCategoryElements.isEmpty()){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
+    		if( aCategoryElements.isEmpty() ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
     		for (WebElement aCategoryElement : aCategoryElements) {
 	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
 				logger.debug("Found text: *"+text+"*");				
@@ -118,7 +118,7 @@ public class UserRequirement1_Test {
 			}
     	}
     	catch(StaleElementReferenceException e) {
-    		System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+    		logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     				+ "while going through the elements with the name aCategory.");
     		e.printStackTrace();
     	}	    	
@@ -148,7 +148,7 @@ public class UserRequirement1_Test {
 		robot.delay(2000);
 		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	
 		logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements named aCategory");
-		if(aCategoryElements.isEmpty() ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
+		if( aCategoryElements.isEmpty() ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
     	try {    		
     		for (WebElement aCategoryElement : aCategoryElements) {
     			currentCategoryPosition++;
@@ -163,13 +163,13 @@ public class UserRequirement1_Test {
 			}
     	}
     	catch(StaleElementReferenceException e) {
-    		System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+    		logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     				+ "while going through the anItem elements.");
     		e.getMessage();
     		e.printStackTrace();
     	}	 
 		    	
-    	if(isCategoryFound == true) {
+    	if(isCategoryFound ) {
     		logger.debug("The new category has been successfuly created.");
     		//2. Deletion of the category created
     			// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
@@ -193,7 +193,7 @@ public class UserRequirement1_Test {
     			
     		}
     		catch(StaleElementReferenceException e) {
-    			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+    			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     					+ "while going through the elements related to a trash can icon in front of a category.");
     			e.getMessage();
     			e.printStackTrace();    			
@@ -226,7 +226,7 @@ public class UserRequirement1_Test {
     			assertThat(isCategoryFound).isFalse();
     		}
     		catch(StaleElementReferenceException e) {
-    			System.err.println(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+    			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     					+ "while going through the elements related to a trash can icon before a category.");
     			e.getMessage();
     			e.printStackTrace();    			
@@ -235,7 +235,7 @@ public class UserRequirement1_Test {
     	}
     	
     	else {
-    		System.err.println("The test category was not found.");
+    		logger.error("The test category was not found.");
     		fail("Test of category creation failed.");
     	}		
 		
