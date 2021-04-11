@@ -1,6 +1,0 @@
-projectKey=End-to-endTesting:jl.project
-serverUrl=http://localhost:9000
-serverVersion=8.8.0.42792
-dashboardUrl=http://localhost:9000/dashboard?id=End-to-endTesting%3Ajl.project
-ceTaskId=AXjAaHjZkY1IAX-7cJtE
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXjAaHjZkY1IAX-7cJtE
