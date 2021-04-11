@@ -1,4 +1,4 @@
-package jl.project.Pa11yTest;
+package jl.project.pa11ytest;
 
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertTrue;
@@ -51,7 +51,7 @@ public class UserRequirement5_Pa11yTest {
 	Process process_backend = null;
 	Process process_angular = null;
 	Process process_Pa11y = null;
-	String root_folder = "src/test/java/jl/project/Pa11yTest";
+	String root_folder = "src/test/java/jl/project/pa11ytest";
 	String script_folder = root_folder+"/scripts/";
 	String log_folder = root_folder+"/logs/";
 	String backend_script = "";

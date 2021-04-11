@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ConfigurationUtility {
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
-	static String tmp_folder_by_arg = null;
+	static String path_to_tmp_folder_by_arg = null;
 	static String stringExternalization_folder_by_arg = null;
 	static String stringExternalization_folder = "/src/test/java/jl/project/";
 	
@@ -37,7 +37,9 @@ public class ConfigurationUtility {
 		if (args.length!=0)
 		{
 			logger.debug(String.format("Value for arg[0]: %s", args[0]));
-			tmp_folder_by_arg = args[0];
+			path_to_tmp_folder_by_arg = args[0];
+			logger.debug(String.format("Value for arg[1]: %s", args[1]));
+			stringExternalization_folder_by_arg = args[1];
 		}
 		
 		
@@ -82,11 +84,15 @@ public class ConfigurationUtility {
 	{
 		//temporary folder
 		String path_to_tmp_folder = null;
-		if (tmp_folder_by_arg !=null) path_to_tmp_folder = tmp_folder_by_arg;
+		if (path_to_tmp_folder_by_arg !=null) path_to_tmp_folder = path_to_tmp_folder_by_arg;		
 		else path_to_tmp_folder = "tmp";
+		
+		if (stringExternalization_folder_by_arg !=null) stringExternalization_folder = stringExternalization_folder_by_arg;
+		else stringExternalization_folder=file_folder;
+		
 		Path file_swp_path = FileSystems.getDefault().getPath(path_to_tmp_folder, file_name+".txt");
 		
-		Path file_path = FileSystems.getDefault().getPath( System.getProperty("user.dir")+file_folder, file_name);
+		Path file_path = FileSystems.getDefault().getPath( System.getProperty("user.dir")+stringExternalization_folder, file_name);
 		
 		
 		List<String> lines = null; 		

@@ -53,6 +53,16 @@ public class StringExternalization {
 	public static final String EXCEPTION_AWT = "Caught an AWTException while using the instance of the Robot class";
 	public static final String EXCEPTION_MALFORMEDURL = "Caught a MalformedURLException while instantiating the RemoteWebDriver instance";
 	
+	
+	public static final String TESSERACT_SCREENSHOT_PATH_NEW_ITEM = "./screenshots/newItemScreenshot.png";
+	public static final String TESSERACT_TESSDATA = "./tessdata";
+	public static final String TESSERACT_LANGUAGE = "eng";
+	public static final String TESSERACT_DPI_KEY = "user_defined_dpi";
+	public static final String TESSERACT_DPI_VALUE = "300";
+	public static final String TESSERACT_FOUND_TEST_ITEM = "Success. The test label has been found on the screen.";
+	public static final String TESSERACT_NOT_FOUND_TEST_ITEM = "The item label seems to be absent from the screenshot: ";	
+	
+	
 	public static final String TEST_START = "Entering test for: ";
 	public static final String TEST_CATEGORY_CREATION = "category creation";
 	public static final String TEST_CATEGORY_DELETION = "category deletion";
@@ -67,21 +77,14 @@ public class StringExternalization {
 	public static final String TEST_KEYBOARD = " with the keyboard";
 	public static final String TEST_KEYBOARD_ENTER_KEY = " with ENTER key";
 	public static final String TEST_KEYBOARD_SPACE_KEY = " with SPACE key";
-	
-	public static final String TESSERACT_SCREENSHOT_PATH_NEW_ITEM = "./screenshots/newItemScreenshot.png";
-	public static final String TESSERACT_TESSDATA = "./tessdata";
-	public static final String TESSERACT_LANGUAGE = "eng";
-	public static final String TESSERACT_DPI_KEY = "user_defined_dpi";
-	public static final String TESSERACT_DPI_VALUE = "300";
-	public static final String TESSERACT_FOUND_TEST_ITEM = "Success. The test label has been found on the screen.";
-	public static final String TESSERACT_NOT_FOUND_TEST_ITEM = "The item label seems to be absent from the screenshot: ";
-	
-		
+			
 	public static final String WEBDRIVERS_FOLDER = "../webdrivers/";	
 	public static final String WEBDRIVER_CHROME_KEY = "webdriver.chrome.driver";	
 	public static final String WEBDRIVER_FIREFOX_KEY = "webdriver.gecko.driver";	
 	public static final String WEBDRIVER_EDGE_KEY = "webdriver.edge.driver";
 
+	public static final String 	DEBUG_FOUND = "Found ";
+	public static final String DEBUG_ELEMENT_NAMED_AN_ITEM = " element named 'anItem'";
 	
 	
 	

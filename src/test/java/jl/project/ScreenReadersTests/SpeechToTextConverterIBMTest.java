@@ -1,4 +1,4 @@
-package jl.project.ScreenReadersTests;
+package jl.project.screenreaderstests;
 
 import static org.testng.Assert.assertTrue;
 
@@ -10,8 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import jl.project.ScreenReadersTests.SpeechToTextConverterIBM;
 import jl.project.StringExternalization;
+import jl.project.screenreaderstests.SpeechToTextConverterIBM;
 
 
 

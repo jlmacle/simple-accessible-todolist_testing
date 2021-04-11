@@ -1,6 +1,6 @@
 //https://docs.oracle.com/javase/7/docs/technotes/guides/sound/
 
-package jl.project.ScreenReadersTests;
+package jl.project.screenreaderstests;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.AudioFileFormat.Type;

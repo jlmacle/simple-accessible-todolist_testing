@@ -2,7 +2,9 @@
 // https://cloud.ibm.com/services/speech-to-text/crn%3Av1%3Abluemix%3Apublic%3Aspeech-to-text%3Aeu-gb%3Aa%2F2e4a017664644b6c865cf4e532dd9056%3A08dcb5ed-d57f-410f-98ef-11ae645b5a04%3A%3A?paneId=manage&new=true
 // https://cloud.ibm.com/docs/speech-to-text?topic=speech-to-text-gettingStarted#getting-started-tutorial
 
-package jl.project.ScreenReadersTests;
+package jl.project.screenreaderstests;
+
+import java.awt.Robot;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,8 +12,10 @@ import org.slf4j.LoggerFactory;
 public class SpeechToTextConverterIBM 
 {
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverterIBM.class);
+	Robot robot;
 	ProcessBuilder processBuilder = new ProcessBuilder();	
 	String apikey_param="\"apikey:"+System.getenv("IBM_SpeechToText")+"\"";	
+	
 	
 	
 	public String convertAudioToText(String pathToAudioFile) throws Exception
@@ -24,6 +28,8 @@ public class SpeechToTextConverterIBM
 		String os_name = System.getProperty("os.name");
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		Process process = null;
+		
+		robot = new Robot();
 		
 		logger.debug(String.format("OS: %s",os_name));		
 		if(os_name.contains("Windows"))
@@ -45,7 +51,7 @@ public class SpeechToTextConverterIBM
 		logger.debug("Process started");
 		
 		logger.debug("Waiting for results.");
-		Thread.sleep(15000);
+		robot.delay(15000);
 		
 		//logger.debug(String.format("Error stream %s",new String(process.getErrorStream().readAllBytes())));		
 		//Stream that gives the output 		
