@@ -25,27 +25,26 @@ public class SpeechToTextConverterIBM
 		
 		String informationReturned  = null;			
 				
-		String os_name = System.getProperty("os.name");
-		ProcessBuilder processBuilder = new ProcessBuilder();
+		String osName = System.getProperty("os.name");
 		Process process = null;
 		
 		robot = new Robot();
 		
-		logger.debug(String.format("OS: %s",os_name));		
-		if(os_name.contains("Windows"))
+		if (logger.isDebugEnabled())logger.debug(String.format("OS: %s",osName));		
+		if(osName.contains("Windows"))
 		{
 			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Windows.bat");
 		}
-		else if (os_name.contains("Mac"))
+		else if (osName.contains("Mac"))
 		{
 			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_macOS.zsh");
 		}
-		else if (os_name.contains("Linux"))
+		else if (osName.contains("Linux"))
 		{
 			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Ubuntu.sh");
 
 		}
-		else {throw new Exception(String.format("Unrecognized OS : %s",os_name));}
+		else {throw new Exception(String.format("Unrecognized OS : %s",osName));}
 		
 		process = processBuilder.start();
 		logger.debug("Process started");

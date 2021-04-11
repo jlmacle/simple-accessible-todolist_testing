@@ -15,9 +15,9 @@ import org.slf4j.LoggerFactory;
  * With thanks to DannyM
  * https://stackoverflow.com/questions/3705581/java-sound-api-capturing-microphone
  */
-public class SoundRecordingDiscovery 
+public class AudioSystemInformation 
 {
-	static Logger logger = LoggerFactory.getLogger(SoundRecordingDiscovery.class);
+	static Logger logger = LoggerFactory.getLogger(AudioSystemInformation.class);
 	public static void main(String[] args) {
 		
 		// https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioSystem.html
@@ -26,14 +26,14 @@ public class SoundRecordingDiscovery
 		// AudioSystem.getMixerInfo()
 		// Obtains an array of mixer info objects that represents the set of audiomixers that are currently installed on the system.
 		logger.debug("*******   Set of audiomixers that are currently installed on the system.");
-		Info[] mixers_infos = AudioSystem.getMixerInfo();
-		for(Info mixer_info:mixers_infos)
+		Info[] mixersInfos = AudioSystem.getMixerInfo();
+		for(Info mixer_info:mixersInfos)
 		{
 			logger.debug("Mixer information");
-			logger.debug(String.format("Name: %s",mixer_info.getName()));
-			logger.debug(String.format("Description: %s",mixer_info.getDescription()));
-			logger.debug(String.format("Vendor: %s",mixer_info.getVendor()));
-			logger.debug(String.format("Version: %s",mixer_info.getVersion()));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Name: %s",mixer_info.getName()));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Description: %s",mixer_info.getDescription()));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Vendor: %s",mixer_info.getVendor()));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Version: %s",mixer_info.getVersion()));
 			logger.debug("-----------------------------------------------------");
 			
 		}
@@ -41,10 +41,10 @@ public class SoundRecordingDiscovery
 		// AudioSystem.getAudioFileTypes()
 		// Obtains the file types for which file writing support is provided by the system.
 		logger.debug("*******   File types for which file writing support is provided by the system");
-		Type[] file_types_with_file_writing_support = AudioSystem.getAudioFileTypes();
-		for(Type file_type_with_file_writing_support: file_types_with_file_writing_support)
+		Type[] fileTypesWithFileWritingSupport = AudioSystem.getAudioFileTypes();
+		for(Type file_type_with_file_writing_support: fileTypesWithFileWritingSupport)
 		{
-			logger.debug(String.format("Common file name extension for this type: %s",file_type_with_file_writing_support.getExtension()));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Common file name extension for this type: %s",file_type_with_file_writing_support.getExtension()));
 			
 		}
 		

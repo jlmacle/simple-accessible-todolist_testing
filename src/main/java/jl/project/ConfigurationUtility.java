@@ -24,8 +24,8 @@ public class ConfigurationUtility {
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
 	static String pathToTmpFolderByArg = null;
 	static String stringExternalizationFolderByArg = null;
-	static String stringExternalizationFolder = "/src/test/java/jl/project/";
-	static String stringExternalizationFileName = "StringExternalization.java";
+	static  String stringExternalizationFolder = "/src/test/java/jl/project/";
+	static final String STRING_EXTERNALIZATION_FILENAME = "StringExternalization.java";
 	
 	/***
 	 * The arguments are used for scripting. 
@@ -58,11 +58,11 @@ public class ConfigurationUtility {
 		
 		String angularServer = tab +  "public static final String ANGULAR_SERVER_URL = \"http://localhost:4200\";";
 		
-		replaceTagByData("webdrivers",stringExternalizationFolder, "StringExternalization.java",webdriversValueWindows,webdriversValueMacOS,webdriversValueLinux);
+		replaceTagByData("webdrivers",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,webdriversValueWindows,webdriversValueMacOS,webdriversValueLinux);
 		
-		replaceTagByData("seleniumGrid4",stringExternalizationFolder, "StringExternalization.java",seleniumGridNotUsed,seleniumGridNotUsed,seleniumGridNotUsed);
+		replaceTagByData("seleniumGrid4",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,seleniumGridNotUsed,seleniumGridNotUsed,seleniumGridNotUsed);
 		
-		replaceTagByData("angularServer",stringExternalizationFolder, "StringExternalization.java",angularServer,angularServer,angularServer);
+		replaceTagByData("angularServer",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,angularServer,angularServer,angularServer);
 		
 	}
 	
@@ -139,7 +139,7 @@ public class ConfigurationUtility {
 						confData= valueLinux;
 					}
 					else {
-						logger.error(String.format("Unrecognized operating system: %s",osName));
+						if (logger.isDebugEnabled()) logger.error(String.format("Unrecognized operating system: %s",osName));
 					}
 					//Adding the configuration information
 					line = confData + System.lineSeparator()+ line; 
