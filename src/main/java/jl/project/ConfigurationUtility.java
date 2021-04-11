@@ -25,6 +25,7 @@ public class ConfigurationUtility {
 	static String pathToTmpFolderByArg = null;
 	static String stringExternalizationFolderByArg = null;
 	static String stringExternalizationFolder = "/src/test/java/jl/project/";
+	static String stringExternalizationFileName = "StringExternalization.java";
 	
 	/***
 	 * The arguments are used for scripting. 
