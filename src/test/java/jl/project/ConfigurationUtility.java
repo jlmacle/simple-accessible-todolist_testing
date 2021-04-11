@@ -1,7 +1,5 @@
 package jl.project;
 
-import jl.project.StringExternalization;
-
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -24,9 +22,10 @@ import org.slf4j.LoggerFactory;
  */
 public class ConfigurationUtility {
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
-	static String tmp_folder_by_arg = null;
-	static String stringExternalization_folder_by_arg = null;
-	static String stringExternalization_folder = "/src/test/java/jl/project/";
+	static String pathToTmpFolderByArg = null;
+	static String stringExternalizationFolderByArg = null;
+	static  String stringExternalizationFolder = "/src/test/java/jl/project/";
+	static final String STRING_EXTERNALIZATION_FILENAME = "StringExternalization.java";
 	
 	/***
 	 * The arguments are used for scripting. 
@@ -36,33 +35,34 @@ public class ConfigurationUtility {
 	{
 		if (args.length!=0)
 		{
-			logger.debug(String.format("Value for arg[0]: %s", args[0]));
-			tmp_folder_by_arg = args[0];
+			if (logger.isDebugEnabled()) logger.debug(String.format("Value for arg[0]: %s", args[0]));
+			pathToTmpFolderByArg = args[0];
+			if (logger.isDebugEnabled()) logger.debug(String.format("Value for arg[1]: %s", args[1]));
+			stringExternalizationFolderByArg = args[1];
 		}
 		
 		
 		String tab = "\t";
-		//configure_StringExternalization();
-		String webdrivers_value_Windows = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver.exe\";"+ System.lineSeparator()
+		String webdriversValueWindows = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver.exe\";"+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver.exe\"; "+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver.exe\"; ";
-		String webdrivers_value_MacOS = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
+		String webdriversValueMacOS = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_SAFARI_VALUE = \"\" ; // /usr/bin/safaridriver to be used instead";		
-		String webdrivers_value_Linux = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
+		String webdriversValueLinux = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; ";
 		
-		String selenium_Grid_not_used = tab +  "public static final boolean GRID_NOT_USED = true;";
+		String seleniumGridNotUsed = tab +  "public static final boolean GRID_NOT_USED = true;";
 		
-		String angular_server = tab +  "public static final String ANGULAR_SERVER_URL = \"http://localhost:4200\";";
+		String angularServer = tab +  "public static final String ANGULAR_SERVER_URL = \"http://localhost:4200\";";
 		
-		replace_tag_by_data("webdrivers",stringExternalization_folder, "StringExternalization.java",webdrivers_value_Windows,webdrivers_value_MacOS,webdrivers_value_Linux);
+		replaceTagByData("webdrivers",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,webdriversValueWindows,webdriversValueMacOS,webdriversValueLinux);
 		
-		replace_tag_by_data("seleniumGrid4",stringExternalization_folder, "StringExternalization.java",selenium_Grid_not_used,selenium_Grid_not_used,selenium_Grid_not_used);
+		replaceTagByData("seleniumGrid4",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,seleniumGridNotUsed,seleniumGridNotUsed,seleniumGridNotUsed);
 		
-		replace_tag_by_data("angularServer",stringExternalization_folder, "StringExternalization.java",angular_server,angular_server,angular_server);
+		replaceTagByData("angularServer",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,angularServer,angularServer,angularServer);
 		
 	}
 	
@@ -78,67 +78,71 @@ public class ConfigurationUtility {
 	 * @param value_MacOS: 		the configuration value to insert if the operating system is macOS.
 	 * @param value_Linux: 		the configuration value to insert if the operating system is Linux.
 	 */
-	public static void replace_tag_by_data(String tagValue, String file_folder, String file_name, String value_Windows, String value_MacOS, String value_Linux)
+	public static void replaceTagByData(String tagValue, String fileFolder, String fileName, String valueWindows, String valueMacOS, String valueLinux)
 	{
 		//temporary folder
-		String path_to_tmp_folder = null;
-		if (tmp_folder_by_arg !=null) path_to_tmp_folder = tmp_folder_by_arg;
-		else path_to_tmp_folder = "tmp";
-		Path file_swp_path = FileSystems.getDefault().getPath(path_to_tmp_folder, file_name+".txt");
+		String pathToTmpFolder = null;
+		if (pathToTmpFolderByArg !=null) pathToTmpFolder = pathToTmpFolderByArg;		
+		else pathToTmpFolder = "tmp";
 		
-		Path file_path = FileSystems.getDefault().getPath( System.getProperty("user.dir")+file_folder, file_name);
+		if (stringExternalizationFolderByArg !=null) stringExternalizationFolder = stringExternalizationFolderByArg;
+		else stringExternalizationFolder=fileFolder;
+		
+		Path fileSwpPath = FileSystems.getDefault().getPath(pathToTmpFolder, fileName+".txt");
+		
+		Path filePath = FileSystems.getDefault().getPath( System.getProperty("user.dir")+stringExternalizationFolder, fileName);
 		
 		
 		List<String> lines = null; 		
-		String opening_tag = "//<"+tagValue+">";
-		String closing_tag = "//</"+tagValue+">";
+		String openingTag = "//<"+tagValue+">";
+		String closingTag = "//</"+tagValue+">";
 		boolean isATag = false;
 		boolean betweenTags = false;
 		String osName = System.getProperty("os.name");
-		logger.debug(String.format("Operating system: %s", osName));
+		if (logger.isDebugEnabled())  logger.debug(String.format("Operating system: %s", osName));
 		
 		
 		try 
 		{
-			Files.deleteIfExists(file_swp_path);
-			Files.createFile(file_swp_path);
-			lines = Files.readAllLines(file_path);
-			logger.debug(String.format("The file has %d lines.",lines.size()));
+			Files.deleteIfExists(fileSwpPath);
+			Files.createFile(fileSwpPath);
+			lines = Files.readAllLines(filePath);
+			if (logger.isDebugEnabled())  logger.debug(String.format("The file has %d lines.",lines.size()));
 			
 			for(String line:lines)
 			{	
 				
-				if(line.contains(opening_tag))
+				if(line.contains(openingTag))
 				{
 					betweenTags = true;
 					isATag = true;
 					
 					
 				}
-				else if(line.contains(closing_tag))
+				else if(line.contains(closingTag))
 				{
 					isATag = true;
 					betweenTags = false;
 					
-					String conf_data="";
+					String confData="";
 					
 					if(osName.contains("Windows"))
 					{
-						conf_data =value_Windows;
+						confData =valueWindows;
 					}
 					else if (osName.contains("Mac OS"))
 					{
-						conf_data = value_MacOS;
+						confData = valueMacOS;
 					}
 					else if (osName.contains("Linux"))
 					{
-						conf_data= value_Linux;
+						confData= valueLinux;
 					}
 					else {
-						logger.error("Unrecognized operating system: %s",osName);
+						if (logger.isDebugEnabled()) logger.error(String.format("Unrecognized operating system: %s",osName));
 					}
 					//Adding the configuration information
-					line = conf_data + System.lineSeparator()+ line; 
+					line = confData + System.lineSeparator()+ line; 
 					
 				}
 				else
@@ -149,19 +153,18 @@ public class ConfigurationUtility {
 				if(!betweenTags ||  isATag) 
 				{
 					line = line + System.lineSeparator();
-					Files.write(file_swp_path, line.getBytes(),StandardOpenOption.APPEND);
+					Files.write(fileSwpPath, line.getBytes(),StandardOpenOption.APPEND);
 					logger.debug(line);
 				}
 			}
 			logger.debug("---> All lines read.");
 			
 			//Replacing the previous version of the file
-			Files.copy(file_swp_path, file_path, StandardCopyOption.REPLACE_EXISTING);
+			Files.copy(fileSwpPath, filePath, StandardCopyOption.REPLACE_EXISTING);
 		} 
 		catch (IOException e) 
 		{
 			logger.debug(StringExternalization.EXCEPTION_IO);
-			e.printStackTrace();
 		}		
 	}
 	

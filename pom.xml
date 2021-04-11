@@ -39,9 +39,9 @@
                                                 
                           
                         <!-- Issue to fix to be able to run the TestNG Pa11y test on Windows -->   
-                        <!--             
+                        <!--        -->     
                        	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>
-						-->
+						
                        	<!-- API key needed to run this test.  -->                       	
                        	<!--   
                       	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
@@ -70,14 +70,7 @@
 	 <testng.version>6.13.1</testng.version>	 
 	 <assertj.version>3.8.0</assertj.version>	 
 	</properties>
-	<repositories>
-	
-	<repository>
-	    <id>jcenter</id>
-	    <name>bintray</name>
-	    <url>https://jcenter.bintray.com</url>
-    </repository></repositories>
-	
+		
 	
 	<dependencies>
 		 <dependency>
