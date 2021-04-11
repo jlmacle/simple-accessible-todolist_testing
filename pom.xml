@@ -70,14 +70,7 @@
 	 <testng.version>6.13.1</testng.version>	 
 	 <assertj.version>3.8.0</assertj.version>	 
 	</properties>
-	<repositories>
-	
-	<repository>
-	    <id>jcenter</id>
-	    <name>bintray</name>
-	    <url>https://jcenter.bintray.com</url>
-    </repository></repositories>
-	
+		
 	
 	<dependencies>
 		 <dependency>
