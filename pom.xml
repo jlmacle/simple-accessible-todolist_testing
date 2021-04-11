@@ -39,9 +39,9 @@
                                                 
                           
                         <!-- Issue to fix to be able to run the TestNG Pa11y test on Windows -->   
-                        <!--             
+                        <!--        -->     
                        	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>
-						-->
+						
                        	<!-- API key needed to run this test.  -->                       	
                        	<!--   
                       	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
