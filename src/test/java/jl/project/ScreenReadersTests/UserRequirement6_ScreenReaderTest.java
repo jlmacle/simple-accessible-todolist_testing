@@ -1,4 +1,4 @@
-package jl.project.ScreenReadersTests;
+package jl.project.screenreaderstests;
 
 import static org.junit.Assert.*;
 
