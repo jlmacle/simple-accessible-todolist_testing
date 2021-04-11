@@ -4,7 +4,7 @@
 <suite name = "Test Suite Pa11y">
    <test name = "Pa11y Test">
       <classes>
-         <class name = "jl.project.Pa11yTest.UserRequirement5_Pa11yTest" />
+         <class name = "jl.project.pa11ytest.UserRequirement5_Pa11yTest" />
       </classes>
    </test>  
 
