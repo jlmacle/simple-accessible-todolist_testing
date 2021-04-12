@@ -2,6 +2,11 @@ package jl.project;
 
 public class StringExternalization {
 	
+	private StringExternalization() 
+	{
+	    throw new IllegalStateException("Utility class");
+	}
+	
 	//Used by the ConfigurationUtility class to add the proper webdrivers to this class	
 	//<webdrivers>
 	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
