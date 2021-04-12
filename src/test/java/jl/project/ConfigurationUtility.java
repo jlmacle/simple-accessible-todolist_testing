@@ -99,15 +99,14 @@ public class ConfigurationUtility {
 		boolean isATag = false;
 		boolean betweenTags = false;
 		String osName = System.getProperty("os.name");
-		if (logger.isDebugEnabled())  logger.debug(String.format("Operating system: %s", osName));
-		
+				
 		
 		try 
 		{
 			Files.deleteIfExists(fileSwpPath);
 			Files.createFile(fileSwpPath);
 			lines = Files.readAllLines(filePath);
-			if (logger.isDebugEnabled())  logger.debug(String.format("The file has %d lines.",lines.size()));
+	
 			
 			for(String line:lines)
 			{	
@@ -165,6 +164,7 @@ public class ConfigurationUtility {
 		catch (IOException e) 
 		{
 			logger.debug(StringExternalization.EXCEPTION_IO);
+			e.printStackTrace();
 		}		
 	}
 	
