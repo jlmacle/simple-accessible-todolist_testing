@@ -36,7 +36,7 @@ public class SpeechToTextConverterIBMTest {
 	public void convertAudioToTextTest() {
 		
 		try {
-			informationReturned = converter.convertAudioToText("audioFiles/audio-file.flac");
+			informationReturned = converter.convertAudioToText("audio-file.flac");
 			logger.debug(String.format("Information returned: %s",informationReturned));
 			
 		} catch (Exception e) {
