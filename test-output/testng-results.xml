@@ -1,37 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-11T09:45:44Z" name="Default suite" finished-at="2021-04-11T09:46:13Z" duration-ms="28849">
+  <suite started-at="2021-04-12T15:27:33Z" name="Default suite" finished-at="2021-04-12T15:27:33Z" duration-ms="503">
     <groups>
     </groups>
-    <test started-at="2021-04-11T09:45:44Z" name="Default test" finished-at="2021-04-11T09:46:13Z" duration-ms="28849">
-      <class name="jl.project.ChromeTests.UserRequirement2_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@48793bef]" started-at="2021-04-11T04:45:44Z" name="setup" finished-at="2021-04-11T04:45:47Z" duration-ms="2926" status="PASS">
+    <test started-at="2021-04-12T15:27:33Z" name="Default test" finished-at="2021-04-12T15:27:33Z" duration-ms="503">
+      <class name="jl.project.screenreaderstests.AudioSystemInformationTest">
+        <test-method signature="mainTest()[pri:0, instance:jl.project.screenreaderstests.AudioSystemInformationTest@1603cd68]" started-at="2021-04-12T10:27:33Z" name="mainTest" finished-at="2021-04-12T10:27:33Z" duration-ms="471" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@48793bef]" started-at="2021-04-11T04:45:47Z" name="navigate" finished-at="2021-04-11T04:45:51Z" duration-ms="3771" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="createItem()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@48793bef]" started-at="2021-04-11T04:45:51Z" name="createItem" finished-at="2021-04-11T04:46:00Z" duration-ms="9119" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createItem -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@48793bef]" started-at="2021-04-11T04:46:00Z" name="navigate" finished-at="2021-04-11T04:46:01Z" duration-ms="561" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigate -->
-        <test-method signature="deleteItem()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@48793bef]" started-at="2021-04-11T04:46:01Z" name="deleteItem" finished-at="2021-04-11T04:46:12Z" duration-ms="11699" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteItem -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.ChromeTests.UserRequirement2_Test@48793bef]" started-at="2021-04-11T04:46:12Z" name="releaseResources" finished-at="2021-04-11T04:46:13Z" duration-ms="742" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- releaseResources -->
-      </class> <!-- jl.project.ChromeTests.UserRequirement2_Test -->
+        </test-method> <!-- mainTest -->
+      </class> <!-- jl.project.screenreaderstests.AudioSystemInformationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

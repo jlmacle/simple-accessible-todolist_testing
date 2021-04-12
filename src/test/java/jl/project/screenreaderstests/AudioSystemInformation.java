@@ -20,9 +20,11 @@ public class AudioSystemInformation
 	static Logger logger = LoggerFactory.getLogger(AudioSystemInformation.class);
 	public static void main(String[] args) {
 		
+		System.out.println(String.format("AudioSystemInformation : isDebug enabled ? %b", logger.isDebugEnabled()));
+				
 		// https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioSystem.html
 		// "This class lets you query and access the mixers that are installed on the system."
-		
+		System.out.println("Test avec syso");
 		// AudioSystem.getMixerInfo()
 		// Obtains an array of mixer info objects that represents the set of audiomixers that are currently installed on the system.
 		logger.debug("*******   Set of audiomixers that are currently installed on the system.");
@@ -47,11 +49,6 @@ public class AudioSystemInformation
 			if (logger.isDebugEnabled()) logger.debug(String.format("Common file name extension for this type: %s",file_type_with_file_writing_support.getExtension()));
 			
 		}
-		
-		
-		
-		
-		
 		
 	}
 	

@@ -5,7 +5,7 @@ echo "** Running ConfigurationUtility **"
 :: ** Running the code quality **
 echo "** Starting SonarQube and running the code quality analysis **"
 	:: Starting the SonarQube server
-StartSonar.bat 1> sonarqube_log.txt 2>&1
+StartSonar.bat 1> sonarqube_log.txt 2>&1 &
 	:: Running the analysis
 cd ..
 timeout /T 200
