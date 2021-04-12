@@ -1,11 +1,9 @@
 package jl.project.coverage;
 
-import static org.testng.Assert.fail;
+import static org.testng.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.channels.ReadableByteChannel;
 import java.nio.charset.Charset;
 import java.util.List;
 
@@ -42,7 +40,7 @@ public class ConfigurationUtilityTest {
 	}
 	
 	ConfigurationUtility.replaceTagByData(tag, stringTestFileFolder, fileWindows ,testValueForWindows ,testValueForMacOS , testValueForLinux);
-	  
+	boolean isTestTextFound = false;
     //Testing that the value can be found
 	try {
 		
@@ -50,10 +48,14 @@ public class ConfigurationUtilityTest {
 		for(String line:lines)
 		{
 			logger.debug(line);
-			if (line.contains(testValueForWindows)) assert((line.contains(testValueForWindows)));
+			if (line.contains(testValueForWindows)) 
+			{
+				logger.debug("Found text.");
+				isTestTextFound = line.contains(testValueForWindows);
+			}
 		}
 		
-		fail("The test text value should have been found.");
+		assertTrue(isTestTextFound);
 		
 	} catch (IOException e) {
 		logger.debug(StringExternalization.EXCEPTION_IO);
