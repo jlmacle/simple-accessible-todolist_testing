@@ -15,6 +15,7 @@ import com.google.common.io.Files;
 
 import jl.project.ConfigurationUtility;
 import jl.project.StringExternalization;
+import jl.project.exceptions.UnrecognizedOSException;
 
 public class ConfigurationUtilityTest {
 	Logger logger = LoggerFactory.getLogger(ConfigurationUtilityTest.class);
@@ -27,7 +28,11 @@ public class ConfigurationUtilityTest {
 	
 	
   @Test
-  public void replaceTagByDataTest() {
+  public void replaceTagByDataTest() throws UnrecognizedOSException {
+	boolean isTestTextFound = false;
+	String osName = System.getProperty("os.name");
+	if (logger.isDebugEnabled()) logger.debug(String.format("Operating System :%s",osName));
+	
 	//File creation with an ending and closing tag and no other data.
 	String initialText= "//<"+tag+">"+System.lineSeparator()+"//</"+tag+">";
 	byte[] initialText_bytes = initialText.getBytes();
@@ -40,7 +45,7 @@ public class ConfigurationUtilityTest {
 	}
 	
 	ConfigurationUtility.replaceTagByData(tag, stringTestFileFolder, fileWindows ,testValueForWindows ,testValueForMacOS , testValueForLinux);
-	boolean isTestTextFound = false;
+	
     //Testing that the value can be found
 	try {
 		
@@ -48,10 +53,37 @@ public class ConfigurationUtilityTest {
 		for(String line:lines)
 		{
 			logger.debug(line);
-			if (line.contains(testValueForWindows)) 
+			if (osName.contains("Windows"))
 			{
-				logger.debug("Found text.");
-				isTestTextFound = line.contains(testValueForWindows);
+				
+				if (line.contains(testValueForWindows)) 
+				{
+					logger.debug("Found text.");
+					isTestTextFound = line.contains(testValueForWindows);
+				}
+			}
+			else if (osName.contains("Mac"))
+			{
+				
+				if (line.contains(testValueForMacOS)) 
+				{
+					isTestTextFound = line.contains(testValueForMacOS);
+					logger.debug("Found text.");
+				}
+			}
+			else if (osName.contains("Linux"))
+			{
+				
+				if (line.contains(testValueForLinux)) 
+				{
+					logger.debug("Found text.");
+					isTestTextFound = line.contains(testValueForLinux);
+				}
+				
+			}
+			else
+			{
+				throw new UnrecognizedOSException(osName);
 			}
 		}
 		
