@@ -20,7 +20,7 @@ public class SpeechToTextConverterIBM
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverterIBM.class);
 	Robot robot;
 	ProcessBuilder processBuilder = new ProcessBuilder();	
-	String root_folder = "src/test/java/jl/project/screenreaderstests/";
+	String rootFolder = "src/test/java/jl/project/screenreaderstests/";
 	File outputLog = new File("logs/output.txt");
 	File errorLog = new File("logs/error.txt");
 	String apikeyParam="\"apikey:"+System.getenv("IBM_SpeechToText")+"\"";	
@@ -29,8 +29,9 @@ public class SpeechToTextConverterIBM
 	
 	public String convertAudioToText(String audioFileName) throws UnrecognizedOSException
 	{
-		System.setProperty("pathToAudioFile", audioFileName);
-		logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty("pathToAudioFile")));
+		String pathToAudioFile = "pathToAudioFile";
+		System.setProperty(pathToAudioFile, audioFileName);
+		if (logger.isDebugEnabled()) logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty(pathToAudioFile)));
 		 
 		//Needed to fix an new line issue in the environment variable value in Windows.
 		apikeyParam = apikeyParam.replace("\n", "");
@@ -77,7 +78,7 @@ public class SpeechToTextConverterIBM
 			// https://docs.oracle.com/javase/9/docs/api/java/io/InputStream.html#readAllBytes--
 			informationReturned = new String(process.getInputStream().readAllBytes());
 			
-			logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty("pathToAudioFile")));
+			if (logger.isDebugEnabled())  logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty(pathToAudioFile)));
 		} 
 		catch (IOException e) 
 		{

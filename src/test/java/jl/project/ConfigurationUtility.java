@@ -11,6 +11,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import jl.project.exceptions.UnrecognizedOSException;
+
 /***
  * 
  * @author 
@@ -24,8 +26,8 @@ public class ConfigurationUtility {
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
 	static String pathToTmpFolderByArg = null;
 	static String stringExternalizationFolderByArg = null;
-	static  String stringExternalizationFolder = "/src/test/java/jl/project/";
-	static final String STRING_EXTERNALIZATION_FILENAME = "StringExternalization.java";
+	static String stringExternalizationFolder = "/src/test/java/jl/project/";
+	static String stringExternalizationFileName = "StringExternalization.java";
 	
 	/***
 	 * The arguments are used for scripting. 
@@ -35,9 +37,9 @@ public class ConfigurationUtility {
 	{
 		if (args.length!=0)
 		{
-			if (logger.isDebugEnabled()) logger.debug(String.format("Value for arg[0]: %s", args[0]));
+			ifDebugEnabledog(logger, "Value for arg[0]: %s", args[0]);
 			pathToTmpFolderByArg = args[0];
-			if (logger.isDebugEnabled()) logger.debug(String.format("Value for arg[1]: %s", args[1]));
+			ifDebugEnabledog(logger,"Value for arg[1]: %s", args[1]);
 			stringExternalizationFolderByArg = args[1];
 		}
 		
@@ -58,12 +60,20 @@ public class ConfigurationUtility {
 		
 		String angularServer = tab +  "public static final String ANGULAR_SERVER_URL = \"http://localhost:4200\";";
 		
-		replaceTagByData("webdrivers",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,webdriversValueWindows,webdriversValueMacOS,webdriversValueLinux);
+		try 
+		{
+			replaceTagByData("webdrivers",stringExternalizationFolder, stringExternalizationFileName,webdriversValueWindows,webdriversValueMacOS,webdriversValueLinux);
 		
-		replaceTagByData("seleniumGrid4",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,seleniumGridNotUsed,seleniumGridNotUsed,seleniumGridNotUsed);
+			replaceTagByData("seleniumGrid4",stringExternalizationFolder, stringExternalizationFileName,seleniumGridNotUsed,seleniumGridNotUsed,seleniumGridNotUsed);
 		
-		replaceTagByData("angularServer",stringExternalizationFolder, STRING_EXTERNALIZATION_FILENAME,angularServer,angularServer,angularServer);
+			replaceTagByData("angularServer",stringExternalizationFolder, stringExternalizationFileName,angularServer,angularServer,angularServer);
 		
+		} 
+		catch (UnrecognizedOSException e) 
+		{
+			logger.debug(StringExternalization.EXCEPTION_IO);
+			e.printStackTrace();
+		}
 	}
 	
 	/***
@@ -77,16 +87,16 @@ public class ConfigurationUtility {
 	 * @param value_Windows: 	the configuration value to insert if the operating system is Windows 
 	 * @param value_MacOS: 		the configuration value to insert if the operating system is macOS.
 	 * @param value_Linux: 		the configuration value to insert if the operating system is Linux.
+	 * @throws UnrecognizedOSException 
 	 */
-	public static void replaceTagByData(String tagValue, String fileFolder, String fileName, String valueWindows, String valueMacOS, String valueLinux)
+	public static void replaceTagByData(String tagValue, String fileFolder, String fileName, String valueWindows, String valueMacOS, String valueLinux) throws UnrecognizedOSException
 	{
 		//temporary folder
-		String pathToTmpFolder = null;
+		String pathToTmpFolder ="tmp";
 		if (pathToTmpFolderByArg !=null) pathToTmpFolder = pathToTmpFolderByArg;		
-		else pathToTmpFolder = "tmp";
-		
+				
 		if (stringExternalizationFolderByArg !=null) stringExternalizationFolder = stringExternalizationFolderByArg;
-		else stringExternalizationFolder=fileFolder;
+		else stringExternalizationFolder = fileFolder;
 		
 		Path fileSwpPath = FileSystems.getDefault().getPath(pathToTmpFolder, fileName+".txt");
 		
@@ -138,7 +148,8 @@ public class ConfigurationUtility {
 						confData= valueLinux;
 					}
 					else {
-						if (logger.isDebugEnabled()) logger.error(String.format("Unrecognized operating system: %s",osName));
+						ifDebugEnabledog(logger, String.format("Unrecognized operating system: %s"),osName);
+						throw new UnrecognizedOSException(String.format("Unrecognized operating system: %s",osName));						
 					}
 					//Adding the configuration information
 					line = confData + System.lineSeparator()+ line; 
@@ -168,5 +179,9 @@ public class ConfigurationUtility {
 		}		
 	}
 	
+	static void ifDebugEnabledog(Logger logger, String msg, String data) 
+	{
+		if (logger.isDebugEnabled()) logger.debug(String.format(msg, data));
+	}
 	
 }
