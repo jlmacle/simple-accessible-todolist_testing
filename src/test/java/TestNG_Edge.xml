@@ -2,11 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <!-- Right-click + Run As 'TestNG Suite' -->
 <suite name = "Test Suite Edge">
+
    <test name = "User Requirement 1">
       <classes>
          <class name = "jl.project.edgetests.UserRequirement1_Test" />
       </classes>
-   </test>  
+   </test>    
     <test name = "User Requirement 2">
       <classes>
          <class name = "jl.project.edgetests.UserRequirement2_Test" />
@@ -29,6 +30,5 @@
       <classes>
          <class name = "jl.project.edgetests.UserRequirement4_2_Test" />
       </classes>
-   </test>  
-  
+   </test>    
 </suite>  	

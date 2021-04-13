@@ -1,1 +1,5 @@
-cmd.exe /c  "taskkill /FI "WINDOWTITLE eq spring_server*"  && cd ../../../../../../../../AccessibleTodoList_Backend  && start "spring_server" mvn spring-boot:run &" 
+taskkill -T /F /FI "WINDOWTITLE eq spring_server_parent*"
+echo "Waiting for a potential SpringBoot server process to be suppressed."
+timeout /T 5 
+cd src/test/java/jl/project/pa11ytest/scripts
+start "spring_server_parent" run_Backend_server-windows_forBackendServerStartup.bat
