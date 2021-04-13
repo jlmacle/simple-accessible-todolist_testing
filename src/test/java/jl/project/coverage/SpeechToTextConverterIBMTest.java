@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
+import jl.project.screenreaderstests.SpeechToTextConverterIBM;
 
 
 public class SpeechToTextConverterIBMTest {
