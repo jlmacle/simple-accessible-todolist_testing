@@ -5,7 +5,7 @@
    <test name = "Speech To TextConverter Test IBM">
       <classes>
       	<!-- API KEY NEEDED -->
-         <class name = "jl.project.screenreaderstests.SpeechToTextConverterIBMTest" />
+         <class name = "jl.project.coverage.SpeechToTextConverterIBMTest" />
       </classes>
    </test>  
 

@@ -1,12 +1,12 @@
 #!/bin/bash
 cd scripts
 echo "Starting the back-end server." 
-./run_Backend_server-Linux.sh
+./run_Backend_server-linux.sh
 sleep 5
 
 echo ""
 echo "Starting the front-end server." 
-./run_Angular_server-Linux.sh
+./run_Angular_server-linux.sh
 sleep 5
 
 echo ""
