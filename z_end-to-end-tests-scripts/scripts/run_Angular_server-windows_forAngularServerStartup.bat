@@ -1,3 +1,3 @@
-cd ../../../../../../../../AccessibleTodoList_FrontEnd 
+cd ../../../AccessibleTodoList_FrontEnd 
 ng serve &
  
