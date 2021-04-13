@@ -2,24 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-13T11:11:41Z" name="Default suite" finished-at="2021-04-13T11:13:30Z" duration-ms="109303">
+  <suite started-at="2021-04-13T14:12:01Z" name="Default suite" finished-at="2021-04-13T14:12:01Z" duration-ms="56">
     <groups>
     </groups>
-    <test started-at="2021-04-13T11:11:41Z" name="Default test" finished-at="2021-04-13T11:13:30Z" duration-ms="109303">
-      <class name="jl.project.pa11ytest.UserRequirement5_Pa11yTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.pa11ytest.UserRequirement5_Pa11yTest@6ee4d9ab]" started-at="2021-04-13T06:11:41Z" name="setup" finished-at="2021-04-13T06:13:28Z" duration-ms="107226" status="PASS">
+    <test started-at="2021-04-13T14:12:01Z" name="Default test" finished-at="2021-04-13T14:12:01Z" duration-ms="56">
+      <class name="jl.project.coverage.ConfigurationUtilityTest">
+        <test-method signature="replaceTagByDataTest()[pri:0, instance:jl.project.coverage.ConfigurationUtilityTest@63fbfaeb]" started-at="2021-04-13T16:12:01Z" name="replaceTagByDataTest" finished-at="2021-04-13T16:12:01Z" duration-ms="39" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="pa11yTest()[pri:0, instance:jl.project.pa11ytest.UserRequirement5_Pa11yTest@6ee4d9ab]" started-at="2021-04-13T06:13:28Z" name="pa11yTest" finished-at="2021-04-13T06:13:28Z" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pa11yTest -->
-        <test-method is-config="true" signature="release()[pri:0, instance:jl.project.pa11ytest.UserRequirement5_Pa11yTest@6ee4d9ab]" started-at="2021-04-13T06:13:28Z" name="release" finished-at="2021-04-13T06:13:30Z" duration-ms="2040" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- release -->
-      </class> <!-- jl.project.pa11ytest.UserRequirement5_Pa11yTest -->
+        </test-method> <!-- replaceTagByDataTest -->
+      </class> <!-- jl.project.coverage.ConfigurationUtilityTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -25,7 +25,7 @@ public class AudioSystemInformationTest {
 	String infoFile_URI = System.getProperty("user.dir")+"/src/test/java/jl/project/screenreaderstests/logs/"
 				+"AudioSystemInfo.txt";	
 	Path infoFilePath =  Paths.get(infoFile_URI);
-	String mixerInformation =  "Name: Primary Sound Driver";
+	String mixerInformation =  "Mixer information";
 	String commonFileNameExtension = "Common file name extension for this type: wav";
 	boolean isMixerInformationFound = false;
 	boolean isCommonFileNameExtensionFound = false;
