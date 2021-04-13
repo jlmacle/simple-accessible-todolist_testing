@@ -148,7 +148,7 @@ public class ConfigurationUtility {
 						confData= valueLinux;
 					}
 					else {
-						ifDebugEnabledog(logger, String.format("Unrecognized operating system: %s"),osName);
+						ifDebugEnabledog(logger, "Unrecognized operating system: %s",osName);
 						throw new UnrecognizedOSException(String.format("Unrecognized operating system: %s",osName));						
 					}
 					//Adding the configuration information
@@ -174,8 +174,8 @@ public class ConfigurationUtility {
 		} 
 		catch (IOException e) 
 		{
-			logger.debug(StringExternalization.EXCEPTION_IO);
-			e.printStackTrace();
+			logger.debug(StringExternalization.EXCEPTION_IO);			
+			//e.printStackTrace absent to avoid a security hotspot 
 		}		
 	}
 	
