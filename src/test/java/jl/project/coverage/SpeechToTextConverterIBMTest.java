@@ -1,4 +1,4 @@
-package jl.project.screenreaderstests;
+package jl.project.coverage;
 
 import static org.testng.Assert.assertTrue;
 
@@ -11,9 +11,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
+import jl.project.screenreaderstests.SpeechToTextConverterIBM;
 
 
 public class SpeechToTextConverterIBMTest {
+	//TODO: to finish
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverterIBMTest.class);
 	Robot robot;
 	SpeechToTextConverterIBM converter = new SpeechToTextConverterIBM();	
