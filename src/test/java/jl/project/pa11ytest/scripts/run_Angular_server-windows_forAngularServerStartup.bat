@@ -1,1 +1,2 @@
-cmd.exe /c  " cd ../../../../../../../../AccessibleTodoList_FrontEnd && cd && ng serve &" 
+cd ../../../../../../../../AccessibleTodoList_FrontEnd 
+ng serve &

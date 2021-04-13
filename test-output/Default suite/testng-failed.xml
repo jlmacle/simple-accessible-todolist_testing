@@ -3,11 +3,12 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.screenreaderstests.AudioSystemInformationTest">
+      <class name="jl.project.coverage.SpeechToTextConverterIBMTest">
         <methods>
-          <include name="mainTest"/>
+          <include name="setup"/>
+          <include name="convertAudioToTextTest"/>
         </methods>
-      </class> <!-- jl.project.screenreaderstests.AudioSystemInformationTest -->
+      </class> <!-- jl.project.coverage.SpeechToTextConverterIBMTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

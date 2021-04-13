@@ -99,9 +99,9 @@ public class UserRequirement5_Pa11yTest {
 		
 		else if (this.osName.contains("Linux"))		{
 			
-			backend_script = script_folder+"run_Backend_server-Linux.sh";
-			angular_script = script_folder+"run_Angular_server-Linux.sh";
-			pa11y_script = script_folder+"run_Pa11y_test-Linux.sh";
+			backend_script = script_folder+"run_Backend_server-linux.sh";
+			angular_script = script_folder+"run_Angular_server-linux.sh";
+			pa11y_script = script_folder+"run_Pa11y_test-linux.sh";
 		}	
 		else {fail("OS name not recognized");}
 		
