@@ -7,8 +7,7 @@
       <classes>
          <class name = "jl.project.edgetests.UserRequirement1_Test" />
       </classes>
-   </test>  
-   <!-- 
+   </test>    
     <test name = "User Requirement 2">
       <classes>
          <class name = "jl.project.edgetests.UserRequirement2_Test" />
@@ -31,6 +30,5 @@
       <classes>
          <class name = "jl.project.edgetests.UserRequirement4_2_Test" />
       </classes>
-   </test>  
-   -->
+   </test>    
 </suite>  	
