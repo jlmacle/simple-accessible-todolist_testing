@@ -1,0 +1,53 @@
+*******   Set of audiomixers that are currently installed on the system.
+Mixer information
+Name: Port Speakers (Realtek(R) Audio)
+Description: Port Mixer
+Vendor: Unknown Vendor
+Version: 10.0
+-----------------------------------------------------
+Mixer information
+Name: Port Microphone Array (Realtek(R) Au
+Description: Port Mixer
+Vendor: Unknown Vendor
+Version: 10.0
+-----------------------------------------------------
+Mixer information
+Name: Port Stereo Mix (Realtek(R) Audio)
+Description: Port Mixer
+Vendor: Unknown Vendor
+Version: 10.0
+-----------------------------------------------------
+Mixer information
+Name: Primary Sound Driver
+Description: Direct Audio Device: DirectSound Playback
+Vendor: Unknown Vendor
+Version: Unknown Version
+-----------------------------------------------------
+Mixer information
+Name: Speakers (Realtek(R) Audio)
+Description: Direct Audio Device: DirectSound Playback
+Vendor: Unknown Vendor
+Version: Unknown Version
+-----------------------------------------------------
+Mixer information
+Name: Primary Sound Capture Driver
+Description: Direct Audio Device: DirectSound Capture
+Vendor: Unknown Vendor
+Version: Unknown Version
+-----------------------------------------------------
+Mixer information
+Name: Stereo Mix (Realtek(R) Audio)
+Description: Direct Audio Device: DirectSound Capture
+Vendor: Unknown Vendor
+Version: Unknown Version
+-----------------------------------------------------
+Mixer information
+Name: Microphone Array (Realtek(R) Au
+Description: Direct Audio Device: DirectSound Capture
+Vendor: Unknown Vendor
+Version: Unknown Version
+-----------------------------------------------------
+*******   File types for which file writing support is provided by the system
+Common file name extension for this type: wav
+Common file name extension for this type: au
+Common file name extension for this type: aif
