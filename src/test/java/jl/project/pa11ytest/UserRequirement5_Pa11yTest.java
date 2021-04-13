@@ -210,7 +210,7 @@ public class UserRequirement5_Pa11yTest {
 		logger.debug(String.format("process_angular \t is alive : %b", process_angular.isAlive()));
 		logger.debug(String.format("process_backend \t is alive : %b", process_backend.isAlive()));
 		logger.debug(String.format("process_Pa11y \t is alive : %b", process_Pa11y.isAlive()));
-		logger.debug(String.format("process_stopServer is alive : %b", process_stopServer.isAlive()));
+		logger.debug(String.format("process_stopServer  is alive : %b", process_stopServer.isAlive()));
 	}
 
 }
