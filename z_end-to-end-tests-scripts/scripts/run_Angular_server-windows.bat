@@ -3,6 +3,8 @@
 :: and to suppress the parent window with the option removing potential children processes as well. 
 
 taskkill -T /F /FI "WINDOWTITLE eq angular_server_parent" 
+echo "Waiting for a potential Angular server process to be suppressed."
+timeout /T 5 
 start "angular_server_parent" run_Angular_server-windows_forAngularServerStartup.bat 
 
 

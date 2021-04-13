@@ -11,7 +11,7 @@
         <!-- https://maven.apache.org/pom.html#Resources -->
         
         <!-- 	Added to avoid adding /usr/local/lib where the Tesseract lib is.
-        			The Tesseract related files have been added to a folder local to the end-to-end testing code.
+        		The Tesseract related files have been added to a folder local to the end-to-end testing code.
          -->	
         <!--tessaract_lib-->
         <resources>
@@ -32,14 +32,11 @@
                     <!-- Suite testng xml file to consider for test execution -->                    
 
                     <suiteXmlFiles>     
-                        <!--                                         
+                        <!--   -->                                      
                         <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>  
                                                        
-                        <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>   
-                                                
-                          -->
-                        <!-- Issue to fix to be able to run the TestNG Pa11y test on Windows -->   
-                        <!--        -->     
+                        <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>                                                   
+                       
                        	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>
 						
                        	<!-- API key needed to run this test.  -->                       	
