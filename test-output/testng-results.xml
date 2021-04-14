@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-14T10:07:22Z" name="Default suite" finished-at="2021-04-14T10:07:43Z" duration-ms="20707">
+  <suite started-at="2021-04-14T12:04:20Z" name="Test Suite Screen Readers Test" finished-at="2021-04-14T12:04:40Z" duration-ms="20330">
     <groups>
     </groups>
-    <test started-at="2021-04-14T10:07:22Z" name="Default test" finished-at="2021-04-14T10:07:43Z" duration-ms="20707">
+    <test started-at="2021-04-14T12:04:20Z" name="Speech To TextConverter Test IBM" finished-at="2021-04-14T12:04:40Z" duration-ms="20330">
       <class name="jl.project.coverage.SpeechToTextConverterIBMTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@1c33c17b]" started-at="2021-04-14T12:07:22Z" name="setup" finished-at="2021-04-14T12:07:22Z" duration-ms="414" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@1b2abca6]" started-at="2021-04-14T14:04:20Z" name="setup" finished-at="2021-04-14T14:04:20Z" duration-ms="456" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="convertAudioToTextTest()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@1c33c17b]" started-at="2021-04-14T12:07:22Z" name="convertAudioToTextTest" finished-at="2021-04-14T12:07:43Z" duration-ms="20278" status="PASS">
+        <test-method signature="convertAudioToTextTest()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@1b2abca6]" started-at="2021-04-14T14:04:20Z" name="convertAudioToTextTest" finished-at="2021-04-14T14:04:40Z" duration-ms="19859" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- convertAudioToTextTest -->
       </class> <!-- jl.project.coverage.SpeechToTextConverterIBMTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Speech To TextConverter Test IBM -->
+  </suite> <!-- Test Suite Screen Readers Test -->
 </testng-results>
