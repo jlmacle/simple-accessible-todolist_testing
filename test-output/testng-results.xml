@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-14T09:18:49Z" name="Default suite" finished-at="2021-04-14T09:19:09Z" duration-ms="19708">
+  <suite started-at="2021-04-14T09:37:28Z" name="Default suite" finished-at="2021-04-14T09:38:01Z" duration-ms="33822">
     <groups>
     </groups>
-    <test started-at="2021-04-14T09:18:49Z" name="Default test" finished-at="2021-04-14T09:19:09Z" duration-ms="19708">
+    <test started-at="2021-04-14T09:37:28Z" name="Default test" finished-at="2021-04-14T09:38:01Z" duration-ms="33822">
       <class name="jl.project.coverage.SpeechToTextConverterIBMTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@29526c05]" started-at="2021-04-14T11:18:50Z" name="setup" finished-at="2021-04-14T11:18:50Z" duration-ms="444" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@7a1234bf]" started-at="2021-04-14T04:37:28Z" name="setup" finished-at="2021-04-14T04:37:28Z" duration-ms="232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="convertAudioToTextTest()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@29526c05]" started-at="2021-04-14T11:18:50Z" name="convertAudioToTextTest" finished-at="2021-04-14T11:19:09Z" duration-ms="19228" status="PASS">
+        <test-method signature="convertAudioToTextTest()[pri:0, instance:jl.project.coverage.SpeechToTextConverterIBMTest@7a1234bf]" started-at="2021-04-14T04:37:28Z" name="convertAudioToTextTest" finished-at="2021-04-14T04:38:01Z" duration-ms="33556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- convertAudioToTextTest -->
