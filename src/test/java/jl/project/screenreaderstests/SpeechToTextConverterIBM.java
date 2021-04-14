@@ -26,8 +26,6 @@ public class SpeechToTextConverterIBM
 	
 	public String convertAudioToText(String audioFileName) throws UnrecognizedOSException
 	{
-		String pathToAudioFile = "pathToAudioFile";		
-		if (logger.isDebugEnabled()) logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty(pathToAudioFile)));
 		 
 		//Needed to fix an new line issue in the environment variable value in Windows.
 		apikeyParam = apikeyParam.replace("\n", "");
