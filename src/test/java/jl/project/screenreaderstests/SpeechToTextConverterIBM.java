@@ -26,9 +26,7 @@ public class SpeechToTextConverterIBM
 	
 	public String convertAudioToText(String audioFileName) throws UnrecognizedOSException
 	{
-		String pathToAudioFile = "pathToAudioFile";
-		audioFileName = "\""+audioFileName+"\"";
-		System.setProperty(pathToAudioFile, audioFileName);
+		String pathToAudioFile = "pathToAudioFile";		
 		if (logger.isDebugEnabled()) logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty(pathToAudioFile)));
 		 
 		//Needed to fix an new line issue in the environment variable value in Windows.
@@ -74,8 +72,7 @@ public class SpeechToTextConverterIBM
 			
 			logger.debug("Waiting for results.");
 			robot.delay(15000);
-						
-			if (logger.isDebugEnabled())  logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty(pathToAudioFile)));
+			
 		} 
 		catch (IOException e) 
 		{
