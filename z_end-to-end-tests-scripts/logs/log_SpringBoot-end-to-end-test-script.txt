@@ -35,7 +35,7 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.3.RELEASE)
 
-- INFO  j.f.AccessibleTodoListBackEndApplication : Starting AccessibleTodoListBackEndApplication on mm.home with PID 927 (/Users/jean-louis/Desktop/AccessibleTodoList_Backend/target/classes started by jean-louis in /Users/jean-louis/Desktop/AccessibleTodoList_Backend)
+- INFO  j.f.AccessibleTodoListBackEndApplication : Starting AccessibleTodoListBackEndApplication on mm.home with PID 809 (/Users/jean-louis/Desktop/AccessibleTodoList_Backend/target/classes started by jean-louis in /Users/jean-louis/Desktop/AccessibleTodoList_Backend)
 -- INFO  j.f.AccessibleTodoListBackEndApplication : No active profile set, falling back to default profiles: default
 -- INFO  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
 -- INFO  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 2 JPA repository interfaces.
@@ -43,7 +43,7 @@
 -- INFO  o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 -- INFO  org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
 -- INFO  o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
--- INFO  w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 936 ms
+-- INFO  w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 948 ms
 -- INFO  o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 -- INFO  o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
 -- WARN  JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
@@ -63,12 +63,12 @@ Hibernate: alter table tdl_item add constraint FKfxay8ru369ndhyrhr8jsfjs30 forei
 - INFO  o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 -- INFO  j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 -- INFO  DeferredRepositoryInitializationListener : Spring Data repositories initialized!
--- INFO  j.f.AccessibleTodoListBackEndApplication : Started AccessibleTodoListBackEndApplication in 2.82 seconds (JVM running for 3.198)
+-- INFO  j.f.AccessibleTodoListBackEndApplication : Started AccessibleTodoListBackEndApplication in 2.816 seconds (JVM running for 3.214)
 -Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
 Hibernate: insert into tdl_category (category_name) values (?)
 - INFO  o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 -- INFO  o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
--- INFO  o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+-- INFO  o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
 -Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
@@ -88,129 +88,6 @@ Hibernate: select category0_.category_id as category1_0_, category0_.category_na
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
-Hibernate: delete from tdl_category where category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
-Hibernate: delete from tdl_item where item_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
-Hibernate: delete from tdl_item where item_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: insert into tdl_category (category_name) values (?)
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
-Hibernate: delete from tdl_category where category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
-Hibernate: delete from tdl_item where item_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
-Hibernate: delete from tdl_item where item_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: insert into tdl_category (category_name) values (?)
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
@@ -230,6 +107,15 @@ Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
 Hibernate: delete from tdl_item where item_id=?
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
@@ -247,9 +133,6 @@ Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
@@ -260,81 +143,8 @@ Hibernate: select category0_.category_id as category1_0_, category0_.category_na
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: insert into tdl_category (category_name) values (?)
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
-Hibernate: delete from tdl_category where category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
-Hibernate: delete from tdl_item where item_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
-Hibernate: delete from tdl_item where item_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: insert into tdl_category (category_name) values (?)
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
@@ -359,8 +169,8 @@ Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
 Hibernate: delete from tdl_item where item_id=?
@@ -382,9 +192,9 @@ Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
 Hibernate: delete from tdl_item where item_id=?
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
@@ -392,17 +202,17 @@ Hibernate: select category0_.category_id as category1_0_, category0_.category_na
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
-Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: insert into tdl_category (category_name) values (?)
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
@@ -423,8 +233,181 @@ Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item
 Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
 Hibernate: delete from tdl_item where item_id=?
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
+Hibernate: delete from tdl_item where item_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: insert into tdl_category (category_name) values (?)
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
+Hibernate: delete from tdl_category where category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
+Hibernate: delete from tdl_item where item_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
+Hibernate: delete from tdl_item where item_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: insert into tdl_category (category_name) values (?)
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
+Hibernate: delete from tdl_category where category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
+Hibernate: delete from tdl_item where item_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
+Hibernate: delete from tdl_item where item_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: insert into tdl_category (category_name) values (?)
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
+Hibernate: delete from tdl_category where category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
@@ -437,9 +420,26 @@ Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select item0_.item_id as item_id1_1_0_, item0_.category_id as category2_1_0_, item0_.item_name as item_nam3_1_0_ from tdl_item item0_ where item0_.item_id=?
+Hibernate: delete from tdl_item where item_id=?
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: insert into tdl_item (category_id, item_name) values (?, ?)
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
 Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
 Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
 Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
@@ -456,8 +456,8 @@ Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item
 -[INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  10:42 min
-[INFO] Finished at: 2021-04-13T15:31:59+02:00
+[INFO] Total time:  10:13 min
+[INFO] Finished at: 2021-04-14T12:54:28+02:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:2.3.3.RELEASE:run (default-cli) on project AccessibleTodoList_BackEnd: Application finished with exit code: 143 -> [Help 1]
 [ERROR] 
