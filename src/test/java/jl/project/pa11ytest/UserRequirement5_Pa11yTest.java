@@ -109,7 +109,8 @@ public class UserRequirement5_Pa11yTest {
 						
 			logger.debug("Testing that the 'Uncategorized' category can be found."); 	
 			URL page_url = new URL("http://localhost:8080/categories");	 
-			isUncategorizedFound = this.print_stream(page_url.openStream(), url_log, "Uncategorized");			
+			String categoriesPageURLOutput = new String(page_url.openStream().readAllBytes());
+			isUncategorizedFound = categoriesPageURLOutput.contains("Uncategorized");			
 
 			if(!isUncategorizedFound)fail("Uncategorized was not found. There may be an issue with the back-end server.");
 									
@@ -129,7 +130,9 @@ public class UserRequirement5_Pa11yTest {
 			robot.delay(46000);//not too much time for a slow computer.
 			
 			//if no output, getInputStream() replaced by getErrorStream()
-			isPa11yTestPassed = this.print_stream(process_Pa11y.getInputStream(), pa11y_log, "No issues found!");
+			String pa11y_output = new String(process_Pa11y.getInputStream().readAllBytes());
+			logger.debug(pa11y_output);
+			isPa11yTestPassed = pa11y_output.contains("No issues found!");
 			
 		} 
 		catch (IOException e) 
@@ -139,52 +142,9 @@ public class UserRequirement5_Pa11yTest {
 			e.printStackTrace();
 		}	
 		
-		
-		 
 	}	
 	
-	/**
-	 * @param input: an InputStream
-	 * @param log_path: the path to log the output of the stream (from getInputStrem() or getErrorStream())
-	 * @param stringToFind: a string to find in the output
-	 * @return true if the string has been found in the output, false otherwise.
-	 */
-	private boolean print_stream(InputStream inputStream, String log_path, String stringToFind)
-	{
-		boolean isStringFound = false;
-		ReadableByteChannel readableByteChannel = Channels.newChannel(inputStream);
-		FileOutputStream fileOutputStream;
-		try {
-			fileOutputStream = new FileOutputStream(log_path);
-			FileChannel fileChannel = fileOutputStream.getChannel();
-			fileChannel.transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
-			
-			
-			List<String> lines = FileUtils.readLines(new File(log_path), "UTF-8"); 
-			for(String line:lines) 
-			{ 
-				logger.debug(line);
-				if(line.contains(stringToFind)) {isStringFound=true;break;}  
-			}
-			 
-			readableByteChannel.close();
-			fileChannel.close();
-			fileOutputStream.close();
-			
-		} catch (FileNotFoundException e) {
-			logger.debug("Caught a FileNotFoundException in print_stream");
-			logger.debug(e.getMessage());
-			e.printStackTrace();
-		} catch (IOException e) {
-			logger.debug("Caught an IOExceptionin print_stream");
-			logger.debug(e.getMessage());
-			e.printStackTrace();
-		}
 		
-		return isStringFound;
-		
-	}
-	
 	
 	@Test
 	public void pa11yTest()
