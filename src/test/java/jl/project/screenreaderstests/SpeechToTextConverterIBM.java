@@ -20,17 +20,12 @@ public class SpeechToTextConverterIBM
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverterIBM.class);
 	Robot robot;
 	ProcessBuilder processBuilder = new ProcessBuilder();	
-	String root_folder = "src/test/java/jl/project/screenreaderstests/";
-	File outputLog = new File("logs/output.txt");
-	File errorLog = new File("logs/error.txt");
-	String apikeyParam="\"apikey:"+System.getenv("IBM_SpeechToText")+"\"";	
-	
-	
+	String scriptsFolder = System.getProperty("user.dir")+"/src/test/java/jl/project/screenreaderstests/scripts/";	
+	String apikeyParam="\"apikey:"+System.getenv("IBM_SpeechToText")+"\"";		
+	File error_file = new File("logs/error.txt");
 	
 	public String convertAudioToText(String audioFileName) throws UnrecognizedOSException
 	{
-		System.setProperty("pathToAudioFile", audioFileName);
-		logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty("pathToAudioFile")));
 		 
 		//Needed to fix an new line issue in the environment variable value in Windows.
 		apikeyParam = apikeyParam.replace("\n", "");
@@ -47,41 +42,40 @@ public class SpeechToTextConverterIBM
 		}
 		
 		if (logger.isDebugEnabled())logger.debug(String.format("OS: %s",osName));		
-		if(osName.contains("Windows"))
-		{
-			processBuilder.command(String.format("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Windows.bat %s",audioFileName));
+		if(osName.contains("Windows"))	
+		{						
+			processBuilder.command(scriptsFolder+"script_IBM_STT_Windows.bat",audioFileName);
+			
 		}
 		else if (osName.contains("Mac"))
 		{
-			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_macOS.zsh");
+			processBuilder.command(scriptsFolder+"script_IBM_STT_macOS.zsh",audioFileName);
 		}
 		else if (osName.contains("Linux"))
 		{
-			processBuilder.command("src/test/java/jl/project/ScreenReadersTests/scripts/script_IBM_STT_Ubuntu.sh");
+			processBuilder.command(scriptsFolder+"script_IBM_STT_Ubuntu.sh",audioFileName);
 
 		}
 		else {throw new UnrecognizedOSException(String.format("Unrecognized OS : %s",osName));}
 		
 		try 
-		{
-			processBuilder.redirectInput(outputLog);
-			processBuilder.redirectError(errorLog);
+		{			
 			process = processBuilder.start();
-		
+			// readAllBytes() since Java 1.9
+			// https://docs.oracle.com/javase/9/docs/api/java/io/InputStream.html#readAllBytes--
+			informationReturned = new String(process.getInputStream().readAllBytes());
+			logger.debug(String.format("Output stream: %s", informationReturned));
+			logger.debug(String.format("Error stream: %s", new String(process.getErrorStream().readAllBytes())));
 			logger.debug("Request sent.");
 			
 			logger.debug("Waiting for results.");
 			robot.delay(15000);
 			
-			// readAllBytes() since Java 1.9
-			// https://docs.oracle.com/javase/9/docs/api/java/io/InputStream.html#readAllBytes--
-			informationReturned = new String(process.getInputStream().readAllBytes());
-			
-			logger.debug(String.format("Value for the system property 'pathToAudioFile': %s", System.getProperty("pathToAudioFile")));
 		} 
 		catch (IOException e) 
 		{
 			logger.debug(StringExternalization.EXCEPTION_IO);
+			e.printStackTrace();
 		}
 		// supportsNormalTermination() since Java 1.9
 		// https://docs.oracle.com/javase/9/docs/api/java/lang/Process.html#supportsNormalTermination--
@@ -91,7 +85,6 @@ public class SpeechToTextConverterIBM
 			if (logger.isDebugEnabled()) logger.debug(String.format("Process is alive : %b", process.isAlive()));		
 		}
 						
-		
 		return informationReturned;
 	}
 }
