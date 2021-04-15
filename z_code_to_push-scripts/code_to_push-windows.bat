@@ -37,7 +37,7 @@ git commit -m "%commit%"
 echo You entered %commit%
 pause 40 "Waiting before pushing the code."
 echo "Git push"
-
+git push
 
 
 

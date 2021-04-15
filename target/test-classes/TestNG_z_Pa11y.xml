@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- Right-click + Run As 'TestNG Suite' -->
+<suite name = "Test Suite Pa11y">
+   <test name = "Pa11y Test">
+      <classes>
+         <class name = "jl.project.pa11ytest.UserRequirement5_Pa11yTest" />
+      </classes>
+   </test>  
+
+</suite>  	
