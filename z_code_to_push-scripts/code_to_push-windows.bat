@@ -6,20 +6,19 @@ java -cp C:/_Synchronized_Code/ATL/AccessibleTodoList_End2endTests/target/test-c
 :: ** Running the code quality **
 echo ""
 echo ** Starting SonarQube and running the code quality analysis **
-	:: Starting the SonarQube server
+:: Starting the SonarQube server
 start "SonarQube" StartSonar.bat &
 
-	:: Running the analysis
+:: Running the analysis
 timeout /T 60
 cd ..
 start mvn sonar:sonar -Dsonar.projectKey=End-to-endTesting:jl.project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=%SONARQUBE_E2E% 
-	:: Starting a browser to check the result of the analysis
+:: Starting a browser to check the result of the analysis
 pause 40 "Waiting for the analysis to be done."
 echo ""
-echo "Starting a browser to check the result of the analysis."
+echo Starting a browser to check the result of the analysis.
 start msedge http://localhost:9000
 	
-
 echo ""
 echo ** Running mvn clean ** 
 echo The value of an apiKey stored in an environment variable has been dumped and later pushed on GitHub.
@@ -29,14 +28,14 @@ echo mvn clean suppresses some data, including the surefire-reports.
 start mvn clean
 
 echo ""
-echo "Git add ."
+echo git add .
 git add .
-echo "Git commit: enter a commit message"
+echo git commit: enter a commit message
 set /p commit=
 git commit -m "%commit%"
 echo You entered %commit%
 pause 40 "Waiting before pushing the code."
-echo "Git push"
+echo git push
 git push
 
 
