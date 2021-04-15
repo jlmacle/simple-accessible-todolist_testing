@@ -1,0 +1,450 @@
+# Created at 2021-04-14T07:42:51.983
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+# Created at 2021-04-14T07:42:58.259
+Unexpected IOException with stream: Apr 14, 2021 7:42:58 AM org.openqa.selenium.os.OsProcess checkForError
+SEVERE: org.apache.commons.exec.ExecuteException: Execution failed (Exit value: -559038737. Caused by java.io.IOException: Cannot run program "C:\_Synchronized_Code\ATL\webdrivers\msedgedriver" (in directory "."): CreateProcess error=193, %1 is not a valid Win32 application)
+
+
+# Created at 2021-04-14T07:42:58.263
+Unexpected IOException: 8,1,jl.project.edgetests.UserRequirement4_2_Test,setup(jl.project.edgetests.UserRequirement4_2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,UserRequirement4_2_Test.setup:56 \00BB WebDriver Timed out waiting for driver serv...,org.openqa.selenium.WebDriverException: \000ATimed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver\000A\0009at jl.project.edgetests.UserRequirement4_2_Test.setup(UserRequirement4_2_Test.java:56)\000ACaused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:29347/status] to be available after 20024 ms\000A\0009at jl.project.edgetests.UserRequirement4_2_Test.setup(UserRequirement4_2_Test.java:56)\000ACaused by: java.util.concurrent.TimeoutException\000A\0009at jl.project.edgetests.UserRequirement4_2_Test.setup(UserRequirement4_2_Test.java:56)\000A
+
+
+# Created at 2021-04-14T07:42:58.266
+Unexpected IOException: 9,1,jl.project.edgetests.UserRequirement4_2_Test,navigate(jl.project.edgetests.UserRequirement4_2_Test),null,null,null
+
+
+# Created at 2021-04-14T07:42:58.267
+Unexpected IOException: 9,1,jl.project.edgetests.UserRequirement4_2_Test,createAndDeleteACategoryWithKeyboardOnly_SpaceKey(jl.project.edgetests.UserRequirement4_2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null
+
+
+# Created at 2021-04-14T07:42:58.270
+Unexpected IOException: 9,1,jl.project.edgetests.UserRequirement4_2_Test,navigate(jl.project.edgetests.UserRequirement4_2_Test),null,null,null
+
+
+# Created at 2021-04-14T07:42:58.272
+Unexpected IOException: 9,1,jl.project.edgetests.UserRequirement4_2_Test,createAndDeleteItemWithKeyboardOnly_SpaceKey(jl.project.edgetests.UserRequirement4_2_Test),null,Timed out waiting for driver server to start.\000ABuild info: version: '3.13.0'\002C revision: '2f0d292'\002C time: '2018-06-25T15:24:21.231Z'\000ASystem info: host: 'DESKTOP-CL5VKH3'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '11.0.10'\000ADriver info: driver.version: EdgeDriver,null
+
+
+# Created at 2021-04-14T07:42:58.275
+Unexpected IOException: 9,1,jl.project.edgetests.UserRequirement4_2_Test,HideAndDisplayItemsWithKeyboardOnly_SpaceKey(jl.project.edgetests.UserRequirement4_2_Test),null,Method UserRequirement4_2_Test.HideAndDisplayItemsWithKeyboardOnly_SpaceKey()[pri:0\002C instance:jl.project.edgetests.UserRequirement4_2_Test@6f27a732] depends on not successfully finished methods in group "creation_deletion_edge_2",null
+
+
+# Created at 2021-04-14T07:42:58.277
+Unexpected IOException: 9,1,jl.project.edgetests.UserRequirement4_2_Test,releseResources(jl.project.edgetests.UserRequirement4_2_Test),null,null,null
+
+
+# Created at 2021-04-14T07:42:58.291
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] OS: Windows 10
+
+
+# Created at 2021-04-14T07:42:58.294
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] User dir: C:\_Synchronized_Code\ATL\AccessibleTodoList_End2endTests
+
+
+# Created at 2021-04-14T07:42:58.459
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] Starting back-end server
+
+
+# Created at 2021-04-14T07:42:58.475
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] Waiting for the back-end server to start.
+
+
+# Created at 2021-04-14T07:43:23.482
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] Testing that the 'Uncategorized' category can be found.
+
+
+# Created at 2021-04-14T07:43:25.522
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] IOException caught.
+
+
+# Created at 2021-04-14T07:43:25.522
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] Connection refused: connect
+
+
+# Created at 2021-04-14T07:43:25.528
+Unexpected IOException with stream: java.net.ConnectException: Connection refused: connect
+
+# Created at 2021-04-14T07:43:25.530
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.533
+Unexpected IOException with stream: 	at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+
+# Created at 2021-04-14T07:43:25.535
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.538
+Unexpected IOException with stream: 	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+
+# Created at 2021-04-14T07:43:25.539
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.539
+Unexpected IOException with stream: 	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+
+# Created at 2021-04-14T07:43:25.539
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.539
+Unexpected IOException with stream: 	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+
+# Created at 2021-04-14T07:43:25.555
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.556
+Unexpected IOException with stream: 	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+
+# Created at 2021-04-14T07:43:25.562
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.563
+Unexpected IOException with stream: 	at java.base/java.net.Socket.connect(Socket.java:608)
+
+# Created at 2021-04-14T07:43:25.567
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.569
+Unexpected IOException with stream: 	at java.base/java.net.Socket.connect(Socket.java:557)
+
+# Created at 2021-04-14T07:43:25.570
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.570
+Unexpected IOException with stream: 	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:182)
+
+# Created at 2021-04-14T07:43:25.570
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.578
+Unexpected IOException with stream: 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+
+# Created at 2021-04-14T07:43:25.579
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.583
+Unexpected IOException with stream: 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+
+# Created at 2021-04-14T07:43:25.584
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.588
+Unexpected IOException with stream: 	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+
+# Created at 2021-04-14T07:43:25.589
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.592
+Unexpected IOException with stream: 	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+
+# Created at 2021-04-14T07:43:25.593
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.593
+Unexpected IOException with stream: 	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+
+# Created at 2021-04-14T07:43:25.599
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.600
+Unexpected IOException with stream: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+
+# Created at 2021-04-14T07:43:25.603
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.606
+Unexpected IOException with stream: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+
+# Created at 2021-04-14T07:43:25.607
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.611
+Unexpected IOException with stream: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+
+# Created at 2021-04-14T07:43:25.612
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.615
+Unexpected IOException with stream: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+
+# Created at 2021-04-14T07:43:25.616
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.620
+Unexpected IOException with stream: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1592)
+
+# Created at 2021-04-14T07:43:25.621
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.625
+Unexpected IOException with stream: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+
+# Created at 2021-04-14T07:43:25.626
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.629
+Unexpected IOException with stream: 	at java.base/java.net.URL.openStream(URL.java:1140)
+
+# Created at 2021-04-14T07:43:25.630
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.630
+Unexpected IOException with stream: 	at jl.project.pa11ytest.UserRequirement5_Pa11yTest.setup(UserRequirement5_Pa11yTest.java:105)
+
+# Created at 2021-04-14T07:43:25.636
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.637
+Unexpected IOException with stream: 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+# Created at 2021-04-14T07:43:25.641
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.642
+Unexpected IOException with stream: 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+# Created at 2021-04-14T07:43:25.645
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.646
+Unexpected IOException with stream: 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+# Created at 2021-04-14T07:43:25.650
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.651
+Unexpected IOException with stream: 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+
+# Created at 2021-04-14T07:43:25.655
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.656
+Unexpected IOException with stream: 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+
+# Created at 2021-04-14T07:43:25.660
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.661
+Unexpected IOException with stream: 	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+
+# Created at 2021-04-14T07:43:25.665
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.666
+Unexpected IOException with stream: 	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
+
+# Created at 2021-04-14T07:43:25.669
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.670
+Unexpected IOException with stream: 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+
+# Created at 2021-04-14T07:43:25.674
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.675
+Unexpected IOException with stream: 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+
+# Created at 2021-04-14T07:43:25.679
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.680
+Unexpected IOException with stream: 	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:163)
+
+# Created at 2021-04-14T07:43:25.684
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.685
+Unexpected IOException with stream: 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+
+# Created at 2021-04-14T07:43:25.689
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.690
+Unexpected IOException with stream: 	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+
+# Created at 2021-04-14T07:43:25.694
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.695
+Unexpected IOException with stream: 	at org.testng.TestRunner.run(TestRunner.java:505)
+
+# Created at 2021-04-14T07:43:25.699
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.700
+Unexpected IOException with stream: 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+
+# Created at 2021-04-14T07:43:25.704
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.705
+Unexpected IOException with stream: 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+
+# Created at 2021-04-14T07:43:25.705
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.712
+Unexpected IOException with stream: 	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+
+# Created at 2021-04-14T07:43:25.713
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.717
+Unexpected IOException with stream: 	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+
+# Created at 2021-04-14T07:43:25.718
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.722
+Unexpected IOException with stream: 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+
+# Created at 2021-04-14T07:43:25.723
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.727
+Unexpected IOException with stream: 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+
+# Created at 2021-04-14T07:43:25.728
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.732
+Unexpected IOException with stream: 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+
+# Created at 2021-04-14T07:43:25.735
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.736
+Unexpected IOException with stream: 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+
+# Created at 2021-04-14T07:43:25.740
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.741
+Unexpected IOException with stream: 	at org.testng.TestNG.runSuites(TestNG.java:1028)
+
+# Created at 2021-04-14T07:43:25.745
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.746
+Unexpected IOException with stream: 	at org.testng.TestNG.run(TestNG.java:996)
+
+# Created at 2021-04-14T07:43:25.746
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.753
+Unexpected IOException with stream: 	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+
+# Created at 2021-04-14T07:43:25.754
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.759
+Unexpected IOException with stream: 	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+
+# Created at 2021-04-14T07:43:25.760
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.764
+Unexpected IOException with stream: 	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+
+# Created at 2021-04-14T07:43:25.765
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.770
+Unexpected IOException with stream: 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+
+# Created at 2021-04-14T07:43:25.771
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.771
+Unexpected IOException with stream: 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+
+# Created at 2021-04-14T07:43:25.771
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.771
+Unexpected IOException with stream: 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+
+# Created at 2021-04-14T07:43:25.784
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.785
+Unexpected IOException with stream: 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+# Created at 2021-04-14T07:43:25.785
+Unexpected IOException with stream: 
+
+
+# Created at 2021-04-14T07:43:25.785
+Unexpected IOException: 5,1,jl.project.pa11ytest.UserRequirement5_Pa11yTest,pa11yTest(jl.project.pa11ytest.UserRequirement5_Pa11yTest),jl.project.pa11ytest.UserRequirement5_Pa11yTest,null,null
+
+
+# Created at 2021-04-14T07:43:25.785
+Unexpected IOException: 8,1,jl.project.pa11ytest.UserRequirement5_Pa11yTest,pa11yTest(jl.project.pa11ytest.UserRequirement5_Pa11yTest),null,null,null,null,UserRequirement5_Pa11yTest.pa11yTest:145,java.lang.AssertionError\000A\0009at jl.project.pa11ytest.UserRequirement5_Pa11yTest.pa11yTest(UserRequirement5_Pa11yTest.java:145)\000A
+
+
+# Created at 2021-04-14T07:43:27.831
+Unexpected IOException: 8,1,jl.project.pa11ytest.UserRequirement5_Pa11yTest,release(jl.project.pa11ytest.UserRequirement5_Pa11yTest),null,null,null,null,UserRequirement5_Pa11yTest.release:160 NullPointer,java.lang.NullPointerException\000A\0009at jl.project.pa11ytest.UserRequirement5_Pa11yTest.release(UserRequirement5_Pa11yTest.java:160)\000A
+
+
+# Created at 2021-04-14T07:43:28.302
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+
