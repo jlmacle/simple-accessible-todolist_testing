@@ -1,2 +1,18 @@
-ERROR: The process with PID 22412 (child process of PID 20244) could not be terminated.
-Reason: There is no running instance of the task.
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 5: [: too many arguments
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kill: jl: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kill: 20u: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kill: IPv4: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kill: (556194) - No such process
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kill: 0t0: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kill: TCP: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kill: 127.0.0.1:4200: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 9: kilsrc/test/java/jl/project/pa11ytest/scripts/run_Angular_server-linux.sh: line 13:  9300 Terminated              ng serve
+ngular_Spring_server_processes-linux.sh: line 12: [: too many arguments
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: jl: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: 70u: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: IPv6: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: (534062) - No such process
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: 0t0: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: TCP: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: *:8080: arguments must be process or job IDs
+src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: line 16: kill: (LISTEN): arguments must be process or job IDs
