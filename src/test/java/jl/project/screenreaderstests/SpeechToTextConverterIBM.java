@@ -22,7 +22,7 @@ public class SpeechToTextConverterIBM
 	ProcessBuilder processBuilder = new ProcessBuilder();	
 	String scriptsFolder = System.getProperty("user.dir")+"/src/test/java/jl/project/screenreaderstests/scripts/";	
 	String apikeyParam="\"apikey:"+System.getenv("IBM_SpeechToText")+"\"";		
-	File error_file = new File("logs/error.txt");
+	File errorFile = new File("logs/error.txt");
 	
 	public String convertAudioToText(String audioFileName) throws UnrecognizedOSException
 	{
@@ -64,8 +64,8 @@ public class SpeechToTextConverterIBM
 			// readAllBytes() since Java 1.9
 			// https://docs.oracle.com/javase/9/docs/api/java/io/InputStream.html#readAllBytes--
 			informationReturned = new String(process.getInputStream().readAllBytes());
-			logger.debug(String.format("Output stream: %s", informationReturned));
-			logger.debug(String.format("Error stream: %s", new String(process.getErrorStream().readAllBytes())));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Output stream: %s", informationReturned));
+			if (logger.isDebugEnabled()) logger.debug(String.format("Error stream: %s", new String(process.getErrorStream().readAllBytes())));
 			logger.debug("Request sent.");
 			
 			logger.debug("Waiting for results.");
@@ -75,7 +75,7 @@ public class SpeechToTextConverterIBM
 		catch (IOException e) 
 		{
 			logger.debug(StringExternalization.EXCEPTION_IO);
-			e.printStackTrace();
+			//e.printStackTrace removed. Potential security hotspot.
 		}
 		// supportsNormalTermination() since Java 1.9
 		// https://docs.oracle.com/javase/9/docs/api/java/lang/Process.html#supportsNormalTermination--
