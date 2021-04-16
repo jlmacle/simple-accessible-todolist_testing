@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" name="Failed suite [Test Suite Screen Readers Test]" guice-stage="DEVELOPMENT">
-  <test name="Speech To TextConverter Test IBM(failed)">
+<suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.coverage.SpeechToTextConverterIBMTest">
+      <class name="jl.project.pa11ytest.UserRequirement5_Pa11yTest">
         <methods>
+          <include name="pa11yTest"/>
+          <include name="release"/>
           <include name="setup"/>
-          <include name="convertAudioToTextTest"/>
         </methods>
-      </class> <!-- jl.project.coverage.SpeechToTextConverterIBMTest -->
+      </class> <!-- jl.project.pa11ytest.UserRequirement5_Pa11yTest -->
     </classes>
-  </test> <!-- Speech To TextConverter Test IBM(failed) -->
-</suite> <!-- Failed suite [Test Suite Screen Readers Test] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

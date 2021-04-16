@@ -1,4 +1,3 @@
-#!/bin/bash
 IsAngularRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 4200 | sed 's/node//' | sed 's/jean-louis.*//')
 
 if [ -z $IsAngularRunning ] 
