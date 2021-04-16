@@ -1,2 +1,0 @@
-ERROR: The process with PID 5284 (child process of PID 6300) could not be terminated.
-Reason: The operation attempted is not supported.

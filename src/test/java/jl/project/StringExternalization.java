@@ -9,9 +9,9 @@ public class StringExternalization {
 	
 	//Used by the ConfigurationUtility class to add the proper webdrivers to this class	
 	//<webdrivers>
-	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
-	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe"; 
-	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
+	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; 
+	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
+	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
 	//</webdrivers>
 	
 	

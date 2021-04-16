@@ -1,4 +1,3 @@
-pwd
 # ** Running ConfigurationUtility to have localhost configuration by default ** 
 echo "** Running ConfigurationUtility **"
 # I need to understand why there is an issue running this code
@@ -9,15 +8,14 @@ echo ""
 echo "** Starting SonarQube and running the code quality analysis **"
 
 # Starting the SonarQube server
-#gnome-terminal -e 'sonar.sh start &'
-gnome-terminal -e 'echo "Time to start the SonarQube server if not done yet."'
+gnome-terminal -- sh -c 'sonar.sh start; sleep 90'
 
 # Running the analysis
 # Waiting for the SonarQube server to start
 echo "Waiting for the SonarQube server to start"
 sleep 90
 
-gnome-terminal -e "cd Desktop/AccessibleTodoList_End2endTests/ && mvn sonar:sonar -Dsonar.projectKey=End-to-endTesting:jl.project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=$SONARQUBE_E2E"
+gnome-terminal -- sh -c 'cd .. ; mvn sonar:sonar -Dsonar.projectKey=End-to-endTesting:jl.project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=$SONARQUBE_E2E ; sleep 100'
 
 # Starting a browser to check the result of the analysis
 echo "Waiting for the analysis to be done."
@@ -32,7 +30,7 @@ echo "The value of an apiKey stored in an environment variable has been dumped a
 echo "The dump file was in the surefire-reports folder. "
 echo "mvn clean suppresses some data, including the surefire-reports. "
 
-gnome-terminal --  "cd Desktop/AccessibleTodoList_End2endTests/ && mvn clean"
+gnome-terminal -- sh -c 'cd .. ; mvn clean ; sleep 90'
 
 echo ""
 echo "git add ."
