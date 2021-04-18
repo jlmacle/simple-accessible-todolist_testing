@@ -3,12 +3,15 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project.coverage.SpeechToTextConverterIBMTest">
+      <class name="jl.project._chrometests.UserRequirement1_Test">
         <methods>
+          <include name="deleteCategory"/>
+          <include name="createCategory"/>
           <include name="setup"/>
-          <include name="convertAudioToTextTest"/>
+          <include name="navigate"/>
+          <include name="releaseResources"/>
         </methods>
-      </class> <!-- jl.project.coverage.SpeechToTextConverterIBMTest -->
+      </class> <!-- jl.project._chrometests.UserRequirement1_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
