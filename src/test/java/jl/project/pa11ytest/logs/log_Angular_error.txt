@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-=======
-src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: 4: [: 8830: unexpected operator
-src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: 8: kill: Illegal number: jl
-src/test/java/jl/prTerminated
-test/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: 11: [: 8756: unexpected operator
-src/test/java/jl/project/pa11ytest/scripts/stop_potentially_existing_Angular_Spring_server_processes-linux.sh: 15: kill: Illegal number: jl
->>>>>>> 28d7f2d8272f88ade4174193ce9d17c8d0a62b6d
