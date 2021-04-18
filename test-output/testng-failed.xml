@@ -3,25 +3,24 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="jl.project._chrometests.UserRequirement1_Test">
+      <class name="jl.project._chrometests.UserRequirement4_2_Test">
         <methods>
-          <include name="deleteCategory"/>
-          <include name="createCategory"/>
           <include name="setup"/>
           <include name="navigate"/>
-          <include name="releaseResources"/>
+          <include name="releseResources"/>
+          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
         </methods>
-      </class> <!-- jl.project._chrometests.UserRequirement1_Test -->
-=======
-      <class name="jl.project.pa11ytest.UserRequirement5_Pa11yTest">
+      </class> <!-- jl.project._chrometests.UserRequirement4_2_Test -->
+      <class name="jl.project._chrometests.copy.UserRequirement4_2_Test">
         <methods>
-          <include name="pa11yTest"/>
-          <include name="release"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
+          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
+          <include name="releseResources"/>
           <include name="setup"/>
+          <include name="navigate"/>
+          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
         </methods>
-      </class> <!-- jl.project.pa11ytest.UserRequirement5_Pa11yTest -->
->>>>>>> 28d7f2d8272f88ade4174193ce9d17c8d0a62b6d
+      </class> <!-- jl.project._chrometests.copy.UserRequirement4_2_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
