@@ -39,7 +39,8 @@ public class UserRequirement2_Test {
 	}
 	
 	@BeforeMethod
-	public void navigate() {
+	public void navigate() 
+	{
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
@@ -63,7 +64,8 @@ public class UserRequirement2_Test {
 	
 
 	@AfterClass
-	public void releaseResources() {
+	public void releaseResources() 
+	{
 		TestsUtilCommon.release(driver);
 	}
 	

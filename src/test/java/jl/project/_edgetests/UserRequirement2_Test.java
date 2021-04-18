@@ -62,7 +62,8 @@ public class UserRequirement2_Test {
 	
 
 	@AfterClass
-	public void releaseResources() {
+	public void releaseResources() 
+	{
 		TestsUtilCommon.release(driver);
 	}
 	

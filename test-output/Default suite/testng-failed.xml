@@ -5,22 +5,14 @@
     <classes>
       <class name="jl.project._chrometests.UserRequirement4_2_Test">
         <methods>
+          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
           <include name="setup"/>
+          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
           <include name="navigate"/>
           <include name="releseResources"/>
           <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
         </methods>
       </class> <!-- jl.project._chrometests.UserRequirement4_2_Test -->
-      <class name="jl.project._chrometests.copy.UserRequirement4_2_Test">
-        <methods>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
-          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
-          <include name="releseResources"/>
-          <include name="setup"/>
-          <include name="navigate"/>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
-        </methods>
-      </class> <!-- jl.project._chrometests.copy.UserRequirement4_2_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

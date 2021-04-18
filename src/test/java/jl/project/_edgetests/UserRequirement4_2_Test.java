@@ -76,11 +76,10 @@ public class UserRequirement4_2_Test {
 	}
 	
 	
-	@AfterClass
-	public void releseResources() 
+	@AfterClass	
+	public void releaseResources() 
 	{
-		driver.close();
-		driver.quit();
+		TestsUtilCommon.release(driver);
 	}
 	
 }

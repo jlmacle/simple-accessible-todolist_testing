@@ -80,7 +80,8 @@ public class UserRequirement1_Test {
 	 * https://testng.org/doc/documentation-main.html 
 	 */
 	@AfterClass	
-	public void releaseResources() {
+	public void releaseResources() 
+	{
 		TestsUtilCommon.release(driver);
 	}
 

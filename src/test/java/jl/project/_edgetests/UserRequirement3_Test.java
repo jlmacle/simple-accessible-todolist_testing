@@ -7,6 +7,7 @@ import java.awt.Robot;
 import org.testng.log4testng.Logger;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import org.testng.annotations.Test;
@@ -45,6 +46,7 @@ public class UserRequirement3_Test {
 		assertThat(isTestSuccessful).isTrue();			
 	}	
 	
+	@AfterClass	
 	public void releaseResources() 
 	{
 		TestsUtilCommon.release(driver);

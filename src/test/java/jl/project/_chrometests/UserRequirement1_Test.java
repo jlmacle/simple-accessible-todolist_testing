@@ -26,7 +26,8 @@ import jl.project.__commontests.TestsUtilWithClicks;
  * @author 
  *	Class testing the user requirement 1 of creating and deleting a category
  */
-public class UserRequirement1_Test {
+public class UserRequirement1_Test 
+{
 	Logger logger = Logger.getLogger(jl.project._chrometests.UserRequirement1_Test.class);
 	WebDriver driver;	
 	Robot robot;
@@ -37,7 +38,8 @@ public class UserRequirement1_Test {
 	 * https://testng.org/doc/documentation-main.html
 	 */
 	@BeforeClass	
-	public void setup() {	
+	public void setup() 
+	{	
 		
 		robot = RobotFactory.getRobotInstance();
 		
@@ -84,7 +86,8 @@ public class UserRequirement1_Test {
 	 * https://testng.org/doc/documentation-main.html 
 	 */
 	@AfterClass	
-	public void releaseResources() {
+	public void releaseResources() 
+	{
 		TestsUtilCommon.release(driver);
 	}
 

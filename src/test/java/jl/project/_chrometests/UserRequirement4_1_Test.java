@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
@@ -40,13 +39,13 @@ public class UserRequirement4_1_Test {
 	}
 	
 	@BeforeMethod
-	public void navigate() {
+	public void navigate() 
+	{
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
 	}
 	
 	
 	@Test(groups = {"creation_deletion_Chrome_1"})		
-	@Ignore
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() 
 	{
 		boolean isTestSuccessful = false;
@@ -56,7 +55,6 @@ public class UserRequirement4_1_Test {
 	
 	
 	@Test(groups = {"creation_deletion_Chrome_1"})		
-	@Ignore
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() 
 	{
 		boolean isTestSuccessful = false;
@@ -66,7 +64,6 @@ public class UserRequirement4_1_Test {
 	
 	
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_1"})		
-	@Ignore
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
 		boolean isTestSuccessful = false;
@@ -75,12 +72,9 @@ public class UserRequirement4_1_Test {
 			
 	}
 	
-	
-	@AfterClass
-	public void releseResources() 
+	@AfterClass	
+	public void releaseResources() 
 	{
-		driver.close();
-		driver.quit();
+		TestsUtilCommon.release(driver);
 	}
-	
 }

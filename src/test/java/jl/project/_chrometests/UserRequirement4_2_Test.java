@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
@@ -40,13 +39,13 @@ public class UserRequirement4_2_Test {
 	}
 	
 	@BeforeMethod
-	public void navigate() {
+	public void navigate() 
+	{
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
 
 	
-	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_2"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() 
 	{
@@ -57,7 +56,7 @@ public class UserRequirement4_2_Test {
 	
 		
 	@Test(groups = {"creation_deletion_Chrome_2"})	
-	@Ignore
+	
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() 
 	{
 		boolean isTestSuccessful = false;
@@ -66,7 +65,7 @@ public class UserRequirement4_2_Test {
 	}
 	
 	
-	@Ignore
+	
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_2"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
@@ -77,11 +76,10 @@ public class UserRequirement4_2_Test {
 	}
 	
 	
-	@AfterClass
-	public void releseResources() 
+	@AfterClass	
+	public void releaseResources() 
 	{
-		driver.close();
-		driver.quit();
+		TestsUtilCommon.release(driver);
 	}
 	
 }

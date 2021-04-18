@@ -253,9 +253,9 @@ public class TestsUtilWithKeyboard
 				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) 
 				{
 					fail("Error: the test item label has been found. The test is failed.");
-				}
-				isTheTestSuccessful = true;
+				}				
 			}
+			isTheTestSuccessful = true;
 			
 		}
 		catch(StaleElementReferenceException e) 
