@@ -33,6 +33,8 @@ echo "mvn clean suppresses some data, including the surefire-reports. "
 
 osascript -e 'tell application "Terminal" to do script "cd Desktop/AccessibleTodoList_End2endTests/ && mvn clean"'
 
+echo "Waiting for the mvn clean to be done."
+sleep 30
 echo ""
 echo "git add ."
 git add .

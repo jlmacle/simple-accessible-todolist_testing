@@ -26,7 +26,7 @@ echo The dump file was in the surefire-reports folder.
 echo mvn clean suppresses some data, including the surefire-reports. 
 
 start mvn clean
-pause 40 "Waiting for the mvn clean to be done."
+pause 30 "Waiting for the mvn clean to be done."
 
 echo ""
 echo git add .
