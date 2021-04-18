@@ -27,7 +27,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+=======
+	<classpathentry kind="src" output="target/classes" path="home/jl/Documents/ATL/AccessibleTodoList_End2endTests">
+>>>>>>> 28d7f2d8272f88ade4174193ce9d17c8d0a62b6d
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>

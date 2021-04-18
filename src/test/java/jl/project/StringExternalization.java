@@ -12,7 +12,6 @@ public class StringExternalization {
 	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; 
 	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
 	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
-	public static final String WEBDRIVER_SAFARI_VALUE = "" ; // /usr/bin/safaridriver to be used instead
 	//</webdrivers>
 	
 	

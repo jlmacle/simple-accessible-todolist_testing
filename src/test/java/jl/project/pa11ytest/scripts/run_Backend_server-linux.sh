@@ -1,4 +1,3 @@
-#!/bin/bash
 isSpringBootRunning=$(lsof -nP -iTCP -sTCP:LISTEN | grep 8080 | sed 's/java//' | sed 's/jean-louis.*//')
 
 if [ -z $isSpringBootRunning]

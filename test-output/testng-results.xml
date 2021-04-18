@@ -2,6 +2,7 @@
 <testng-results ignored="0" total="2" passed="0" failed="0" skipped="2">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2021-04-17T18:08:23Z" name="Default suite" finished-at="2021-04-17T18:08:25Z" duration-ms="2170">
     <groups>
     </groups>
@@ -47,6 +48,26 @@
           </reporter-output>
         </test-method> <!-- releaseResources -->
       </class> <!-- jl.project._chrometests.UserRequirement1_Test -->
+=======
+  <suite started-at="2021-04-16T15:33:21Z" name="Default suite" finished-at="2021-04-16T15:35:09Z" duration-ms="108769">
+    <groups>
+    </groups>
+    <test started-at="2021-04-16T15:33:21Z" name="Default test" finished-at="2021-04-16T15:35:09Z" duration-ms="108769">
+      <class name="jl.project.pa11ytest.UserRequirement5_Pa11yTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.pa11ytest.UserRequirement5_Pa11yTest@39d9314d]" started-at="2021-04-16T17:33:21Z" name="setup" finished-at="2021-04-16T17:35:07Z" duration-ms="106715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="pa11yTest()[pri:0, instance:jl.project.pa11ytest.UserRequirement5_Pa11yTest@39d9314d]" started-at="2021-04-16T17:35:07Z" name="pa11yTest" finished-at="2021-04-16T17:35:07Z" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pa11yTest -->
+        <test-method is-config="true" signature="release()[pri:0, instance:jl.project.pa11ytest.UserRequirement5_Pa11yTest@39d9314d]" started-at="2021-04-16T17:35:07Z" name="release" finished-at="2021-04-16T17:35:09Z" duration-ms="2009" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- release -->
+      </class> <!-- jl.project.pa11ytest.UserRequirement5_Pa11yTest -->
+>>>>>>> 28d7f2d8272f88ade4174193ce9d17c8d0a62b6d
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
