@@ -32,6 +32,9 @@ echo "mvn clean suppresses some data, including the surefire-reports. "
 
 gnome-terminal -- sh -c 'cd .. ; mvn clean ; sleep 90'
 
+
+echo "Waiting for the mvn clean to be done."
+sleep 30
 echo ""
 echo "git add ."
 git add .
