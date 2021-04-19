@@ -37,9 +37,12 @@ public class ConfigurationUtilityTest {
 	String initialText= "//<"+tag+">"+System.lineSeparator()+"//</"+tag+">";
 	byte[] initialText_bytes = initialText.getBytes();
 	File testFile = new File(System.getProperty("user.dir")+stringTestFileFolder+fileWindows);
-	try {
+	try 
+	{
 		Files.write(initialText_bytes, testFile);
-	} catch (IOException e) {
+	} 
+	catch (IOException e) 
+	{
 		logger.debug(StringExternalization.EXCEPTION_IO);
 		e.printStackTrace();
 	}
@@ -89,7 +92,8 @@ public class ConfigurationUtilityTest {
 		
 		assertTrue(isTestTextFound);
 		
-	} catch (IOException e) {
+	} catch (IOException e) 
+	{
 		logger.debug(StringExternalization.EXCEPTION_IO);
 		e.printStackTrace();
 	}

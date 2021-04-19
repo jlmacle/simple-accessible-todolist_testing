@@ -14,8 +14,8 @@ import jl.project.StringExternalization;
 import jl.project.screenreaderstests.SpeechToTextConverterIBM;
 
 
-public class SpeechToTextConverterIBMTest {
-	//TODO: to finish
+public class SpeechToTextConverterIBMTest 
+{	
 	Logger logger = LoggerFactory.getLogger(SpeechToTextConverterIBMTest.class);
 	Robot robot;
 	SpeechToTextConverterIBM converter = new SpeechToTextConverterIBM();	
