@@ -1,0 +1,2 @@
+ERROR: The process with PID 5432 (child process of PID 8024) could not be terminated.
+Reason: The operation attempted is not supported.

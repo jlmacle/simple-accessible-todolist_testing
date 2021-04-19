@@ -35,6 +35,7 @@ public class StringExternalization
 	//Grid 4 : end
 	
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";
+	public static final String LABEL_DEFAULT_CATEGORY = "Uncategorized";
 	public static final String LABEL_TEST_ITEM = "test"; 
 	//the ocr sometimes has an issue to detect the word 'item'.
 	

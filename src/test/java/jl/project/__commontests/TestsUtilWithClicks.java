@@ -316,7 +316,7 @@ public class TestsUtilWithClicks
 		//1. Creation of an item. By default the item is displayed
 		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		//Adding an item to the Uncategorized category created at startup
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys("Uncategorized");
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys(StringExternalization.LABEL_DEFAULT_CATEGORY);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		

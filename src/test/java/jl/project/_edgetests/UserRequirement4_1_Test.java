@@ -52,8 +52,7 @@ public class UserRequirement4_1_Test {
 		boolean isTestSuccessful = false;
 		isTestSuccessful = TestsUtilWithKeyboard.createAndDeleteCategory_UsingTheKeyboard(logger, driver, robot, Keys.ENTER, StringExternalization.TEST_KEYBOARD_ENTER_KEY);
 		assertThat(isTestSuccessful).isTrue();		
-	}
-	
+	}	
 	
 	
 	@Test(groups = {"creation_deletion_edge_1"})	
