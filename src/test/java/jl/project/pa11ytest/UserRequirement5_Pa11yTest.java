@@ -21,7 +21,8 @@ import jl.project.StringExternalization;
  * @author 
  * 
  */
-public class UserRequirement5_Pa11yTest {
+public class UserRequirement5_Pa11yTest 
+{
 	
 	Logger logger = Logger.getLogger(UserRequirement5_Pa11yTest.class);
 	String osName = System.getProperty("os.name");		
@@ -58,12 +59,16 @@ public class UserRequirement5_Pa11yTest {
 		
 		//Used to avoid the deprecated Thread.stop();
 		
-		  try { robot = new Robot(); } catch (AWTException e1) {
-		  logger.debug(StringExternalization.EXCEPTION_AWT); e1.printStackTrace(); }
+		  try { robot = new Robot(); } 
+		  catch (AWTException e1) 
+		  {
+			  logger.debug(StringExternalization.EXCEPTION_AWT); e1.printStackTrace(); 
+		  }
 		 
 		
 		
-		if (this.osName.contains("Windows"))		{			
+		if (this.osName.contains("Windows"))		
+		{			
 			
 			backend_script = script_folder+"run_Backend_server-windows.bat";
 			angular_script = script_folder+"run_Angular_server-windows.bat";
@@ -79,7 +84,8 @@ public class UserRequirement5_Pa11yTest {
 			stop_servers_script = script_folder + "stop_potentially_existing_Angular_Spring_server_processes-macOS.zsh";
 		}		
 		
-		else if (this.osName.contains("Linux"))		{
+		else if (this.osName.contains("Linux"))		
+		{
 			
 			backend_script = script_folder+"run_Backend_server-linux.sh";
 			angular_script = script_folder+"run_Angular_server-linux.sh";
