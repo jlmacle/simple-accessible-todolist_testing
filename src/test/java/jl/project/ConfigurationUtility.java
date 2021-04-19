@@ -22,7 +22,8 @@ import jl.project.exceptions.UnrecognizedOSException;
  * - the path the the StringExternalization.java file
  *
  */
-public class ConfigurationUtility {
+public class ConfigurationUtility 
+{
 	static Logger logger = LoggerFactory.getLogger(ConfigurationUtility.class);
 	static String pathToTmpFolderByArg = null;
 	static String stringExternalizationFolderByArg = null;
@@ -147,7 +148,8 @@ public class ConfigurationUtility {
 					{
 						confData= valueLinux;
 					}
-					else {
+					else 
+					{
 						ifDebugEnabledog(logger, "Unrecognized operating system: %s",osName);
 						throw new UnrecognizedOSException(String.format("Unrecognized operating system: %s",osName));						
 					}
@@ -166,8 +168,7 @@ public class ConfigurationUtility {
 					Files.write(fileSwpPath, line.getBytes(),StandardOpenOption.APPEND);
 					logger.debug(line);
 				}
-			}
-			logger.debug("---> All lines read.");
+			}			
 			
 			//Replacing the previous version of the file
 			Files.copy(fileSwpPath, filePath, StandardCopyOption.REPLACE_EXISTING);

@@ -42,17 +42,20 @@ public class TestsUtilWithClicks
 		robot.delay(2000);
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	  
     	
-    	try {
+    	try 
+    	{
     		logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" aCategory elements");
     		if( aCategoryElements.isEmpty() ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
-    		for (WebElement aCategoryElement : aCategoryElements) {
+    		for (WebElement aCategoryElement : aCategoryElements) 
+    		{
 	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
 				logger.debug("Found text: *"+text+"*");				
 				if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {isCategoryFound=true;break;}
 				
 			}
     	}
-    	catch(StaleElementReferenceException e) {
+    	catch(StaleElementReferenceException e) 
+    	{
     		logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
     				+ "while going through the elements with the name aCategory.");
     		e.printStackTrace();
@@ -133,7 +136,8 @@ public class TestsUtilWithClicks
 				}
 				
 			}
-			catch(StaleElementReferenceException e) {
+			catch(StaleElementReferenceException e) 
+			{
 				logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 						+ "while going through the elements related to a trash can icon in front of a category.");
 				e.getMessage();
@@ -148,7 +152,8 @@ public class TestsUtilWithClicks
 			
 			aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
-			try {
+			try 
+			{
 				for(WebElement aCategoryElement : aCategoryElements) 
 				{
 					String text = aCategoryElement.getText();
@@ -165,7 +170,8 @@ public class TestsUtilWithClicks
 				isCategoryFound = false;
 				
 			}
-			catch(StaleElementReferenceException e) {
+			catch(StaleElementReferenceException e) 
+			{
 				logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 						+ "while going through the elements related to a trash can icon before a category.");
 				e.getMessage();
@@ -174,7 +180,8 @@ public class TestsUtilWithClicks
 			
 		}
 		
-		else {
+		else 
+		{
 			logger.error("The test category was not found.");
 			fail("Test of category creation failed.");
 		}		
@@ -203,9 +210,11 @@ public class TestsUtilWithClicks
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
-		try {
+		try 
+		{
 			logger.debug(StringExternalization.DEBUG_FOUND+anItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
-			for(WebElement anItemElement: anItemElements) {
+			for(WebElement anItemElement: anItemElements) 
+			{
 				String text = anItemElement.getText();				
 				if (text.contains(StringExternalization.LABEL_TEST_ITEM))
 				{
@@ -215,16 +224,13 @@ public class TestsUtilWithClicks
 			}
 			
 		}
-		catch(StaleElementReferenceException e) {
+		catch(StaleElementReferenceException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();
 			e.printStackTrace();
-		}	
-
-		
-		// Giving time for the item to be displayed
-    	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
+		}			
 		
 		robot.delay(3000);    	   	
 
@@ -243,19 +249,22 @@ public class TestsUtilWithClicks
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
 		robot.delay(2000);
-		try {			
+		try 
+		{			
 			logger.debug(StringExternalization.DEBUG_FOUND+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
 			//There should be only one item
 			if(anIconToDeleteAnItemElements.size() != 1) 
 				{fail(StringExternalization.EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE+anIconToDeleteAnItemElements.size());}
-			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {				
+			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) 
+			{				
 				anIconToDeleteAnItemElement.click();
 				logger.debug("Trash can icon clicked.");
 				robot.delay(2000);
 			}
 			
 		}
-		catch(StaleElementReferenceException e) {
+		catch(StaleElementReferenceException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anIconToDeleteAnItem' ");
 			e.getMessage();
@@ -267,20 +276,22 @@ public class TestsUtilWithClicks
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
-		try {
+		try 
+		{
 			
 			logger.debug(StringExternalization.DEBUG_FOUND+anIconToDeleteAnItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
 			for(WebElement anItemElement: anIconToDeleteAnItemElements) 
 			{
 				String text = anItemElement.getText();
 				logger.debug("Found *"+text+"* as text.");
-				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) {
-					fail("Error: the test label has been found.");}
+				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) 
+				{fail("Error: the test label has been found.");}
 			}
 			isItemDeleted = true;
 			
 		}
-		catch(StaleElementReferenceException e) {
+		catch(StaleElementReferenceException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' ");
 			e.getMessage();
@@ -305,7 +316,7 @@ public class TestsUtilWithClicks
 		//1. Creation of an item. By default the item is displayed
 		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		//Adding an item to the Uncategorized category created at startup
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys("Uncategorized");
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys(StringExternalization.LABEL_DEFAULT_CATEGORY);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
 		
@@ -315,8 +326,10 @@ public class TestsUtilWithClicks
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
-		try {
-			for(WebElement anItemElement: anItemElements) {
+		try 
+		{
+			for(WebElement anItemElement: anItemElements) 
+			{
 				String text = anItemElement.getText();				
 				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {logger.debug(StringExternalization.DEBUG_FOUND+text+" as text."); isTestItemLabelFound=true;}
 				if(isTestItemLabelFound == false) {fail("The test label was not found. The test of item creation failed.");}
@@ -325,7 +338,8 @@ public class TestsUtilWithClicks
 			isTestSuccessful = true;
 			
 		}
-		catch(StaleElementReferenceException e) {
+		catch(StaleElementReferenceException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			e.getMessage();

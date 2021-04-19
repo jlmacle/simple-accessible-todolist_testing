@@ -53,7 +53,6 @@ public class UserRequirement2_Test {
 		assertThat(isItemCreated).isTrue();
 	}
 	
-	
 	@Test
 	public void deleteItem() 
 	{

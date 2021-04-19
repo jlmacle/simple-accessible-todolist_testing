@@ -70,7 +70,6 @@ public class TestsUtilWithKeyboard
 							+ "created using the keyboard only. ");
 					isCategoryCreated=true;
 				}
-					
 				
 				assertThat(isCategoryCreated).isTrue();
 			}
@@ -116,10 +115,12 @@ public class TestsUtilWithKeyboard
 			aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
 			try {
-				for(WebElement aCategoryElement : aCategoryElements) {
+				for(WebElement aCategoryElement : aCategoryElements) 
+				{
 					String text = aCategoryElement.getText();
 					logger.debug(text);
-					if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {
+					if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) 
+					{
 						//if the created category can be found the test is failed    					
 						fail(StringExternalization.DEBUG_FOUND+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
 								+ "The test is failed.");
@@ -133,7 +134,8 @@ public class TestsUtilWithKeyboard
 				
 				assertThat(isCategoryFound).isFalse();
 			}
-			catch(StaleElementReferenceException e) {
+			catch(StaleElementReferenceException e) 
+			{
 				logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 						+ "while going through the elements related to a trash can icon before a category.");
 				logger.error(e.getMessage());
@@ -186,18 +188,22 @@ public class TestsUtilWithKeyboard
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		
 		boolean isItemCreated=false;
-		try {
+		try 
+		{
 			logger.debug(StringExternalization.DEBUG_FOUND+anItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
-			for(WebElement anItemElement: anItemElements) {
+			for(WebElement anItemElement: anItemElements) 
+			{
 				String text = anItemElement.getText();				
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) 
+				{
 					logger.debug(StringExternalization.DEBUG_FOUND+text+" as text.");
 					isItemCreated = true;
-					}
+				}
 			}
 			
 		}
-		catch(StaleElementReferenceException e) {
+		catch(StaleElementReferenceException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			logger.error(e.getMessage());
@@ -244,10 +250,12 @@ public class TestsUtilWithKeyboard
 		robot.delay(2000);
 		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
-		try {
+		try 
+		{
 			
 			logger.debug(StringExternalization.DEBUG_FOUND+anIconToDeleteAnItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
-			for(WebElement anItemElement: anIconToDeleteAnItemElements) {
+			for(WebElement anItemElement: anIconToDeleteAnItemElements) 
+			{
 				String text = anItemElement.getText();
 				logger.debug("Found *"+text+"* as text.");
 				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) 
@@ -309,19 +317,23 @@ public class TestsUtilWithKeyboard
 		robot.delay(2000);
 		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
 		boolean isItemCreated=false;
-		try {
+		try 
+		{
 			logger.debug(StringExternalization.DEBUG_FOUND+anItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
-			for(WebElement anItemElement: anItemElements) {
+			for(WebElement anItemElement: anItemElements) 
+			{
 				String text = anItemElement.getText();				
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) 
+				{
 					logger.debug("Success. Found "+text+" as text.");
 					isItemCreated = true;
-					}
+				}
 			}
 			assertThat(isItemCreated).isTrue();
 			
 		}
-		catch(StaleElementReferenceException e) {
+		catch(StaleElementReferenceException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
 					+ "the elements named 'anItem' after creation of the element.");
 			logger.error(e.getMessage());
@@ -332,9 +344,11 @@ public class TestsUtilWithKeyboard
 		logger.info("3. Verification that the item is displayed");
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		File screenshotFile_copy = new File(StringExternalization.TESSERACT_SCREENSHOT_PATH_NEW_ITEM);
-		try {
+		try 
+		{
 			FileUtils.copyFile(screenshotFile, screenshotFile_copy);
-		} catch (IOException e) {
+		} catch (IOException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
 			e.printStackTrace();
 		}
@@ -345,9 +359,12 @@ public class TestsUtilWithKeyboard
 		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
 		ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
-		try {
+		try 
+		{
 			result = ocr.doOCR(screenshotFile_copy);
-		} catch (TesseractException e) {
+		} 
+		catch (TesseractException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_TESSERACT);
 			logger.error(e.getMessage());
 			e.printStackTrace();
@@ -394,7 +411,8 @@ public class TestsUtilWithKeyboard
 		// Verification that the item is hidden
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
-		try {
+		try 
+		{
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToHide_copy);
 			result = ocr.doOCR(screenshot_AfterClickToHide_copy);
 			
@@ -407,13 +425,16 @@ public class TestsUtilWithKeyboard
 			{fail("The label was found on the screenshot when the item should have been hidden: "+result);
 			}
 			
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			logger.error("An IOExeption occured while copying the screenshot taken after the click"				
 					+ "(Hiding of the item).");
 			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
-		 catch (TesseractException e) {
+		catch (TesseractException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Hiding of the item)");			
 			logger.error(e.getMessage());
@@ -430,7 +451,8 @@ public class TestsUtilWithKeyboard
 		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");
 		
-		try {			
+		try 
+		{			
 			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
 			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
 			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
@@ -443,12 +465,16 @@ public class TestsUtilWithKeyboard
 			}
 			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
 					+" when the item should have been displayed.");}
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_IO+"occured while copying the screenshot taken after the click"
 					+ "(Display of the item)");
 			logger.error(e.getMessage());
 			e.printStackTrace();
-		} catch (TesseractException e) {
+		} 
+		catch (TesseractException e) 
+		{
 			logger.error(StringExternalization.EXCEPTION_TESSERACT
 					+ "(Display of the item)");
 			logger.error(e.getMessage());
@@ -459,7 +485,8 @@ public class TestsUtilWithKeyboard
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
-		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
+		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) 
+		{//only one item in the test
 			anIconToDeleteAnItemElement.click();
 			robot.delay(2000);
 		}

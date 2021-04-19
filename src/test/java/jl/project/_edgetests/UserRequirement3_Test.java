@@ -36,8 +36,6 @@ public class UserRequirement3_Test {
 		
 	}
 	
-	
-	
 	@Test
 	public void hideAndDisplayItem() 
 	{

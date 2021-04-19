@@ -1,6 +1,7 @@
 package jl.project;
 
-public class StringExternalization {
+public class StringExternalization 
+{
 	
 	private StringExternalization() 
 	{
@@ -34,6 +35,7 @@ public class StringExternalization {
 	//Grid 4 : end
 	
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";
+	public static final String LABEL_DEFAULT_CATEGORY = "Uncategorized";
 	public static final String LABEL_TEST_ITEM = "test"; 
 	//the ocr sometimes has an issue to detect the word 'item'.
 	
@@ -90,13 +92,5 @@ public class StringExternalization {
 
 	public static final String 	DEBUG_FOUND = "Found ";
 	public static final String DEBUG_ELEMENT_NAMED_AN_ITEM = " element named 'anItem'";
-	
-	
-	
-
-	
-	
-	
-	
 
 }
