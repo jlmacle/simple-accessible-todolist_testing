@@ -22,7 +22,7 @@ echo "Waiting for the analysis to be done."
 sleep 40 
 echo ""
 echo "Starting a browser to check the result of the analysis."
-chromium-browser http:// http://localhost:9000
+chromium-browser http://localhost:9000
 
 echo ""
 echo "** Running mvn clean ** "
