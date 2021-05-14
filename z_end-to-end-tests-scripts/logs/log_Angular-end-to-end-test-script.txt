@@ -1,0 +1,25 @@
+Your global Angular CLI version (11.2.6) is greater than your local version (10.2.3). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+- Generating browser application bundles...
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names         |      Size
+vendor.js           | vendor        |   3.99 MB
+polyfills.js        | polyfills     | 141.32 kB
+main.js             | main          |  69.83 kB
+runtime.js          | runtime       |   6.15 kB
+styles.css          | styles        |   1.00 kB
+
+| Initial Total |   4.20 MB
+
+<<<<<<< HEAD
+Build at: 2021-04-16T16:20:40.417Z - Hash: fd005c488903601424cb - Time: 10589ms
+=======
+Build at: 2021-04-16T14:37:24.358Z - Hash: 221a27c21e043668c7ff - Time: 43158ms
+>>>>>>> 28d7f2d8272f88ade4174193ce9d17c8d0a62b6d
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.

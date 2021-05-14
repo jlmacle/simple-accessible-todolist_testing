@@ -2,9 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <!-- Right-click + Run As 'TestNG Suite' -->
 <suite name = "Test Suite Screen Readers Test">
-   <test name = "Speech To TextConverter Test (IBM)">
+   <test name = "Speech To TextConverter Test IBM">
       <classes>
-         <class name = "jl.project.ScreenReadersTests/SpeechToTextConverterIBMTest" />
+      	<!-- API KEY NEEDED -->
+         <class name = "jl.project.coverage.SpeechToTextConverterIBMTest" />
       </classes>
    </test>  
 

@@ -1,0 +1,93 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< jl.forthem:AccessibleTodoList_BackEnd >----------------
+[INFO] Building AccessibleTodoList_BackEnd 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.3.3.RELEASE:run (default-cli) > test-compile @ AccessibleTodoList_BackEnd >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ AccessibleTodoList_BackEnd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ AccessibleTodoList_BackEnd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ AccessibleTodoList_BackEnd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jean-louis/Desktop/AccessibleTodoList_Backend/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ AccessibleTodoList_BackEnd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.3.3.RELEASE:run (default-cli) < test-compile @ AccessibleTodoList_BackEnd <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.3.3.RELEASE:run (default-cli) @ AccessibleTodoList_BackEnd ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.3.RELEASE)
+
+- INFO  j.f.AccessibleTodoListBackEndApplication : Starting AccessibleTodoListBackEndApplication on mm.home with PID 661 (/Users/jean-louis/Desktop/AccessibleTodoList_Backend/target/classes started by jean-louis in /Users/jean-louis/Desktop/AccessibleTodoList_Backend)
+-- INFO  j.f.AccessibleTodoListBackEndApplication : No active profile set, falling back to default profiles: default
+-- INFO  .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+-- INFO  .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 2 JPA repository interfaces.
+-- INFO  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+-- INFO  o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+-- INFO  org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+-- INFO  o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+-- INFO  w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 975 ms
+-- INFO  o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+-- INFO  o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+-- WARN  JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+-- INFO  org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+-- INFO  o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+-- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+-- INFO  o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+-- INFO  DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+-- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+-- INFO  org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+-Hibernate: alter table tdl_item drop constraint FKfxay8ru369ndhyrhr8jsfjs30
+Hibernate: drop table if exists tdl_category cascade
+Hibernate: drop table if exists tdl_item cascade
+Hibernate: create table tdl_category (category_id  serial not null, category_name varchar(255), primary key (category_id))
+Hibernate: create table tdl_item (item_id  serial not null, category_id int4, item_name varchar(255), primary key (item_id))
+Hibernate: alter table tdl_item add constraint FKfxay8ru369ndhyrhr8jsfjs30 foreign key (category_id) references tdl_category
+- INFO  o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+-- INFO  j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+-- INFO  DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+-- INFO  j.f.AccessibleTodoListBackEndApplication : Started AccessibleTodoListBackEndApplication in 3.361 seconds (JVM running for 3.768)
+-Hibernate: select category0_.category_id as category1_0_0_, category0_.category_name as category2_0_0_ from tdl_category category0_ where category0_.category_id=?
+Hibernate: insert into tdl_category (category_name) values (?)
+- INFO  o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+-- INFO  o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+-- INFO  o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+-Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+Hibernate: select category0_.category_id as category1_0_, category0_.category_name as category2_0_ from tdl_category category0_
+Hibernate: select item0_.item_id as item_id1_1_, item0_.category_id as category2_1_, item0_.item_name as item_nam3_1_ from tdl_item item0_
+Hibernate: select items0_.category_id as category2_1_0_, items0_.item_id as item_id1_1_0_, items0_.item_id as item_id1_1_1_, items0_.category_id as category2_1_1_, items0_.item_name as item_nam3_1_1_ from tdl_item items0_ where items0_.category_id=?
+- INFO  j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+-- INFO  o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+-- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+-- INFO  com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+-[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:42 min
+[INFO] Finished at: 2021-04-16T18:21:17+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:2.3.3.RELEASE:run (default-cli) on project AccessibleTodoList_BackEnd: Application finished with exit code: 143 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
