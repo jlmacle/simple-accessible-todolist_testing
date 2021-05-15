@@ -3,16 +3,15 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project._chrometests.UserRequirement4_2_Test">
+      <class name="jl.project._chrometests.UserRequirement1_Test">
         <methods>
-          <include name="HideAndDisplayItemsWithKeyboardOnly_SpaceKey"/>
+          <include name="deleteCategory_UsingClicks"/>
           <include name="setup"/>
-          <include name="createAndDeleteACategoryWithKeyboardOnly_SpaceKey"/>
+          <include name="createCategory_UsingClicks"/>
           <include name="navigate"/>
-          <include name="releseResources"/>
-          <include name="createAndDeleteItemWithKeyboardOnly_SpaceKey"/>
+          <include name="releaseResources"/>
         </methods>
-      </class> <!-- jl.project._chrometests.UserRequirement4_2_Test -->
+      </class> <!-- jl.project._chrometests.UserRequirement1_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
