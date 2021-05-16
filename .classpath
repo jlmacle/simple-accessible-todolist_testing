@@ -25,14 +25,9 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/classes" path="home/jl/Documents/ATL/AccessibleTodoList_End2endTests">
+	<classpathentry kind="src" output="target/classes" path="_Synchronized_Code/ATL/AccessibleTodoList_End2endTests">
 		<attributes>
 			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry excluding="**" kind="src" output="target/classes" path="z_end-to-end-tests-scripts/tesseract_lib_macOS">
-		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
