@@ -1,3 +1,0 @@
-//<testTag>
-valueWindows
-//</testTag>

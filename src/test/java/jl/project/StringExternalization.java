@@ -18,7 +18,7 @@ public class StringExternalization
 	
 	//Used by the ConfigurationUtility class to make sure that the default configuration doesn't use Selenium Grid 4.
 	//<seleniumGrid4>
-	public static final boolean GRID_NOT_USED = true;
+	public static final boolean GRID_NOT_USED = false;
 	//</seleniumGrid4>
 	
 	//<angularServer>

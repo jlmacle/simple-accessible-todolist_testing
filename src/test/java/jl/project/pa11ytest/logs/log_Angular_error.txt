@@ -1,4 +1,19 @@
-ERROR: The process with PID 2000 (child process of PID 12432) could not be terminated.
-Reason: There is no running instance of the task.
-ERROR: The process with PID 11144 (child process of PID 12300) could not be terminated.
-Reason: The operation attempted is not supported.
+
+Error: net::ERR_CONNECTION_REFUSED at http://localhost:4200
+    at navigate (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\puppeteer\lib\FrameManager.js:120:37)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async FrameManager.navigateFrame (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\puppeteer\lib\FrameManager.js:94:17)
+    at async Frame.goto (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\puppeteer\lib\FrameManager.js:406:12)
+    at async Page.goto (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\puppeteer\lib\Page.js:674:12)
+    at async runPa11yTest (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\pa11y\lib\pa11y.js:183:3)
+    at async pa11y (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\pa11y\lib\pa11y.js:55:19)
+    at async runProgram (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\pa11y\bin\pa11y.js:122:19)
+  -- ASYNC --
+    at Frame.<anonymous> (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\puppeteer\lib\helper.js:111:15)
+    at Page.goto (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\puppeteer\lib\Page.js:674:49)
+    at Page.<anonymous> (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\puppeteer\lib\helper.js:112:23)
+    at runPa11yTest (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\pa11y\lib\pa11y.js:183:14)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async pa11y (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\pa11y\lib\pa11y.js:55:19)
+    at async runProgram (C:\_Synchronized_Code\ATL\AccessibleTodoList_FrontEnd\node_modules\pa11y\bin\pa11y.js:122:19)
+

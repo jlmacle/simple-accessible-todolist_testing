@@ -32,11 +32,11 @@
                     <!-- Suite testng xml file to consider for test execution -->                    
 
                     <suiteXmlFiles>     
-                        <!--      -->                                  
+                        <!--                                      
                         <suiteXmlFile>src/test/java/TestNG_Chrome.xml</suiteXmlFile>  
                                                        
                         <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>                                                   
-                        
+                         --> 
                        	<suiteXmlFile>src/test/java/TestNG_z_Pa11y.xml</suiteXmlFile>
 						
                        	<!-- API key needed to run this test.  -->                       	
