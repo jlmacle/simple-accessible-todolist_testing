@@ -13,16 +13,18 @@ public class StringExternalization
 	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
 	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe"; 
 	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
+	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "chromedriver_83_0_4103.exe";
 	//</webdrivers>
 	
 	
 	//Used by the ConfigurationUtility class to make sure that the default configuration doesn't use Selenium Grid 4.
 	//<seleniumGrid4>
-	public static final boolean GRID_NOT_USED = false;
+	public static final boolean GRID_NOT_USED = true;
 	//</seleniumGrid4>
 	
 	//<angularServer>
-	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";
+	//public static final String ANGULAR_SERVER_URL = "http://localhost:4200";
+	public static final String ANGULAR_SERVER_URL = "http://192.168.1.15:4200";
 	//</angularServer>
 	
 	/* Selenium Grid 4 configuration : begin */

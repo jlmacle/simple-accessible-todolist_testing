@@ -3,15 +3,14 @@
 <suite thread-count="-1" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="jl.project._chrometests.UserRequirement1_Test">
+      <class name="jl.project.androidtests.UserRequirement1_Test">
         <methods>
-          <include name="deleteCategory_UsingClicks"/>
-          <include name="setup"/>
-          <include name="createCategory_UsingClicks"/>
           <include name="navigate"/>
+          <include name="createCategory"/>
           <include name="releaseResources"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- jl.project._chrometests.UserRequirement1_Test -->
+      </class> <!-- jl.project.androidtests.UserRequirement1_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

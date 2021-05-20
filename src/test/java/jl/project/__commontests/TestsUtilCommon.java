@@ -5,13 +5,17 @@ import java.awt.Robot;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import io.appium.java_client.android.AndroidDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.log4testng.Logger;
-import org.openqa.selenium.WebDriver;
 
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import jl.project.StringExternalization;
 
@@ -34,6 +38,13 @@ public class TestsUtilCommon
 		{
 			if (webDriverValue.equals(StringExternalization.WEBDRIVER_CHROME_VALUE)) driver = new ChromeDriver();
 			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_EDGE_VALUE)) driver = new EdgeDriver();
+			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_CHROME_ON_ANDROID_VALUE))
+			{
+				capabilities.setCapability("automationName", "UiAutomator2");
+				capabilities.setCapability("chromedriverExecutableDir","../webdrivers/");
+				driver =  new AndroidDriver<WebElement>(capabilities);
+				
+			}
 			else 
 			{
 				if (logger.isDebugEnabled()) logger.debug(String.format("Unexpected webdriver value: %s",webDriverValue));
@@ -53,8 +64,7 @@ public class TestsUtilCommon
 				e.printStackTrace();
 			}			
 		}
-		
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		
 		try 
 		{
