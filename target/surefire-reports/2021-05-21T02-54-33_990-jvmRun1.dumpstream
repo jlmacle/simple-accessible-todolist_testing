@@ -1,0 +1,47 @@
+# Created at 2021-05-21T02:57:16.125
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+# Created at 2021-05-21T02:57:34.842
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] 
+C:\_Synchronized_Code\ATL\AccessibleTodoList_End2endTests>if exist ../AccessibleTodoList_FrontEnd/node_modules/pa11y/bin (cd ../AccessibleTodoList_FrontEnd/node_modules/.bin   && pa11y http://localhost:4200 )  else (pa11y http://localhost:4200 ) 
+
+Welcome to Pa11y
+
+ > Running Pa11y on URL http://localhost:4200
+
+
+
+# Created at 2021-05-21T02:57:34.842
+Unexpected IOException: 5,1,jl.project.pa11ytest.UserRequirement5_Pa11yTest,pa11yTest(jl.project.pa11ytest.UserRequirement5_Pa11yTest),jl.project.pa11ytest.UserRequirement5_Pa11yTest,null,null
+
+
+# Created at 2021-05-21T02:57:34.842
+Unexpected IOException: 8,1,jl.project.pa11ytest.UserRequirement5_Pa11yTest,pa11yTest(jl.project.pa11ytest.UserRequirement5_Pa11yTest),null,null,null,null,UserRequirement5_Pa11yTest.pa11yTest:151,java.lang.AssertionError\000A\0009at jl.project.pa11ytest.UserRequirement5_Pa11yTest.pa11yTest(UserRequirement5_Pa11yTest.java:151)\000A
+
+
+# Created at 2021-05-21T02:57:36.858
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] process_angular 	 is alive : false
+
+
+# Created at 2021-05-21T02:57:36.858
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] process_backend 	 is alive : false
+
+
+# Created at 2021-05-21T02:57:36.858
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] process_Pa11y 	 is alive : false
+
+
+# Created at 2021-05-21T02:57:36.858
+Unexpected IOException with stream: [UserRequirement5_Pa11yTest] [DEBUG] process_stopServer  is alive : false
+
+
+# Created at 2021-05-21T02:57:37.217
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+
