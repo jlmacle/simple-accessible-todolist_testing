@@ -16,7 +16,7 @@ public class StringExternalization
 	// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter
 	// as long as the webdriver is in the webdriver folder.
 	// Automatixc research of webdrrivers with 
-	// capabilities.setCapability("chromedriverExecutableDir","../webdrivers/");
+	// capabilities.setCapability["chromedriverExecutableDir","../webdrivers/"];
 	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "";
 	//</webdrivers>
 	

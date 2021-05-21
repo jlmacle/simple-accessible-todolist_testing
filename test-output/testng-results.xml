@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-21T08:37:29Z" name="Default suite" finished-at="2021-05-21T08:38:28Z" duration-ms="58521">
+  <suite started-at="2021-05-21T11:21:20Z" name="Default suite" finished-at="2021-05-21T11:22:16Z" duration-ms="55614">
     <groups>
     </groups>
-    <test started-at="2021-05-21T08:37:29Z" name="Default test" finished-at="2021-05-21T08:38:28Z" duration-ms="58521">
+    <test started-at="2021-05-21T11:21:20Z" name="Default test" finished-at="2021-05-21T11:22:16Z" duration-ms="55614">
       <class name="jl.project.androidtests.UserRequirement1_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@48d61b48]" started-at="2021-05-21T03:37:29Z" name="setup" finished-at="2021-05-21T03:37:54Z" duration-ms="24447" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@3b8f0a79]" started-at="2021-05-21T06:21:20Z" name="setup" finished-at="2021-05-21T06:21:43Z" duration-ms="22538" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@48d61b48]" started-at="2021-05-21T03:37:54Z" name="navigate" finished-at="2021-05-21T03:38:17Z" duration-ms="23179" status="PASS">
+        <test-method is-config="true" signature="navigate()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@3b8f0a79]" started-at="2021-05-21T06:21:43Z" name="navigate" finished-at="2021-05-21T06:22:06Z" duration-ms="23606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigate -->
-        <test-method signature="createCategory()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@48d61b48]" started-at="2021-05-21T03:38:17Z" name="createCategory" finished-at="2021-05-21T03:38:27Z" duration-ms="10139" status="PASS">
+        <test-method signature="createCategory()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@3b8f0a79]" started-at="2021-05-21T06:22:06Z" name="createCategory" finished-at="2021-05-21T06:22:15Z" duration-ms="8937" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createCategory -->
-        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@48d61b48]" started-at="2021-05-21T03:38:27Z" name="releaseResources" finished-at="2021-05-21T03:38:28Z" duration-ms="718" status="PASS">
+        <test-method is-config="true" signature="releaseResources()[pri:0, instance:jl.project.androidtests.UserRequirement1_Test@3b8f0a79]" started-at="2021-05-21T06:22:15Z" name="releaseResources" finished-at="2021-05-21T06:22:16Z" duration-ms="512" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseResources -->
