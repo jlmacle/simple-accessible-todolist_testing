@@ -3,7 +3,7 @@ cd ../../../../../../..
 ::  Reducing the risk of credential leak.
 ::-----------------------------------------------------------------------------------------------------------------------------
 
-::mvn clean
+start mvn clean &
 
 ::-----------------------------------------------------------------------------------------------------------------------------
 ::#  Pushing the code to Git
@@ -17,4 +17,4 @@ set /p commit_end=
 git commit -m %quotation_mark% %commit_prefix% %commit_end% %quotation_mark%
 echo "git push"
 git push
-echo Commited and pushed %commit_prefix% %commit_end%
+echo Commited and pushed  %quotation_mark%  %commit_prefix% %commit_end%  %quotation_mark%
