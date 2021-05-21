@@ -48,7 +48,12 @@ public class ConfigurationUtility
 		String tab = "\t";
 		String webdriversValueWindows = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver.exe\";"+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver.exe\"; "+ System.lineSeparator()
-		+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver.exe\"; ";
+		+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver.exe\"; "+ System.lineSeparator()
+		+tab + "// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter"+ System.lineSeparator()
+		+tab + "// as long as the webdriver is in the webdriver folder."+ System.lineSeparator()
+		+tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
+		+tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];"+ System.lineSeparator()
+		+tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"\";";
 		String webdriversValueMacOS = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
@@ -73,7 +78,7 @@ public class ConfigurationUtility
 		catch (UnrecognizedOSException e) 
 		{
 			logger.debug(StringExternalization.EXCEPTION_IO);
-			e.printStackTrace();
+			//e.printStackTrace //Commented to avoid a security hostpot
 		}
 	}
 	
