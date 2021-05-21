@@ -25,7 +25,7 @@ public class TestsUtilCommon
 		
  	public static WebDriver setup(Logger logger, Robot robot, String browserName, WebDriver driver, String webDriverKey, String webDriverValue)
 	{
-			
+		boolean isNotATestOnAndroid = true;
 		logger.info(StringExternalization.TEST_START+webDriverValue);
 		//https://chromedriver.chromium.org/downloads
 		System.setProperty(webDriverKey, 
@@ -40,6 +40,7 @@ public class TestsUtilCommon
 			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_EDGE_VALUE)) driver = new EdgeDriver();
 			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_CHROME_ON_ANDROID_VALUE))
 			{
+				isNotATestOnAndroid = false; 
 				capabilities.setCapability("automationName", "UiAutomator2");
 				capabilities.setCapability("chromedriverExecutableDir","../webdrivers/");
 				driver =  new AndroidDriver<WebElement>(capabilities);
@@ -64,7 +65,7 @@ public class TestsUtilCommon
 				e.printStackTrace();
 			}			
 		}
-		//driver.manage().window().maximize();
+		if (isNotATestOnAndroid) driver.manage().window().maximize();
 		
 		try 
 		{
