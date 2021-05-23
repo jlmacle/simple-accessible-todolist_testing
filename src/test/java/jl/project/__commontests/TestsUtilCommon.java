@@ -46,6 +46,7 @@ public class TestsUtilCommon
 				driver =  new AndroidDriver<WebElement>(capabilities);
 				
 			}
+			
 			else 
 			{
 				if (logger.isDebugEnabled()) logger.debug(String.format("Unexpected webdriver value: %s",webDriverValue));

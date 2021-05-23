@@ -35,7 +35,7 @@ public class UserRequirement1_Test
 	public void navigate()
 	{
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		robot.delay(20000);
+		robot.delay(2000);
 	}
 	
 	@Test
