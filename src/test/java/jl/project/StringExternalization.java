@@ -17,7 +17,7 @@ public class StringExternalization
 	// as long as the webdriver is in the webdriver folder.
 	// Automatixc research of webdrrivers with 
 	// capabilities.setCapability["chromedriverExecutableDir","../webdrivers/"];
-	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "";
+	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "Chrome on Android";
 	//</webdrivers>
 	
 	
@@ -27,7 +27,7 @@ public class StringExternalization
 	//</seleniumGrid4>
 	
 	//<angularServer>
-	public static final String ANGULAR_SERVER_URL = "http://192.168.1.15:4200";
+	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";
 	//</angularServer>
 	
 	/* Selenium Grid 4 configuration : begin */
