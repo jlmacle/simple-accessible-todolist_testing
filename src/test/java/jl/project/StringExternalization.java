@@ -10,14 +10,15 @@ public class StringExternalization
 	
 	//Used by the ConfigurationUtility class to add the proper webdrivers to this class	
 	//<webdrivers>
-	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
-	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe"; 
-	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
+	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; 
+	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
+	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
 	// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter
 	// as long as the webdriver is in the webdriver folder.
 	// Automatixc research of webdrrivers with 
 	// capabilities.setCapability["chromedriverExecutableDir","../webdrivers/"];
-	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "";
+	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "Chrome on Android";
+	public static final String WEBDRIVER_SAFARI_VALUE = "" ; // /usr/bin/safaridriver to be used instead
 	//</webdrivers>
 	
 	
@@ -27,7 +28,7 @@ public class StringExternalization
 	//</seleniumGrid4>
 	
 	//<angularServer>
-	public static final String ANGULAR_SERVER_URL = "http://localhost:4200";
+	public static final String ANGULAR_SERVER_URL = "http://192.168.1.16:4200";
 	//</angularServer>
 	
 	/* Selenium Grid 4 configuration : begin */

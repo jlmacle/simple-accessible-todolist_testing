@@ -57,10 +57,20 @@ public class ConfigurationUtility
 		String webdriversValueMacOS = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
+		+ tab + "// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter"+ System.lineSeparator()
+		+ tab + "// as long as the webdriver is in the webdriver folder."+ System.lineSeparator()
+		+ tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
+		+ tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];"+ System.lineSeparator()
+		+ tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"\";" + System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_SAFARI_VALUE = \"\" ; // /usr/bin/safaridriver to be used instead";		
 		String webdriversValueLinux = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
-		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; ";
+		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
+		+ tab + "// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter"+ System.lineSeparator()
+		+ tab + "// as long as the webdriver is in the webdriver folder."+ System.lineSeparator()
+		+ tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
+		+ tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];" + System.lineSeparator()
+		+ tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"\";" ;
 		
 		String seleniumGridNotUsed = tab +  "public static final boolean GRID_NOT_USED = true;";
 		
