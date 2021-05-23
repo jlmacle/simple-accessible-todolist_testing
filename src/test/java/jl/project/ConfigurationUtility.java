@@ -53,7 +53,7 @@ public class ConfigurationUtility
 		+tab + "// as long as the webdriver is in the webdriver folder."+ System.lineSeparator()
 		+tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
 		+tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];"+ System.lineSeparator()
-		+tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"\";";
+		+tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"Chrome on Android\";";
 		String webdriversValueMacOS = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
