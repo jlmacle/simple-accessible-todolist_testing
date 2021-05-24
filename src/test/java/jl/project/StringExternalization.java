@@ -17,8 +17,7 @@ public class StringExternalization
 	// as long as the webdriver is in the webdriver folder.
 	// Automatixc research of webdrrivers with 
 	// capabilities.setCapability["chromedriverExecutableDir","../webdrivers/"];
-	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "";
-	public static final String WEBDRIVER_SAFARI_VALUE = "" ; // /usr/bin/safaridriver to be used instead
+	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "Chrome on Android";
 	//</webdrivers>
 	
 	

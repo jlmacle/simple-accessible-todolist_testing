@@ -25,7 +25,7 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/classes" path="Users/jean-louis/Desktop/AccessibleTodoList_End2endTests">
+	<classpathentry kind="src" output="target/classes" path="home/jl/Documents/ATL/AccessibleTodoList_End2endTests">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
