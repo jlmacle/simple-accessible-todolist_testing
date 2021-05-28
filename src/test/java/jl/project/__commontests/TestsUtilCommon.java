@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -44,6 +45,25 @@ public class TestsUtilCommon
 				capabilities.setCapability("automationName", "UiAutomator2");
 				capabilities.setCapability("chromedriverExecutableDir","../webdrivers/");
 				driver =  new AndroidDriver<WebElement>(capabilities);
+				
+			}
+			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_SAFARI_ON_IOS_VALUE))
+			{
+				capabilities.setCapability("platformName","iOS");
+				capabilities.setCapability("platformVersion","14.5");
+				capabilities.setCapability("deviceName","iPhone 6s");
+				capabilities.setCapability("browserName","safari");
+				capabilities.setCapability("automationName","Safari");
+				driver =  new IOSDriver<WebElement>(capabilities);
+				/*
+				try {
+					
+					//driver =  new IOSDriver<WebElement>(new URL(StringExternalization.ANGULAR_SERVER_URL),capabilities);
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				*/
 				
 			}
 			
