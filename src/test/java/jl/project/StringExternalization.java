@@ -18,6 +18,8 @@ public class StringExternalization
 	// Automatixc research of webdrrivers with 
 	// capabilities.setCapability["chromedriverExecutableDir","../webdrivers/"];
 	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "Chrome on Android";
+	public static final String WEBDRIVER_SAFARI_ON_IOS_VALUE = "Safari on iOS";
+	public static final String WEBDRIVER_SAFARI_VALUE = "Using XCUITest" ; //"Appium's primary support for automating iOS apps is via the XCUITest driver. "
 	//</webdrivers>
 	
 	

@@ -49,11 +49,12 @@ public class ConfigurationUtility
 		String webdriversValueWindows = tab +"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver.exe\";"+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver.exe\"; "+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver.exe\"; "+ System.lineSeparator()
-		+tab + "// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter"+ System.lineSeparator()
-		+tab + "// as long as the webdriver is in the webdriver folder."+ System.lineSeparator()
-		+tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
-		+tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];"+ System.lineSeparator()
-		+tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"Chrome on Android\";";
+		+ tab + "// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter"+ System.lineSeparator()
+		+ tab + "// as long as the webdriver is in the webdriver folder."+ System.lineSeparator()
+		+ tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
+		+ tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];"+ System.lineSeparator()
+		+ tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"Chrome on Android\";" + System.lineSeparator()
+		+ tab + "public static final String WEBDRIVER_SAFARI_ON_IOS_VALUE = \"N.A.\";";
 		String webdriversValueMacOS = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
@@ -62,7 +63,9 @@ public class ConfigurationUtility
 		+ tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
 		+ tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];"+ System.lineSeparator()
 		+ tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"Chrome on Android\";" + System.lineSeparator()
-		+ tab +  "public static final String WEBDRIVER_SAFARI_VALUE = \"\" ; // /usr/bin/safaridriver to be used instead";		
+		+ tab + "public static final String WEBDRIVER_SAFARI_ON_IOS_VALUE = \"Safari on iOS\";" + System.lineSeparator()
+		+ tab + "public static final String WEBDRIVER_SAFARI_VALUE = \"Using XCUITest\" ; "
+				+ "//\"Appium's primary support for automating iOS apps is via the XCUITest driver. \"";		
 		String webdriversValueLinux = tab+"public static final String WEBDRIVER_CHROME_VALUE = \"chromedriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_FIREFOX_VALUE = \"geckodriver\"; "+ System.lineSeparator()
 		+ tab +  "public static final String WEBDRIVER_EDGE_VALUE = \"msedgedriver\"; "+ System.lineSeparator()
@@ -70,7 +73,8 @@ public class ConfigurationUtility
 		+ tab + "// as long as the webdriver is in the webdriver folder."+ System.lineSeparator()
 		+ tab + "// Automatixc research of webdrrivers with "+ System.lineSeparator()
 		+ tab + "// capabilities.setCapability[\"chromedriverExecutableDir\",\"../webdrivers/\"];" + System.lineSeparator()
-		+ tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"Chrome on Android\";" ;
+		+ tab + "public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = \"Chrome on Android\";" + System.lineSeparator()
+		+ tab + "public static final String WEBDRIVER_SAFARI_ON_IOS_VALUE = \"N.A.\";";
 		
 		String seleniumGridNotUsed = tab +  "public static final boolean GRID_NOT_USED = true;";
 		
