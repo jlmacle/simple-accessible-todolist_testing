@@ -1,3 +1,6 @@
+#-----------------------------------------------------------------------------------------------------------------------------
+#  Making sure to have the default network configuration
+#-----------------------------------------------------------------------------------------------------------------------------
 # ** Running ConfigurationUtility to have localhost configuration by default ** 
 echo "** Running ConfigurationUtility **"
 # I need to understand why there is an issue running this code
@@ -22,8 +25,11 @@ echo "Waiting for the analysis to be done."
 sleep 40 
 echo ""
 echo "Starting a browser to check the result of the analysis."
-chromium-browser http://localhost:9000
+chromium-browser http://localhost:9000 &
 
+#-----------------------------------------------------------------------------------------------------------------------------
+#  Reducing the risk of credential leak.
+#-----------------------------------------------------------------------------------------------------------------------------
 echo ""
 echo "** Running mvn clean ** "
 echo "The value of an apiKey stored in an environment variable has been dumped and later pushed on GitHub."
@@ -35,17 +41,20 @@ gnome-terminal -- sh -c 'cd .. ; mvn clean ; sleep 90'
 
 echo "Waiting for the mvn clean to be done."
 sleep 30
-echo ""
+
+#-----------------------------------------------------------------------------------------------------------------------------
+#  Pushing the code to Git
+#-----------------------------------------------------------------------------------------------------------------------------
+export commit_prefix="Work on the script used before pushing the code (Ubuntu)."
+export quotation_mark="\""
 echo "git add ."
 git add .
-echo "git commit: enter a commit message"
-read commit
-git commit -m "$commit"
-echo "You entered $commit"
-echo "Waiting before pushing the code."
-sleep 40 
+echo "Enter the message to append to: $commit_prefix " 
+read commit_end
+git "commit -m $quotation_mark $commit_prefix $commit_end $quotation_mark"
 echo "git push"
 git push
+echo Commited and pushed  $quotation_mark  $commit_prefix $commit_end  $quotation_mark
 
 
 
