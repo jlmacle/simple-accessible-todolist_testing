@@ -49,21 +49,17 @@ public class TestsUtilCommon
 			}
 			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_SAFARI_ON_IOS_VALUE))
 			{
-				capabilities.setCapability("platformName","iOS");
+				capabilities.setCapability("platformName","ios");
 				capabilities.setCapability("platformVersion","14.5");
-				capabilities.setCapability("deviceName","iPhone 6s");
+				capabilities.setCapability("appium:deviceName","iPhone 6s");
 				capabilities.setCapability("browserName","safari");
-				capabilities.setCapability("automationName","Safari");
+				capabilities.setCapability("appium:automationName","xcuitest");
+				//capabilities.setCapability("appium:wdaLocalPort", "5100");
+				capabilities.setCapability("appium:udid","59AAEEA3-5A0E-4133-A9FB-9518885D86B6");
+				// Appium's primary support for automating iOS apps is via the XCUITest driver.
+				// http://appium.io/docs/en/drivers/ios-xcuitest/index.html
 				driver =  new IOSDriver<WebElement>(capabilities);
-				/*
-				try {
-					
-					//driver =  new IOSDriver<WebElement>(new URL(StringExternalization.ANGULAR_SERVER_URL),capabilities);
-				} catch (MalformedURLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				*/
+				
 				
 			}
 			
