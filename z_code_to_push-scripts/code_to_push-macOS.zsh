@@ -1,4 +1,6 @@
-# ** Running ConfigurationUtility to have localhost configuration by default ** 
+#-----------------------------------------------------------------------------------------------------------------------------
+#  Making sure to have the default network configuration
+#-----------------------------------------------------------------------------------------------------------------------------
 echo "** Running ConfigurationUtility **"
 #java -cp ../AccessibleTodoList_End2endTests/target/test-classes;../../../.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar;../../../.m2/repository/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30.jar;../../../.m2/repository/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar;../AccessibleTodoList_End2endTests/tmp/StringExternalization.java.txt jl.project.ConfigurationUtility "..\tmp" "\..\src\test\java\jl\project\" 
 
@@ -6,10 +8,11 @@ echo "** Running ConfigurationUtility **"
 echo ""
 echo "** Starting SonarQube and running the code quality analysis **"
 
+
 # Starting the SonarQube server
 # The following code works. I have an issue when running sonar.sh.
-# osascript -e 'tell application "Terminal" to do script "sonar.sh start"'	
-osascript -e 'tell application "Terminal" to do script "echo \"Time to start the Sonarqube server\"" '	
+osascript -e 'tell application "Terminal" to do script "sonar.sh start"'	
+#osascript -e 'tell application "Terminal" to do script "echo \"Time to start the Sonarqube server\"" '	
 
 # Running the analysis
 # Waiting for the SonarQube server to start
@@ -25,6 +28,11 @@ echo ""
 echo "Starting a browser to check the result of the analysis."
 open -a Safari http://localhost:9000
 
+
+
+#-----------------------------------------------------------------------------------------------------------------------------
+#  Reducing the risk of credential leak.
+#-----------------------------------------------------------------------------------------------------------------------------
 echo ""
 echo "** Running mvn clean ** "
 echo "The value of an apiKey stored in an environment variable has been dumped and later pushed on GitHub."
@@ -35,17 +43,21 @@ osascript -e 'tell application "Terminal" to do script "cd Desktop/AccessibleTod
 
 echo "Waiting for the mvn clean to be done."
 sleep 30
-echo ""
+
+
+#-----------------------------------------------------------------------------------------------------------------------------
+#  Pushing the code to Git
+#-----------------------------------------------------------------------------------------------------------------------------
+export commit_prefix="Work on the script used before pushing the code (macOS)."
+export quotation_mark="\""
 echo "git add ."
 git add .
-echo "git commit: enter a commit message"
-read commit
-git commit -m "$commit"
-echo "You entered $commit"
-echo "Waiting before pushing the code."
-sleep 40 
+echo "Enter the message to append to: $commit_prefix " 
+read commit_end
+git "commit -m $quotation_mark $commit_prefix $commit_end $quotation_mark"
 echo "git push"
 git push
+echo Commited and pushed  $quotation_mark  $commit_prefix $commit_end  $quotation_mark
 
 
 
