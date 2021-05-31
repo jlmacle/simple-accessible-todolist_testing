@@ -39,6 +39,7 @@ public class StringExternalization
 	public static final String BROWSER_NAME_CHROME = "chrome";	
 	public static final String BROWSER_NAME_EDGE = "MicrosoftEdge";	
 	public static final String BROWSER_NAME_FIREFOX = "firefox";
+	public static final String BROWSER_NAME_SAFARI = "firefox";
 	//Grid 4 : end
 	
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";

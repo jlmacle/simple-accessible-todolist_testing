@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -26,6 +27,7 @@ public class TestsUtilCommon
  	public static WebDriver setup(Logger logger, Robot robot, String browserName, WebDriver driver, String webDriverKey, String webDriverValue)
 	{
 		boolean isNotATestOnAndroid = true;
+		boolean isNotATestOnIOS = true;
 		logger.info(StringExternalization.TEST_START+webDriverValue);
 		//https://chromedriver.chromium.org/downloads
 		System.setProperty(webDriverKey, 
@@ -44,6 +46,21 @@ public class TestsUtilCommon
 				capabilities.setCapability("automationName", "UiAutomator2");
 				capabilities.setCapability("chromedriverExecutableDir","../webdrivers/");
 				driver =  new AndroidDriver<WebElement>(capabilities);
+				
+			}
+			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_SAFARI_ON_IOS_VALUE))
+			{
+				isNotATestOnIOS = false;
+				capabilities.setCapability("platformName","ios");
+				capabilities.setCapability("platformVersion","13.7");
+				capabilities.setCapability("appium:deviceName","iPhone 8");
+				capabilities.setCapability("browserName","safari");
+				capabilities.setCapability("appium:automationName","xcuitest");
+				capabilities.setCapability("appium:udid","4A462E70-381D-46E6-BF1B-EB31BA8A1E30");
+				// Appium's primary support for automating iOS apps is via the XCUITest driver.
+				// http://appium.io/docs/en/drivers/ios-xcuitest/index.html
+				driver =  new IOSDriver<WebElement>(capabilities);
+				
 				
 			}
 			
@@ -66,7 +83,7 @@ public class TestsUtilCommon
 				e.printStackTrace();
 			}			
 		}
-		if (isNotATestOnAndroid) driver.manage().window().maximize();
+		if (isNotATestOnAndroid && isNotATestOnIOS) driver.manage().window().maximize();
 		
 		try 
 		{
