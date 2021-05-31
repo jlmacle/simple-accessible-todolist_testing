@@ -1,3 +1,6 @@
+#-----------------------------------------------------------------------------------------------------------------------------
+#  Making sure to have the default network configuration
+#-----------------------------------------------------------------------------------------------------------------------------
 # ** Running ConfigurationUtility to have localhost configuration by default ** 
 echo "** Running ConfigurationUtility **"
 # I need to understand why there is an issue running this code
@@ -22,7 +25,7 @@ echo "Waiting for the analysis to be done."
 sleep 40 
 echo ""
 echo "Starting a browser to check the result of the analysis."
-chromium-browser http://localhost:9000
+chromium-browser http://localhost:9000 &
 
 
 

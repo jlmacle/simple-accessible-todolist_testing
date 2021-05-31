@@ -38,13 +38,28 @@ public class UserRequirement1_Test
 		robot.delay(2000);
 	}
 	
-	@Test
-	public void createCategory()
+	/**
+	 * Tests a successful creation of category
+	 */
+	@Test	
+    public void createCategory_UsingClicks() 
 	{
 		boolean isCategoryFound = false;
 		isCategoryFound = TestsUtilWithClicks.createCategory_UsingClicks(logger, driver, robot);
-		assertThat(isCategoryFound).isTrue();
-	}
+    	assertThat(isCategoryFound).isTrue();
+    	
+    }
+	
+	/**
+	 * Tests a successful deletion of category	 
+	 */
+	@Test	
+	public void deleteCategory_UsingClicks() 
+	{
+		boolean isCategoryFound = false;
+		isCategoryFound = TestsUtilWithClicks.deleteCategory_UsingClicks(logger, driver, robot);
+		assertThat(isCategoryFound).isFalse();		
+	}	
 	
 	
 	@AfterClass
