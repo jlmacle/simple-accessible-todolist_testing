@@ -26,32 +26,8 @@ echo ------------------------------------------
 echo Starting a browser to check the result of the analysis.
 start msedge http://localhost:9000
 
-::-----------------------------------------------------------------------------------------------------------------------------
-::  Reducing the risk of credential leak.
-::-----------------------------------------------------------------------------------------------------------------------------
-	
-echo ------------------------------------------  
-echo ** Running mvn clean ** 
-echo The value of an apiKey stored in an environment variable has been dumped and later pushed on GitHub.
-echo The dump file was in the surefire-reports folder. 
-echo mvn clean suppresses some data, including the surefire-reports. 
 
-start mvn clean
-pause 10 "Waiting for the mvn clean to be done."
 
-::-----------------------------------------------------------------------------------------------------------------------------
-::#  Pushing the code to Git
-::-----------------------------------------------------------------------------------------------------------------------------
-set commit_prefix=Android tests: worked on UserRequirement
-set quotation_mark="
-echo git add .
-git add .
-echo git commit_end: enter the message to append to: %quotation_mark% %commit_prefix% %quotation_mark% 
-set /p commit_end=
-git commit -m %quotation_mark% %commit_prefix% %commit_end% %quotation_mark%
-echo "git push"
-git push
-echo Commited and pushed  %quotation_mark%  %commit_prefix% %commit_end%  %quotation_mark%
 
 
 
