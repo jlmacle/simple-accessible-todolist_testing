@@ -27,38 +27,3 @@ sleep 40
 echo ""
 echo "Starting a browser to check the result of the analysis."
 open -a Safari http://localhost:9000
-
-
-
-#-----------------------------------------------------------------------------------------------------------------------------
-#  Reducing the risk of credential leak.
-#-----------------------------------------------------------------------------------------------------------------------------
-echo ""
-echo "** Running mvn clean ** "
-echo "The value of an apiKey stored in an environment variable has been dumped and later pushed on GitHub."
-echo "The dump file was in the surefire-reports folder. "
-echo "mvn clean suppresses some data, including the surefire-reports. "
-
-osascript -e 'tell application "Terminal" to do script "cd Desktop/AccessibleTodoList_End2endTests/ && mvn clean"'
-
-echo "Waiting for the mvn clean to be done."
-sleep 30
-
-
-#-----------------------------------------------------------------------------------------------------------------------------
-#  Pushing the code to Git
-#-----------------------------------------------------------------------------------------------------------------------------
-export commit_prefix="Work on the script used before pushing the code (macOS)."
-export quotation_mark="\""
-echo "git add ."
-git add .
-echo "Enter the message to append to: $commit_prefix " 
-read commit_end
-git "commit -m $quotation_mark $commit_prefix $commit_end $quotation_mark"
-echo "git push"
-git push
-echo Commited and pushed  $quotation_mark  $commit_prefix $commit_end  $quotation_mark
-
-
-
-
