@@ -1,2 +1,2 @@
-cd ../../../AccessibleTodoList_Backend
+cd ../../../simple-accessible-todolist_backend
 mvn spring-boot:run

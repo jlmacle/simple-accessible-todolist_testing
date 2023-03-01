@@ -8,4 +8,4 @@ if [ -z $isSpringBootRunning]
 fi
 
 echo "Starting a fresh instance of the server."
-cd ../AccessibleTodoList_Backend && mvn spring-boot:run
+cd ../simple-accessible-todolist_backend && mvn spring-boot:run
