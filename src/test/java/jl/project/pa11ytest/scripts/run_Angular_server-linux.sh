@@ -9,4 +9,4 @@ fi
 
 echo "Starting a fresh instance of the server."
 
-cd ../AccessibleTodoList_FrontEnd && ng serve  
+cd ../simple-accessible-todolist_frontend && ng serve  

@@ -9,5 +9,5 @@ if [ -z $isSpringBootRunning ]
 fi
 
 echo "Starting a fresh instance of the server."
-cd ../AccessibleTodoList_Backend 
+cd ../simple-accessible-todolist_backend 
 mvn spring-boot:run &> ../AccessibleTodoList_End2endTests/z_end-to-end-tests-scripts/logs/log_SpringBoot-script.txt 
