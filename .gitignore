@@ -34,3 +34,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#E2e
+/screenshots/
+/test-output/
+/webdrivers/
+/src/test/java/jl/project/pa11ytest/logs/
