@@ -1,10 +1,3 @@
-:: To start from command console
-
-:: To add to README.md : environment variables
-:: blog to check if deletion of script folder
-:: posts with intriductions to ...
-:: + post about scripts
-
 echo "Starting the back-end server" 
 cd %ATL_BACKEND_DIR%
 start mvn spring-boot:run 
