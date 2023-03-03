@@ -1,17 +1,20 @@
 :: To start from command console
-:: Numerous windows :)
+
+:: To add to README.md : environment variables
+:: blog to check if deletion of script folder
+:: posts with intriductions to ...
+:: + post about scripts
 
 echo "Starting the back-end server" 
-cd scripts 
-start run_Backend_server-windows.bat 
+cd %ATL_BACKEND_DIR%
+start mvn spring-boot:run 
+timeout /T 60
 
 echo "Starting the front-end server"  
-start run_Angular_server-windows.bat 
+cd %ATL_FRONTEND_DIR%
+start npx ng serve -o 
+timeout /T 120
 
 echo "Starting the test suites"  
-cd ../../
-timeout /T 120 
+cd %ATL_E2E_DIR%
 mvn test 
-stop_potentially_existing_Angular_Spring_server_processes-windows.bat
-
-:: https://developer.android.com/studio/run/emulator-commandline
