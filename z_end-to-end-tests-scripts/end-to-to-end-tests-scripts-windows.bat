@@ -1,20 +1,24 @@
-:: To start from command console
+@echo off
 
-:: To add to README.md : environment variables
-:: blog to check if deletion of script folder
-:: posts with intriductions to ...
-:: + post about scripts
-
-echo "Starting the back-end server" 
+echo.
+echo *********************************************************
+echo Starting the back-end server
+echo *********************************************************
 cd %ATL_BACKEND_DIR%
 start mvn spring-boot:run 
 timeout /T 60
 
-echo "Starting the front-end server"  
+echo.
+echo *********************************************************
+echo Starting the front-end server  
+echo *********************************************************
 cd %ATL_FRONTEND_DIR%
 start npx ng serve -o 
 timeout /T 120
 
-echo "Starting the test suites"  
+echo.
+echo *********************************************************
+echo Starting the test suites  
+echo *********************************************************
 cd %ATL_E2E_DIR%
 mvn test 
