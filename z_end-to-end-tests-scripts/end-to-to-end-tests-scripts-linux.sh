@@ -1,18 +1,22 @@
-$ATL_BACKEND_DIRecho ""
+# In case of need
+#  sudo apt install gnome-terminal
+
+
+echo ""
 echo "*********************************************************"
 echo "Starting the back-end server"
 echo "*********************************************************"
-cd $ATL_BACKEND_DIR
-cd /scripts
-./run_Spring.sh
+cd $ATL_E2E_DIR/z_end-to-end-tests-scripts/scripts
+# sleep 600 useful for debugging
+gnome-terminal -- sh -c './run_Spring.sh;sleep 600'
 read -p "Press the [Enter] key to continue..."
 
 echo ""
 echo "*********************************************************"
 echo "Starting the front-end server"
 echo "*********************************************************"
-cd $ATL_FRONTEND_DIR
-xdg-open  "npx ng serve -o"
+cd $ATL_E2E_DIR/z_end-to-end-tests-scripts/scripts
+gnome-terminal -- sh -c './run_Angular.sh;sleep 600'
 read -p "Press the [Enter] key to continue..."
 
 echo ""
