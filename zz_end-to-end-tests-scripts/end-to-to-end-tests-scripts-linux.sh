@@ -1,19 +1,14 @@
-echo ""
-echo "*********************************************************"
-echo "Starting the back-end server"
-echo "*********************************************************"
-cd $ATL_BACKEND_DIR
-# sleep 600 useful for debugging
-x-terminal-emulator -e /bin/bash -c 'mvn spring-boot:run;sleep 600'
-read -p "Press the [Enter] key to continue..."
+# ConfigurationUtility class to run before starting this script
+# Script asking if this was done
+cd $ATL_E2E_DIR
+cd z__utility_scripts/_configuration_utility
+./run_configuration_utility.sh
 
-echo ""
-echo "*********************************************************"
-echo "Starting the front-end server"
-echo "*********************************************************"
-cd $ATL_FRONTEND_DIR
-x-terminal-emulator -e /bin/bash -c 'npx ng serve -o;sleep 600'
-read -p "Press the [Enter] key to continue..."
+# Backend and frontend to start
+cd $ATL_E2E_DIR
+cd z__utility_scripts/_start_backend_and_frontend
+./_start_backend_and_frontend.sh
+
 
 echo ""
 echo "*********************************************************"
