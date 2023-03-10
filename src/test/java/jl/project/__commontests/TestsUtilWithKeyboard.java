@@ -4,16 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
 
 import java.awt.Robot;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -369,17 +364,7 @@ public class TestsUtilWithKeyboard
 	
 		
 		logger.info("3. Verification that the item is displayed");
-		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
-		File screenshotFile_copy = new File(StringExternalization.TESSERACT_SCREENSHOT_PATH_NEW_ITEM);
-		try 
-		{
-			FileUtils.copyFile(screenshotFile, screenshotFile_copy);
-		} catch (IOException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
-			e.printStackTrace();
-		}
-
+		
 		// TODO : To use .isDisplayed() method
 
 
