@@ -36,7 +36,6 @@ public class UserRequirement3_Test {
 		
 	}
 	
-	// TODO: javadoc
 	@Test
 	public void hideAndDisplayItem() 
 	{

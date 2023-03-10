@@ -44,8 +44,7 @@ public class UserRequirement2_Test {
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 	}
-	
-	// TODO: javadoc
+		
 	@Test
 	public void createItem() throws Exception
 	{			
@@ -54,7 +53,6 @@ public class UserRequirement2_Test {
 		assertThat(isItemCreated).isTrue();
 	}
 	
-	// TODO: javadoc
 	@Test
 	public void deleteItem() 
 	{
