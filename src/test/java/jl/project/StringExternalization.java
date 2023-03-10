@@ -10,16 +10,15 @@ public class StringExternalization
 	
 	//Used by the ConfigurationUtility class to add the proper webdrivers to this class	
 	//<webdrivers>
-	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver"; 
-	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver"; 
-	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver"; 
+	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
+	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe"; 
+	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
 	// The value for WEBDRIVER_CHROME_ON_ANDROID_VALUE doesn't matter
 	// as long as the webdriver is in the webdriver folder.
 	// Automatixc research of webdrrivers with 
 	// capabilities.setCapability["chromedriverExecutableDir","../webdrivers/"];
 	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "Chrome on Android";
-	public static final String WEBDRIVER_SAFARI_ON_IOS_VALUE = "Safari on iOS";
-	public static final String WEBDRIVER_SAFARI_VALUE = "Using XCUITest" ; //"Appium's primary support for automating iOS apps is via the XCUITest driver. "
+	public static final String WEBDRIVER_SAFARI_ON_IOS_VALUE = "N.A.";
 	//</webdrivers>
 	
 	
@@ -45,7 +44,7 @@ public class StringExternalization
 	public static final String LABEL_TEST_CATEGORY = "Selenium test category";
 	public static final String LABEL_DEFAULT_CATEGORY = "Uncategorized";
 	public static final String LABEL_TEST_ITEM = "test"; 
-	//the ocr sometimes has an issue to detect the word 'item'.
+	
 	
 	public static final String ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD = "new-category-input-field";
 	public static final String ELEMENT_ID_ADD_CATEGORY_BUTTON = "add-category-button";
@@ -63,20 +62,10 @@ public class StringExternalization
 	public static final String EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE = 
 			"There should be one item. Number of item found: ";
 	public static final String EXCEPTION_STALE_ELEMENT_REFERENCE = "Caught a StaleElementReferenceException ";
-	public static final String EXCEPTION_TESSERACT = "Caught a TesseractException while doing the OCR.";
+	
 	public static final String EXCEPTION_IO = "Caught an IOException ";
 	public static final String EXCEPTION_AWT = "Caught an AWTException while using the instance of the Robot class";
 	public static final String EXCEPTION_MALFORMEDURL = "Caught a MalformedURLException while instantiating the RemoteWebDriver instance";
-	
-	
-	public static final String TESSERACT_SCREENSHOT_PATH_NEW_ITEM = "./screenshots/newItemScreenshot.png";
-	public static final String TESSERACT_TESSDATA = "./tessdata";
-	public static final String TESSERACT_LANGUAGE = "eng";
-	public static final String TESSERACT_DPI_KEY = "user_defined_dpi";
-	public static final String TESSERACT_DPI_VALUE = "300";
-	public static final String TESSERACT_FOUND_TEST_ITEM = "Success. The test label has been found on the screen.";
-	public static final String TESSERACT_NOT_FOUND_TEST_ITEM = "The item label seems to be absent from the screenshot: ";	
-	
 	
 	public static final String TEST_START = "Entering test for: ";
 	public static final String TEST_CATEGORY_CREATION = "category creation";
@@ -89,11 +78,12 @@ public class StringExternalization
 			"item creation/deletion with the keyboard";	
 	public static final String TEST_ITEM_HIDING_DISPLAY = "item hiding/display";
 	public static final String TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD = "item hiding/display with keyboard";
+	public static final String TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND = "The test item wasn't found.";
 	public static final String TEST_KEYBOARD = " with the keyboard";
 	public static final String TEST_KEYBOARD_ENTER_KEY = " with ENTER key";
 	public static final String TEST_KEYBOARD_SPACE_KEY = " with SPACE key";
 			
-	public static final String WEBDRIVERS_FOLDER = "../webdrivers/";	
+	public static final String WEBDRIVERS_FOLDER = "webdrivers/";	
 	public static final String WEBDRIVER_CHROME_KEY = "webdriver.chrome.driver";	
 	public static final String WEBDRIVER_FIREFOX_KEY = "webdriver.gecko.driver";	
 	public static final String WEBDRIVER_EDGE_KEY = "webdriver.edge.driver";

@@ -14,6 +14,12 @@ public class RobotFactory
 	static Logger logger = LoggerFactory.getLogger(RobotFactory.class);
 	private static Robot robot = null;	
 	
+
+	// TODO: to look at the Paths javadoc for example as a reference
+	/**
+	 * 
+	 * @return An instance of the Robot class
+	 */
 	public static Robot getRobotInstance()
 	{
 		if (robot==null)

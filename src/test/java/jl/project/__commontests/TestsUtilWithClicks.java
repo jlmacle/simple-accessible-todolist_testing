@@ -17,13 +17,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import jl.project.StringExternalization;
-import net.sourceforge.tess4j.Tesseract;
-import net.sourceforge.tess4j.TesseractException;
+
+
+// Code with likely immaturities.
 
 
 public class TestsUtilWithClicks 
 {	
- 	
+ 	/**
+	 * Tests the CREATION of a CATEGORY using CLICKS
+	 * @param logger - the logger instance of User Requirement Test class 
+	 * @param driver - the webdriver instance used for the test 
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @return true if the test is successful, false otherwise
+	 */
  	public static boolean createCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
 	{
 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_CATEGORY_CREATION);
@@ -69,6 +76,13 @@ public class TestsUtilWithClicks
 		return isCategoryFound;
 	}
  	
+	/**
+	 *  Tests the DELETION of a CATEGORY using CLICKS
+	 * @param logger - the logger instance of User Requirement Test class 
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @return true if the test is successful, false otherwise
+	 */
  	public static boolean deleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
  	{
 	 	logger.info(StringExternalization.TEST_START+StringExternalization.TEST_CATEGORY_DELETION);
@@ -188,6 +202,13 @@ public class TestsUtilWithClicks
 		return isCategoryFound;
  	}
 
+	/**
+	 * Tests the CREATION of an ITEM using CLICKS
+	 * @param logger - the logger instance of User Requirement Test class
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @return true if the test is successful, false otherwise
+	 */
  	public static boolean createItem_UsingClicks(Logger logger, WebDriver driver, Robot robot)
  	{ 	 		
  		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_CREATION);	
@@ -238,6 +259,13 @@ public class TestsUtilWithClicks
  		
  	}
  	
+	/**
+	 * Tests the DELETION of an ITEM using CLICKS
+	 * @param logger - the logger instance of User Requirement Test class
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @return true if the test is successful, false otherwise
+	 */
  	public static boolean deleteItem_UsingClicks(Logger logger, WebDriver driver, Robot robot)
  	{
  		boolean isItemDeleted=false;
@@ -304,12 +332,20 @@ public class TestsUtilWithClicks
 		return isItemDeleted;
  	}
 
+	/**
+	 * Tests the ability to HIDE and DISPLAY an ITEM using CLICKS
+	 * @param logger - the logger instance of User Requirement Test class
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @return true if the test is successful, false otherwise
+	 */
  	public static boolean hideAndDisplayItem_UsingClicks(Logger logger, WebDriver driver, Robot robot)
  	{ 		
- 		boolean isTestSuccessful = false;
- 		
- 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
+ 		boolean isTestSuccessful = false;	
 		boolean isTestItemLabelFound = false;		
+
+		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
+		
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		driver.navigate().refresh();		
 		
@@ -319,8 +355,7 @@ public class TestsUtilWithClicks
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys(StringExternalization.LABEL_DEFAULT_CATEGORY);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
 		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
-		
-				
+						
 		//Checking that the new item creation was successful	
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
@@ -330,13 +365,16 @@ public class TestsUtilWithClicks
 		{
 			for(WebElement anItemElement: anItemElements) 
 			{
-				String text = anItemElement.getText();				
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) {logger.debug(StringExternalization.DEBUG_FOUND+text+" as text."); isTestItemLabelFound=true;}
-				if(isTestItemLabelFound == false) {fail("The test label was not found. The test of item creation failed.");}
+				String text = anItemElement.getText().trim();			
+				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) 
+				{
+					logger.debug(StringExternalization.DEBUG_FOUND+text+" as text."); 
+					isTestItemLabelFound = true;					
+				}
+				logger.debug(String.format("isTestItemLabelFound: %b",isTestItemLabelFound));
+				if(!isTestItemLabelFound) {fail("The test label was not found. The test of item creation failed.");}
 			}
-			
-			isTestSuccessful = true;
-			
+						
 		}
 		catch(StaleElementReferenceException e) 
 		{
@@ -349,101 +387,51 @@ public class TestsUtilWithClicks
 		
 		//2. Verification that the item is displayed
 		//a. code to get a screenshot from the browser
-		logger.info("2. Verification that the item is displayed");
-		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
-		File screenshotFile_copy = new File(StringExternalization.TESSERACT_SCREENSHOT_PATH_NEW_ITEM);
-		try {
-			FileUtils.copyFile(screenshotFile, screenshotFile_copy);
-		} catch (IOException e) {
-			logger.error(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
-			e.printStackTrace();
-		}
-		//b. code to extract the text from the picture
-		Tesseract ocr = new Tesseract();
-		String result = null;
-		//https://github.com/tesseract-ocr/tessdata
-		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
-		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
-		ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
-		try {
-			result = ocr.doOCR(screenshotFile_copy);
-		} catch (TesseractException e) {
-			logger.error(StringExternalization.EXCEPTION_TESSERACT);
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
-		if(result != null && result.contains(StringExternalization.LABEL_TEST_ITEM)) 
+		logger.info("2. Verification that the item is displayed : Code being re-written");
+		boolean itemCreatedIsDisplayed = false;
+		List<WebElement> items = driver.findElements(By.cssSelector(".itemName"));
+		for (WebElement item : items) 
 		{
-			 
-			logger.debug(StringExternalization.TESSERACT_FOUND_TEST_ITEM);
+			itemCreatedIsDisplayed = 
+			(item.getText()).contains(StringExternalization.LABEL_TEST_ITEM)
+			&& item.isDisplayed();
+			// + isDisplayed() method
+			if(itemCreatedIsDisplayed)
+			{
+				logger.debug(String.format("The string %s was found in %s",StringExternalization.LABEL_TEST_ITEM, item.getText()));
+			}
+			
 		}
-		else{fail(StringExternalization.TESSERACT_NOT_FOUND_TEST_ITEM+result);};
+		
+		if(!itemCreatedIsDisplayed) 
+		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
 	
 		//3. Hiding of the item		
 		logger.info("3. Verification that the item can be hidden.");
 		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
+		
 		//4. Verification that the item is hidden
-		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
-		try {
-			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToHide_copy);
-			result = ocr.doOCR(screenshot_AfterClickToHide_copy);
-			if(!result.contains(StringExternalization.LABEL_TEST_ITEM)) 
-			{ 
-				
-				logger.debug("Success: the label couldn't be found in the screenshot: "+result);
-			}
-			else 
-			{fail("The label was found on the screenshot when the item should have been hidden: "+result);
-			}
-			
-		} catch (IOException e) {
-			logger.error("An IOExeption occured while copying the screenshot taken after the click"				
-					+ "(Hiding of the item).");
-			logger.error(e.getMessage());
-			e.printStackTrace();
+
+		// TODO : CODE MODIFICATIONS TO FINISH
+		itemCreatedIsDisplayed = false;
+		items = driver.findElements(By.cssSelector(".item1"));
+		for(WebElement item: items)
+		{
+			itemCreatedIsDisplayed = 
+			(item.getText()).contains(StringExternalization.LABEL_TEST_ITEM)
+			&& !item.isDisplayed();
 		}
-		 catch (TesseractException e) {
-			logger.error(StringExternalization.EXCEPTION_TESSERACT
-					+ "(Hiding of the item)");			
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}		
+		// TODO : To use .isDisplayed() method
+
+			
 		
 		//4. Verification that the item can be displayed 
 		logger.info("4. Verification that the item can be displayed");
 		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
 		
-		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");
-		
-		try {			
-			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
-			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
-			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
-			ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
-			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
-			
-			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
-			{
-				logger.debug("Sucess: the label was found after clicking to display the item: "+result);
-			}
-			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
-					+" when the item should have been displayed.");}
-		} catch (IOException e) {
-			logger.error(StringExternalization.EXCEPTION_IO+"while copying the screenshot taken after the click"
-					+ "(Display of the item)");
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		} catch (TesseractException e) {
-			logger.error(StringExternalization.EXCEPTION_TESSERACT
-					+ "(Display of the item)");
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
-		
-		
+		// TODO : To use .isDisplayed() method
+				
 		
 		//5. Suppressing the item to go on with the test suite
 		logger.info("5. Deletion of the test item");

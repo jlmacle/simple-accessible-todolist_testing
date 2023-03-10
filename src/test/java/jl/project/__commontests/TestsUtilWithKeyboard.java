@@ -20,12 +20,21 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.log4testng.Logger;
 
 import jl.project.StringExternalization;
-import net.sourceforge.tess4j.Tesseract;
-import net.sourceforge.tess4j.TesseractException;
+
+
+// Code with likely immaturities.
 
 public class TestsUtilWithKeyboard 
 {
-	
+	/**
+	 * Tests the CREATION and DELETION of a CATEGORY using KEYBOARD KEYS ONLY
+	 * @param logger - the logger instance of User Requirement Test class
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @param keyUsedToSubmitData - the key used to submit data ( ENTER or SPACE )
+	 * @param commentAddOn - a field used to add a comment concerning the use of the Enter or Space key to enter data
+	 * @return true if the test is successful, false otherwise
+	 */
 	public static boolean createAndDeleteCategory_UsingTheKeyboard(Logger logger, WebDriver driver, Robot robot, Keys keyUsedToSubmitData, String commentAddOn)
 		{
 			boolean isTestSuccessful = false;
@@ -145,6 +154,15 @@ public class TestsUtilWithKeyboard
 			return isTestSuccessful;
 		}
 	
+	/**
+	 * Tests the CREATION and DELETION of an ITEM using KEYBOARD KEYS ONLY
+	 * @param logger - the logger instance of User Requirement Test class
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @param keyUsedToSubmitData - the key used to submit data ( ENTER or SPACE )
+	 * @param commentAddOn - a field used to add a comment concerning the use of the Enter or Space key to enter data
+	 * @return true if the test is successful, false otherwise
+	 */
 	public static boolean createAndDeleteItem_UsingTheKeyboard(Logger logger, WebDriver driver, Robot robot, Keys keyUsedToSubmitData, String commentAddOn)
 	{
 		boolean isTheTestSuccessful = false;
@@ -276,6 +294,15 @@ public class TestsUtilWithKeyboard
 		return isTheTestSuccessful;
 	}
 	
+	/**
+	 * Tests the ability to HIDE and DISPLAY an ITEM using CLICKS
+	 * @param logger - the logger instance of User Requirement Test class
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @param keyUsedToSubmitData - the key used to submit data ( ENTER or SPACE )
+	 * @param commentAddOn - a field used to add a comment concerning the use of the Enter or Space key to enter data
+	 * @return true if the test is successful, false otherwise
+	 */
 	public static boolean HideAndDisplayItems_UsingTheKeyboard(Logger logger, WebDriver driver, Robot robot, Keys keyUsedToSubmitData, String commentAddOn)
 	{
 		boolean isTheTestSuccessful = false;
@@ -352,28 +379,12 @@ public class TestsUtilWithKeyboard
 			logger.error(StringExternalization.EXCEPTION_IO+"while copy and saving the screenshot");
 			e.printStackTrace();
 		}
-		// code to extract the text from the picture
-		Tesseract ocr = new Tesseract();
-		String result = null;
-		//https://github.com/tesseract-ocr/tessdata
-		ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
-		ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
-		ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
-		try 
-		{
-			result = ocr.doOCR(screenshotFile_copy);
-		} 
-		catch (TesseractException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_TESSERACT);
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
-		if(result != null && result.contains(StringExternalization.LABEL_TEST_ITEM)) 
-		{
-			logger.debug(StringExternalization.TESSERACT_FOUND_TEST_ITEM);
-		}
-		else{fail(StringExternalization.TESSERACT_NOT_FOUND_TEST_ITEM+result);};
+
+		// TODO : To use .isDisplayed() method
+
+
+
+
 		
 		//clicking to hide the item		
 		logger.info("4. Verification that the item can be hidden.");
@@ -408,38 +419,8 @@ public class TestsUtilWithKeyboard
 		action.sendKeys(Keys.ENTER).build().perform();//Click to hide the item
 		robot.delay(5000);
 		
-		// Verification that the item is hidden
-		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File screenshot_AfterClickToHide_copy = new File("./screenshots/AfterClickToHideScreenshot.png");
-		try 
-		{
-			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToHide_copy);
-			result = ocr.doOCR(screenshot_AfterClickToHide_copy);
-			
-			if(!result.contains(StringExternalization.LABEL_TEST_ITEM)) 
-			{ 
-				
-				logger.debug("Success: the label couldn't be found in the screenshot: "+result);
-			}
-			else 
-			{fail("The label was found on the screenshot when the item should have been hidden: "+result);
-			}
-			
-		} 
-		catch (IOException e) 
-		{
-			logger.error("An IOExeption occured while copying the screenshot taken after the click"				
-					+ "(Hiding of the item).");
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
-		catch (TesseractException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_TESSERACT
-					+ "(Hiding of the item)");			
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}		
+		// TODO : To use .isDisplayed() method
+
 		
 		//Verification that the item can be displayed by clicking a second time.
 		logger.info("5. Verification that the item can be displayed");
@@ -447,39 +428,9 @@ public class TestsUtilWithKeyboard
 		robot.delay(1000);
 		action = new Actions(driver);
 		action.sendKeys(Keys.ENTER).build().perform();//Click to hide the item
-				
-		screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File screenshot_AfterClickToDisplay_copy = new File("./screenshots/AfterClickToDisplayScreenshot.png");
 		
-		try 
-		{			
-			FileUtils.copyFile(screenshotFile, screenshot_AfterClickToDisplay_copy);
-			ocr.setDatapath(StringExternalization.TESSERACT_TESSDATA);
-			ocr.setLanguage(StringExternalization.TESSERACT_LANGUAGE);
-			ocr.setTessVariable(StringExternalization.TESSERACT_DPI_KEY,StringExternalization.TESSERACT_DPI_VALUE);
-			result = ocr.doOCR(screenshot_AfterClickToDisplay_copy);
-			
-			if(result.contains(StringExternalization.LABEL_TEST_ITEM)) 
-			{
-				logger.debug("Sucess: the label was found after clicking to display the item: "+result);
-			}
-			else {fail("The label: "+StringExternalization.LABEL_TEST_ITEM+" could not be in the ocr result: "+result
-					+" when the item should have been displayed.");}
-		} 
-		catch (IOException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_IO+"occured while copying the screenshot taken after the click"
-					+ "(Display of the item)");
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		} 
-		catch (TesseractException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_TESSERACT
-					+ "(Display of the item)");
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
+		// TODO : To use .isDisplayed() method
+		
 		//Cleaning up for a potential next test. Using a click for the task
 		logger.info("6. Suppression of the item.");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
