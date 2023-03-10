@@ -32,7 +32,7 @@ public class ConfigurationUtility
 	
 	/***
 	 * The arguments are used for scripting. 
-	 * The first expected argument is the path to the tmp folder	 * 
+	 * The first expected argument is the path to the tmp folder	 
 	 */
 	public static void main(String[] args) 
 	{

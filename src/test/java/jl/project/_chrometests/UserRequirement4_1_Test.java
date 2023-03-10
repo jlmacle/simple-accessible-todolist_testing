@@ -44,7 +44,8 @@ public class UserRequirement4_1_Test {
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
 	}
 	
-	
+
+	// TODO: javadoc
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() 
 	{
@@ -53,7 +54,7 @@ public class UserRequirement4_1_Test {
 		assertThat(isTestSuccessful).isTrue();		
 	}
 	
-	
+	// TODO: javadoc
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() 
 	{
@@ -62,7 +63,7 @@ public class UserRequirement4_1_Test {
 		assertThat(isTestSuccessful).isTrue();	
 	}
 	
-	
+	// TODO: javadoc
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_1"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{

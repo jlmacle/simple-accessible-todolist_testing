@@ -26,7 +26,7 @@ public class ConfigurationUtilityTest {
 	String testValueForMacOS = "valueMacOS";
 	String testValueForLinux = "valueLinux";
 	
-	
+// TODO: javadoc
   @Test
   public void replaceTagByDataTest() throws UnrecognizedOSException {
 	boolean isTestTextFound = false;

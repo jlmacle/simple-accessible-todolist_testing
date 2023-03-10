@@ -46,7 +46,7 @@ public class UserRequirement4_2_Test {
 	}
 	
 	
-	
+	// TODO: javadoc
 	@Test(groups = {"creation_deletion_edge_2"})	
 	public void createAndDeleteACategoryWithKeyboardOnly_SpaceKey() 
 	{
@@ -56,7 +56,7 @@ public class UserRequirement4_2_Test {
 	}
 	
 	
-	
+	// TODO: javadoc
 	@Test(groups = {"creation_deletion_edge_2"})					
 	public void createAndDeleteItemWithKeyboardOnly_SpaceKey() 
 	{
@@ -66,7 +66,7 @@ public class UserRequirement4_2_Test {
 	}
 	
 	
-	
+	// TODO: javadoc
 	@Test(dependsOnGroups = {"creation_deletion_edge_2"})		
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{

@@ -20,10 +20,18 @@ import org.openqa.selenium.WebElement;
 
 import jl.project.StringExternalization;
 
-
 public class TestsUtilCommon 
 {
-		
+	/**
+	 * 
+	 * @param logger - the logger to be used
+	 * @param robot - the instance of the Robot class to be used
+	 * @param browserName - the name of the browser being used for the test
+	 * @param driver - the webdriver used
+	 * @param webDriverKey - a value used when instancing WebDriver 
+	 * @param webDriverValue
+	 * @return
+	 */
  	public static WebDriver setup(Logger logger, Robot robot, String browserName, WebDriver driver, String webDriverKey, String webDriverValue)
 	{
 		boolean isNotATestOnAndroid = true;
