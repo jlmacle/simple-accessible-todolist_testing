@@ -34,9 +34,8 @@ public class UserRequirement3_Test {
 		
 		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_CHROME_KEY,StringExternalization.WEBDRIVER_CHROME_VALUE);
 	
-	}
+	}	
 	
-	// TODO: javadoc
 	@Test
 	public void hideAndDisplayItem_UsingClicks()
 	{
