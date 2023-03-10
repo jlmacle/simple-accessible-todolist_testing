@@ -15,7 +15,7 @@ public class RobotFactory
 	private static Robot robot = null;	
 	
 
-	// TODO: to look at the Paths javadoc for example as a reference
+	
 	/**
 	 * 
 	 * @return An instance of the Robot class

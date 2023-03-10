@@ -3,16 +3,11 @@ package jl.project.__commontests;
 import static org.testng.Assert.fail;
 
 import java.awt.Robot;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import org.testng.log4testng.Logger;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -412,8 +407,7 @@ public class TestsUtilWithClicks
 		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
 		
 		//4. Verification that the item is hidden
-
-		// TODO : CODE MODIFICATIONS TO FINISH
+		
 		itemCreatedIsDisplayed = false;
 		items = driver.findElements(By.cssSelector(".item1"));
 		for(WebElement item: items)
