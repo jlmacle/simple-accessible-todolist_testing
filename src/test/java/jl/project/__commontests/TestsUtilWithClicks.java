@@ -408,7 +408,7 @@ public class TestsUtilWithClicks
 		
 		//4. Verification that the item is hidden
 		
-		itemCreatedIsDisplayed = false;
+		itemCreatedIsDisplayed = true;
 		items = driver.findElements(By.cssSelector(".item1"));
 		for(WebElement item: items)
 		{
