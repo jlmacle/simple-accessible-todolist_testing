@@ -12,13 +12,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.log4testng.Logger;
-
-
+import org.slf4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import jl.project.StringExternalization;
+
+
+// A credit to GitHub Copilot for the help with this project
 
 public class TestsUtilCommon 
 {
@@ -36,7 +38,9 @@ public class TestsUtilCommon
 	{
 		boolean isNotATestOnAndroid = true;
 		boolean isNotATestOnIOS = true;
-		logger.info(StringExternalization.TEST_START+webDriverValue);
+		logger.debug(String.format("logger.toString(): %s", logger.toString()));
+		logger.debug(String.format("logger.isDebugEnabled(): %b", logger.isDebugEnabled()));
+		logger.debug(StringExternalization.COMMENT_ENTERING_TEST_FOR+webDriverValue);
 		//https://chromedriver.chromium.org/downloads
 		System.setProperty(webDriverKey, 
 				StringExternalization.WEBDRIVERS_FOLDER+webDriverValue);
@@ -112,4 +116,49 @@ public class TestsUtilCommon
  	{ 		
  		driver.quit();
  	}
+
+
+	public static void sendKeys_withId(String id, String text, WebDriver driver)
+	{
+		driver.findElement(By.id(id)).sendKeys(text);
+	}
+
+	public static void click_withId(String id, WebDriver driver)
+	{
+		driver.findElement(By.id(id)).click();
+	}
+
+	public static boolean isTextFindableWithinElements_withName(String text, String elementName, WebDriver driver, Logger logger)
+	{
+		boolean isTextFindableWithinElements_withName = false;
+		for (WebElement element : driver.findElements(By.name(elementName)))
+		{
+			if (element.getText().trim().equals(text))
+			{
+				logger.debug(String.format("%s %s as text.",StringExternalization.DEBUG_FOUND, text)); 
+				isTextFindableWithinElements_withName = true;
+				break;
+			}
+		}
+		logger.debug(String.format("isLabelFindableWithinElements_withName: %b",isTextFindableWithinElements_withName));
+		return isTextFindableWithinElements_withName;
+	}
+	
+	public static boolean isTextFindableWithinElements_withCSSSelector(String text, String selectorName, WebDriver driver, Logger logger)
+	{
+		boolean isTextindableWithinElements_withCSSSelector = false;
+		for (WebElement element : driver.findElements(By.cssSelector(selectorName)))
+		{
+			if (element.getText().trim().equals(text))
+			{
+				logger.debug(String.format("%s %s as text.",StringExternalization.DEBUG_FOUND, text)); 
+				isTextindableWithinElements_withCSSSelector = true;
+				break;
+			}
+		}
+		logger.debug(String.format("isLabelFindableWithinElements_withCSSSelector: %b",isTextindableWithinElements_withCSSSelector));
+		return isTextindableWithinElements_withCSSSelector;
+	}
+	
+
 }
