@@ -27,12 +27,7 @@
                           <!--                              
                         <suiteXmlFile>src/test/java/TestNG_Edge.xml</suiteXmlFile>                                                   
                                           	
-						--> 
-                       	<!-- API key needed to run this test.  -->                       	
-                       	<!--   
-                      	<suiteXmlFile>src/test/java/TestNG_z_ScreenReaders.xml</suiteXmlFile>
-                      	-->
-                      	
+						-->                        
                     </suiteXmlFiles>
                     
                     

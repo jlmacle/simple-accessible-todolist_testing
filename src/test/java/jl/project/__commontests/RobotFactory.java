@@ -13,9 +13,7 @@ public class RobotFactory
 {
 	static Logger logger = LoggerFactory.getLogger(RobotFactory.class);
 	private static Robot robot = null;	
-	
-
-	
+		
 	/**
 	 * 
 	 * @return An instance of the Robot class

@@ -5,11 +5,12 @@ import static org.testng.Assert.fail;
 import java.awt.Robot;
 import java.util.List;
 
-import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
 
 import jl.project.StringExternalization;
 
@@ -19,27 +20,21 @@ import jl.project.StringExternalization;
 
 public class TestsUtilWithClicks 
 {	
- 	/**
-	 * Tests the CREATION of a CATEGORY using CLICKS
-	 * @param logger - the logger instance of User Requirement Test class 
-	 * @param driver - the webdriver instance used for the test 
-	 * @param robot - the instance of the Robot class used to add delays
-	 * @return true if the test is successful, false otherwise
-	 */
  	public static boolean createCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
 	{
-		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_CATEGORY_CREATION);
+		logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
+		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_CREATION);
     	boolean isCategoryFound = false;    	
     	
-    	logger.info("1. Category creation using clicks");
-    	driver.findElement(By.id(StringExternalization.ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD)).sendKeys(StringExternalization.LABEL_TEST_CATEGORY);
+    	logger.debug("1. Category creation using clicks");
+    	driver.findElement(By.id(StringExternalization.ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD)).sendKeys(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY);
     	robot.delay(1000);
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
     	robot.delay(1000);
     	//The category has been added. The display of the existing categories is being refreshed.
     	logger.debug("At this point, the test category should have been created.");
     	   	
-    	logger.info("2. Confirmation of category creation ");		
+    	logger.debug("2. Confirmation of category creation ");		
     	driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
     	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	  
@@ -52,7 +47,7 @@ public class TestsUtilWithClicks
     		{
 	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
 				logger.debug("Found text: *"+text+"*");				
-				if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) {isCategoryFound=true;break;}
+				if (text.contains(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) {isCategoryFound=true;break;}
 				
 			}
     	}
@@ -80,7 +75,7 @@ public class TestsUtilWithClicks
 	 */
  	public static boolean deleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
  	{
-	 	logger.info(StringExternalization.TEST_START+StringExternalization.TEST_CATEGORY_DELETION);
+	 	logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_DELETION);
 		int testCategoryPositionIntheList = 0;
 		int currentCategoryPosition = 0;
 		boolean isCategoryFound = false;
@@ -100,7 +95,7 @@ public class TestsUtilWithClicks
 				currentCategoryPosition++;
 	    		String text = aCategoryElement.getText().trim();
 	    		logger.debug("Found text: *"+text+"*");
-				if (text.equals(StringExternalization.LABEL_TEST_CATEGORY)) 
+				if (text.equals(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
 				{
 					testCategoryPositionIntheList = currentCategoryPosition;
 					logger.debug("Found the text:"+text+" in position: "+testCategoryPositionIntheList);					
@@ -167,10 +162,10 @@ public class TestsUtilWithClicks
 				{
 					String text = aCategoryElement.getText();
 					logger.debug(text);
-					if (text.equals(StringExternalization.LABEL_TEST_CATEGORY)) 
+					if (text.equals(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
 					{
 						//if the created category can be found the test is failed    					
-						fail(StringExternalization.DEBUG_FOUND+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
+						fail(StringExternalization.DEBUG_FOUND+StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY+" when the test category should have been deleted."
 								+ "The test is failed.");
 					}
 					   				
@@ -206,13 +201,13 @@ public class TestsUtilWithClicks
 	 */
  	public static boolean createItem_UsingClicks(Logger logger, WebDriver driver, Robot robot)
  	{ 	 		
- 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_CREATION);	
-		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
+ 		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_STEP_ITEM_CREATION);	
+		logger.info("1. "+StringExternalization.TEST_STEP_ITEM_CREATION);
 		boolean isItemCreated=false;
 		//Adding an item to the Uncategorized category created at startup
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys("Uncategorized");
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_FOR_CATEGORY_TO_SELECT_FIELD)).sendKeys("Uncategorized");
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_FOR_NEW_ITEM_FIELD)).sendKeys(StringExternalization.TEST_STRING_FOR_TEST_ITEM);
+		driver.findElement(By.id(StringExternalization.ELEMENT_ID_FOR_ADD_ITEM_BUTTON)).click();
 		//To avoid a StaleElementReferenceException
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 
@@ -225,14 +220,14 @@ public class TestsUtilWithClicks
 		logger.info("2. Confirmation of item creation ");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
+		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ITEM_NAME));
 		try 
 		{
 			logger.debug(StringExternalization.DEBUG_FOUND+anItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
 			for(WebElement anItemElement: anItemElements) 
 			{
 				String text = anItemElement.getText();				
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM))
+				if (text.contains(StringExternalization.TEST_STRING_FOR_TEST_ITEM))
 				{
 					logger.debug(StringExternalization.DEBUG_FOUND+text+" as text.");
 					isItemCreated = true;
@@ -264,13 +259,13 @@ public class TestsUtilWithClicks
  	public static boolean deleteItem_UsingClicks(Logger logger, WebDriver driver, Robot robot)
  	{
  		boolean isItemDeleted=false;
- 		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_DELETION);
-		logger.info("1. "+StringExternalization.TEST_ITEM_DELETION);
+ 		logger.debug(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_ITEM_DELETION);
+		logger.debug("1. "+StringExternalization.TEST_ITEM_DELETION);
 		
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
 		robot.delay(2000);
 		try 
 		{			
@@ -295,10 +290,10 @@ public class TestsUtilWithClicks
 		}
 		
 		//Checking the absence of the items
-		logger.info("2. Confirmation of deletion");
+		logger.debug("2. Confirmation of deletion");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
+		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ITEM_NAME));
 		try 
 		{
 			
@@ -307,7 +302,7 @@ public class TestsUtilWithClicks
 			{
 				String text = anItemElement.getText();
 				logger.debug("Found *"+text+"* as text.");
-				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) 
+				if (text.equals(StringExternalization.TEST_STRING_FOR_TEST_ITEM)) 
 				{fail("Error: the test label has been found.");}
 			}
 			isItemDeleted = true;
@@ -335,116 +330,76 @@ public class TestsUtilWithClicks
 	 * @return true if the test is successful, false otherwise
 	 */
  	public static boolean hideAndDisplayItem_UsingClicks(Logger logger, WebDriver driver, Robot robot)
- 	{ 		
+ 	{ 	
+		
  		boolean isTestSuccessful = false;	
-		boolean isTestItemLabelFound = false;		
-
-		logger.info(StringExternalization.TEST_START+StringExternalization.TEST_ITEM_HIDING_DISPLAY);
+		
+		logger.debug(String.format("%s %s","Entering ",new Object(){}.getClass().getEnclosingMethod().getName()));
 		
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		driver.navigate().refresh();		
 		
 		//1. Creation of an item. By default the item is displayed
-		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
+		logger.debug(String.format("%s %s","1.",StringExternalization.TEST_STEP_ITEM_CREATION));
 		//Adding an item to the Uncategorized category created at startup
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_CATEGORY_TO_SELECT_FIELD)).sendKeys(StringExternalization.LABEL_DEFAULT_CATEGORY);
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ITEM_INPUT_NAME)).sendKeys(StringExternalization.LABEL_TEST_ITEM);
-		driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_ITEM_BUTTON)).click();
-						
-		//Checking that the new item creation was successful	
+		TestsUtilCommon.sendKeys_withId(StringExternalization.ELEMENT_ID_FOR_CATEGORY_TO_SELECT_FIELD, StringExternalization.TEST_NAME_OF_DEFAULT_CATEGORY, driver);
+		TestsUtilCommon.sendKeys_withId(StringExternalization.ELEMENT_ID_FOR_NEW_ITEM_FIELD, StringExternalization.TEST_STRING_FOR_TEST_ITEM, driver);
+		TestsUtilCommon.click_withId(StringExternalization.ELEMENT_ID_FOR_ADD_ITEM_BUTTON, driver);
+				
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
-		try 
-		{
-			for(WebElement anItemElement: anItemElements) 
-			{
-				String text = anItemElement.getText().trim();			
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) 
-				{
-					logger.debug(StringExternalization.DEBUG_FOUND+text+" as text."); 
-					isTestItemLabelFound = true;					
-				}
-				logger.debug(String.format("isTestItemLabelFound: %b",isTestItemLabelFound));
-				if(!isTestItemLabelFound) {fail("The test label was not found. The test of item creation failed.");}
-			}
-						
-		}
-		catch(StaleElementReferenceException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-					+ "the elements named 'anItem' after creation of the element.");
-			e.getMessage();
-			e.printStackTrace();
-		}		
-		
-		
-		//2. Verification that the item is displayed
-		//a. code to get a screenshot from the browser
-		logger.info("2. Verification that the item is displayed : Code being re-written");
-		boolean itemCreatedIsDisplayed = false;
-		List<WebElement> items = driver.findElements(By.cssSelector(".itemName"));
-		for (WebElement item : items) 
-		{
-			itemCreatedIsDisplayed = 
-			(item.getText()).contains(StringExternalization.LABEL_TEST_ITEM)
-			&& item.isDisplayed();
-			// + isDisplayed() method
-			if(itemCreatedIsDisplayed)
-			{
-				logger.debug(String.format("The string %s was found in %s",StringExternalization.LABEL_TEST_ITEM, item.getText()));
-			}
-			
-		}
-		
-		if(!itemCreatedIsDisplayed) 
-		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
-	
-		//3. Hiding of the item		
-		logger.info("3. Verification that the item can be hidden.");
-		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
-		
-		//4. Verification that the item is hidden
-		
-		itemCreatedIsDisplayed = true;
-		items = driver.findElements(By.cssSelector(".item1"));
-		for(WebElement item: items)
-		{
-			itemCreatedIsDisplayed = 
-			(item.getText()).contains(StringExternalization.LABEL_TEST_ITEM)
-			&& !item.isDisplayed();
-		}
-		// TODO : To use .isDisplayed() method
 
-			
+		//2. Verification that the item is created and displayed	
+		// TODO: test to re-work at a later time
+		logger.debug(String.format("%s %s","2.",StringExternalization.TEST_STEP_VERIFICATION_OF_DISPLAYED_ITEM));
+		boolean itemIsCreated = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_TEST_ITEM,StringExternalization.ELEMENT_AN_ITEM_NAME, driver, logger);
+		boolean itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		if (!(itemIsCreated && itemCreatedIsDisplayed)) {fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
+
+		//3. Verification that the item can be hidden.	
+		logger.debug(String.format("%s %s","3.",StringExternalization.TEST_STEP_VERIFICATION_OF_HIDEABLE_ITEM));
+		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
+		driver.findElement(By.cssSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA)).click();
 		
+		//4. Verification that the item is hidden		
+		itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		if (itemCreatedIsDisplayed) {fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
+		if(itemCreatedIsDisplayed) 
+		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_HIDDEN);};
+	
 		//4. Verification that the item can be displayed 
-		logger.info("4. Verification that the item can be displayed");
-		driver.findElement(By.cssSelector(".foldUnfoldClickArea")).click();
+		logger.debug(String.format("%s %s","4.", StringExternalization.TEST_STEP_VERIFICATION_OF_DISPLAYED_ITEM));
+		driver.findElement(By.cssSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA)).click();				
+		itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		if(!itemCreatedIsDisplayed) 
+		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);}
 		
-		// TODO : To use .isDisplayed() method
-				
+		// The test succeeded. The next steps are for cleaning the test environment.
+		else {isTestSuccessful=true;}
+
 		
 		//5. Suppressing the item to go on with the test suite
-		logger.info("5. Deletion of the test item");
+		logger.debug(String.format("%s %s", "5.", StringExternalization.TEST_ITEM_DELETION));
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
 		robot.delay(2000);
+
 		
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
-			for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
-				anIconToDeleteAnItemElement.click();
-				robot.delay(2000);
-			}
+		
+		// List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
+		// 	for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
+		// 		anIconToDeleteAnItemElement.click();
+		// 		robot.delay(2000);
+		// 	}
 			
-		logger.info("6. Testing the deletion of the test item");
+		logger.debug("6. Testing the deletion of the test item");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		
-		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
+		TestsUtilCommon.click_onElements_withName(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME, driver, logger);
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
 		if( !anIconToDeleteAnItemElements.isEmpty() ) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");
-		else {logger.debug(String.format("The test item has been deleted, the number is items found with thwe name %s is: %d ",StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM,anIconToDeleteAnItemElements.size() ));}
+		else {logger.debug(String.format("The test item has been deleted, the number is items found with the name %s is: %d ",StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME,anIconToDeleteAnItemElements.size() ));}
 		
 		return isTestSuccessful;
  	}
