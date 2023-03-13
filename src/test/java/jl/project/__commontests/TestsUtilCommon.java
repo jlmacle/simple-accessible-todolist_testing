@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -128,12 +129,29 @@ public class TestsUtilCommon
 		driver.findElement(By.id(id)).click();
 	}
 
+	public static void click_onElements_withName(String name, WebDriver driver, Logger logger)
+	{
+		Robot robot = null;
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			logger.error(e.getMessage());
+		}
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(name));
+		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
+			anIconToDeleteAnItemElement.click();
+			if (robot != null) {robot.delay(2000);}
+		}
+		
+	}
+
 	public static boolean isTextFindableWithinElements_withName(String text, String elementName, WebDriver driver, Logger logger)
 	{
 		boolean isTextFindableWithinElements_withName = false;
 		for (WebElement element : driver.findElements(By.name(elementName)))
 		{
-			if (element.getText().trim().equals(text))
+			logger.debug(String.format("String *%s* present", text)); 
+			if ((element.getText().trim()).equals(text))
 			{
 				logger.debug(String.format("%s %s as text.",StringExternalization.DEBUG_FOUND, text)); 
 				isTextFindableWithinElements_withName = true;
