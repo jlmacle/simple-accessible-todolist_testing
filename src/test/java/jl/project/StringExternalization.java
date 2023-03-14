@@ -82,7 +82,7 @@ public class StringExternalization
 	public static final String TEST_ITEM_HIDING_DISPLAY = "item hiding/display";
 	public static final String TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND = "The test item wasn't found.";
 	public static final String TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_HIDDEN = "The test item isn't hidden.";
-	public static final String TEST_WITH_KEYBOARD = " with the keyboard";
+	public static final String TEST_WITH_KEYBOARD = " with the keyboard only";
 	public static final String TEST_KEYBOARD_ENTER_KEY = " with ENTER key";
 	public static final String TEST_KEYBOARD_SPACE_KEY = " with SPACE key";
 			
