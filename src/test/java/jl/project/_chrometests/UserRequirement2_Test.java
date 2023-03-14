@@ -5,8 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.awt.Robot;
 
 
-import org.testng.log4testng.Logger;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -25,7 +25,7 @@ import jl.project.__commontests.TestsUtilWithClicks;
 
 
 public class UserRequirement2_Test {
-	Logger logger = Logger.getLogger(jl.project._chrometests.UserRequirement2_Test.class);	
+	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement2_Test.class);	
 	WebDriver driver;	
 	Robot robot;
 	

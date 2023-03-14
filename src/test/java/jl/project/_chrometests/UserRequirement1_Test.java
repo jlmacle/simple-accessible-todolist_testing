@@ -13,7 +13,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.log4testng.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
@@ -28,7 +29,7 @@ import jl.project.__commontests.TestsUtilWithClicks;
  */
 public class UserRequirement1_Test 
 {
-	Logger logger = Logger.getLogger(jl.project._chrometests.UserRequirement1_Test.class);
+	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement1_Test.class);
 	WebDriver driver;	
 	Robot robot;
 

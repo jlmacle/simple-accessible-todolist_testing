@@ -4,9 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.awt.Robot;
 
-import org.testng.log4testng.Logger;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -25,7 +27,7 @@ import jl.project.__commontests.TestsUtilWithKeyboard;
  */
 public class UserRequirement4_1_Test {	
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
-	Logger logger = Logger.getLogger(jl.project._edgetests.UserRequirement4_1_Test.class);
+	Logger logger = LoggerFactory.getLogger(jl.project._edgetests.UserRequirement4_1_Test.class);
 	WebDriver driver;
 	Robot robot;
 	
