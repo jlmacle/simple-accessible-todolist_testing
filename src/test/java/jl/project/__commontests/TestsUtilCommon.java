@@ -11,10 +11,12 @@ import io.appium.java_client.ios.IOSDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -131,12 +133,7 @@ public class TestsUtilCommon
 
 	public static void click_onElements_withName(String name, WebDriver driver, Logger logger)
 	{
-		Robot robot = null;
-		try {
-			robot = new Robot();
-		} catch (AWTException e) {
-			logger.error(e.getMessage());
-		}
+		Robot robot = RobotFactory.getRobotInstance();		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(name));
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 			anIconToDeleteAnItemElement.click();
@@ -178,5 +175,27 @@ public class TestsUtilCommon
 		return isTextindableWithinElements_withCSSSelector;
 	}
 	
+	public static void tabTo_AddTheCategoryButton(Actions action, Robot robot)
+	{
+		action.sendKeys(Keys.TAB).build().perform();// nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();// nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();// nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();// Name of the category to add
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();// Add the category button
+	}
 
+	public static void tabTo_NameOfTheCategoryToAdd(Actions action, Robot robot)
+	{
+		action.sendKeys(Keys.TAB).build().perform();// nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();// nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();// nav bar
+		robot.delay(1000);
+		action.sendKeys(Keys.TAB).build().perform();// Name of the category to add
+	}
 }

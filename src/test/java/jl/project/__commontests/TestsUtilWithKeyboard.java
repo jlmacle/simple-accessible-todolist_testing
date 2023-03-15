@@ -12,7 +12,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.log4testng.Logger;
+import org.slf4j.Logger;
 
 import jl.project.StringExternalization;
 
@@ -34,31 +34,22 @@ public class TestsUtilWithKeyboard
 		{
 			boolean isTestSuccessful = false;
 			
-			logger.info(StringExternalization.TEST_START
-					+StringExternalization.TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD
-					+StringExternalization.TEST_KEYBOARD_ENTER_KEY);		
+			logger.info(String.format("%s %s %s",StringExternalization.COMMENT_ENTERING_TEST_FOR
+					,StringExternalization.TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD
+					,StringExternalization.TEST_KEYBOARD_ENTER_KEY));		
 			boolean isCategoryCreated = false;		
 			
-			logger.info("1. Creation of a category with the keyboard only.");		
+			logger.info(String.format("%s %s %s","1.", StringExternalization.TEST_CATEGORY_CREATION, StringExternalization.TEST_CATEGORY_CREATION,StringExternalization.TEST_WITH_KEYBOARD));		
 			//Tabbing until finding the input field to add the new category label		
-			Actions  action = new Actions(driver);
-					
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
+			Actions  action = new Actions(driver);			
+			TestsUtilCommon.tabTo_NameOfTheCategoryToAdd(action, robot);
 			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
+			action.sendKeys(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY).build().perform(); // adding the category label
 			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar			
-			robot.delay(1000);			
-			action.sendKeys(Keys.TAB).build().perform();//to category input
+			action.sendKeys(Keys.TAB).build().perform();// tabbing to the button to add the category
 			robot.delay(1000);
-			action.sendKeys(StringExternalization.LABEL_TEST_CATEGORY).build().perform();//to new category entry
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//to submit button
-			robot.delay(1000);
-			action.sendKeys(Keys.ENTER).build().perform();			
-			robot.delay(1000);		
-			
-		
+			action.sendKeys(Keys.ENTER).build().perform();// pressing the enter key to add the category			
+			robot.delay(1000);				
 		
 			//Verifying that the category has been created		
 			logger.info("2. Confirming creation of the category");
@@ -68,7 +59,7 @@ public class TestsUtilWithKeyboard
 			logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements named aCategory");	
 			for(WebElement aCategoryElement: aCategoryElements ) {
 				String text = aCategoryElement.getText();
-				if(text.contains(StringExternalization.LABEL_TEST_CATEGORY)) 
+				if(text.contains(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
 				{
 					logger.debug("The text *"+text+"* was found. The category was successfully "
 							+ "created using the keyboard only. ");
@@ -86,16 +77,7 @@ public class TestsUtilWithKeyboard
 			//Assuming the category location
 			boolean isCategoryFound;
 			
-				
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//nav bar
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//new category text
-			robot.delay(1000);
-			action.sendKeys(Keys.TAB).build().perform();//submit category button
+			TestsUtilCommon.tabTo_AddTheCategoryButton(action, robot);
 			robot.delay(1000);
 			action.sendKeys(Keys.TAB).build().perform();//category selection
 			robot.delay(1000);
@@ -123,10 +105,10 @@ public class TestsUtilWithKeyboard
 				{
 					String text = aCategoryElement.getText();
 					logger.debug(text);
-					if (text.contains(StringExternalization.LABEL_TEST_CATEGORY)) 
+					if (text.contains(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
 					{
 						//if the created category can be found the test is failed    					
-						fail(StringExternalization.DEBUG_FOUND+StringExternalization.LABEL_TEST_CATEGORY+" when the test category should have been deleted."
+						fail(StringExternalization.DEBUG_FOUND+StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY+" when the test category should have been deleted."
 								+ "The test is failed.");
 					}
 					
@@ -162,30 +144,22 @@ public class TestsUtilWithKeyboard
 	{
 		boolean isTheTestSuccessful = false;
 		
-		logger.info(StringExternalization.TEST_START
+		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR
 				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);
-		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
+		logger.info("1. "+StringExternalization.TEST_STEP_ITEM_CREATION);
 		
 		Actions action;
 				
-		action = new Actions(driver);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//new category text
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		action = new Actions(driver);		
+		TestsUtilCommon.tabTo_AddTheCategoryButton(action, robot);
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//category selection
 		action.sendKeys("Uncategorized").build().perform();
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//new item text
 		robot.delay(1000);
-		action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
+		action.sendKeys(StringExternalization.TEST_STRING_FOR_TEST_ITEM).build().perform();
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//submit item button
 		robot.delay(2000);
@@ -198,7 +172,7 @@ public class TestsUtilWithKeyboard
 		//Checking that the new item creation was successful		
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
+		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ITEM_NAME));
 		
 		boolean isItemCreated=false;
 		try 
@@ -207,7 +181,7 @@ public class TestsUtilWithKeyboard
 			for(WebElement anItemElement: anItemElements) 
 			{
 				String text = anItemElement.getText();				
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) 
+				if (text.contains(StringExternalization.TEST_STRING_FOR_TEST_ITEM)) 
 				{
 					logger.debug(StringExternalization.DEBUG_FOUND+text+" as text.");
 					isItemCreated = true;
@@ -227,16 +201,8 @@ public class TestsUtilWithKeyboard
 		logger.info("3. Deletion of the test item using the keyboard only.");
 		
 		
-		action = new Actions(driver);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//new category text
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		action = new Actions(driver);		
+		TestsUtilCommon.tabTo_AddTheCategoryButton(action, robot);
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//category selection
 		robot.delay(1000);
@@ -262,7 +228,7 @@ public class TestsUtilWithKeyboard
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ITEM_NAME));
 		try 
 		{
 			
@@ -271,7 +237,7 @@ public class TestsUtilWithKeyboard
 			{
 				String text = anItemElement.getText();
 				logger.debug("Found *"+text+"* as text.");
-				if (text.equals(StringExternalization.LABEL_TEST_ITEM)) 
+				if (text.equals(StringExternalization.TEST_STRING_FOR_TEST_ITEM)) 
 				{
 					fail("Error: the test item label has been found. The test is failed.");
 				}				
@@ -301,31 +267,23 @@ public class TestsUtilWithKeyboard
 	public static boolean HideAndDisplayItems_UsingTheKeyboard(Logger logger, WebDriver driver, Robot robot, Keys keyUsedToSubmitData, String commentAddOn)
 	{
 		boolean isTheTestSuccessful = false;
-		logger.info(StringExternalization.TEST_START
-				+StringExternalization.TEST_ITEM_HIDING_DISPLAY_WITH_KEYBOARD
+		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR
+				+StringExternalization.TEST_ITEM_HIDING_DISPLAY
 				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		
 		Actions action;
 	
-		action = new Actions(driver);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//new category text
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		action = new Actions(driver);		
+		TestsUtilCommon.tabTo_AddTheCategoryButton(action, robot);
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//category selection
 		action.sendKeys("Uncategorized").build().perform();
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//new item text
 		robot.delay(1000);
-		action.sendKeys(StringExternalization.LABEL_TEST_ITEM).build().perform();
+		action.sendKeys(StringExternalization.TEST_STRING_FOR_TEST_ITEM).build().perform();
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//submit item button
 		robot.delay(1000);			
@@ -337,7 +295,7 @@ public class TestsUtilWithKeyboard
 		//Checking that the new item creation was successful	
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ITEM));
+		List<WebElement> anItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ITEM_NAME));
 		boolean isItemCreated=false;
 		try 
 		{
@@ -345,7 +303,7 @@ public class TestsUtilWithKeyboard
 			for(WebElement anItemElement: anItemElements) 
 			{
 				String text = anItemElement.getText();				
-				if (text.contains(StringExternalization.LABEL_TEST_ITEM)) 
+				if (text.contains(StringExternalization.TEST_STRING_FOR_TEST_ITEM)) 
 				{
 					logger.debug("Success. Found "+text+" as text.");
 					isItemCreated = true;
@@ -365,28 +323,14 @@ public class TestsUtilWithKeyboard
 		
 		logger.info("3. Verification that the item is displayed");
 		
-		// TODO : To use .isDisplayed() method
-
-
-
-
-		
 		//clicking to hide the item		
 		logger.info("4. Verification that the item can be hidden.");
 		//Using the keyboard to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		
 		
-		action = new Actions(driver);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//nav bar
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//new category text
-		robot.delay(1000);
-		action.sendKeys(Keys.TAB).build().perform();//submit category button
+		action = new Actions(driver);		
+		TestsUtilCommon.tabTo_AddTheCategoryButton(action, robot);
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();//category selection
 		robot.delay(1000);
@@ -420,7 +364,7 @@ public class TestsUtilWithKeyboard
 		logger.info("6. Suppression of the item.");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) 
 		{//only one item in the test
 			anIconToDeleteAnItemElement.click();
@@ -431,7 +375,7 @@ public class TestsUtilWithKeyboard
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		
-		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_AN_ITEM));
+		anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
 		if(!anIconToDeleteAnItemElements.isEmpty()) { fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");}
 		else {logger.debug("Page cleaned from test item.");}
 		
