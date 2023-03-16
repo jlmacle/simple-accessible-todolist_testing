@@ -34,11 +34,13 @@ public class TestsUtilWithKeyboard
 		{
 			boolean isTestSuccessful = false;
 			
-			logger.info(String.format("%s %s %s",StringExternalization.COMMENT_ENTERING_TEST_FOR
-					,StringExternalization.TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD
-					,StringExternalization.TEST_KEYBOARD_ENTER_KEY));		
-			boolean isCategoryCreated = false;		
+			logger.info(String.format("%s %s %s %s",
+				StringExternalization.COMMENT_ENTERING_TEST_FOR,
+				StringExternalization.TEST_CATEGORY_CREATION_AND_DELETION,
+				StringExternalization.TEST_WITH_KEYBOARD,
+				StringExternalization.TEST_KEYBOARD_ENTER_KEY));		
 			
+			boolean isCategoryCreated = false;					
 			logger.info(String.format("%s %s %s","1.", StringExternalization.TEST_CATEGORY_CREATION, StringExternalization.TEST_CATEGORY_CREATION,StringExternalization.TEST_WITH_KEYBOARD));		
 			//Tabbing until finding the input field to add the new category label		
 			Actions  action = new Actions(driver);			

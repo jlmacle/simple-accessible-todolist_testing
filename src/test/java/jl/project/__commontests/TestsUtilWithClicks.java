@@ -16,10 +16,25 @@ import jl.project.StringExternalization;
 
 
 // Code with likely immaturities.
+// To do: code rewrite to allow running tests in parallel.
 
 
 public class TestsUtilWithClicks 
 {	
+	public static boolean createAndDeleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
+	{
+		boolean isTestSuccessful = false;
+
+		logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
+		logger.info(String.format("%s %s", 
+			StringExternalization.COMMENT_ENTERING_TEST_FOR,
+			StringExternalization.TEST_CATEGORY_CREATION_AND_DELETION,
+			StringExternalization.TEST_WITH_CLICKS
+		));
+	
+		return isTestSuccessful;
+	}
+
  	public static boolean createCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
 	{
 		logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
