@@ -70,8 +70,8 @@ public class StringExternalization
 	public static final String COMMENT_ENTERING_TEST_FOR = "Entering test for: ";
 	public static final String TEST_CATEGORY_CREATION = "Category creation";
 	public static final String TEST_CATEGORY_DELETION = "Category deletion";
-	public static final String TEST_CATEGORY_CREATION_DELETION_WITH_KEYBOARD = 
-			"category creation/deletion with the keyboard";
+	public static final String TEST_CATEGORY_CREATION_AND_DELETION = 
+			"Category creation/deletion";
 	public static final String TEST_STEP_ITEM_CREATION = "Item creation";
 	public static final String TEST_ITEM_DELETION = "Item deletion";	
 	public static final String TEST_STEP_VERIFICATION_OF_DISPLAYED_ITEM = "Verification that the item is displayed";
@@ -82,6 +82,7 @@ public class StringExternalization
 	public static final String TEST_ITEM_HIDING_DISPLAY = "item hiding/display";
 	public static final String TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND = "The test item wasn't found.";
 	public static final String TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_HIDDEN = "The test item isn't hidden.";
+	public static final String TEST_WITH_CLICKS = " with clicks";
 	public static final String TEST_WITH_KEYBOARD = " with the keyboard only";
 	public static final String TEST_KEYBOARD_ENTER_KEY = " with ENTER key";
 	public static final String TEST_KEYBOARD_SPACE_KEY = " with SPACE key";
