@@ -63,6 +63,9 @@ public class StringExternalization
 	public static final String EXCEPTION_AWT = "Caught an AWTException while using the instance of the Robot class";
 	public static final String EXCEPTION_MALFORMEDURL = "Caught a MalformedURLException while instantiating the RemoteWebDriver instance";
 	
+	public static final String TEST_FAILURE_CATEGORY_CREATION = "Test of category creation failed.";
+	public static final String TEST_FAILURE_CATEGORY_NOT_FOUND = "The test category was not found.";
+
 	public static final String TEST_STRING_FOR_CREATED_CATEGORY = "Selenium test category";
 	public static final String TEST_NAME_OF_DEFAULT_CATEGORY = "Uncategorized";
 	public static final String TEST_STRING_FOR_TEST_ITEM = "test"; 
@@ -72,6 +75,8 @@ public class StringExternalization
 	public static final String TEST_CATEGORY_DELETION = "Category deletion";
 	public static final String TEST_CATEGORY_CREATION_AND_DELETION = 
 			"Category creation/deletion";
+	public static final String TEST_CATEGORY_CREATION_CONFIRMATION = "Confirming creation of the category";
+	
 	public static final String TEST_STEP_ITEM_CREATION = "Item creation";
 	public static final String TEST_ITEM_DELETION = "Item deletion";	
 	public static final String TEST_STEP_VERIFICATION_OF_DISPLAYED_ITEM = "Verification that the item is displayed";
@@ -84,8 +89,8 @@ public class StringExternalization
 	public static final String TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_HIDDEN = "The test item isn't hidden.";
 	public static final String TEST_WITH_CLICKS = " with clicks";
 	public static final String TEST_WITH_KEYBOARD = " with the keyboard only";
-	public static final String TEST_KEYBOARD_ENTER_KEY = " with ENTER key";
-	public static final String TEST_KEYBOARD_SPACE_KEY = " with SPACE key";
+	public static final String TEST_KEYBOARD_ENTER_KEY = " ( with ENTER key )";
+	public static final String TEST_KEYBOARD_SPACE_KEY = " ( with SPACE key )";
 			
 	public static final String WEBDRIVERS_FOLDER = "webdrivers/";	
 	public static final String WEBDRIVER_CHROME_KEY = "webdriver.chrome.driver";	
