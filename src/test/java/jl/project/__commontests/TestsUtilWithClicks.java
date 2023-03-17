@@ -31,6 +31,21 @@ public class TestsUtilWithClicks
 			StringExternalization.TEST_CATEGORY_CREATION_AND_DELETION,
 			StringExternalization.TEST_WITH_CLICKS
 		));
+
+		// Category creation
+		boolean isCategoryCreated = false;
+		logger.info(String.format("%s %s %s","1.", 
+				StringExternalization.TEST_CATEGORY_CREATION, 
+				StringExternalization.TEST_WITH_CLICKS));
+		
+		isCategoryCreated = createCategory_UsingClicks(logger, driver, robot);
+		if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);}
+		
+		// Verifying that the category has been created	
+		logger.info("2. Confirming creation of the category");
+		logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
+
+		//TODO: code to finish
 	
 		return isTestSuccessful;
 	}
@@ -201,8 +216,8 @@ public class TestsUtilWithClicks
 		
 		else 
 		{
-			logger.error("The test category was not found.");
-			fail("Test of category creation failed.");
+			logger.error(StringExternalization.TEST_FAILURE_CATEGORY_NOT_FOUND);
+			fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);
 		}		
 		return isCategoryFound;
  	}

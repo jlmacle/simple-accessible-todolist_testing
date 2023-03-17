@@ -114,12 +114,10 @@ public class TestsUtilCommon
 		
 	}
  
-
  	public static void release(WebDriver driver)
  	{ 		
  		driver.quit();
  	}
-
 
 	public static void sendKeys_withId(String id, String text, WebDriver driver)
 	{

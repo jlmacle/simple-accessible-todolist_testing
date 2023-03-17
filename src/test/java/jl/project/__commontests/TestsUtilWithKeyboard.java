@@ -38,10 +38,14 @@ public class TestsUtilWithKeyboard
 				StringExternalization.COMMENT_ENTERING_TEST_FOR,
 				StringExternalization.TEST_CATEGORY_CREATION_AND_DELETION,
 				StringExternalization.TEST_WITH_KEYBOARD,
-				StringExternalization.TEST_KEYBOARD_ENTER_KEY));		
+				commentAddOn));		
 			
+			// Category creation
 			boolean isCategoryCreated = false;					
-			logger.info(String.format("%s %s %s","1.", StringExternalization.TEST_CATEGORY_CREATION, StringExternalization.TEST_CATEGORY_CREATION,StringExternalization.TEST_WITH_KEYBOARD));		
+			logger.info(String.format("%s %s %s","1.", 
+				StringExternalization.TEST_CATEGORY_CREATION, 
+				StringExternalization.TEST_WITH_KEYBOARD,
+				commentAddOn));		
 			//Tabbing until finding the input field to add the new category label		
 			Actions  action = new Actions(driver);			
 			TestsUtilCommon.tabTo_NameOfTheCategoryToAdd(action, robot);
@@ -54,7 +58,7 @@ public class TestsUtilWithKeyboard
 			robot.delay(1000);				
 		
 			//Verifying that the category has been created		
-			logger.info("2. Confirming creation of the category");
+			logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
 			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			robot.delay(2000);
 			List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
