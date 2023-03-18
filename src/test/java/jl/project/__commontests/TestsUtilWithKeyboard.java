@@ -46,7 +46,8 @@ public class TestsUtilWithKeyboard
 				StringExternalization.TEST_CATEGORY_CREATION, 
 				StringExternalization.TEST_WITH_KEYBOARD,
 				commentAddOn));		
-			//Tabbing until finding the input field to add the new category label		
+			//Tabbing until finding the input field to add the new category label	
+
 			Actions  action = new Actions(driver);			
 			TestsUtilCommon.tabTo_NameOfTheCategoryToAdd(action, robot);
 			robot.delay(1000);
@@ -61,21 +62,24 @@ public class TestsUtilWithKeyboard
 			logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
 			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			robot.delay(2000);
-			List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
-			logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements named aCategory");	
-			for(WebElement aCategoryElement: aCategoryElements ) {
-				String text = aCategoryElement.getText();
-				if(text.contains(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
-				{
-					logger.debug("The text *"+text+"* was found. The category was successfully "
-							+ "created using the keyboard only. ");
-					isCategoryCreated=true;
-				}
+
+			isCategoryCreated = TestsUtilCommon.isTextFindableWithinElements_withName( StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY,driver, logger);
+			if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_NOT_FOUND);	}
+
+			// List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
+			// logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements named aCategory");	
+			// for(WebElement aCategoryElement: aCategoryElements ) {
+			// 	String text = aCategoryElement.getText();
+			// 	if(text.contains(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
+			// 	{
+			// 		logger.debug("The text *"+text+"* was found. The category was successfully "
+			// 				+ "created using the keyboard only. ");
+			// 		isCategoryCreated=true;
+			// 	}
 				
-				assertThat(isCategoryCreated).isTrue();
-			}
-			
-			
+			// 	assertThat(isCategoryCreated).isTrue();
+			// }
+					
 			
 			logger.info("3. Deletion of a category with the keyboard only.");
 			driver.get(StringExternalization.ANGULAR_SERVER_URL);
@@ -104,7 +108,7 @@ public class TestsUtilWithKeyboard
 			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			robot.delay(2000);
 			
-			aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
+			List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
 			logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
 			try {
 				for(WebElement aCategoryElement : aCategoryElements) 
