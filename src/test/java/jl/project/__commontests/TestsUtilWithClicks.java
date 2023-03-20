@@ -41,9 +41,9 @@ public class TestsUtilWithClicks
 		isCategoryCreated = createCategory_UsingClicks(logger, driver, robot);
 		if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);}
 		
-		// Verifying that the category has been created	
-		logger.info("2. Confirming creation of the category");
-		logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
+		// Can the category created be deleted ?
+		boolean isCategoryDeleted = false;
+		
 
 		//TODO: code to finish
 	
@@ -56,37 +56,18 @@ public class TestsUtilWithClicks
 		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_CREATION);
     	boolean isCategoryFound = false;    	
     	
-    	logger.debug("1. Category creation using clicks");
+    	logger.debug(String.format("1. %s %s", StringExternalization.TEST_CATEGORY_CREATION , StringExternalization.TEST_WITH_CLICKS));
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD)).sendKeys(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY);
     	robot.delay(1000);
     	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
     	robot.delay(1000);
-    	//The category has been added. The display of the existing categories is being refreshed.
-    	logger.debug("At this point, the test category should have been created.");
-    	   	
-    	logger.debug("2. Confirmation of category creation ");		
+    	    	   	
+    	logger.debug(String.format("2. %s", StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION ));		
     	driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-    	List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	  
-    	
-    	try 
-    	{
-    		logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" aCategory elements");
-    		if( aCategoryElements.isEmpty() ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
-    		for (WebElement aCategoryElement : aCategoryElements) 
-    		{
-	    		String text = aCategoryElement.getText().trim();//A space is in front of all strings
-				logger.debug("Found text: *"+text+"*");				
-				if (text.contains(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) {isCategoryFound=true;break;}
-				
-			}
-    	}
-    	catch(StaleElementReferenceException e) 
-    	{
-    		logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-    				+ "while going through the elements with the name aCategory.");
-    		e.printStackTrace();
-    	}	    	
+
+		//TODO: use of the TestUtil class 
+		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);	    	
 
     	// Giving time for the item to be displayed
     	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
