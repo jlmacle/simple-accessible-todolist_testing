@@ -66,7 +66,6 @@ public class TestsUtilWithClicks
     	driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 
-		//TODO: use of the TestUtil class 
 		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);	    	
 
     	// Giving time for the item to be displayed
@@ -92,13 +91,13 @@ public class TestsUtilWithClicks
 		boolean isCategoryFound = false;
 		
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
-		logger.info("1. Category existence confirmation");
+		logger.info("1. %s",StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION);
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	
-		
 		logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements named aCategory");
 		if( aCategoryElements.isEmpty() ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
+		
 		try 
 		{    		
 			for (WebElement aCategoryElement : aCategoryElements) 
@@ -123,9 +122,8 @@ public class TestsUtilWithClicks
 			e.printStackTrace();
 		}	 
 		    	
-		if(isCategoryFound ) 
-		{
-			logger.debug("The new category has been successfuly created.");    		
+		if( isCategoryFound ) 		{
+			   		
 			//2. Deletion of the category created
 				// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
 			logger.info("2. Category deletion");
