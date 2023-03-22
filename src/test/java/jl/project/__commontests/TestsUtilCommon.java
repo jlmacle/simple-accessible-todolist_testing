@@ -145,7 +145,7 @@ public class TestsUtilCommon
 		boolean isTextFindableWithinElements_withName = false;
 		for (WebElement element : driver.findElements(By.name(elementName)))
 		{
-			logger.debug(String.format("String *%s* present", text)); 
+			
 			if ((element.getText().trim()).equals(text))
 			{
 				logger.debug(String.format("%s %s as text.",StringExternalization.DEBUG_FOUND, text)); 
@@ -172,6 +172,7 @@ public class TestsUtilCommon
 		logger.debug(String.format("isLabelFindableWithinElements_withCSSSelector: %b",isTextindableWithinElements_withCSSSelector));
 		return isTextindableWithinElements_withCSSSelector;
 	}
+	
 	
 	public static void tabTo_AddTheCategoryButton(Actions action, Robot robot)
 	{

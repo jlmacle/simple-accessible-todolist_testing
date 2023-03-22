@@ -94,111 +94,56 @@ public class TestsUtilWithClicks
 		logger.info("1. %s",StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION);
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));	
-		logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements named aCategory");
-		if( aCategoryElements.isEmpty() ){fail(StringExternalization.EXCEPTION_APP_NOT_STARTED);}//for the case where the app wasn't started 
+
+		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
+		if(!isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}		
+
+		//2. Deletion of the category created
+		// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
+		logger.info("2. %s", StringExternalization.TEST_CATEGORY_DELETION);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
+
 		
+		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
+		logger.debug(StringExternalization.DEBUG_FOUND+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
 		try 
-		{    		
-			for (WebElement aCategoryElement : aCategoryElements) 
+		{
+			currentCategoryPosition=0;    			
+			for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) 
 			{
-				currentCategoryPosition++;
-	    		String text = aCategoryElement.getText().trim();
-	    		logger.debug("Found text: *"+text+"*");
-				if (text.equals(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
+				currentCategoryPosition++;    				    				
+				if (currentCategoryPosition == testCategoryPositionIntheList) 
 				{
-					testCategoryPositionIntheList = currentCategoryPosition;
-					logger.debug("Found the text:"+text+" in position: "+testCategoryPositionIntheList);					
-					isCategoryFound=true;
+					logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
+					trashCanIconElementInFrontOfCategory.click();
+					//Issue with undeleted category
+					robot.delay(2000);
 					break;
 				}
+				else {logger.debug("Skipping this trash can icon.");}
 			}
+			
 		}
 		catch(StaleElementReferenceException e) 
 		{
 			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-					+ "while going through the anItem elements.");
+					+ "while going through the elements related to a trash can icon in front of a category.");
 			e.getMessage();
-			e.printStackTrace();
-		}	 
-		    	
-		if( isCategoryFound ) 		{
-			   		
-			//2. Deletion of the category created
-				// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
-			logger.info("2. Category deletion");
-			driver.get(StringExternalization.ANGULAR_SERVER_URL);
-			robot.delay(2000);
-			List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
-			logger.debug(StringExternalization.DEBUG_FOUND+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
-			try 
-			{
-				currentCategoryPosition=0;    			
-				for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) 
-				{
-					currentCategoryPosition++;    				    				
-					if (currentCategoryPosition == testCategoryPositionIntheList) 
-					{
-						logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
-						trashCanIconElementInFrontOfCategory.click();
-						//Issue with undeleted category
-			    		robot.delay(2000);
-						break;
-					}
-					else {logger.debug("Skipping this trash can icon.");}
-				}
-				
-			}
-			catch(StaleElementReferenceException e) 
-			{
-				logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-						+ "while going through the elements related to a trash can icon in front of a category.");
-				e.getMessage();
-				e.printStackTrace();    			
-			}    	
-			
-			
-			//3. confirmation of deletion
-			logger.info("3. Confirmation of category deletion");
-			driver.get(StringExternalization.ANGULAR_SERVER_URL);
-			robot.delay(2000);
-			
-			aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
-			logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements in aCategoryElements after deletion.");
-			try 
-			{
-				for(WebElement aCategoryElement : aCategoryElements) 
-				{
-					String text = aCategoryElement.getText();
-					logger.debug(text);
-					if (text.equals(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
-					{
-						//if the created category can be found the test is failed    					
-						fail(StringExternalization.DEBUG_FOUND+StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY+" when the test category should have been deleted."
-								+ "The test is failed.");
-					}
-					   				
-				}
-				//otherwise the test is successful
-				isCategoryFound = false;
-				
-			}
-			catch(StaleElementReferenceException e) 
-			{
-				logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-						+ "while going through the elements related to a trash can icon before a category.");
-				e.getMessage();
-				e.printStackTrace();    			
-			}    
-			
-		}
+			e.printStackTrace();    			
+		}    	
 		
-		else 
-		{
-			logger.error(StringExternalization.TEST_FAILURE_CATEGORY_NOT_FOUND);
-			fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);
-		}		
-		return isCategoryFound;
+		
+		//3. confirmation of deletion
+		logger.info(String.format("%s %s"),"3. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION);
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);			
+		
+		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
+		if(isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}
+		
+		
+		return true;
  	}
 
 	/**

@@ -65,22 +65,7 @@ public class TestsUtilWithKeyboard
 
 			isCategoryCreated = TestsUtilCommon.isTextFindableWithinElements_withName( StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY,driver, logger);
 			if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_NOT_FOUND);	}
-
-			// List<WebElement> aCategoryElements = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_A_CATEGORY));
-			// logger.debug(StringExternalization.DEBUG_FOUND+aCategoryElements.size()+" elements named aCategory");	
-			// for(WebElement aCategoryElement: aCategoryElements ) {
-			// 	String text = aCategoryElement.getText();
-			// 	if(text.contains(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY)) 
-			// 	{
-			// 		logger.debug("The text *"+text+"* was found. The category was successfully "
-			// 				+ "created using the keyboard only. ");
-			// 		isCategoryCreated=true;
-			// 	}
-				
-			// 	assertThat(isCategoryCreated).isTrue();
-			// }
-					
-			
+	
 			logger.info("3. Deletion of a category with the keyboard only.");
 			driver.get(StringExternalization.ANGULAR_SERVER_URL);
 			robot.delay(2000);
