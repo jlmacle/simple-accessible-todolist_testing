@@ -65,6 +65,7 @@ public class StringExternalization
 	
 	public static final String TEST_FAILURE_CATEGORY_CREATION = "Test of category creation failed.";
 	public static final String TEST_FAILURE_CATEGORY_NOT_FOUND = "The test category was not found.";
+	public static final String TEST_FAILURE_CATEGORY_FOUND = "The test category was found.";
 
 	public static final String TEST_STRING_FOR_CREATED_CATEGORY = "Selenium test category";
 	public static final String TEST_NAME_OF_DEFAULT_CATEGORY = "Uncategorized";
@@ -76,7 +77,8 @@ public class StringExternalization
 	public static final String TEST_CATEGORY_CREATION_AND_DELETION = 
 			"Category creation/deletion";
 	public static final String TEST_CATEGORY_CREATION_CONFIRMATION = "Confirming creation of the category";
-	
+	public static final String TEST_CATEGORY_DELETION_CONFIRMATION = "Confirming deletion of the category";
+
 	public static final String TEST_STEP_ITEM_CREATION = "Item creation";
 	public static final String TEST_ITEM_DELETION = "Item deletion";	
 	public static final String TEST_STEP_VERIFICATION_OF_DISPLAYED_ITEM = "Verification that the item is displayed";
