@@ -197,4 +197,30 @@ public class TestsUtilCommon
 		robot.delay(1000);
 		action.sendKeys(Keys.TAB).build().perform();// Name of the category to add
 	}
+
+	public static boolean createCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
+	{
+		logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
+		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_CREATION);
+    	boolean isCategoryFound = false;    	
+    	
+    	logger.debug(String.format("1. %s %s", StringExternalization.TEST_CATEGORY_CREATION , StringExternalization.TEST_WITH_CLICKS));
+    	driver.findElement(By.id(StringExternalization.ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD)).sendKeys(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY);
+    	robot.delay(1000);
+    	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
+    	robot.delay(1000);
+    	    	   	
+    	logger.debug(String.format("2. %s", StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION ));		
+    	driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
+
+		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);	    	
+
+    	// Giving time for the item to be displayed
+    	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
+    	
+		robot.delay(3000);    
+		
+		return isCategoryFound;
+	}
 }
