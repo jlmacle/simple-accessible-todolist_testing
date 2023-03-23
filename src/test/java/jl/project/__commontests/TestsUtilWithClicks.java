@@ -38,7 +38,7 @@ public class TestsUtilWithClicks
 				StringExternalization.TEST_CATEGORY_CREATION, 
 				StringExternalization.TEST_WITH_CLICKS));
 		
-		isCategoryCreated = createCategory_UsingClicks(logger, driver, robot);
+		isCategoryCreated = TestsUtilCommon.createCategory_UsingClicks(logger, driver, robot);
 		if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);}
 		
 		// Can the category created be deleted ?
@@ -50,31 +50,7 @@ public class TestsUtilWithClicks
 		return isTestSuccessful;
 	}
 
- 	public static boolean createCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
-	{
-		logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
-		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_CREATION);
-    	boolean isCategoryFound = false;    	
-    	
-    	logger.debug(String.format("1. %s %s", StringExternalization.TEST_CATEGORY_CREATION , StringExternalization.TEST_WITH_CLICKS));
-    	driver.findElement(By.id(StringExternalization.ELEMENT_ID_NEW_CATEGORY_INPUT_FIELD)).sendKeys(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY);
-    	robot.delay(1000);
-    	driver.findElement(By.id(StringExternalization.ELEMENT_ID_ADD_CATEGORY_BUTTON)).click();
-    	robot.delay(1000);
-    	    	   	
-    	logger.debug(String.format("2. %s", StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION ));		
-    	driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		robot.delay(2000);
-
-		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);	    	
-
-    	// Giving time for the item to be displayed
-    	// Recurrent failed deletion issues that did not occur with the slowest computer I have.
-    	
-		robot.delay(3000);    
-		
-		return isCategoryFound;
-	}
+ 	
  	
 	/**
 	 *  Tests the DELETION of a CATEGORY using CLICKS
@@ -91,7 +67,7 @@ public class TestsUtilWithClicks
 		boolean isCategoryFound = false;
 		
 		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
-		logger.info("1. %s",StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION);
+		logger.info(String.format("1. %s",StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 
@@ -100,18 +76,18 @@ public class TestsUtilWithClicks
 
 		//2. Deletion of the category created
 		// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
-		logger.info("2. %s", StringExternalization.TEST_CATEGORY_DELETION);
+		logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_DELETION));
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-
 		
 		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
-		logger.debug(StringExternalization.DEBUG_FOUND+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory.");    		
+		logger.debug(StringExternalization.DEBUG_FOUND+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory. There should be no more than 2.");    		
 		try 
 		{
 			currentCategoryPosition=0;    			
 			for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) 
 			{
+				// Goal : to delete the category in second position
 				currentCategoryPosition++;    				    				
 				if (currentCategoryPosition == testCategoryPositionIntheList) 
 				{
@@ -121,7 +97,7 @@ public class TestsUtilWithClicks
 					robot.delay(2000);
 					break;
 				}
-				else {logger.debug("Skipping this trash can icon.");}
+				
 			}
 			
 		}
@@ -135,7 +111,7 @@ public class TestsUtilWithClicks
 		
 		
 		//3. confirmation of deletion
-		logger.info(String.format("%s %s"),"3. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION);
+		logger.info(String.format("%s %s","3. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION));
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);			
 		
