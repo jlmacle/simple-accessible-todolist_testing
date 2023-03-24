@@ -19,8 +19,6 @@ import org.slf4j.LoggerFactory;
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.TestsUtilCommon;
-import jl.project.__commontests.TestsUtilWithClicks;
-
 
 
 /**
@@ -62,25 +60,16 @@ public class UserRequirement1_Test
 	 * Tests a successful creation of category
 	 */
 	@Test	
-    public void createCategory_UsingClicks() 
+    public void create_and_delete_category_UsingClicks() 
 	{
 		boolean isCategoryFound = false;
-		isCategoryFound = TestsUtilWithClicks.createCategory_UsingClicks(logger, driver, robot);
-    	assertThat(isCategoryFound).isTrue();
+		isCategoryFound = TestsUtilCommon.createCategory_UsingClicks(logger, driver, robot);
+    	boolean isCategoryDeleted = false;
+		isCategoryDeleted = TestsUtilCommon.deleteCategory_UsingClicks(logger, driver, robot);
+		assertThat(isCategoryFound && isCategoryDeleted).isTrue();
     	
     }
-	
-	/**
-	 * Tests a successful deletion of category	 
-	 */
-	@Test	
-	public void deleteCategory_UsingClicks() 
-	{
-		boolean isCategoryFound = false;
-		isCategoryFound = TestsUtilWithClicks.deleteCategory_UsingClicks(logger, driver, robot);
-		assertThat(isCategoryFound).isFalse();		
-	}	
-	
+		
 	
 	/**
 	 * The annotated method will be run after all the test methods in the current class have been run.

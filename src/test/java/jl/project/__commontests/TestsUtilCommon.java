@@ -9,6 +9,8 @@ import java.util.List;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
+import static org.testng.Assert.fail;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -128,15 +130,22 @@ public class TestsUtilCommon
 	{
 		driver.findElement(By.id(id)).click();
 	}
-
-	// TODO : to add the element position in the list as a parameter
-	// Then applicable to a test category deletion process
-	public static void click_onElements_withName(String name, WebDriver driver, Logger logger)
+	
+	/**
+	 * 
+	 * @param name - the name of the element to be clicked
+	 * @param elementPosition - the position of the element to be clicked (starting from 0)
+	 * @param driver - the webdriver used
+	 * @param logger - the logger to be used
+	 */
+	public static void click_onElements_withName(String name, int elementPosition, WebDriver driver, Logger logger)
 	{
 		Robot robot = RobotFactory.getRobotInstance();		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(name));
+		int count = 0;
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
-			anIconToDeleteAnItemElement.click();
+			count++;
+			if (count == elementPosition) anIconToDeleteAnItemElement.click();
 			if (robot != null) {robot.delay(2000);}
 		}
 		
@@ -224,5 +233,77 @@ public class TestsUtilCommon
 		robot.delay(3000);    
 		
 		return isCategoryFound;
+	}
+
+	/**
+	 *  Tests the DELETION of a CATEGORY using CLICKS
+	 * @param logger - the logger instance of User Requirement Test class 
+	 * @param driver - the webdriver instance used for the test
+	 * @param robot - the instance of the Robot class used to add delays
+	 * @return true if the test is successful, false otherwise
+	 */
+	public static boolean deleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
+	{
+		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_DELETION);
+	//    int testCategoryPositionIntheList = 0;
+	//    int currentCategoryPosition = 0;
+	   boolean isCategoryFound = false;
+	   
+	   //1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
+	   logger.info(String.format("1. %s",StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
+	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
+	   robot.delay(2000);
+
+	   isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
+	   if(!isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}		
+
+	   //2. Deletion of the category created
+	   // finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
+	   logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_DELETION));
+	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
+	   robot.delay(2000);
+
+	   click_onElements_withName(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY, 1, driver, logger);
+	   
+	//    List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
+	//    logger.debug(StringExternalization.DEBUG_FOUND+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory. There should be no more than 2.");    		
+	//    try 
+	//    {
+	// 	   currentCategoryPosition=0;    			
+	// 	   for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) 
+	// 	   {
+	// 		   // Goal : to delete the category in second position
+	// 		   currentCategoryPosition++;    				    				
+	// 		   if (currentCategoryPosition == testCategoryPositionIntheList) 
+	// 		   {
+	// 			   logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
+	// 			   trashCanIconElementInFrontOfCategory.click();
+	// 			   //Issue with undeleted category
+	// 			   robot.delay(2000);
+	// 			   break;
+	// 		   }
+			   
+	// 	   }
+		   
+	//    }
+	//    catch(StaleElementReferenceException e) 
+	//    {
+	// 	   logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
+	// 			   + "while going through the elements related to a trash can icon in front of a category.");
+	// 	   e.getMessage();
+	// 	   e.printStackTrace();    			
+	//    }    	
+	   
+	   
+	   //3. confirmation of deletion
+	   logger.info(String.format("%s %s","3. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION));
+	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
+	   robot.delay(2000);			
+	   
+	   isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
+	   if(isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}
+	   
+	   
+	   return true;
 	}
 }
