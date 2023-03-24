@@ -129,6 +129,8 @@ public class TestsUtilCommon
 		driver.findElement(By.id(id)).click();
 	}
 
+	// TODO : to add the element position in the list as a parameter
+	// Then applicable to a test category deletion process
 	public static void click_onElements_withName(String name, WebDriver driver, Logger logger)
 	{
 		Robot robot = RobotFactory.getRobotInstance();		
