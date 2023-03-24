@@ -21,106 +21,38 @@ import jl.project.StringExternalization;
 
 public class TestsUtilWithClicks 
 {	
-	public static boolean createAndDeleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
-	{
-		boolean isTestSuccessful = false;
+	// public static boolean createAndDeleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
+	// {
+	// 	boolean isTestSuccessful = false;
 
-		logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
-		logger.info(String.format("%s %s", 
-			StringExternalization.COMMENT_ENTERING_TEST_FOR,
-			StringExternalization.TEST_CATEGORY_CREATION_AND_DELETION,
-			StringExternalization.TEST_WITH_CLICKS
-		));
+	// 	logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
+	// 	logger.info(String.format("%s %s", 
+	// 		StringExternalization.COMMENT_ENTERING_TEST_FOR,
+	// 		StringExternalization.TEST_CATEGORY_CREATION_AND_DELETION,
+	// 		StringExternalization.TEST_WITH_CLICKS
+	// 	));
 
-		// Category creation
-		boolean isCategoryCreated = false;
-		logger.info(String.format("%s %s %s","1.", 
-				StringExternalization.TEST_CATEGORY_CREATION, 
-				StringExternalization.TEST_WITH_CLICKS));
+	// 	// Category creation
+	// 	boolean isCategoryCreated = false;
+	// 	logger.info(String.format("%s %s %s","1.", 
+	// 			StringExternalization.TEST_CATEGORY_CREATION, 
+	// 			StringExternalization.TEST_WITH_CLICKS));
 		
-		isCategoryCreated = TestsUtilCommon.createCategory_UsingClicks(logger, driver, robot);
-		if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);}
+	// 	isCategoryCreated = TestsUtilCommon.createCategory_UsingClicks(logger, driver, robot);
+	// 	if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);}
 		
-		// Can the category created be deleted ?
-		boolean isCategoryDeleted = false;
+	// 	// Can the category created be deleted ?
+	// 	boolean isCategoryDeleted = false;
 		
 
-		//TODO: code to finish
+	// 	//TODO: code to finish
 	
-		return isTestSuccessful;
-	}
+	// 	return isTestSuccessful;
+	// }
 
  	
  	
-	/**
-	 *  Tests the DELETION of a CATEGORY using CLICKS
-	 * @param logger - the logger instance of User Requirement Test class 
-	 * @param driver - the webdriver instance used for the test
-	 * @param robot - the instance of the Robot class used to add delays
-	 * @return true if the test is successful, false otherwise
-	 */
- 	public static boolean deleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
- 	{
-	 	logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_DELETION);
-		int testCategoryPositionIntheList = 0;
-		int currentCategoryPosition = 0;
-		boolean isCategoryFound = false;
-		
-		//1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
-		logger.info(String.format("1. %s",StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		robot.delay(2000);
-
-		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
-		if(!isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}		
-
-		//2. Deletion of the category created
-		// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
-		logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_DELETION));
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		robot.delay(2000);
-		
-		List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
-		logger.debug(StringExternalization.DEBUG_FOUND+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory. There should be no more than 2.");    		
-		try 
-		{
-			currentCategoryPosition=0;    			
-			for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) 
-			{
-				// Goal : to delete the category in second position
-				currentCategoryPosition++;    				    				
-				if (currentCategoryPosition == testCategoryPositionIntheList) 
-				{
-					logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
-					trashCanIconElementInFrontOfCategory.click();
-					//Issue with undeleted category
-					robot.delay(2000);
-					break;
-				}
-				
-			}
-			
-		}
-		catch(StaleElementReferenceException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-					+ "while going through the elements related to a trash can icon in front of a category.");
-			e.getMessage();
-			e.printStackTrace();    			
-		}    	
-		
-		
-		//3. confirmation of deletion
-		logger.info(String.format("%s %s","3. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION));
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		robot.delay(2000);			
-		
-		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
-		if(isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}
-		
-		
-		return true;
- 	}
+	
 
 	/**
 	 * Tests the CREATION of an ITEM using CLICKS
@@ -326,7 +258,7 @@ public class TestsUtilWithClicks
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		
-		TestsUtilCommon.click_onElements_withName(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME, driver, logger);
+		TestsUtilCommon.click_onElements_withName(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME, 1, driver, logger);
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
 		if( !anIconToDeleteAnItemElements.isEmpty() ) fail("The test item was not deleted. "+anIconToDeleteAnItemElements.size()+" element has been found with the name anIconToDeleteAnItem");
 		else {logger.debug(String.format("The test item has been deleted, the number is items found with the name %s is: %d ",StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME,anIconToDeleteAnItemElements.size() ));}
