@@ -76,8 +76,7 @@ public class TestsUtilCommon
 				capabilities.setCapability("appium:udid","4A462E70-381D-46E6-BF1B-EB31BA8A1E30");
 				// Appium's primary support for automating iOS apps is via the XCUITest driver.
 				// http://appium.io/docs/en/drivers/ios-xcuitest/index.html
-				driver =  new IOSDriver<WebElement>(capabilities);
-				
+				driver =  new IOSDriver<WebElement>(capabilities);	
 				
 			}
 			
@@ -245,58 +244,18 @@ public class TestsUtilCommon
 	public static boolean deleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
 	{
 		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_DELETION);
-	//    int testCategoryPositionIntheList = 0;
-	//    int currentCategoryPosition = 0;
-	   boolean isCategoryFound = false;
-	   
-	   //1. Confirmation that the category was created; registration of its position in the list of elements named aCategory    	
-	   logger.info(String.format("1. %s",StringExternalization.TEST_CATEGORY_CREATION_CONFIRMATION));
-	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
-	   robot.delay(2000);
+	   boolean isCategoryFound = false;	   
 
-	   isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
-	   if(!isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}		
-
-	   //2. Deletion of the category created
+	   //1. Deletion of the category created
 	   // finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
-	   logger.info(String.format("2. %s", StringExternalization.TEST_CATEGORY_DELETION));
+	   logger.info(String.format("1. %s", StringExternalization.TEST_CATEGORY_DELETION));
 	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
 	   robot.delay(2000);
 
 	   click_onElements_withName(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY, 1, driver, logger);
-	   
-	//    List<WebElement> trashIconElementsInFrontOfCategories = driver.findElements(By.name(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY));
-	//    logger.debug(StringExternalization.DEBUG_FOUND+trashIconElementsInFrontOfCategories.size()+" elements with name anIconToDeleteACategory. There should be no more than 2.");    		
-	//    try 
-	//    {
-	// 	   currentCategoryPosition=0;    			
-	// 	   for(WebElement trashCanIconElementInFrontOfCategory : trashIconElementsInFrontOfCategories) 
-	// 	   {
-	// 		   // Goal : to delete the category in second position
-	// 		   currentCategoryPosition++;    				    				
-	// 		   if (currentCategoryPosition == testCategoryPositionIntheList) 
-	// 		   {
-	// 			   logger.debug("Clicking the trash can icon in position: "+currentCategoryPosition);
-	// 			   trashCanIconElementInFrontOfCategory.click();
-	// 			   //Issue with undeleted category
-	// 			   robot.delay(2000);
-	// 			   break;
-	// 		   }
-			   
-	// 	   }
-		   
-	//    }
-	//    catch(StaleElementReferenceException e) 
-	//    {
-	// 	   logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-	// 			   + "while going through the elements related to a trash can icon in front of a category.");
-	// 	   e.getMessage();
-	// 	   e.printStackTrace();    			
-	//    }    	
-	   
-	   
-	   //3. confirmation of deletion
-	   logger.info(String.format("%s %s","3. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION));
+	 		   
+	   //2. confirmation of deletion
+	   logger.info(String.format("%s %s","2. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION));
 	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
 	   robot.delay(2000);			
 	   

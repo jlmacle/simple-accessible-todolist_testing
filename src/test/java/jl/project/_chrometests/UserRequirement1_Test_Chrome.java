@@ -1,9 +1,6 @@
 	
 package jl.project._chrometests;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-
 import java.awt.Robot;
 
 
@@ -20,14 +17,16 @@ import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.TestsUtilCommon;
 
+import jl.project.__commontests.tests.UserRequirement1_Test;
+
 
 /**
  * @author 
  *	Class testing the user requirement 1 of creating and deleting a category
  */
-public class UserRequirement1_Test 
+public class UserRequirement1_Test_Chrome 
 {
-	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement1_Test.class);
+	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement1_Test_Chrome.class);
 	WebDriver driver;	
 	Robot robot;
 
@@ -39,11 +38,8 @@ public class UserRequirement1_Test
 	@BeforeClass	
 	public void setup() 
 	{	
-		
-		robot = RobotFactory.getRobotInstance();
-		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_CHROME_KEY,StringExternalization.WEBDRIVER_CHROME_VALUE);
-		
+		driver = UserRequirement1_Test.setup(StringExternalization.BROWSER_NAME_CHROME, StringExternalization.WEBDRIVER_CHROME_KEY,StringExternalization.WEBDRIVER_CHROME_VALUE);
+		robot = RobotFactory.getRobotInstance();		
 	}
 	
 	/**
@@ -53,23 +49,18 @@ public class UserRequirement1_Test
 	@BeforeMethod	
 	public void navigate() 
 	{
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
+		UserRequirement1_Test.navigate(StringExternalization.ANGULAR_SERVER_URL);			
 	}
 	
 	/**
-	 * Tests a successful creation of category
+	 * Tests a successful creation and deletion of category
 	 */
 	@Test	
     public void create_and_delete_category_UsingClicks() 
 	{
-		boolean isCategoryFound = false;
-		isCategoryFound = TestsUtilCommon.createCategory_UsingClicks(logger, driver, robot);
-    	boolean isCategoryDeleted = false;
-		isCategoryDeleted = TestsUtilCommon.deleteCategory_UsingClicks(logger, driver, robot);
-		assertThat(isCategoryFound && isCategoryDeleted).isTrue();
+		UserRequirement1_Test.create_and_delete_category_UsingClicks(logger, driver, robot);
     	
-    }
-		
+    }		
 	
 	/**
 	 * The annotated method will be run after all the test methods in the current class have been run.
