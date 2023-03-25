@@ -17,16 +17,14 @@ import org.testng.annotations.Test;
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.TestsUtilCommon;
-import jl.project.__commontests.TestsUtilWithClicks;
-
-
+import jl.project.__commontests.tests.UserRequirement1_Test;
 
 /**
  * @author 
  *	Class testing the user requirement 1 of creating and deleting a category
  */
-public class UserRequirement1_Test {
-	Logger logger = LoggerFactory.getLogger(jl.project._edgetests.UserRequirement1_Test.class);
+public class UserRequirement1_Test_Edge {
+	Logger logger = LoggerFactory.getLogger(jl.project._edgetests.UserRequirement1_Test_Edge.class);
 	WebDriver driver;
 	Robot robot;
 		
@@ -37,10 +35,8 @@ public class UserRequirement1_Test {
 	@BeforeClass	
 	public void setup()
 	{	
-		robot = RobotFactory.getRobotInstance();
-		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_EDGE, driver, StringExternalization.WEBDRIVER_EDGE_KEY,StringExternalization.WEBDRIVER_EDGE_VALUE);
-		
+		driver = UserRequirement1_Test.setup(StringExternalization.BROWSER_NAME_EDGE, StringExternalization.WEBDRIVER_EDGE_KEY,StringExternalization.WEBDRIVER_EDGE_VALUE);
+		robot = RobotFactory.getRobotInstance();		
 	}
 	
 	/**
@@ -49,31 +45,19 @@ public class UserRequirement1_Test {
 	 */
 	@BeforeMethod	
 	public void navigate() {
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);
-		
+		UserRequirement1_Test.navigate(StringExternalization.ANGULAR_SERVER_URL);
+				
 	}
 	
 	/**
-	 * Tests a successful creation of category
+	 * Tests a successful creation and deletion of category
 	 */
 	@Test	
-    public void createCategory() 
+    public void create_and_delete_category_UsingClicks() 
 	{
-		boolean isCategoryFound = false;
-		isCategoryFound = TestsUtilWithClicks.createCategory_UsingClicks(logger, driver, robot);
-    	assertThat(isCategoryFound).isTrue();    	
+		UserRequirement1_Test.create_and_delete_category_UsingClicks(logger, driver, robot);
+		    	
     }
-	
-	/**
-	 * Tests a successful deletion of category	 
-	 */
-	@Test	
-	public void deleteCategory() 
-	{
-		boolean isCategoryFound = false;
-		isCategoryFound = TestsUtilWithClicks.deleteCategory_UsingClicks(logger, driver, robot);
-		assertThat(isCategoryFound).isFalse();		
-	}	
 	
 	
 	/**
