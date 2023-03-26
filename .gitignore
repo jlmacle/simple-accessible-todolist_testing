@@ -44,3 +44,4 @@ webdrivers/*
 z__selenium-server/*.jar
 *.log
 
+/target/
