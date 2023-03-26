@@ -79,11 +79,12 @@ public class StringExternalization
 	public static final String TEST_CATEGORY_CREATION_CONFIRMATION = "Confirming creation of the category";
 	public static final String TEST_CATEGORY_DELETION_CONFIRMATION = "Confirming deletion of the category";
 
-	public static final String TEST_STEP_ITEM_CREATION = "Item creation";
+	public static final String TEST_ITEM_CREATION = "Item creation";
 	public static final String TEST_ITEM_DELETION = "Item deletion";	
-	public static final String TEST_STEP_VERIFICATION_OF_DISPLAYED_ITEM = "Verification that the item is displayed";
-	public static final String TEST_STEP_VERIFICATION_OF_HIDEABLE_ITEM = "Verification that the item can be hidden.";
-	
+	public static final String TEST_ITEM_VERIFICATION_OF_DISPLAYED_ITEM = "Verification that the item is displayed";
+	public static final String TEST_ITEM_VERIFICATION_OF_HIDEABLE_ITEM = "Verification that the item can be hidden.";
+	public static final String TEST_ITEM_CREATION_CONFIRMATION = "Confirming creation of the item";
+
 	public static final String TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD = 
 			"item creation/deletion with the keyboard";	
 	public static final String TEST_ITEM_HIDING_DISPLAY = "item hiding/display";
