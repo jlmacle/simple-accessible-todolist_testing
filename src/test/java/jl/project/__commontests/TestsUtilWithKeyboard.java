@@ -142,7 +142,7 @@ public class TestsUtilWithKeyboard
 		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR
 				+StringExternalization.TEST_ITEM_CREATION_DELETION_WITH_KEYBOARD
 				+StringExternalization.TEST_KEYBOARD_ENTER_KEY);
-		logger.info("1. "+StringExternalization.TEST_STEP_ITEM_CREATION);
+		logger.info("1. "+StringExternalization.TEST_ITEM_CREATION);
 		
 		Actions action;
 				
