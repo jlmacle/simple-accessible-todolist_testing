@@ -19,7 +19,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -260,26 +259,25 @@ public class TestsUtilCommon
 	public static boolean deleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
 	{
 		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR+StringExternalization.TEST_CATEGORY_DELETION);
-	   boolean isCategoryFound = false;	   
+		boolean isCategoryFound = false;	   
 
-	   //1. Deletion of the category created
-	   // finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
-	   logger.info(String.format("1. %s", StringExternalization.TEST_CATEGORY_DELETION));
-	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
-	   robot.delay(2000);
+		//1. Deletion of the category created
+		// finding the elements with the name StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY
+		logger.info(String.format("1. %s", StringExternalization.TEST_CATEGORY_DELETION));
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);
 
-	   click_onElement_withName(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY, 0, driver, logger);
-	 		   
-	   //2. confirmation of deletion
-	   logger.info(String.format("%s %s","2. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION));
-	   driver.get(StringExternalization.ANGULAR_SERVER_URL);
-	   robot.delay(2000);			
-	   
-	   isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
-	   if(isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}
-	   
-	   
-	   return true;
+		click_onElement_withName(StringExternalization.ELEMENT_NAME_AN_ICON_TO_DELETE_A_CATEGORY, 0, driver, logger);
+				
+		//2. confirmation of deletion
+		logger.info(String.format("%s %s","2. ", StringExternalization.TEST_CATEGORY_DELETION_CONFIRMATION));
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+		robot.delay(2000);			
+		
+		isCategoryFound = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_CREATED_CATEGORY, StringExternalization.ELEMENT_NAME_A_CATEGORY, driver, logger);
+		if(isCategoryFound) {fail(StringExternalization.TEST_FAILURE_CATEGORY_FOUND);}
+				
+		return true;
 	}
 	
 	/**
@@ -335,60 +333,16 @@ public class TestsUtilCommon
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		
-		// TODO: CODE CLEANING
 		TestsUtilCommon.click_onElement_withName(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME, 0, driver, logger);
-
-		// List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
-		// robot.delay(2000);
-		// try 
-		// {			
-		// 	logger.debug(StringExternalization.DEBUG_FOUND+anIconToDeleteAnItemElements.size()+" element named 'anIconToDeleteAnItem'");
-		// 	//There should be only one item
-		// 	if(anIconToDeleteAnItemElements.size() != 1) 
-		// 		{fail(StringExternalization.EXCEPTION_ITEM_NOT_EXISTING_OR_NOT_UNIQUE+anIconToDeleteAnItemElements.size());}
-		// 	for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) 
-		// 	{				
-		// 		anIconToDeleteAnItemElement.click();
-		// 		logger.debug("Trash can icon clicked.");
-		// 		robot.delay(2000);
-		// 	}
-			
-		// }
-		// catch(StaleElementReferenceException e) 
-		// {
-		// 	logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-		// 			+ "the elements named 'anIconToDeleteAnItem' ");
-		// 	e.getMessage();
-		// 	e.printStackTrace();
-		// }
+		
 		
 		//Checking the absence of the items
-		logger.debug("2. Confirmation of deletion");
+		logger.debug(String.format("%s %s","2. ", StringExternalization.TEST_ITEM_DELETION_CONFIRMATION));
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
-		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ITEM_NAME));
-		try 
-		{
-			
-			logger.debug(StringExternalization.DEBUG_FOUND+anIconToDeleteAnItemElements.size()+StringExternalization.DEBUG_ELEMENT_NAMED_AN_ITEM);
-			for(WebElement anItemElement: anIconToDeleteAnItemElements) 
-			{
-				String text = anItemElement.getText();
-				logger.debug("Found *"+text+"* as text.");
-				if (text.equals(StringExternalization.TEST_STRING_FOR_TEST_ITEM)) 
-				{fail("Error: the test label has been found.");}
-			}
-			isItemDeleted = true;
-			
-		}
-		catch(StaleElementReferenceException e) 
-		{
-			logger.error(StringExternalization.EXCEPTION_STALE_ELEMENT_REFERENCE
-					+ "the elements named 'anItem' ");
-			e.getMessage();
-			e.printStackTrace();
-		}
-		
+
+		isItemDeleted = !TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_NAME, driver, logger);
+				
 		//Issue with an undeleted test item
 		robot.delay(3000);
 		
