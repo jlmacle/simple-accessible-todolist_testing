@@ -20,24 +20,11 @@ import jl.project.__commontests.TestsUtilCommon;
  * @author 
  *	Class testing the user requirement 1 of creating and deleting a category
  */
-public class UserRequirement1_Test 
+public class UserRequirement1_Test extends UserRequirement_Common
 {
 	static Logger logger = LoggerFactory.getLogger(jl.project.__commontests.tests.UserRequirement1_Test.class);
 	static WebDriver driver;	
 	static Robot robot;
-
-	public static WebDriver setup(String browserName, String webDriverKey, String webDriverValue) 
-	{	
-		
-		robot = RobotFactory.getRobotInstance();		
-		driver = TestsUtilCommon.setup(logger,robot, browserName, driver, webDriverKey,webDriverValue);
-		return driver;
-	}	
-
-	public static void navigate(String URL) 
-	{
-		driver.get(URL);		
-	}
 	
 	public static void create_and_delete_category_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
 	{
@@ -49,11 +36,4 @@ public class UserRequirement1_Test
 		assertThat(isCategoryFound && isCategoryDeleted).isTrue();
     	
     }
-		
-	
-	public static void releaseResources(WebDriver driver) 
-	{
-		TestsUtilCommon.release(driver);
-	}
-
 }
