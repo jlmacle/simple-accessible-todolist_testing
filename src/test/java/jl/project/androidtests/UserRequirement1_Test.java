@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.awt.Robot;
 
-
-
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +12,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.TestsUtilCommon;
-import jl.project.__commontests.TestsUtilWithClicks;
 
 public class UserRequirement1_Test 
 {
@@ -47,7 +43,7 @@ public class UserRequirement1_Test
     public void createCategory_UsingClicks() 
 	{
 		boolean isCategoryFound = false;
-		isCategoryFound = TestsUtilWithClicks.createCategory_UsingClicks(logger, driver, robot);
+		isCategoryFound = TestsUtilCommon.createCategory_UsingClicks(logger, driver, robot);
     	assertThat(isCategoryFound).isTrue();
     	
     }
@@ -59,7 +55,7 @@ public class UserRequirement1_Test
 	public void deleteCategory_UsingClicks() 
 	{
 		boolean isCategoryFound = false;
-		isCategoryFound = TestsUtilWithClicks.deleteCategory_UsingClicks(logger, driver, robot);
+		isCategoryFound = TestsUtilCommon.deleteCategory_UsingClicks(logger, driver, robot);
 		assertThat(isCategoryFound).isFalse();		
 	}	
 	
