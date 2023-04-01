@@ -11,7 +11,7 @@
  
     <test name = "User Requirement 2">
       <classes>
-         <class name = "jl.project._chrometests.UserRequirement2_Test" />
+         <class name = "jl.project._chrometests.UserRequirement2_Test_Chrome" />
       </classes>
    </test>   
     

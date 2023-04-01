@@ -10,7 +10,7 @@
    </test>    
     <test name = "User Requirement 2">
       <classes>
-         <class name = "jl.project._edgetests.UserRequirement2_Test" />
+         <class name = "jl.project._edgetests.UserRequirement2_Test_Edge" />
       </classes>
    </test>
   

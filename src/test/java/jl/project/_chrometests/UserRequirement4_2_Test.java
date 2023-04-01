@@ -16,8 +16,8 @@ import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
-import jl.project.__commontests.TestsUtilCommon;
-import jl.project.__commontests.TestsUtilWithKeyboard;
+import jl.project.__commontests.tests.TestsUtilCommon;
+import jl.project.__commontests.tests.TestsUtilWithKeyboard;
 
 /**
  * @author
@@ -28,14 +28,14 @@ public class UserRequirement4_2_Test {
 	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement4_2_Test.class);
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	WebDriver driver;	
-	Robot robot;
+	Robot robot = RobotFactory.getRobotInstance();
 	
 	@BeforeClass
 	public void setup() 
 	{
 		robot = RobotFactory.getRobotInstance();
 		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_CHROME_KEY,StringExternalization.WEBDRIVER_CHROME_VALUE);
+		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_KEY_CHROME,StringExternalization.WEBDRIVER_VALUE_CHROME);
 	
 	}
 	
@@ -76,7 +76,7 @@ public class UserRequirement4_2_Test {
 	@AfterClass	
 	public void releaseResources() 
 	{
-		TestsUtilCommon.release(driver);
+		TestsUtilCommon.releaseResources(driver);
 	}
 	
 }

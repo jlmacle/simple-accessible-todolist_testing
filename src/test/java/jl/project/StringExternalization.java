@@ -1,5 +1,7 @@
 package jl.project;
 
+import java.util.HashMap;
+
 public class StringExternalization 
 {
 	
@@ -10,18 +12,27 @@ public class StringExternalization
 	
 	//Used by the ConfigurationUtility class to add the proper webdrivers to this class	
 	//<webdrivers>
-	public static final String WEBDRIVER_CHROME_VALUE = "chromedriver.exe";
-	public static final String WEBDRIVER_FIREFOX_VALUE = "geckodriver.exe"; 
-	public static final String WEBDRIVER_EDGE_VALUE = "msedgedriver.exe"; 
+	public static final String WEBDRIVER_VALUE_CHROME = "chromedriver.exe";
+	public static final String WEBDRIVER_VALUE_FIREFOX = "geckodriver.exe"; 
+	public static final String WEBDRIVER_VALUE_EDGE = "msedgedriver.exe"; 
 	// At the time of starting this project,
 	// the value for WEBDRIVER_CHROME_ON_ANDROID_VALUE didn't matter
 	// as long as the webdriver was in the webdriver folder.
-	// Automatixc research of webdrrivers with 
+	// Automatic research of webdrivers with 
 	// capabilities.setCapability["chromedriverExecutableDir","../webdrivers/"];
 	// Potential TODO: to find if this remains true.
 	public static final String WEBDRIVER_CHROME_ON_ANDROID_VALUE = "Chrome on Android";
 	public static final String WEBDRIVER_SAFARI_ON_IOS_VALUE = "N.A.";
 	//</webdrivers>
+
+	public static final String WEBDRIVERS_FOLDER_PATH = "webdrivers/";	
+	public static final String WEBDRIVER_KEY_CHROME = "webdriver.chrome.driver";	
+	public static final String WEBDRIVER_KEY_FIREFOX = "webdriver.gecko.driver";	
+	public static final String WEBDRIVER_KEY_EDGE = "webdriver.edge.driver";
+
+	public static final HashMap<String,HashMap<String,String>> WEBDRIVER_DATA = new HashMap<>();
+	public static final HashMap<String,String> WEBDRIVER_DATA_CHROME = new HashMap<>();
+	public static final HashMap<String,String> WEBDRIVER_DATA_EDGE = new HashMap<>();
 		
 	//Used by the ConfigurationUtility class to make sure that the default configuration doesn't use Selenium Grid 4.
 	//<seleniumGrid4>
@@ -95,11 +106,6 @@ public class StringExternalization
 	public static final String TEST_WITH_KEYBOARD = " with the keyboard only";
 	public static final String TEST_KEYBOARD_ENTER_KEY = " ( with ENTER key )";
 	public static final String TEST_KEYBOARD_SPACE_KEY = " ( with SPACE key )";
-			
-	public static final String WEBDRIVERS_FOLDER = "webdrivers/";	
-	public static final String WEBDRIVER_CHROME_KEY = "webdriver.chrome.driver";	
-	public static final String WEBDRIVER_FIREFOX_KEY = "webdriver.gecko.driver";	
-	public static final String WEBDRIVER_EDGE_KEY = "webdriver.edge.driver";
 
 	public static final String DEBUG_FOUND = "Found ";
 	public static final String DEBUG_ELEMENT_NAMED_AN_ITEM = " element named 'anItem'";

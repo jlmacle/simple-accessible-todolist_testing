@@ -1,4 +1,4 @@
-package jl.project.__commontests;
+package jl.project.__commontests.tests;
 
 import static org.testng.Assert.fail;
 
@@ -19,40 +19,7 @@ import jl.project.StringExternalization;
 
 
 public class TestsUtilWithClicks 
-{	
-	// public static boolean createAndDeleteCategory_UsingClicks(Logger logger, WebDriver driver, Robot robot)
-	// {
-	// 	boolean isTestSuccessful = false;
-
-	// 	logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
-	// 	logger.info(String.format("%s %s", 
-	// 		StringExternalization.COMMENT_ENTERING_TEST_FOR,
-	// 		StringExternalization.TEST_CATEGORY_CREATION_AND_DELETION,
-	// 		StringExternalization.TEST_WITH_CLICKS
-	// 	));
-
-	// 	// Category creation
-	// 	boolean isCategoryCreated = false;
-	// 	logger.info(String.format("%s %s %s","1.", 
-	// 			StringExternalization.TEST_CATEGORY_CREATION, 
-	// 			StringExternalization.TEST_WITH_CLICKS));
-		
-	// 	isCategoryCreated = TestsUtilCommon.createCategory_UsingClicks(logger, driver, robot);
-	// 	if(!isCategoryCreated) {fail(StringExternalization.TEST_FAILURE_CATEGORY_CREATION);}
-		
-	// 	// Can the category created be deleted ?
-	// 	boolean isCategoryDeleted = false;
-		
-
-	// 	//TODO: code to finish
-	
-	// 	return isTestSuccessful;
-	// }
-
- 	
- 	
-	
-
+{		
 	/**
 	 * Tests the ability to HIDE and DISPLAY an ITEM using CLICKS
 	 * @param logger - the logger instance of User Requirement Test class

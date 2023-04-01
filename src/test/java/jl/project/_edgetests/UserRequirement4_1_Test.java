@@ -16,8 +16,8 @@ import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
-import jl.project.__commontests.TestsUtilCommon;
-import jl.project.__commontests.TestsUtilWithKeyboard;
+import jl.project.__commontests.tests.TestsUtilCommon;
+import jl.project.__commontests.tests.TestsUtilWithKeyboard;
 
 
 /**
@@ -29,7 +29,7 @@ public class UserRequirement4_1_Test {
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
 	Logger logger = LoggerFactory.getLogger(jl.project._edgetests.UserRequirement4_1_Test.class);
 	WebDriver driver;
-	Robot robot;
+	Robot robot = RobotFactory.getRobotInstance();
 	
 	@BeforeClass
 	public void setup() 
@@ -37,7 +37,7 @@ public class UserRequirement4_1_Test {
 		
 		robot = RobotFactory.getRobotInstance();
 		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_EDGE, driver, StringExternalization.WEBDRIVER_EDGE_KEY,StringExternalization.WEBDRIVER_EDGE_VALUE);
+		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_EDGE, driver, StringExternalization.WEBDRIVER_KEY_EDGE,StringExternalization.WEBDRIVER_VALUE_EDGE);
 		
 	}
 	
@@ -75,7 +75,7 @@ public class UserRequirement4_1_Test {
 	@AfterClass	
 	public void releaseResources() 
 	{
-		TestsUtilCommon.release(driver);
+		TestsUtilCommon.releaseResources(driver);
 	}
 	
 }
