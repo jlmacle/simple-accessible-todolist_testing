@@ -16,8 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
-import jl.project.__commontests.TestsUtilCommon;
-import jl.project.__commontests.TestsUtilWithClicks;
+import jl.project.__commontests.tests.TestsUtilCommon;
+import jl.project.__commontests.tests.TestsUtilWithClicks;
 
 
 /**
@@ -27,14 +27,14 @@ import jl.project.__commontests.TestsUtilWithClicks;
 public class UserRequirement3_Test {
 	Logger logger = LoggerFactory.getLogger(jl.project._edgetests.UserRequirement3_Test.class);
 	WebDriver driver; 
-	Robot robot;
+	Robot robot = RobotFactory.getRobotInstance();
 		
 	@BeforeClass
 	public void setup()
 	{
 		robot = RobotFactory.getRobotInstance();
 		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_EDGE, driver, StringExternalization.WEBDRIVER_EDGE_KEY,StringExternalization.WEBDRIVER_EDGE_VALUE);
+		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_EDGE, driver, StringExternalization.WEBDRIVER_KEY_EDGE,StringExternalization.WEBDRIVER_VALUE_EDGE);
 		
 	}
 	
@@ -49,6 +49,6 @@ public class UserRequirement3_Test {
 	@AfterClass	
 	public void releaseResources() 
 	{
-		TestsUtilCommon.release(driver);
+		TestsUtilCommon.releaseResources(driver);
 	}
 }

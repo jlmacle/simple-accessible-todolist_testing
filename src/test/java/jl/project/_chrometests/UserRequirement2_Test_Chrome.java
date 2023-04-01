@@ -1,33 +1,31 @@
-	
 package jl.project._chrometests;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.awt.Robot;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openqa.selenium.WebDriver;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.tests.TestsUtilCommon;
-import jl.project.__commontests.tests.UserRequirement1_Test;
-
 
 /**
  * @author 
- *	Class testing the user requirement 1 of creating and deleting a category
- */
-public class UserRequirement1_Test_Chrome 
-{
-	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement1_Test_Chrome.class);
-	WebDriver driver;	
-	Robot robot = RobotFactory.getRobotInstance();
+ * Class testing the creation and deletion of an item.
+ * */
 
+
+public class UserRequirement2_Test_Chrome {
+	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement2_Test_Chrome.class);	
+	WebDriver driver;	
+	Robot robot = RobotFactory.getRobotInstance();;
 	
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  
@@ -38,16 +36,18 @@ public class UserRequirement1_Test_Chrome
 	{			
 		driver = TestsUtilCommon.setup_and_navigate(StringExternalization.BROWSER_NAME_CHROME);
 	}	
-	
-	/**
-	 * Tests a successful creation and deletion of category
-	 */	
-	@Test	
-    public void create_and_delete_category_UsingClicks() 
+		
+	@Test
+	public void create_and_delete_item_UsingClicks() 
 	{
-		UserRequirement1_Test.create_and_delete_category_UsingClicks(logger, driver, robot);    	
-    }		
-	
+		logger.debug("Entering "+new Object(){}.getClass().getEnclosingMethod().getName());
+		boolean isItemCreated = false;
+		isItemCreated = TestsUtilCommon.createItem_UsingClicks(logger, driver, robot);
+		boolean isItemDeleted = false;
+		isItemDeleted = TestsUtilCommon.deleteItem_UsingClicks(logger, driver, robot);
+		assertThat(isItemCreated && isItemDeleted).isTrue();		
+	}
+
 	/**
 	 * The annotated method will be run after all the test methods in the current class have been run.
 	 * https://testng.org/doc/documentation-main.html 
@@ -57,5 +57,6 @@ public class UserRequirement1_Test_Chrome
 	{
 		TestsUtilCommon.releaseResources(driver);
 	}
+		
 
 }

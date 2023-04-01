@@ -1,9 +1,10 @@
-package jl.project.__commontests;
+package jl.project.__commontests.tests;
 
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -17,6 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +31,31 @@ import jl.project.StringExternalization;
 
 public class TestsUtilCommon 
 {
-	/**
+	static Logger logger = LoggerFactory.getLogger(jl.project.__commontests.tests.TestsUtilCommon.class);
+    static WebDriver driver;	
+    static Robot robot;
+
+	public static void load_WebDriver_data()
+    {
+        StringExternalization.WEBDRIVER_DATA_CHROME.put("webDriverKey", StringExternalization.WEBDRIVER_KEY_CHROME);
+		StringExternalization.WEBDRIVER_DATA_CHROME.put("webDriverValue", StringExternalization.WEBDRIVER_VALUE_CHROME);
+		StringExternalization.WEBDRIVER_DATA.put(StringExternalization.BROWSER_NAME_CHROME,StringExternalization.WEBDRIVER_DATA_CHROME);
+
+		StringExternalization.WEBDRIVER_DATA_EDGE.put("webDriverKey", StringExternalization.WEBDRIVER_KEY_EDGE);
+		StringExternalization.WEBDRIVER_DATA_EDGE.put("webDriverValue", StringExternalization.WEBDRIVER_VALUE_EDGE);
+		StringExternalization.WEBDRIVER_DATA.put(StringExternalization.BROWSER_NAME_EDGE,StringExternalization.WEBDRIVER_DATA_EDGE);
+    }
+
+    public static WebDriver setup_and_navigate(String browserName)
+	{        
+        load_WebDriver_data();  
+        HashMap<String,String> webDriverData = (StringExternalization.WEBDRIVER_DATA).get(browserName);
+        driver = TestsUtilCommon.setup(logger,robot, browserName, driver, webDriverData.get("webDriverKey"), webDriverData.get("webDriverValue"));
+		driver.get(StringExternalization.ANGULAR_SERVER_URL);
+        return driver;
+	}      
+    
+    /**
 	 * Returns the WebDriver instance used for a specific browser
 	 * @param logger - the logger to be used
 	 * @param robot - the instance of the Robot class to be used
@@ -48,15 +74,15 @@ public class TestsUtilCommon
 		logger.debug(StringExternalization.COMMENT_ENTERING_TEST_FOR+webDriverValue);
 		//https://chromedriver.chromium.org/downloads
 		System.setProperty(webDriverKey, 
-				StringExternalization.WEBDRIVERS_FOLDER+webDriverValue);
+				StringExternalization.WEBDRIVERS_FOLDER_PATH+webDriverValue);
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(browserName);
 		
 		if(StringExternalization.GRID_NOT_USED) 
 		{
-			if (webDriverValue.equals(StringExternalization.WEBDRIVER_CHROME_VALUE)) driver = new ChromeDriver();
-			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_EDGE_VALUE)) driver = new EdgeDriver();
+			if (webDriverValue.equals(StringExternalization.WEBDRIVER_VALUE_CHROME)) driver = new ChromeDriver();
+			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_VALUE_EDGE)) driver = new EdgeDriver();
 			else if (webDriverValue.equals(StringExternalization.WEBDRIVER_CHROME_ON_ANDROID_VALUE))
 			{
 				isNotATestOnAndroid = false; 
@@ -119,7 +145,7 @@ public class TestsUtilCommon
 	 * Releases the WebDriver instance used by the test
 	 * @param driver - the webdriver used
 	 */
- 	public static void release(WebDriver driver)
+ 	public static void releaseResources(WebDriver driver)
  	{ 		
  		driver.quit();
  	}

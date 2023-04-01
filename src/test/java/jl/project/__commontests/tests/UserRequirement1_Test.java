@@ -12,19 +12,18 @@ import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jl.project.__commontests.RobotFactory;
-import jl.project.__commontests.TestsUtilCommon;
-
 
 /**
  * @author 
  *	Class testing the user requirement 1 of creating and deleting a category
  */
-public class UserRequirement1_Test extends UserRequirement_Common
+public class UserRequirement1_Test 
 {
 	static Logger logger = LoggerFactory.getLogger(jl.project.__commontests.tests.UserRequirement1_Test.class);
 	static WebDriver driver;	
 	static Robot robot;
+
+	
 	
 	public static void create_and_delete_category_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
 	{

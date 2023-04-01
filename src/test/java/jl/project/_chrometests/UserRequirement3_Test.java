@@ -14,8 +14,8 @@ import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
-import jl.project.__commontests.TestsUtilCommon;
-import jl.project.__commontests.TestsUtilWithClicks;
+import jl.project.__commontests.tests.TestsUtilCommon;
+import jl.project.__commontests.tests.TestsUtilWithClicks;
 
 
 /**
@@ -25,14 +25,14 @@ import jl.project.__commontests.TestsUtilWithClicks;
 public class UserRequirement3_Test {
 	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement3_Test.class);
 	WebDriver driver; 	
-	Robot robot;
+	Robot robot = RobotFactory.getRobotInstance();
 	
 	@BeforeClass
 	public void setup()
 	{		
 		robot = RobotFactory.getRobotInstance();	
 		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_CHROME_KEY,StringExternalization.WEBDRIVER_CHROME_VALUE);
+		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_KEY_CHROME,StringExternalization.WEBDRIVER_VALUE_CHROME);
 	
 	}	
 	
@@ -48,7 +48,7 @@ public class UserRequirement3_Test {
 	@AfterClass	
 	public void releaseResources() 
 	{
-		TestsUtilCommon.release(driver);
+		TestsUtilCommon.releaseResources(driver);
 	}
 	
 }

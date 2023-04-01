@@ -1,4 +1,4 @@
-package jl.project.__commontests;
+package jl.project.__commontests.tests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.fail;
