@@ -81,15 +81,7 @@ public class TestsUtilWithClicks
 		logger.debug(String.format("%s %s", "5.", StringExternalization.TEST_ITEM_DELETION));
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
 		robot.delay(2000);
-
-		
-		
-		// List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME));
-		// 	for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
-		// 		anIconToDeleteAnItemElement.click();
-		// 		robot.delay(2000);
-		// 	}
-			
+		TestsUtilCommon.click_onElement_withName(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME, 0, driver, logger);
 		logger.debug("6. Testing the deletion of the test item");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
