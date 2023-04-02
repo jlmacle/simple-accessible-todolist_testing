@@ -25,6 +25,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import jl.project.StringExternalization;
+import jl.project.__commontests.RobotFactory;
 
 
 // A credit to GitHub Copilot for the help with this project

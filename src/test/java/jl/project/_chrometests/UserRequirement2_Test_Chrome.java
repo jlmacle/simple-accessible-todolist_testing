@@ -25,7 +25,7 @@ import jl.project.__commontests.tests.TestsUtilCommon;
 public class UserRequirement2_Test_Chrome {
 	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement2_Test_Chrome.class);	
 	WebDriver driver;	
-	Robot robot = RobotFactory.getRobotInstance();;
+	Robot robot = RobotFactory.getRobotInstance();
 	
 	/**
 	 * "The annotated method will be run before the first test method in the current class is invoked."  

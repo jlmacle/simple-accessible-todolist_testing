@@ -22,18 +22,15 @@ import jl.project.__commontests.tests.TestsUtilWithClicks;
  * @author 
  * Class testing the display/hiding of items
  */
-public class UserRequirement3_Test {
-	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement3_Test.class);
+public class UserRequirement3_Test_Chrome {
+	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement3_Test_Chrome.class);
 	WebDriver driver; 	
 	Robot robot = RobotFactory.getRobotInstance();
 	
 	@BeforeClass
 	public void setup()
 	{		
-		robot = RobotFactory.getRobotInstance();	
-		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_KEY_CHROME,StringExternalization.WEBDRIVER_VALUE_CHROME);
-	
+		driver = TestsUtilCommon.setup_and_navigate(StringExternalization.BROWSER_NAME_CHROME);
 	}	
 	
 	@Test
