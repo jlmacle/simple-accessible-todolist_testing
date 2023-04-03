@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
-import jl.project.__commontests.TestsUtilCommon;
+import jl.project.__commontests.tests.TestsUtilCommon;
 
 public class UserRequirement1_Test 
 {
@@ -26,7 +26,7 @@ public class UserRequirement1_Test
 	public void setup()
 	{
 		robot = RobotFactory.getRobotInstance();
-		driver = TestsUtilCommon.setup(logger, robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_CHROME_KEY, StringExternalization.WEBDRIVER_CHROME_ON_ANDROID_VALUE);
+		driver = TestsUtilCommon.setup(logger, robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_KEY_CHROME, StringExternalization.WEBDRIVER_CHROME_ON_ANDROID_VALUE);
 	}
 	
 	@BeforeMethod
@@ -63,7 +63,7 @@ public class UserRequirement1_Test
 	@AfterClass
 	public void releaseResources()
 	{
-		TestsUtilCommon.release(driver);
+		TestsUtilCommon.releaseResources(driver);
 	}
 
 }
