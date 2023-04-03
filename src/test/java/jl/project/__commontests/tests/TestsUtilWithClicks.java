@@ -49,7 +49,7 @@ public class TestsUtilWithClicks
 		robot.delay(2000);
 
 		//2. Verification that the item is created and displayed	
-		// TODO: test to re-work at a later time
+		// TODO: isDisplayed: test to re-write at a later time
 		logger.debug(String.format("%s %s","2.",StringExternalization.TEST_ITEM_VERIFICATION_OF_DISPLAYED_ITEM));
 		boolean itemIsCreated = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_TEST_ITEM,StringExternalization.ELEMENT_AN_ITEM_NAME, driver, logger);
 		boolean itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
@@ -82,7 +82,6 @@ public class TestsUtilWithClicks
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
 		robot.delay(2000);
 		TestsUtilCommon.click_onElement_withName(StringExternalization.ELEMENT_AN_ICON_TO_DELETE_AN_ITEM_NAME, 0, driver, logger);
-		logger.debug("6. Testing the deletion of the test item");
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 		

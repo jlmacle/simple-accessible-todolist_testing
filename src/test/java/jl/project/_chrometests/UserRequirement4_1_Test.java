@@ -11,7 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
@@ -34,17 +33,8 @@ public class UserRequirement4_1_Test {
 	@BeforeClass
 	public void setup() 
 	{
-		robot = RobotFactory.getRobotInstance();
-		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_KEY_CHROME,StringExternalization.WEBDRIVER_VALUE_CHROME);
-		
-	}
-	
-	@BeforeMethod
-	public void navigate() 
-	{
-		driver.get(StringExternalization.ANGULAR_SERVER_URL);		
-	}
+		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_KEY_CHROME,StringExternalization.WEBDRIVER_VALUE_CHROME);		
+	}	
 	
 	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_1"})		
