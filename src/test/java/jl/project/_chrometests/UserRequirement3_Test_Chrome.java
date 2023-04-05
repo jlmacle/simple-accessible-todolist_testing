@@ -1,7 +1,5 @@
 package jl.project._chrometests;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.awt.Robot;
 
 import org.slf4j.Logger;
@@ -15,7 +13,7 @@ import org.testng.annotations.Test;
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.tests.TestsUtilCommon;
-import jl.project.__commontests.tests.TestsUtilWithClicks;
+import jl.project._edgetests.UserRequirement3_Test;
 
 
 /**
@@ -36,10 +34,7 @@ public class UserRequirement3_Test_Chrome {
 	@Test
 	public void hideAndDisplayItem_UsingClicks()
 	{
-		boolean isTestSuccessful = false;
-		isTestSuccessful = TestsUtilWithClicks.hideAndDisplayItem_UsingClicks(logger, driver, robot);	
-		assertThat(isTestSuccessful).isTrue();
-		
+		UserRequirement3_Test.hideAndDisplayItem_UsingClicks(logger, driver, robot);		
 	}	
 	
 	@AfterClass	

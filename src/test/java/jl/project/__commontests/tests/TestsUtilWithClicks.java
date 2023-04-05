@@ -58,16 +58,25 @@ public class TestsUtilWithClicks
 		//3. Verification that the item can be hidden.	
 		logger.debug(String.format("%s %s","3.",StringExternalization.TEST_ITEM_VERIFICATION_OF_HIDEABLE_ITEM));
 		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
+		
+		
+		// TODO : TestUtilCommon to use
 		driver.findElement(By.cssSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA)).click();
 		
 		//4. Verification that the item is hidden		
-		itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
-		if (itemCreatedIsDisplayed) {fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
+		// TODO : isDisplayed to use 
+		
+		itemCreatedIsDisplayed = TestsUtilCommon.isDisplayed_withhCSSSelector(StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		// itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		
 		if(itemCreatedIsDisplayed) 
 		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_HIDDEN);};
 	
 		//4. Verification that the item can be displayed 
 		logger.debug(String.format("%s %s","4.", StringExternalization.TEST_ITEM_VERIFICATION_OF_DISPLAYED_ITEM));
+				// TODO : isDisplayed to use 
+
+		// TODO : TestsUtilCommon to use
 		driver.findElement(By.cssSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA)).click();				
 		itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
 		if(!itemCreatedIsDisplayed) 

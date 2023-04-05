@@ -7,16 +7,9 @@ import java.awt.Robot;
 
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-
-import org.testng.annotations.Test;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
-import jl.project.__commontests.tests.TestsUtilCommon;
 import jl.project.__commontests.tests.TestsUtilWithClicks;
 
 
@@ -29,26 +22,12 @@ public class UserRequirement3_Test {
 	WebDriver driver; 
 	Robot robot = RobotFactory.getRobotInstance();
 		
-	@BeforeClass
-	public void setup()
-	{
-		robot = RobotFactory.getRobotInstance();
-		
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_EDGE, driver, StringExternalization.WEBDRIVER_KEY_EDGE,StringExternalization.WEBDRIVER_VALUE_EDGE);
-		
-	}
-	
-	@Test
-	public void hideAndDisplayItem() 
+	public static void hideAndDisplayItem_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
 	{
 		boolean isTestSuccessful = false;
 		isTestSuccessful = TestsUtilWithClicks.hideAndDisplayItem_UsingClicks(logger, driver, robot);	
 		assertThat(isTestSuccessful).isTrue();			
 	}	
-	
-	@AfterClass	
-	public void releaseResources() 
-	{
-		TestsUtilCommon.releaseResources(driver);
-	}
+
+
 }
