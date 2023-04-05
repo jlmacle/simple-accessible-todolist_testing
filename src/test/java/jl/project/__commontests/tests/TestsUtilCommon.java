@@ -224,6 +224,15 @@ public class TestsUtilCommon
 		logger.debug(String.format("isLabelFindableWithinElements_withCSSSelector: %b",isTextindableWithinElements_withCSSSelector));
 		return isTextindableWithinElements_withCSSSelector;
 	}
+
+	public static boolean isDisplayed_withhCSSSelector(String selectorName, WebDriver driver, Logger logger)
+	{
+		boolean isDisplayed_withhCSSSelector = false;
+		WebElement element = driver.findElement(By.cssSelector(selectorName));
+		isDisplayed_withhCSSSelector = element.isDisplayed();
+		logger.debug(String.format("isDisplayed_withhCSSSelector: %b",isDisplayed_withhCSSSelector));
+		return isDisplayed_withhCSSSelector;
+	}
 	
 	
 	public static void tabTo_AddTheCategoryButton(Actions action, Robot robot)
