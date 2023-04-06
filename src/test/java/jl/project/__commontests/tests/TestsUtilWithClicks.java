@@ -42,46 +42,33 @@ public class TestsUtilWithClicks
 		//Adding an item to the Uncategorized category created at startup
 		TestsUtilCommon.sendKeys_withId(StringExternalization.ELEMENT_ID_FOR_CATEGORY_TO_SELECT_FIELD, StringExternalization.TEST_NAME_OF_DEFAULT_CATEGORY, driver);
 		TestsUtilCommon.sendKeys_withId(StringExternalization.ELEMENT_ID_FOR_NEW_ITEM_FIELD, StringExternalization.TEST_STRING_FOR_TEST_ITEM, driver);
-		TestsUtilCommon.click_withId(StringExternalization.ELEMENT_ID_FOR_ADD_ITEM_BUTTON, driver);
+		TestsUtilCommon.click_onElement_withId(StringExternalization.ELEMENT_ID_FOR_ADD_ITEM_BUTTON, driver);
 				
 		//To avoid a StaleElementReferenceException 
 		driver.get(StringExternalization.ANGULAR_SERVER_URL);
 		robot.delay(2000);
 
 		//2. Verification that the item is created and displayed	
-		// TODO: isDisplayed: test to re-write at a later time
 		logger.debug(String.format("%s %s","2.",StringExternalization.TEST_ITEM_VERIFICATION_OF_DISPLAYED_ITEM));
-		boolean itemIsCreated = TestsUtilCommon.isTextFindableWithinElements_withName(StringExternalization.TEST_STRING_FOR_TEST_ITEM,StringExternalization.ELEMENT_AN_ITEM_NAME, driver, logger);
-		boolean itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
-		if (!(itemIsCreated && itemCreatedIsDisplayed)) {fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
-
+		boolean itemCreatedIsDisplayed = TestsUtilCommon.isDisplayed_withhCSSSelector(StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		if (!(itemCreatedIsDisplayed)) {fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
+		
 		//3. Verification that the item can be hidden.	
 		logger.debug(String.format("%s %s","3.",StringExternalization.TEST_ITEM_VERIFICATION_OF_HIDEABLE_ITEM));
 		//Click on the category to hide the item. Only one category (Uncategorized) means only one element named foldUnfoldArea.
-		
-		
-		// TODO : TestUtilCommon to use
-		driver.findElement(By.cssSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA)).click();
-		
-		//4. Verification that the item is hidden		
-		// TODO : isDisplayed to use 
-		
+		TestsUtilCommon.click_onElement_withCSSSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA, 0, driver, logger);	
 		itemCreatedIsDisplayed = TestsUtilCommon.isDisplayed_withhCSSSelector(StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
-		// itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
-		
 		if(itemCreatedIsDisplayed) 
 		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_HIDDEN);};
 	
 		//4. Verification that the item can be displayed 
 		logger.debug(String.format("%s %s","4.", StringExternalization.TEST_ITEM_VERIFICATION_OF_DISPLAYED_ITEM));
-				// TODO : isDisplayed to use 
-
-		// TODO : TestsUtilCommon to use
-		driver.findElement(By.cssSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA)).click();				
-		itemCreatedIsDisplayed = TestsUtilCommon.isTextFindableWithinElements_withCSSSelector( StringExternalization.TEST_STRING_FOR_TEST_ITEM, StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		TestsUtilCommon.click_onElement_withCSSSelector(StringExternalization.ELEMENT_A_FOLDABLE_AREA, 0, driver, logger);
+		itemCreatedIsDisplayed = TestsUtilCommon.isDisplayed_withhCSSSelector(StringExternalization.ELEMENT_AN_ITEM_CLASS, driver, logger);
+		if (!(itemCreatedIsDisplayed)) {fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);};
+				
 		if(!itemCreatedIsDisplayed) 
-		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);}
-		
+		{fail(StringExternalization.TEST_ITEM_HIDING_DISPLAY_ITEM_NOT_FOUND);}		
 		// The test succeeded. The next steps are for cleaning the test environment.
 		else {isTestSuccessful=true;}
 

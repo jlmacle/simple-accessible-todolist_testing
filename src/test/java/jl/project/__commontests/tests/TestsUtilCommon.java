@@ -162,7 +162,7 @@ public class TestsUtilCommon
 		driver.findElement(By.id(id)).sendKeys(text);
 	}
 
-	public static void click_withId(String id, WebDriver driver)
+	public static void click_onElement_withId(String id, WebDriver driver)
 	{
 		driver.findElement(By.id(id)).click();
 	}
@@ -178,6 +178,24 @@ public class TestsUtilCommon
 	{
 		Robot robot = RobotFactory.getRobotInstance();		
 		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.name(name));
+		int count = 0;
+		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
+			
+			if (count == elementPosition) 
+			{ 
+				anIconToDeleteAnItemElement.click();
+				if (robot != null) {robot.delay(2000);}
+			}
+			count++;
+			
+		}
+		
+	}
+
+	public static void click_onElement_withCSSSelector(String selectorName, int elementPosition, WebDriver driver, Logger logger)
+	{
+		Robot robot = RobotFactory.getRobotInstance();		
+		List<WebElement> anIconToDeleteAnItemElements = driver.findElements(By.cssSelector(selectorName));
 		int count = 0;
 		for(WebElement anIconToDeleteAnItemElement: anIconToDeleteAnItemElements) {//only one item in the test
 			
