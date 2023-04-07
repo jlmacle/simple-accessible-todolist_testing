@@ -22,8 +22,6 @@ public class UserRequirement1_Test
 	static Logger logger = LoggerFactory.getLogger(jl.project.__commontests.tests.UserRequirement1_Test.class);
 	static WebDriver driver;	
 	static Robot robot;
-
-	
 	
 	public static void create_and_delete_category_UsingClicks(Logger logger, WebDriver driver, Robot robot) 
 	{
