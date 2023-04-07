@@ -18,34 +18,33 @@ import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.tests.TestsUtilCommon;
 import jl.project.__commontests.tests.TestsUtilWithKeyboard;
+import jl.project.__commontests.tests.UserRequirement4_1_Test;
 
 /**
  * @author
  * Class testing the user requirement of physical impairment web accessibility 
  * using the keyboard only - Enter key used.
  */
-public class UserRequirement4_1_Test {
+public class UserRequirement4_1_Test_Chrome {
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
-	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement4_1_Test.class);
+	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement4_1_Test_Chrome.class);
 	WebDriver driver;
 	Robot robot = RobotFactory.getRobotInstance();
 			
 	@BeforeClass
 	public void setup() 
 	{
-		driver = TestsUtilCommon.setup(logger,robot, StringExternalization.BROWSER_NAME_CHROME, driver, StringExternalization.WEBDRIVER_KEY_CHROME,StringExternalization.WEBDRIVER_VALUE_CHROME);		
-	}	
-	
-	@Ignore
-	@Test(groups = {"creation_deletion_Chrome_1"})		
-	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() 
-	{
-		boolean isTestSuccessful = false;
-		isTestSuccessful = TestsUtilWithKeyboard.createAndDeleteCategory_UsingTheKeyboard(logger, driver, robot, Keys.ENTER, StringExternalization.TEST_KEYBOARD_ENTER_KEY);
-		assertThat(isTestSuccessful).isTrue();		
+		driver = TestsUtilCommon.setup_and_navigate(StringExternalization.BROWSER_NAME_CHROME);
 	}
 	
 	
+	@Test(groups = {"creation_deletion_Chrome_1"})		
+	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() 
+	{
+		UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey(logger, driver, robot);
+	}
+	
+	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() 
 	{

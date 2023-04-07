@@ -22,7 +22,7 @@ import jl.project.__commontests.tests.UserRequirement1_Test;
  * @author 
  *	Class testing the user requirement 1 of creating and deleting a category
  */
-public class UserRequirement1_Test_Chrome 
+public class UserRequirement1_Test_Chrome extends UserRequirement1_Test
 {
 	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement1_Test_Chrome.class);
 	WebDriver driver;	
