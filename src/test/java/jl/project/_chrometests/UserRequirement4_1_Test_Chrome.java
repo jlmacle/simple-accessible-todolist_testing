@@ -1,11 +1,8 @@
 package jl.project._chrometests;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.awt.Robot;
 
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +14,6 @@ import org.testng.annotations.Test;
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.tests.TestsUtilCommon;
-import jl.project.__commontests.tests.TestsUtilWithKeyboard;
 import jl.project.__commontests.tests.UserRequirement4_1_Test;
 
 /**
@@ -37,13 +33,11 @@ public class UserRequirement4_1_Test_Chrome {
 		driver = TestsUtilCommon.setup_and_navigate(StringExternalization.BROWSER_NAME_CHROME);
 	}
 	
-	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() 
 	{
 		UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey(logger, driver, robot);
 	}
-	
 	
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() 
@@ -51,14 +45,10 @@ public class UserRequirement4_1_Test_Chrome {
 		UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey(logger, driver, robot);		
 	}
 	
-	@Ignore
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_1"})		
-	public void HideAndDisplayItemsWithKeyboardOnly_EnterKey() 
+	public void hideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
-		boolean isTestSuccessful = false;
-		isTestSuccessful = TestsUtilWithKeyboard.HideAndDisplayItems_UsingTheKeyboard(logger, driver, robot,  Keys.ENTER, StringExternalization.TEST_KEYBOARD_ENTER_KEY);
-		assertThat(isTestSuccessful).isTrue();	
-			
+		UserRequirement4_1_Test.hideAndDisplayItemsWithKeyboardOnly_EnterKey(logger, driver, robot);			
 	}
 	
 	@AfterClass	

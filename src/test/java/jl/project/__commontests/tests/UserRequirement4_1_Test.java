@@ -32,4 +32,11 @@ public class UserRequirement4_1_Test
 		assertThat(isTestSuccessful).isTrue();	
 	}
 
+	public static void hideAndDisplayItemsWithKeyboardOnly_EnterKey(Logger logger, WebDriver driver, Robot robot) 
+	{
+		boolean isTestSuccessful = false;
+		isTestSuccessful = TestsUtilWithKeyboard.HideAndDisplayItems_UsingTheKeyboard(logger, driver, robot,  Keys.ENTER, StringExternalization.TEST_KEYBOARD_ENTER_KEY);
+		assertThat(isTestSuccessful).isTrue();				
+	}
+
 }
