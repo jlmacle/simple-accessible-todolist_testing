@@ -37,20 +37,18 @@ public class UserRequirement4_1_Test_Chrome {
 		driver = TestsUtilCommon.setup_and_navigate(StringExternalization.BROWSER_NAME_CHROME);
 	}
 	
-	
+	@Ignore
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() 
 	{
 		UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey(logger, driver, robot);
 	}
 	
-	@Ignore
+	
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() 
 	{
-		boolean isTestSuccessful = false;
-		isTestSuccessful = TestsUtilWithKeyboard.createAndDeleteItem_UsingTheKeyboard(logger, driver, robot,  Keys.ENTER, StringExternalization.TEST_KEYBOARD_ENTER_KEY);
-		assertThat(isTestSuccessful).isTrue();	
+		UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey(logger, driver, robot);		
 	}
 	
 	@Ignore

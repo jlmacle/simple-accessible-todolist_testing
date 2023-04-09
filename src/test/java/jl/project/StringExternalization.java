@@ -78,9 +78,9 @@ public class StringExternalization
 	public static final String TEST_FAILURE_CATEGORY_NOT_FOUND = "The test category was not found.";
 	public static final String TEST_FAILURE_CATEGORY_FOUND = "The test category was found.";
 
-	public static final String TEST_STRING_FOR_CREATED_CATEGORY = "Selenium test category";
+	public static final String TEST_STRING_FOR_CREATED_CATEGORY = "Test category";
 	public static final String TEST_NAME_OF_DEFAULT_CATEGORY = "Uncategorized";
-	public static final String TEST_STRING_FOR_TEST_ITEM = "test"; 
+	public static final String TEST_STRING_FOR_TEST_ITEM = "Test item"; 
 
 	public static final String COMMENT_ENTERING_TEST_FOR = "Entering test for: ";
 	public static final String TEST_CATEGORY_CREATION = "Category creation";
