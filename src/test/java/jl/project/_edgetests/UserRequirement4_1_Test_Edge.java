@@ -1,4 +1,4 @@
-package jl.project._chrometests;
+package jl.project._edgetests;
 
 import java.awt.Robot;
 
@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import jl.project.StringExternalization;
@@ -20,16 +21,16 @@ import jl.project.__commontests.tests.UserRequirement4_1_Test;
  * Class testing the user requirement of physical impairment web accessibility 
  * using the keyboard only - Enter key used.
  */
-public class UserRequirement4_1_Test_Chrome {
+public class UserRequirement4_1_Test_Edge {
 	/* Note: delaying or not the sending of the keys impact the success of the tests */
-	Logger logger = LoggerFactory.getLogger(jl.project._chrometests.UserRequirement4_1_Test_Chrome.class);
+	Logger logger = LoggerFactory.getLogger(jl.project._edgetests.UserRequirement4_1_Test_Edge.class);
 	WebDriver driver;
 	Robot robot = RobotFactory.getRobotInstance();
 			
 	@BeforeClass
 	public void setup() 
 	{
-		driver = TestsUtilCommon.setup_and_navigate(StringExternalization.BROWSER_NAME_CHROME);
+		driver = TestsUtilCommon.setup_and_navigate(StringExternalization.BROWSER_NAME_EDGE);
 	}
 	
 	@Test(groups = {"creation_deletion_Chrome_1"})		

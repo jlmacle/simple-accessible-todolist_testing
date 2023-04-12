@@ -66,7 +66,7 @@ public class UserRequirement4_2_Test {
 	public void HideAndDisplayItemsWithKeyboardOnly_SpaceKey() 
 	{
 		boolean isTestSuccessful = false;
-		isTestSuccessful = TestsUtilWithKeyboard.HideAndDisplayItems_UsingTheKeyboard(logger, driver, robot, Keys.SPACE, StringExternalization.TEST_KEYBOARD_SPACE_KEY);
+		isTestSuccessful = TestsUtilWithKeyboard.hideAndDisplayItems_UsingTheKeyboard(logger, driver, robot, Keys.SPACE, StringExternalization.TEST_KEYBOARD_SPACE_KEY);
 		assertThat(isTestSuccessful).isTrue();	
 	}
 	

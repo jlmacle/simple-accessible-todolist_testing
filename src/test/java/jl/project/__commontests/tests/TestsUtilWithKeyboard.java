@@ -259,7 +259,7 @@ public class TestsUtilWithKeyboard
 	 * @param commentAddOn - a field used to add a comment concerning the use of the Enter or Space key to enter data
 	 * @return true if the test is successful, false otherwise
 	 */
-	public static boolean HideAndDisplayItems_UsingTheKeyboard(Logger logger, WebDriver driver, Robot robot, Keys keyUsedToSubmitData, String commentAddOn)
+	public static boolean hideAndDisplayItems_UsingTheKeyboard(Logger logger, WebDriver driver, Robot robot, Keys keyUsedToSubmitData, String commentAddOn)
 	{
 		boolean isTheTestSuccessful = false;
 		logger.info(StringExternalization.COMMENT_ENTERING_TEST_FOR
