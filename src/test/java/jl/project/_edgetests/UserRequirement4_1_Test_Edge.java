@@ -2,7 +2,7 @@ package jl.project._edgetests;
 
 import java.awt.Robot;
 
-
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import jl.project.StringExternalization;
 import jl.project.__commontests.RobotFactory;
 import jl.project.__commontests.tests.TestsUtilCommon;
-import jl.project.__commontests.tests.UserRequirement4_1_Test;
+import jl.project.__commontests.tests.UserRequirement4_Test;
 
 /**
  * @author
@@ -36,19 +36,19 @@ public class UserRequirement4_1_Test_Edge {
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteACategoryWithKeyboardOnly_EnterKey() 
 	{
-		UserRequirement4_1_Test.createAndDeleteACategoryWithKeyboardOnly_EnterKey(logger, driver, robot);
+		UserRequirement4_Test.createAndDeleteACategoryWithKeyboardOnly(logger, driver, robot, Keys.ENTER);
 	}
 	
 	@Test(groups = {"creation_deletion_Chrome_1"})		
 	public void createAndDeleteItemWithKeyboardOnly_EnterKey() 
 	{
-		UserRequirement4_1_Test.createAndDeleteItemWithKeyboardOnly_EnterKey(logger, driver, robot);		
+		UserRequirement4_Test.createAndDeleteItemWithKeyboardOnly(logger, driver, robot, Keys.ENTER);		
 	}
 	
 	@Test(dependsOnGroups = {"creation_deletion_Chrome_1"})		
 	public void hideAndDisplayItemsWithKeyboardOnly_EnterKey() 
 	{
-		UserRequirement4_1_Test.hideAndDisplayItemsWithKeyboardOnly_EnterKey(logger, driver, robot);			
+		UserRequirement4_Test.hideAndDisplayItemsWithKeyboardOnly(logger, driver, robot, Keys.ENTER);			
 	}
 	
 	@AfterClass	

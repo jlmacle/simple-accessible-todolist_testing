@@ -47,6 +47,14 @@ public class TestsUtilCommon
 		StringExternalization.WEBDRIVER_DATA.put(StringExternalization.BROWSER_NAME_EDGE,StringExternalization.WEBDRIVER_DATA_EDGE);
     }
 
+	public static void load_KeyCommentAddOnMap()
+	{
+		UserRequirement4_Test.keyCommentAddOnMap.put(Keys.ENTER, StringExternalization.TEST_KEYBOARD_ENTER_KEY);
+		UserRequirement4_Test.keyCommentAddOnMap.put(Keys.SPACE, StringExternalization.TEST_KEYBOARD_SPACE_KEY);
+	}
+
+
+
     public static WebDriver setup_and_navigate(String browserName)
 	{        
         load_WebDriver_data();  

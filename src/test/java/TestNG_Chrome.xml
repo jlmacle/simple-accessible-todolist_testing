@@ -32,7 +32,7 @@
    
    <test name = "User Requirement 4 Part 2">
       <classes>
-         <class name = "jl.project._chrometests.UserRequirement4_2_Test" />
+         <class name = "jl.project._chrometests.UserRequirement4_2_Test_Chrome" />
       </classes>
    </test>  
 
