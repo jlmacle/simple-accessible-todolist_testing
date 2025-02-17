@@ -1,5 +1,4 @@
 # ConfigurationUtility class to run before starting this script
-# Script asking if this was done
 cd $ATL_E2E_DIR
 cd z__utility_scripts/_configuration_utility
 ./run_configuration_utility.zsh
