@@ -7,4 +7,3 @@ Some code cleanup remains to be done.<br>
 Another project is more important at the moment.<br>
 
 
-[More information concerning the project can be found on javafullstackcode.wordpress.com](https://javafullstackcode.wordpress.com/, "Java Full Stack Code")
